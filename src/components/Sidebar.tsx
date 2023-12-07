@@ -58,16 +58,15 @@ export const Sidebar: React.FC = () => {
    */
   const pathSegments = pathname.split('/').filter((d: string) => d);
   /**
-   * appPath is the full page path without the pathPrefix or trailing slashes.
+   * currentPath is the full page path without the pathPrefix or trailing slashes.
    * The pathPrefix only matters when the option is set in the config and 
    * the app is deployed under another path (e.g. '/strudel-web').
-   * The regex below removes the trailing slash from the path if present.
    */
-  let appPath = pathname.replace(/\/$/, "");
+  let currentPath = removeTrailingSlash(pathname);
   let sidebarRootPath: string | null = null;
   if (pathPrefix && `/${pathSegments[0]}` === pathPrefix) {
-    appPath = pathSegments.filter((d, i) => i > 0).join('/');
-    appPath = `/${appPath}`;
+    currentPath = pathSegments.filter((d, i) => i > 0).join('/');
+    currentPath = `/${currentPath}`;
     sidebarRootPath = `/${pathSegments[1]}`;
   } else {
     sidebarRootPath = `/${pathSegments[0]}`;
@@ -95,7 +94,7 @@ export const Sidebar: React.FC = () => {
           height: '100%',
           borderRight: '1px solid',
           borderRightColor: 'neutral.main',
-          color: '#ffffff',
+          color: 'secondary.main',
         }}
       >
         <List>
@@ -108,7 +107,7 @@ export const Sidebar: React.FC = () => {
                 padding: 0,
               }}
             >
-              <Link 
+              <Link
                 to={sidebarRootPage.path}
                 style={{
                   padding: '0.5rem 1rem',
@@ -124,34 +123,51 @@ export const Sidebar: React.FC = () => {
               key={`${page.name} ${i}`}
               component="li"
               sx={{
-                backgroundColor: page.path === appPath ? 'secondary.main' : 'inherit',
-                color: page.path === appPath ? '#000000' : 'inherit',
                 padding: 0,
-                transition: '0.25s',
-                '&:hover': {
-                  color: page.path === appPath ? '#000000' : 'secondary.main',
-                }
               }}
             >
               {!page.children && (
-                <Link
-                  to={page.path}
-                  style={{
-                    padding: '0.5rem 1rem',
-                    width: '100%'
+                <Box
+                  sx={{
+                    ...getSideBarItemStyles(page, currentPath),
                   }}
                 >
-                  {page.name}
-                </Link>
+                  <Link
+                    to={page.path}
+                    style={{
+                      display: 'block',
+                      padding: '0.5rem 1rem',
+                      width: '100%'
+                    }}
+                  >
+                    {page.name}
+                  </Link>
+                </Box>
               )}
               {page.children && (
-                <Accordion disableGutters>
+                <Accordion 
+                  disableGutters
+                  sx={{
+                    background: 'none',
+                    borderRadius: 0,
+                    boxShadow: 'none',
+                    color: 'secondary.main',
+                    width: '100%',
+                  }}
+                >
                   <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                     sx={{
+                      ...getSideBarItemStyles(page, currentPath),
+                      height: '40px',
+                      minHeight: '40px',
+                      '& .MuiAccordionSummary-content': {
+                        margin: '0.5rem 0',
+                      },
                       '& .MuiAccordionSummary-expandIconWrapper': {
+                        color: 'white',
                         transform: 'rotate(270deg)',
                       },
                       '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
@@ -161,9 +177,29 @@ export const Sidebar: React.FC = () => {
                   >
                     <Typography>{page.name}</Typography>
                   </AccordionSummary>
-                  <AccordionDetails>
+                  <AccordionDetails
+                    sx={{
+                      padding: '0.5rem 1rem'
+                    }}
+                  >
                     {page.children?.map((subPage, i) => (
-                      <p>{subPage.name}</p>
+                      <Box
+                        sx={{
+                          ...getSideBarItemStyles(subPage, currentPath),
+                          borderRadius: '4px',
+                        }}
+                      >
+                        <Link
+                          to={subPage.path}
+                          style={{
+                            display: 'block',
+                            padding: '0.5rem 1rem',
+                            width: '100%'
+                          }}
+                        >
+                          {subPage.name}
+                        </Link>
+                      </Box>
                     ))}
                   </AccordionDetails>
                 </Accordion>
@@ -177,5 +213,19 @@ export const Sidebar: React.FC = () => {
 };
 
 const removeTrailingSlash = (str: string) => {     
-  return str.replace(/\/$/, "");
+  return str.replace(/\/$/, '');
+}
+
+const getSideBarItemStyles = (page: StrudelPage, currentPath: string) => {
+  return {
+    backgroundColor: page.path === currentPath ? 'secondary.main' : 'inherit',
+    color: page.path === currentPath ? 'info.main' : 'inherit',
+    fontWeight: page.path === currentPath ? 'bold' : 'normal',
+    transition: '0.25s',
+    width: '100%',
+    '&:hover': {
+      backgroundColor: page.path === currentPath ? 'secondary.dark' : 'info.light',
+      color: page.path === currentPath ? '#000000' : 'secondary.main',
+    }
+  }
 }
