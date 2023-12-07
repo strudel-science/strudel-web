@@ -27,9 +27,13 @@
     {
       "name": "Design System",
       "path": "/design-system",
-      "markdownId": "design-system",
-      "layoutComponent": "SidebarLayout",
       "children": [
+        {
+          "name": "Overview",
+          "path": "/design-system",
+          "markdownId": "design-system-overview",
+          "layoutComponent": "SidebarLayout"
+        },
         {
           "name": "Getting Started",
           "path": "/design-system/getting-started",

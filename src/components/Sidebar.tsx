@@ -1,12 +1,16 @@
 import * as React from 'react';
-import { Box, List, ListItem, Stack, Typography } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Box, List, ListItem, Stack, Typography } from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Link, graphql, useStaticQuery } from 'gatsby';
-import { useLocation } from '@gatsbyjs/reach-router';
+import { useLocation, useMatch } from '@gatsbyjs/reach-router';
 import { StrudelPage } from '../../gatsby-node';
 
 interface PagesResult {
   configJson: {
     pages: StrudelPage[]
+  },
+  site: {
+    pathPrefix?: string
   }
 }
 
@@ -17,7 +21,9 @@ interface PagesResult {
  */
 export const Sidebar: React.FC = () => {
   const { pathname } = useLocation();
-  const { configJson: { pages } } = useStaticQuery<PagesResult>(graphql`
+  const match = useMatch('/task-flows/');
+  console.log(match);
+  const result = useStaticQuery<PagesResult>(graphql`
     query {
       configJson {
         pages {
@@ -39,66 +45,35 @@ export const Sidebar: React.FC = () => {
           }
         }
       }
+      site {
+        pathPrefix
+      }
     }
   `);
+  const pages = result.configJson.pages;
+  const pathPrefix = result.site.pathPrefix;
 
   /**
    * Split pathname by slash and remove empty strings
    */
-  const pathnameSplit = pathname.split('/').filter((d: string) => d);
-  pathnameSplit.splice(pathnameSplit.length - 1);
-  const parentPath = `/${pathnameSplit.join('/')}`;
-  const currentPath = removeTrailingSlash(pathname);
-  let parentPage: StrudelPage = pages[0];
-  let currentPage: StrudelPage = pages[0];
+  const pathSegments = pathname.split('/').filter((d: string) => d);
   /**
-   * Traverse the menuLinks to find the current page and its parent
-   * Number of nested loops is based on the maximum depth of menuLinks
+   * appPath is the full page path without the pathPrefix or trailing slashes.
+   * The pathPrefix only matters when the option is set in the config and 
+   * the app is deployed under another path (e.g. '/strudel-web').
+   * The regex below removes the trailing slash from the path if present.
    */
-  pages.forEach((page: StrudelPage) => {
-    if (page.path === currentPath) {
-      currentPage = page;
-    }
-    if (page.path === parentPath) {
-      parentPage = page;
-    }
-    if (page.children) {
-      page.children.forEach((subPage: StrudelPage) => {
-        if (subPage.path === currentPath) {
-          currentPage = subPage;
-        }
-        if (subPage.path === parentPath) {
-          parentPage = subPage;
-        }
-        if (page.children) {
-          page.children.forEach((subSubPage: StrudelPage) => {
-            if (subSubPage.path === currentPath) {
-              currentPage = subSubPage;
-            }
-            if (subSubPage.path === parentPath) {
-              parentPage = subSubPage;
-            }
-          })
-        }
-      })
-    }
-  });
-  let sidebarRootLink: StrudelPage | null = null;
-  let sidebarLinks: StrudelPage[] = [];
-  /**
-   * If the current page has child pages
-   * then it is the root item in the sidebar and its children are the links.
-   * Otherwise, the parent page is the root item and the parent's children are the links.
-   * 
-   * TODO: fix the way parentPage is determined. This may not matter once the sidebar changes to an accordion.
-   */
-  if (currentPage.children) {
-    sidebarRootLink = currentPage;
-    sidebarLinks = currentPage.children;
-  } else if (parentPage.children) {
-    sidebarRootLink = parentPage;
-    sidebarLinks = parentPage!.children;
+  let appPath = pathname.replace(/\/$/, "");
+  let sidebarRootPath: string | null = null;
+  if (pathPrefix && `/${pathSegments[0]}` === pathPrefix) {
+    appPath = pathSegments.filter((d, i) => i > 0).join('/');
+    appPath = `/${appPath}`;
+    sidebarRootPath = `/${pathSegments[1]}`;
+  } else {
+    sidebarRootPath = `/${pathSegments[0]}`;
   }
+  const sidebarRootPage = pages.find((page) => page.path === sidebarRootPath);
+
   return (
     <Box
       component="aside"
@@ -124,7 +99,7 @@ export const Sidebar: React.FC = () => {
         }}
       >
         <List>
-          {sidebarRootLink && (
+          {sidebarRootPage && (
             <ListItem
               sx={{
                 color: 'neutral.main',
@@ -134,40 +109,66 @@ export const Sidebar: React.FC = () => {
               }}
             >
               <Link 
-                to={sidebarRootLink.path}
+                to={sidebarRootPage.path}
                 style={{
                   padding: '0.5rem 1rem',
                   width: '100%'
                 }}
               >
-                {sidebarRootLink.name}
+                {sidebarRootPage.name}
               </Link>
             </ListItem>
           )}
-          {sidebarLinks.map((link, i) => (
+          {sidebarRootPage && sidebarRootPage.children?.map((page, i) => (
             <ListItem 
-              key={`${link.name} ${i}`}
+              key={`${page.name} ${i}`}
               component="li"
               sx={{
-                backgroundColor: link.path === currentPath ? 'secondary.main' : 'inherit',
-                color: link.path === currentPath ? '#000000' : 'inherit',
+                backgroundColor: page.path === appPath ? 'secondary.main' : 'inherit',
+                color: page.path === appPath ? '#000000' : 'inherit',
                 padding: 0,
                 transition: '0.25s',
                 '&:hover': {
-                  color: link.path === currentPath ? '#000000' : 'secondary.main',
+                  color: page.path === appPath ? '#000000' : 'secondary.main',
                 }
               }}
             >
-              <Link
-                to={link.path}
-                style={{
-                  padding: '0.5rem 1rem',
-                  width: '100%'
-                }}
-              >
-                {link.name}
-              </Link>
-            </ListItem>
+              {!page.children && (
+                <Link
+                  to={page.path}
+                  style={{
+                    padding: '0.5rem 1rem',
+                    width: '100%'
+                  }}
+                >
+                  {page.name}
+                </Link>
+              )}
+              {page.children && (
+                <Accordion disableGutters>
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1a-content"
+                    id="panel1a-header"
+                    sx={{
+                      '& .MuiAccordionSummary-expandIconWrapper': {
+                        transform: 'rotate(270deg)',
+                      },
+                      '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
+                        transform: 'rotate(360deg)',
+                      },
+                    }}
+                  >
+                    <Typography>{page.name}</Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    {page.children?.map((subPage, i) => (
+                      <p>{subPage.name}</p>
+                    ))}
+                  </AccordionDetails>
+                </Accordion>
+              )}
+            </ListItem> 
           ))}
         </List>
       </Box>
