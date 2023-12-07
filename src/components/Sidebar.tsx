@@ -49,7 +49,7 @@ export const Sidebar: React.FC = () => {
   pathnameSplit.splice(pathnameSplit.length - 1);
   const parentPath = `/${pathnameSplit.join('/')}`;
   const currentPath = removeTrailingSlash(pathname);
-  let parentPage: StrudelPage | null = null;
+  let parentPage: StrudelPage = pages[0];
   let currentPage: StrudelPage = pages[0];
   /**
    * Traverse the menuLinks to find the current page and its parent
@@ -89,11 +89,13 @@ export const Sidebar: React.FC = () => {
    * If the current page has child pages
    * then it is the root item in the sidebar and its children are the links.
    * Otherwise, the parent page is the root item and the parent's children are the links.
+   * 
+   * TODO: fix the way parentPage is determined. This may not matter once the sidebar changes to an accordion.
    */
   if (currentPage.children) {
     sidebarRootLink = currentPage;
     sidebarLinks = currentPage.children;
-  } else if (parentPage!.children) {
+  } else if (parentPage.children) {
     sidebarRootLink = parentPage;
     sidebarLinks = parentPage!.children;
   }
