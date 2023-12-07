@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, Container, Stack } from '@mui/material';
+import { Container } from '@mui/material';
 import BaseLayout from './BaseLayout';
 
 const SidebarLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
@@ -12,4 +12,4 @@ const SidebarLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
   )
 };
 
-export  default SidebarLayout;
+export default SidebarLayout;
