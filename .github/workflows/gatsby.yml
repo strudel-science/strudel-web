@@ -59,11 +59,11 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
-        with:
-          # Automatically inject pathPrefix in your Gatsby configuration file.
-          #
-          # You may remove this line if you want to manage the configuration yourself.
-          static_site_generator: gatsby
+        # with:
+        #   # Automatically inject pathPrefix in your Gatsby configuration file.
+        #   #
+        #   # You may remove this line if you want to manage the configuration yourself.
+        #   static_site_generator: gatsby
       - name: Restore cache
         uses: actions/cache@v3
         with:
@@ -78,7 +78,7 @@ jobs:
       - name: Build with Gatsby
         env:
           PREFIX_PATHS: 'true'
-        run: ${{ steps.detect-package-manager.outputs.manager }} run build
+        run: ${{ steps.detect-package-manager.outputs.manager }} run build --prefix-paths
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:

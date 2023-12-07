@@ -1,6 +1,7 @@
 import type { GatsbyConfig } from "gatsby"
 
 const config: GatsbyConfig = {
+  pathPrefix: '/strudel-web',
   siteMetadata: {
     title: `STRUDEL`,
     siteUrl: `https://strudel.science`,
