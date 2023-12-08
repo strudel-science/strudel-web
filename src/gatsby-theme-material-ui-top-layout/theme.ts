@@ -1,5 +1,10 @@
 import { Theme, createTheme } from "@mui/material";
 
+/**
+ * Material UI custom theme object.
+ * This is where the color palette and default 
+ * component styles and props can be defined.
+ */
 const theme: Theme = createTheme({
     palette: {
       primary: {

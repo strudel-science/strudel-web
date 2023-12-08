@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
-import { AppBar, Box, Container, Grid, Stack, Toolbar, Typography } from '@mui/material';
-import { PropsWithChildren } from 'react';
+import { AppBar, Box, Toolbar } from '@mui/material';
 import { Link, graphql, useStaticQuery } from 'gatsby';
 import { StrudelPage } from '../types/strudel-config';
 import { useLocation } from '@gatsbyjs/reach-router';
