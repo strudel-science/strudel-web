@@ -3,7 +3,10 @@ import { Accordion, AccordionDetails, AccordionSummary, Box, List, ListItem, Sta
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Link, graphql, useStaticQuery } from 'gatsby';
 import { useLocation, useMatch } from '@gatsbyjs/reach-router';
-import { StrudelPage } from '../../gatsby-node';
+import { NavigationActionType, NavigationState, useNavigation } from '../context/NavigationProvider';
+import { useEffect } from 'react';
+import { findPageByPath, flattenPages } from '../utils/utils';
+import { StrudelPage } from '../types/strudel-config';
 
 interface PagesResult {
   configJson: {
@@ -17,12 +20,11 @@ interface PagesResult {
 /**
  * Sidebar component that dynamically displays page links based on the current 
  * page and its position in the navigational architecture.
- * The architecture and link metadata is pulled from strudel-config.json.
+ * The architecture and link metadata are pulled from strudel-config.json.
  */
 export const Sidebar: React.FC = () => {
   const { pathname } = useLocation();
-  const match = useMatch('/task-flows/');
-  console.log(match);
+  const navigation = useNavigation();
   const result = useStaticQuery<PagesResult>(graphql`
     query {
       configJson {
@@ -73,6 +75,20 @@ export const Sidebar: React.FC = () => {
   }
   const sidebarRootPage = pages.find((page) => page.path === sidebarRootPath);
 
+  /**
+   * If the current page is within a collapsible section,
+   * make sure its section is open on load.
+   */
+  useEffect(() => {
+    const currentPage = findPageByPath(currentPath, pages);
+    if (currentPage?.parent?.parent) {
+      navigation.dispatch({
+        type: NavigationActionType.EXPAND_SIDEBAR_SECTION,
+        payload: currentPage.parent.path
+      });
+    }
+  }, []);
+
   return (
     <Box
       component="aside"
@@ -101,21 +117,19 @@ export const Sidebar: React.FC = () => {
           {sidebarRootPage && (
             <ListItem
               sx={{
-                color: 'neutral.main',
-                fontSize: '1.125rem',
-                fontWeight: 'bold',
                 padding: 0,
               }}
             >
-              <Link
-                to={sidebarRootPage.path}
-                style={{
+              <Typography
+                sx={{
                   padding: '0.5rem 1rem',
-                  width: '100%'
+                  color: 'neutral.main',
+                  fontSize: '1.125rem',
+                  fontWeight: 'bold',
                 }}
               >
                 {sidebarRootPage.name}
-              </Link>
+              </Typography>
             </ListItem>
           )}
           {sidebarRootPage && sidebarRootPage.children?.map((page, i) => (
@@ -145,8 +159,16 @@ export const Sidebar: React.FC = () => {
                 </Box>
               )}
               {page.children && (
-                <Accordion 
+                <Accordion
+                  expanded={isExpanded(page, navigation.state.sidebarExpandedSections)}
                   disableGutters
+                  onChange={(e, expanded) => {
+                    const actionType = expanded ? NavigationActionType.EXPAND_SIDEBAR_SECTION : NavigationActionType.COLLAPSE_SIDEBAR_SECTION;
+                    navigation.dispatch({
+                      type: actionType,
+                      payload: page.path
+                    });
+                  }}
                   sx={{
                     background: 'none',
                     borderRadius: 0,
@@ -184,6 +206,7 @@ export const Sidebar: React.FC = () => {
                   >
                     {page.children?.map((subPage, i) => (
                       <Box
+                        key={`${subPage.name} ${i}`}
                         sx={{
                           ...getSideBarItemStyles(subPage, currentPath),
                           borderRadius: '4px',
@@ -214,7 +237,7 @@ export const Sidebar: React.FC = () => {
 
 const removeTrailingSlash = (str: string) => {     
   return str.replace(/\/$/, '');
-}
+};
 
 const getSideBarItemStyles = (page: StrudelPage, currentPath: string) => {
   return {
@@ -224,8 +247,15 @@ const getSideBarItemStyles = (page: StrudelPage, currentPath: string) => {
     transition: '0.25s',
     width: '100%',
     '&:hover': {
-      backgroundColor: page.path === currentPath ? 'secondary.dark' : 'info.light',
+      backgroundColor: page.path === currentPath ? 'secondary.light' : 'info.light',
       color: page.path === currentPath ? '#000000' : 'secondary.main',
     }
   }
-}
+};
+
+const isExpanded = (
+  page: StrudelPage, 
+  sidebarExpandedSections: NavigationState['sidebarExpandedSections']
+) => {
+  return sidebarExpandedSections.indexOf(page.path) > -1;
+};

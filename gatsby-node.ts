@@ -1,16 +1,7 @@
 import path from "path";
 import type { GatsbyNode } from "gatsby";
-
-/**
- * Possible properties for a page object in strudel-config.json.
- */
-export interface StrudelPage {
-  name: string;
-  path: string;
-  markdownId?: string;
-  layoutComponent?: string;
-  children?: StrudelPage[];
-}
+import { flattenPages } from "./src/utils/utils";
+import { StrudelPage } from "./src/types/strudel-config";
 
 /**
  * Shape of the result from the graphql query
@@ -95,18 +86,6 @@ export const createPages: GatsbyNode["createPages"] = async ({
   }
 
   const nestedPages = result.data?.configJson.pages;
-
-  /**
-   * Build a flat list of page objects from the json
-   */
-  const flattenPages = (pages: StrudelPage[]): StrudelPage[] => { 
-    return pages.reduce((flattened: StrudelPage[], { children, ...rest }) => {      
-      return flattened
-        .concat([{ ...rest }])
-        .concat(children ? flattenPages(children) : []);
-    }, []);
-  }
-
   const pages = nestedPages && flattenPages(nestedPages);
   const mdxPages = result.data?.allMdx.nodes;
 

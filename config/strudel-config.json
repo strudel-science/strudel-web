@@ -86,19 +86,19 @@
         },
         {
           "name": "UI Library",
-          "path": "ui-library",
+          "path": "/design-system/ui-library",
           "markdownId": "ui-library",
           "layoutComponent": "SidebarLayout",
           "children": [
             {
               "name": "Getting Started",
-              "path": "/ui-library/getting-started",
+              "path": "/design-system/ui-library/getting-started",
               "markdownId": "ui-library-getting-started",
               "layoutComponent": "SidebarLayout"
             },
             {
               "name": "React Templates",
-              "path": "/ui-library/react-templates",
+              "path": "/design-system/ui-library/react-templates",
               "markdownId": "ui-library-react-templates",
               "layoutComponent": "SidebarLayout"
             }
