@@ -5,7 +5,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby';
 import { useLocation, useMatch } from '@gatsbyjs/reach-router';
 import { NavigationActionType, NavigationState, useNavigation } from '../context/NavigationProvider';
 import { useEffect } from 'react';
-import { findPageByPath, flattenPages } from '../utils/utils';
+import { findPageByPath, flattenPages, getCurrentPath } from '../utils/utils';
 import { StrudelPage } from '../types/strudel-config';
 
 interface PagesResult {
@@ -54,25 +54,8 @@ export const Sidebar: React.FC = () => {
   `);
   const pages = result.configJson.pages;
   const pathPrefix = result.site.pathPrefix;
-
-  /**
-   * Split pathname by slash and remove empty strings
-   */
-  const pathSegments = pathname.split('/').filter((d: string) => d);
-  /**
-   * currentPath is the full page path without the pathPrefix or trailing slashes.
-   * The pathPrefix only matters when the option is set in the config and 
-   * the app is deployed under another path (e.g. '/strudel-web').
-   */
-  let currentPath = removeTrailingSlash(pathname);
-  let sidebarRootPath: string | null = null;
-  if (pathPrefix && `/${pathSegments[0]}` === pathPrefix) {
-    currentPath = pathSegments.filter((d, i) => i > 0).join('/');
-    currentPath = `/${currentPath}`;
-    sidebarRootPath = `/${pathSegments[1]}`;
-  } else {
-    sidebarRootPath = `/${pathSegments[0]}`;
-  }
+  const currentPath = getCurrentPath(pathname, pathPrefix);
+  const sidebarRootPath = `/${currentPath.split('/')[1]}`;
   const sidebarRootPage = pages.find((page) => page.path === sidebarRootPath);
 
   /**
@@ -233,10 +216,6 @@ export const Sidebar: React.FC = () => {
       </Box>
     </Box>
   )
-};
-
-const removeTrailingSlash = (str: string) => {     
-  return str.replace(/\/$/, '');
 };
 
 const getSideBarItemStyles = (page: StrudelPage, currentPath: string) => {
