@@ -52,7 +52,9 @@ jobs:
           SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
         with:
           source-directory: 'public'
+          target-directory: 'public'
           destination-github-username: 'strudel-science'
           destination-repository-name: 'strudel-science.github.io'
           user-email: ctodonnell@lbl.gov
-          target-branch: test/copy-from-strudel-web
+          target-branch: test/gatsby-prod
+          create-target-branch-if-needed: true
