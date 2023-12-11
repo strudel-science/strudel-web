@@ -9,15 +9,15 @@ The Scientific sofTware Research for User experience, Design, Engagement, and Le
 - [Staging Website](https://strudel.science/strudel-web)
 - [Production Website](https://strudel.science/)
 
-Table of Contents
+## Table of Contents
 
-- [Locations of Interest](#locations-of-interest)
-- [Getting Started Contributing Content](#getting started contributing content)
-- [Contributing and Deploying (for team members)](#contributing-and-deploying(for-team-members))
-- [Running the website locally](#running-the-website-locally)
+- [Repo Overview](#repo-overview)
+- [Contributing and Deploying](#contributing-and-deploying)
+- [Creating and Editing Content](#creating-and-editing-content)
+- [Installing Locally](#installing-locally)
 - [About STRUDEL](#about-strudel)
 
-## Locations of Interest
+## Repo Overview
 
 | Location    | Description |
 | -------- | ------- |
@@ -28,7 +28,47 @@ Table of Contents
 | `/src/gatsby-theme-material-ui-top-layout` | Contains `theme.ts` which configures the material ui theme for the site (e.g. palette, spacing, component defaults). |
 | `/src/pages` | Gatsby Page components that are automatically added to the routing tree (but not the navigation config). |
 
-## Getting Started Contributing Content
+## Contributing and Deploying
+
+This guide is for STRUDEL team members who have permission to create branches and run GitHub actions.
+
+### Contributing
+
+#### 1. Create a new branch called `update/short-description-of-change`
+
+You can do this from the command line or from the [github branches page](https://github.com/strudel-science/strudel-web/branches). Make sure that you source the new branch from the latest version of the `main` branch.
+
+#### 2. Make your changes
+
+Update any markdown, config, or typescript files that you need to.
+
+#### 3. Commit your changes
+
+#### 4. Create a PR to merge changes to the `main` branch
+
+Request that your changes get merged into the `main` branch.
+
+#### 5. Merge the PR and delete your branch
+
+If there are no conflicts and you are ready, merge the PR into the main branch and delete the `update` branch you made for your changes.
+
+#### 6. Check your changes on the staging website
+
+Merging the PR should kick off the Deploy Gatsby Site to Pages workflow automatically. Check the status of that workflow on [its actions page](https://github.com/strudel-science/strudel-web/actions/workflows/gatsby.yml). Once the workflow completes, go to https://strudel.science/strudel-web and make sure your changes are there and that there were no unintended consquences.
+
+### Deploying
+
+#### 7. Run the production deployment workflow
+
+If the staging websites looks good, go to the [actions page for the Copy Build to Production Repo workflow](https://github.com/strudel-science/strudel-web/actions/workflows/prod.yml). Click the "Run workflow" dropdown, ensure that the `main` branch is selected, then click the "Run workflow" button. This will create build files for the website and copy them to the [strudel-web-prod](https://github.com/strudel-science/strudel-science.github.io) repo. This will automatically trigger a new deployment to the production website at https://strudel.science.
+
+#### 8. Confirm your changes on the production website
+
+Go to the the production website at https://strudel.science and confirm that everything looks as expected.
+
+You're done!
+
+## Creating and Editing Content
 
 There are two possible ways that content gets loaded into the website:
 1. Markdown (.mdx) files in the `content` directory
@@ -102,45 +142,7 @@ const TeamPage: React.FC = () => {
 export default TeamPage
 ```
 
-## Contributing and Deploying (for team members)
-
-### Contributing
-
-#### 1. Create a new branch called `update/short-description-of-change`
-
-You can do this from the command line or from the [github branches page](https://github.com/strudel-science/strudel-web/branches). Make sure that you source the new branch from the latest version of the `main` branch.
-
-#### 2. Make your changes
-
-Update any markdown, config, or typescript files that you need to.
-
-#### 3. Commit your changes
-
-#### 4. Create a PR to merge changes to the `main` branch
-
-Request that your changes get merged into the `main` branch.
-
-#### 5. Merge the PR and delete your branch
-
-If there are no conflicts and you are ready, merge the PR into the main branch and delete the `update` branch you made for your changes.
-
-#### 6. Check your changes on the staging website
-
-Merging the PR should kick off the Deploy Gatsby Site to Pages workflow automatically. Check the status of that workflow on [its actions page](https://github.com/strudel-science/strudel-web/actions/workflows/gatsby.yml). Once the workflow completes, go to https://strudel.science/strudel-web and make sure your changes are there and that there were no unintended consquences.
-
-### Deploying
-
-#### 7. Run the production deployment workflow
-
-If the staging websites looks good, go to the [actions page for the Copy Build to Production Repo workflow](https://github.com/strudel-science/strudel-web/actions/workflows/prod.yml). Click the "Run workflow" dropdown, ensure that the `main` branch is selected, then click the "Run workflow" button. This will create build files for the website and copy them to the [strudel-web-prod](https://github.com/strudel-science/strudel-science.github.io) repo. This will automatically trigger a new deployment to the production website at https://strudel.science.
-
-#### 8. Confirm your changes on the production website
-
-Go to the the production website at https://strudel.science and confirm that everything looks as expected.
-
-You're done!
-
-## Running the website locally
+## Installing Locally
 
 This website is built with [Gatsby](https://www.gatsbyjs.com/docs), a React-based framework for building websites. 
 
@@ -183,11 +185,11 @@ This website is built with [Gatsby](https://www.gatsbyjs.com/docs), a React-base
     - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
 ## About STRUDEL
-### Scientific sofTware Research for User experience, Design, Engagement, and Learning
 
-The Scientific sofTware Research for User experience, Design, Engagement, and Learning project (STRUDEL) is a planning framework and design system for scientific software towards improving the usability and user interfaces.
+The Scientific sofTware Research for User experience, Design, Engagement, and Learning project (STRUDEL) is a planning framework and design system for scientific software towards improving the usability and user interfaces. It is funded by the Alfred P. Sloan Foundation and is based at the Lawrence Berkeley National Laboratory.
 
-The STRUDEL project is based at Lawrence Berkeley National Laboratory. The team members are:
+The STRUDEL team includes:
+
 * Lavanya Ramakrishnan (PI)
 * Rajshree Deshmukh
 * Dan Gunter
