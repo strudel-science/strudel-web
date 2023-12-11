@@ -21,7 +21,7 @@ The Scientific sofTware Research for User experience, Design, Engagement, and Le
 
 | Location    | Description |
 | -------- | ------- |
-| `/config` | Contains the navigation link structure and connects markdown files to pages. |
+| `/config` | Contains `strudel-config.json` which defines the navigation link structure and connects markdown files to pages. |
 | `/content` | Contains markdown (.mdx) files that can be turned into pages. |
 | `/content/images` | Contains images that are used in markdown files or other areas of the website. |
 | `/src/components` | React components that are reused across the website. |
@@ -54,9 +54,11 @@ If there are no conflicts and you are ready, merge the PR into the main branch a
 
 #### 6. Check your changes on the staging website
 
-Merging the PR should kick off the Deploy Gatsby Site to Pages workflow automatically. Check the status of that workflow on [its actions page](https://github.com/strudel-science/strudel-web/actions/workflows/gatsby.yml). Once the workflow completes, go to https://strudel.science/strudel-web and make sure your changes are there and that there were no unintended consquences.
+Merging the PR should kick off the Deploy Gatsby Site to Pages workflow automatically. Check the status of that workflow on [its actions page](https://github.com/strudel-science/strudel-web/actions/workflows/gatsby.yml). Once the workflow completes, go to https://strudel.science/strudel-web and make sure your changes are there and that there were no unintended consequences.
 
 ### Deploying
+
+NOTE: This process is still a work in progress. Right now, this will not replace any content on the official strudel.science site.
 
 #### 7. Run the production deployment workflow
 
