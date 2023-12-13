@@ -30,7 +30,7 @@ export const About: React.FC = () => {
           <Grid container columnSpacing={4}>
             <Grid item sm={6}>
               <InnerCardItem
-                title="Typology"
+                title="Planning Framework"
                 description="A tool for categorizing key elements making up scientific software projects"
                 link={
                   <Button 

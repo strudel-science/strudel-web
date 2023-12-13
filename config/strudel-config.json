@@ -5,21 +5,21 @@
       "path": "/"
     },
     {
-      "name": "Typology",
-      "path": "/typology",
-      "markdownId": "typology",
+      "name": "Planning Framework",
+      "path": "/planning-framework",
+      "markdownId": "planning-framework",
       "layoutComponent": "SidebarLayout",
       "children": [
         {
           "name": "Getting Started",
-          "path": "/typology/getting-started",
-          "markdownId": "typology-getting-started",
+          "path": "/planning-framework/getting-started",
+          "markdownId": "planning-framework-getting-started",
           "layoutComponent": "SidebarLayout"
         },
         {
           "name": "Facets",
-          "path": "/typology/facets",
-          "markdownId": "typology-facets",
+          "path": "/planning-framework/facets",
+          "markdownId": "planning-framework-facets",
           "layoutComponent": "SidebarLayout"
         }
       ]
