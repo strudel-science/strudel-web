@@ -32,15 +32,15 @@ export const Hero: React.FC = () => {
           }}
         >
           <Typography 
-            variant="h4" 
+            variant="h5" 
             component="h1"
             sx={{
               textAlign: 'center',
-              maxWidth: '800px',
+              maxWidth: '900px',
               display: 'inline-block'
             }}
           >
-            Scientific software research for user experience, design, engagement, and learning
+            STRUDEL enables teams to create user-centered software for scientific communities. Plan, Design, & Build better products using STRUDEL Planning Framework and Design System.
           </Typography>
         </Box>
       </Stack>

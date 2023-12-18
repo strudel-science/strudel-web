@@ -14,16 +14,11 @@ export const About: React.FC = () => {
         leftContent={
           <>
             <HomeSectionTitle>
-              About
+              Get Started
             </HomeSectionTitle>
             <HomeSectionDescription>
-              The STRUDEL project aims to ease the process of planning & designing scientific software from core requirements to UI development.
+              STRUDEL products support work planning & designing scientific software.
             </HomeSectionDescription>
-            <Box>
-              <Button variant="contained">
-                Get Involved
-              </Button>
-            </Box>
           </>
         }
         rightContent={
@@ -31,7 +26,7 @@ export const About: React.FC = () => {
             <Grid item sm={6}>
               <InnerCardItem
                 title="Planning Framework"
-                description="A tool for categorizing key elements making up scientific software projects"
+                description="Strategize & prioritize project work by incorporating UX"
                 link={
                   <Button 
                     to="/"
@@ -47,7 +42,7 @@ export const About: React.FC = () => {
             <Grid item sm={6}>
               <InnerCardItem
                 title="Design System"
-                description="A tool to streamline scientific software UI design and development"
+                description="Streamline scientific UI design and development"
                 link={
                   <Button 
                     to="/"
