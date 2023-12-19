@@ -23,11 +23,15 @@ export const Footer: React.FC<FooterProps> = ({
           paddingBottom: 8
         }}
       >
-        STRUDEL is an effort of the Berkeley Lab Scientific Data <Link href="https://crd.lbl.gov/divisions/scidata/" target="_blank">(SciData)</Link> Division <Link href="https://ux.lbl.gov" target="_blank">UX team</Link>.
+        <em>STRUDEL is an effort of the Berkeley Lab Scientific Data <Link href="https://crd.lbl.gov/divisions/scidata/" target="_blank" rel="noreferrer">(SciData)</Link> Division <Link href="https://ux.lbl.gov" target="_blank" rel="noreferrer">UX team</Link></em>.
         <br />
-        Questions? Ideas? Get in touch at <Link href="mailto:strudel@lbl.gov" target="_blank">strudel - at - lbl - dot - gov</Link>
         <br />
-        Looking to stay up to date? Join our mailing list by emailing <Link href="mailto:strudel-community+subscribe@lbl.gov" target="_blank">strudel-community+subscribe@lbl.gov</Link> or on <Link href='https://github.com/strudel-science/' target="_blank">GitHub</Link>.
+        <strong>Questions? Ideas? Looking to stay up to date?</strong>
+        <ul>
+          <li>Get in touch at <Link href="mailto:strudel@lbl.gov" target="_blank">strudel@lbl.gov</Link></li>
+          <li>Join our mailing list by emailing <Link href="mailto:strudel-community+subscribe@lbl.gov" target="_blank">strudel-community+subscribe@lbl.gov</Link></li>
+          <li>Visit us on <Link href='https://github.com/strudel-science/' target="_blank">GitHub</Link> and join the <Link href='https://github.com/orgs/strudel-science/discussions/' target='_blank'>Discussion</Link></li>
+        </ul>
       </Container>
     </Box>
   )
