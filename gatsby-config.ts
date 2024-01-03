@@ -1,3 +1,6 @@
+import * as dotenv from 'dotenv'
+dotenv.config({ path: __dirname + `/.env.${process.env.NODE_ENV}` });
+
 import type { GatsbyConfig } from "gatsby"
 
 /**
@@ -15,6 +18,7 @@ const config: GatsbyConfig = {
     'gatsby-theme-material-ui',
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
+    'gatsby-transformer-json',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -42,7 +46,30 @@ const config: GatsbyConfig = {
         ],
       },
     },
-    'gatsby-transformer-json',
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          /** Google Analytics Measurement ID */
+          process.env.STRUDEL_GA_ID,
+        ],
+        /**
+         * This object gets passed directly to the gtag config command
+         * This config will be shared across all trackingIds
+         */
+        gtagConfig: {
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+        pluginConfig: {
+          head: false,
+          respectDNT: true,
+          exclude: [],
+          origin: 'https://www.googletagmanager.com',
+          delayOnRouteUpdate: 0,
+        },
+      },
+    },
   ],
 }
 
