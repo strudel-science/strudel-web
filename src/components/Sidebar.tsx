@@ -165,7 +165,7 @@ export const Sidebar: React.FC = () => {
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                     sx={{
-                      ...getSideBarItemStyles(page, currentPath),
+                      ...getSideBarItemStyles(page, currentPath, true),
                       height: '40px',
                       minHeight: '40px',
                       '& .MuiAccordionSummary-content': {
@@ -218,16 +218,16 @@ export const Sidebar: React.FC = () => {
   )
 };
 
-const getSideBarItemStyles = (page: StrudelPage, currentPath: string) => {
+const getSideBarItemStyles = (page: StrudelPage, currentPath: string, isAccordionRoot?: boolean) => {
   return {
-    backgroundColor: page.path === currentPath ? 'secondary.main' : 'inherit',
-    color: page.path === currentPath ? 'info.main' : 'inherit',
-    fontWeight: page.path === currentPath ? 'bold' : 'normal',
+    backgroundColor: page.path === currentPath && !isAccordionRoot ? 'secondary.main' : 'inherit',
+    color: page.path === currentPath && !isAccordionRoot ? 'info.main' : 'inherit',
+    fontWeight: page.path === currentPath && !isAccordionRoot ? 'bold' : 'normal',
     transition: '0.25s',
     width: '100%',
     '&:hover': {
-      backgroundColor: page.path === currentPath ? 'secondary.light' : 'info.light',
-      color: page.path === currentPath ? '#000000' : 'secondary.main',
+      backgroundColor: page.path === currentPath && !isAccordionRoot ? 'secondary.light' : 'info.light',
+      color: page.path === currentPath && !isAccordionRoot ? '#000000' : 'secondary.main',
     }
   }
 };
