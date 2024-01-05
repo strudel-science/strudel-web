@@ -115,13 +115,13 @@ export const createPages: GatsbyNode["createPages"] = async ({
         const mdx = mdxPages?.find((d) => d.frontmatter.id === page.markdownId);
         if (mdx) {
           /**
-           * The layoutComponent prop will fallback to SidebarLayout if none exists on the page object.
+           * The layoutComponent prop will fallback to PageLayout if none exists on the page object.
            * Because gatsby graphql looks at the existing properties of strudel-config.json to determine
            * what the queryable properties are, the layoutComponent property has been included in the json 
            * for each object to ensure layoutComponent remains queryable at every page level.
            * Technically each property only needs to exist in one object per child-level to be queryable.
            */
-          page.layoutComponent = page.layoutComponent || 'SidebarLayout';
+          page.layoutComponent = page.layoutComponent || 'PageLayout';
           const pageTemplate = path.resolve(`src/components/layouts/${page.layoutComponent}.tsx`);
           createPage({
             path: page.path,

@@ -1,11 +1,16 @@
 import * as React from 'react';
-import { Container, Stack, Typography } from '@mui/material';
+import { Stack, Typography } from '@mui/material';
 import BaseLayout from './BaseLayout';
 import { PageHeader } from '../PageHeader';
 import { PageProps } from 'gatsby';
 import { StyledMarkdown } from '../StyledMarkdown';
 
-const SidebarLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) => {
+/**
+ * Layout for general pages.
+ * Includes everything in the BaseLayout plus a sidebar and PageHeader section.
+ * Markdown content is rendered underneath the PageHeader using the children prop.
+ */
+const PageLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) => {
   return (
     <BaseLayout hasSidebar>
       <PageHeader>
@@ -32,4 +37,4 @@ const SidebarLayout: React.FC<PageProps<any, any>> = ({ pageContext, children })
   )
 };
 
-export default SidebarLayout;
+export default PageLayout;

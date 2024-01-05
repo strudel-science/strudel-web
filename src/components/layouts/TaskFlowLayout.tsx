@@ -9,12 +9,16 @@ import { PageHeader } from '../PageHeader';
 import { Hero } from '../Hero';
 import { Button } from 'gatsby-theme-material-ui';
 import { StyledMarkdown } from '../StyledMarkdown';
-import { usePage } from '../../hooks/usePage';
 import { PageContainer } from '../PageContainer';
 
-const TaskFlowDetailsLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) => {
-  const page = usePage();
-  console.log(page);
+/**
+ * Layout for Task Flow pages.
+ * Includes everything in the BaseLayout plus a sidebar, 
+ * PageHeader section, Hero section, and a main content container.
+ * Markdown content is rendered inside the main content container (PageContainer)
+ * using the children prop.
+ */
+const TaskFlowLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) => {
   return (
     <BaseLayout hasSidebar>
       <PageHeader>
@@ -82,4 +86,4 @@ const TaskFlowDetailsLayout: React.FC<PageProps<any, any>> = ({ pageContext, chi
   )
 };
 
-export default TaskFlowDetailsLayout;
+export default TaskFlowLayout;

@@ -9,10 +9,17 @@ import { Link } from 'gatsby';
 
 interface BaseLayoutProps extends React.PropsWithChildren {
   hasSidebar?: boolean;
+  hasBreadcrumbs?: boolean;
 }
 
+/**
+ * Base layout that wraps around all page layouts.
+ * Automatically includes the navbar and optionally includes the 
+ * sidebar and breadcrumbs.
+ */
 const BaseLayout: React.FC<BaseLayoutProps> = ({
   hasSidebar,
+  hasBreadcrumbs = true,
   children
 }) => {
   const breadcrumbs = useBreadcrumbs();
@@ -43,31 +50,41 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({
             paddingTop: '3rem'
           }}
         >
-          <Breadcrumbs 
-            aria-label="breadcrumb"
-            sx={{
-              padding: 2
-            }}
-          >
-            {breadcrumbs.map((breadcrumb, i) => {
-              if (i === breadcrumbs.length - 1) {
-                return (
-                  <Typography color="text.primary">{breadcrumb.label}</Typography>
-                )
-              } else {
-                return (
-                  <Link to={breadcrumb.path || '#'}>
-                    {breadcrumb.path === '/' && (
-                      <HomeIcon />
-                    )}
-                    {breadcrumb.path !== '/' && (
-                      breadcrumb.label
-                    )}
-                  </Link>
-                )
-              }
-            })}
-          </Breadcrumbs>
+          {hasBreadcrumbs && (
+            <Breadcrumbs 
+              aria-label="breadcrumb"
+              sx={{
+                alignItems: 'center',
+                padding: 2,
+              }}
+            >
+              {breadcrumbs.map((breadcrumb, i) => {
+                if (i === breadcrumbs.length - 1) {
+                  return (
+                    <Typography color="text.primary">{breadcrumb.label}</Typography>
+                  )
+                } else {
+                  return (
+                    <Link to={breadcrumb.path || '#'}>
+                      {breadcrumb.path === '/' && (
+                        <Box
+                          sx={{
+                            alignItems: 'baseline',
+                            display: 'flex',
+                          }}
+                        >
+                          <HomeIcon />
+                        </Box>
+                      )}
+                      {breadcrumb.path !== '/' && (
+                        breadcrumb.label
+                      )}
+                    </Link>
+                  )
+                }
+              })}
+            </Breadcrumbs>
+          )}
           <Box
             component="main"
           >

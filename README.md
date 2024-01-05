@@ -109,7 +109,7 @@ For example, take the following page object from `strudel-config.json`:
     "name": "Comparison",
     "path": "/design-system/task-flows/comparison",
     "markdownId": "task-flows-comparison",
-    "layoutComponent": "SidebarLayout"
+    "layoutComponent": "PageLayout"
 },
 ```
 
