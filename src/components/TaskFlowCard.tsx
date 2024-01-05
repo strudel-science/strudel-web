@@ -82,7 +82,7 @@ export const TaskFlowCardBase: React.FC<TaskFlowCardBaseProps> = ({
           paddingLeft: 2,
           transition: '0.25s',
           '&:hover': {
-            backgroundColor: 'error.light'
+            backgroundColor: 'neutral.main'
           }
         }}
       >

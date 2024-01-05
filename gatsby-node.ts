@@ -21,6 +21,9 @@ interface Result {
           title: string;
           tagline: string;
           intent: string;
+          exampleUrl: string;
+          codeUrl: string;
+          figmaUrl: string;
         },
         internal: {
           contentFilePath: string;
@@ -76,6 +79,9 @@ export const createPages: GatsbyNode["createPages"] = async ({
               title
               tagline
               intent
+              exampleUrl
+              codeUrl
+              figmaUrl
             }
             internal {
               contentFilePath

@@ -4,7 +4,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import CodeIcon from '@mui/icons-material/Code';
 import DrawIcon from '@mui/icons-material/Draw';
 import BaseLayout from './BaseLayout';
-import { PageProps } from 'gatsby';
+import { PageProps, Link } from 'gatsby';
 import { PageHeader } from '../PageHeader';
 import { Hero } from '../Hero';
 import { Button } from 'gatsby-theme-material-ui';
@@ -17,7 +17,7 @@ const TaskFlowDetailsLayout: React.FC<PageProps<any, any>> = ({ pageContext, chi
         <Stack spacing={2}>
           <Typography 
             component="h1"
-            variant="h4" 
+            variant="h3" 
             fontWeight="bold"
           >
             {pageContext.frontmatter.title}
@@ -34,10 +34,10 @@ const TaskFlowDetailsLayout: React.FC<PageProps<any, any>> = ({ pageContext, chi
         <Stack spacing={2}>
           <Typography 
             component="h2"
-            variant="h5" 
+            variant="h4" 
             fontWeight="bold"
           >
-            Task Flow Intent
+            Intent
           </Typography>
           <Typography>
             {pageContext.frontmatter.intent}
@@ -45,19 +45,25 @@ const TaskFlowDetailsLayout: React.FC<PageProps<any, any>> = ({ pageContext, chi
           <Stack direction="row" justifyContent="center">
             <Grid container spacing={2} width="75%">
               <Grid item md={4}>
-                <Button variant="contained" fullWidth startIcon={<VisibilityIcon />}>
-                  Live Example
-                </Button>
+                <Link to={pageContext.frontmatter.exampleUrl} target='_blank'>
+                  <Button variant="contained" fullWidth startIcon={<VisibilityIcon />}>
+                    Live Example
+                  </Button>
+                </Link>
               </Grid>
               <Grid item md={4}>
-                <Button variant="contained" fullWidth startIcon={<CodeIcon />}>
-                  Code
-                </Button>
+                <Link to={pageContext.frontmatter.codeUrl} target='_blank'>
+                  <Button variant="contained" fullWidth startIcon={<CodeIcon />}>
+                    Code
+                  </Button>
+                </Link>
               </Grid>
               <Grid item md={4}>
-                <Button variant="contained" fullWidth startIcon={<DrawIcon />}>
-                  Figma
-                </Button>
+                <Link to={pageContext.frontmatter.figmaUrl} target='_blank'>
+                  <Button variant="contained" fullWidth startIcon={<DrawIcon />}>
+                    Figma
+                  </Button>
+                </Link>
               </Grid>
             </Grid>
           </Stack>
