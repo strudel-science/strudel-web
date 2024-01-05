@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, Container, Grid, Stack, Typography } from '@mui/material';
+import { Grid, Link as MuiLink, Stack, Typography } from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import CodeIcon from '@mui/icons-material/Code';
 import DrawIcon from '@mui/icons-material/Draw';
@@ -10,6 +10,7 @@ import { Hero } from '../Hero';
 import { Button } from 'gatsby-theme-material-ui';
 import { StyledMarkdown } from '../StyledMarkdown';
 import { usePage } from '../../hooks/usePage';
+import { PageContainer } from '../PageContainer';
 
 const TaskFlowDetailsLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) => {
   const page = usePage();
@@ -48,42 +49,35 @@ const TaskFlowDetailsLayout: React.FC<PageProps<any, any>> = ({ pageContext, chi
           <Stack direction="row">
             <Grid container spacing={2} width="75%">
               <Grid item md={4}>
-                <Link to={pageContext.frontmatter.exampleUrl} target='_blank'>
+                <MuiLink href={pageContext.frontmatter.exampleUrl} target='_blank'>
                   <Button variant="contained" fullWidth startIcon={<VisibilityIcon />}>
                     Live Example
                   </Button>
-                </Link>
+                </MuiLink>
               </Grid>
               <Grid item md={4}>
-                <Link to={pageContext.frontmatter.codeUrl} target='_blank'>
+                <MuiLink href={pageContext.frontmatter.codeUrl} target='_blank'>
                   <Button variant="contained" fullWidth startIcon={<CodeIcon />}>
                     Code
                   </Button>
-                </Link>
+                </MuiLink>
               </Grid>
               <Grid item md={4}>
-                <Link to={pageContext.frontmatter.figmaUrl} target='_blank'>
+                <MuiLink href={pageContext.frontmatter.figmaUrl} target='_blank'>
                   <Button variant="contained" fullWidth startIcon={<DrawIcon />}>
                     Design Templates
                   </Button>
-                </Link>
+                </MuiLink>
               </Grid>
             </Grid>
           </Stack>
         </Stack>
       </Hero>
-      <Container
-        component="article" 
-        maxWidth="md"
-        sx={{
-          paddingBottom: 4,
-          paddingTop: 4,
-        }}
-      >
+      <PageContainer>
         <StyledMarkdown>
           {children}  
         </StyledMarkdown>
-      </Container>
+      </PageContainer>
     </BaseLayout>
   )
 };
