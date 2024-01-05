@@ -22,6 +22,16 @@ export const findPageByPath = (path: string, pages: StrudelPage[]) => {
 };
 
 /**
+ * Find a page in a nested array of page objects that has a given name value.
+ * Name values are not necessarily unique. This will return the first page found with a given name.
+ * This should only be used when you know the name is unique, such as for getting a Task Flow page object.
+ * Result will include a reference to the page's parent if it has one.
+ */
+export const findPageByName = (name: string, pages: StrudelPage[]) => { 
+  return flattenPages(pages).find((page) => page.name === name);
+};
+
+/**
  * Remove single trailing slash from a string
  */
 const removeTrailingSlash = (str: string) => {     

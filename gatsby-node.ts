@@ -19,7 +19,7 @@ interface Result {
         frontmatter: {
           id: string;
           title: string;
-          subtitle: string;
+          tagline: string;
           intent: string;
         },
         internal: {
@@ -74,7 +74,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
             frontmatter {
               id
               title
-              subtitle
+              tagline
               intent
             }
             internal {

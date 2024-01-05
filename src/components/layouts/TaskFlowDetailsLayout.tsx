@@ -26,7 +26,7 @@ const TaskFlowDetailsLayout: React.FC<PageProps<any, any>> = ({ pageContext, chi
             variant="h6" 
             fontWeight="normal"
           >
-            {pageContext.frontmatter.subtitle}
+            {pageContext.frontmatter.tagline}
           </Typography>
         </Stack>
       </PageHeader>
