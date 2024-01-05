@@ -9,6 +9,7 @@ import { Box } from '@mui/material';
 export const StyledMarkdown: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <Box
+      className="styled-markdown"
       sx={{
         '& h1, & h2, & h3, & h4, & h5, & h6': {
           marginBottom: 2,
@@ -19,8 +20,8 @@ export const StyledMarkdown: React.FC<PropsWithChildren> = ({ children }) => {
           borderTopColor: 'error.light',
           paddingTop: 2,
         },
-        '& > *:first-child': {
-          marginTop: 0,
+        '& > *:last-child': {
+          marginBottom: 0,
         },
       }}
     >

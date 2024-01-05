@@ -6,6 +6,9 @@ import { StrudelPage } from "../types/strudel-config";
  */
 export const flattenPages = (pages: StrudelPage[], parent?: StrudelPage): StrudelPage[] => { 
   return pages.reduce((flattened: StrudelPage[], { children, ...rest }) => {
+    if (!parent) {
+      parent = pages.find((p) => p.path === '/');
+    }
     const page = { ...rest, parent };
     return flattened
       .concat([page])

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Box, Container, Breakpoint, BoxProps } from '@mui/material';
+import { PageContainer } from './PageContainer';
 
 interface PageSectionProps extends BoxProps {
   /** Optionally wrap the inner content in its own container and give it a max width. */
@@ -20,6 +21,7 @@ export const PageSection: React.FC<PageSectionProps> = ({
 }) => {
   return (
     <Box
+      component="section"
       sx={{
         paddingBottom: 4,
         paddingTop: 4,
@@ -40,22 +42,16 @@ export const PageSection: React.FC<PageSectionProps> = ({
           }}
         />
       )}
-      {containerWidth && (
-        <Container 
-          maxWidth={containerWidth}
-          sx={{
-            '& > *:first-child': {
-              marginTop: 0,
-              paddingTop: 0,
-            },
-          }}
-        >
-          {children} 
-        </Container>
-      )}
-      {!containerWidth && (
-        children
-      )}
+      <PageContainer
+        component="div"
+        maxWidth={containerWidth}
+        sx={{
+          paddingBottom: 0,
+          paddingTop: 0,
+        }}
+      >
+        {children} 
+      </PageContainer>
     </Box>
   );
 };

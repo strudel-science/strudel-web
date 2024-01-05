@@ -9,8 +9,11 @@ import { PageHeader } from '../PageHeader';
 import { Hero } from '../Hero';
 import { Button } from 'gatsby-theme-material-ui';
 import { StyledMarkdown } from '../StyledMarkdown';
+import { usePage } from '../../hooks/usePage';
 
 const TaskFlowDetailsLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) => {
+  const page = usePage();
+  console.log(page);
   return (
     <BaseLayout hasSidebar>
       <PageHeader>
@@ -42,7 +45,7 @@ const TaskFlowDetailsLayout: React.FC<PageProps<any, any>> = ({ pageContext, chi
           <Typography>
             {pageContext.frontmatter.intent}
           </Typography>
-          <Stack direction="row" justifyContent="center">
+          <Stack direction="row">
             <Grid container spacing={2} width="75%">
               <Grid item md={4}>
                 <Link to={pageContext.frontmatter.exampleUrl} target='_blank'>
@@ -61,7 +64,7 @@ const TaskFlowDetailsLayout: React.FC<PageProps<any, any>> = ({ pageContext, chi
               <Grid item md={4}>
                 <Link to={pageContext.frontmatter.figmaUrl} target='_blank'>
                   <Button variant="contained" fullWidth startIcon={<DrawIcon />}>
-                    Figma
+                    Design Templates
                   </Button>
                 </Link>
               </Grid>
@@ -69,7 +72,7 @@ const TaskFlowDetailsLayout: React.FC<PageProps<any, any>> = ({ pageContext, chi
           </Stack>
         </Stack>
       </Hero>
-      <Container 
+      <Container
         component="article" 
         maxWidth="md"
         sx={{
