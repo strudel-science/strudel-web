@@ -18,6 +18,12 @@ interface Result {
       nodes: {
         frontmatter: {
           id: string;
+          title: string;
+          tagline: string;
+          intent: string;
+          exampleUrl: string;
+          codeUrl: string;
+          figmaUrl: string;
         },
         internal: {
           contentFilePath: string;
@@ -70,6 +76,12 @@ export const createPages: GatsbyNode["createPages"] = async ({
           nodes {
             frontmatter {
               id
+              title
+              tagline
+              intent
+              exampleUrl
+              codeUrl
+              figmaUrl
             }
             internal {
               contentFilePath
@@ -117,6 +129,9 @@ export const createPages: GatsbyNode["createPages"] = async ({
              * This will pass the formatted markdown file to the page template via the children prop
              */
             component: `${pageTemplate}?__contentFilePath=${mdx.internal.contentFilePath}`,
+            context: {
+              frontmatter: mdx.frontmatter,
+            }
           });
         }
       }

@@ -2,6 +2,7 @@ import * as React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import { Box, Container, Grid, Stack, Typography } from '@mui/material';
 import { PropsWithChildren } from 'react';
+import { PageSection } from '../../PageSection';
 
 interface HomeSectionProps extends PropsWithChildren {
    variant?: 'light' | 'dark';
@@ -14,42 +15,22 @@ export const HomeSection: React.FC<HomeSectionProps> = ({
   children
 }) => {
   return (
-    <Box
+    <PageSection
+      containerWidth="lg"
+      sideRibbon={borderPosition}
       sx={{
-        position: 'relative',
         backgroundColor: variant === 'dark' ? 'info.main' : 'white',
-        // borderBottomColor: variant === 'dark' ? 'white' : 'error.main',
-        // borderBottomWidth: 2,
-        // borderBottomStyle: 'solid',
-        color: variant === 'dark' ? 'white' : 'black'
+        color: variant === 'dark' ? 'white' : 'black',
+        paddingBottom: 8,
+        paddingTop: 8,
+        position: 'relative',
+        '@media (max-width: 1300px)': {
+          paddingLeft: 8,
+          paddingRight: 8,
+        },
       }}
     >
-      {borderPosition && (
-        <Box
-          sx={{
-            backgroundColor: 'error.main',
-            height: '100%',
-            left: borderPosition === 'left' ? 0 : 'auto',
-            position: 'absolute',
-            right: borderPosition === 'right' ? 0 : 'auto',
-            top: 0,
-            width: '20px',
-          }}
-        />
-      )}
-      <Container 
-        maxWidth="lg"
-        sx={{
-          paddingTop: 8,
-          paddingBottom: 8,
-          '@media (max-width: 1300px)': {
-            paddingLeft: 8,
-            paddingRight: 8,
-          }
-        }}
-      >
-        {children} 
-      </Container>
-    </Box>
+      {children} 
+    </PageSection>
   );
 };

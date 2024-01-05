@@ -50,37 +50,37 @@
               "name": "Comparison",
               "path": "/design-system/task-flows/comparison",
               "markdownId": "task-flows-comparison",
-              "layoutComponent": "SidebarLayout"
+              "layoutComponent": "TaskFlowDetailsLayout"
             },
             {
               "name": "Contributing Data",
               "path": "/design-system/task-flows/contributing-data",
               "markdownId": "task-flows-contributing-data",
-              "layoutComponent": "SidebarLayout"
+              "layoutComponent": "TaskFlowDetailsLayout"
             },
             {
               "name": "Exploring Datasets",
               "path": "/design-system/task-flows/exploring-datasets",
               "markdownId": "task-flows-exploring-datasets",
-              "layoutComponent": "SidebarLayout"
+              "layoutComponent": "TaskFlowDetailsLayout"
             },
             {
               "name": "Exploring Entities",
               "path": "/design-system/task-flows/exploring-entities",
               "markdownId": "task-flows-exploring-entities",
-              "layoutComponent": "SidebarLayout"
+              "layoutComponent": "TaskFlowDetailsLayout"
             },
             {
               "name": "Monitoring",
               "path": "/design-system/task-flows/monitoring",
               "markdownId": "task-flows-monitoring",
-              "layoutComponent": "SidebarLayout"
+              "layoutComponent": "TaskFlowDetailsLayout"
             },
             {
               "name": "Optimization",
               "path": "/design-system/task-flows/optimization",
               "markdownId": "task-flows-optimization",
-              "layoutComponent": "SidebarLayout"
+              "layoutComponent": "TaskFlowDetailsLayout"
             }
           ]
         },

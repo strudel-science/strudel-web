@@ -5,9 +5,9 @@ import BaseLayout from './BaseLayout';
 const SidebarLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
     <BaseLayout hasSidebar>
-      <Container component="article" maxWidth="md">
+      {/* <Container component="article" maxWidth="md"> */}
         {children}
-      </Container>
+      {/* </Container> */}
     </BaseLayout>
   )
 };
