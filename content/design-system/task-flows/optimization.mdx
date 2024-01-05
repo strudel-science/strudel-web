@@ -7,8 +7,9 @@ exampleUrl: 'https://strudel.science/strudel-kit/optimization'
 codeUrl: 'https://github.com/strudel-science/strudel-kit/tree/main/src/app/optimization'
 figmaUrl: 'https://www.figma.com/file/UQT4iRirRG9lrgzayfzswY/STRUDEL-task-flows?type=design&node-id=1%3A26644&mode=design&t=039KVhiqqy4X7Gw7-1'
 ---
-import { Grid } from '@mui/material';
+import { Grid, TableHead, TableRow, TableCell, TableBody } from '@mui/material';
 import { TaskFlowCard } from '/src/components/TaskFlowCard';
+import { InfoTable } from '/src/components/InfoTable';
 
 ## Overview
 
@@ -24,7 +25,37 @@ Aliquip ea ipsum Lorem amet incididunt excepteur Lorem aute proident deserunt co
 
 ## Components & Patterns Used
 
-Qui eiusmod aliqua labore do commodo cupidatat quis. Culpa et laboris qui ad ut tempor consectetur adipisicing tempor. Ut tempor minim velit aliquip voluptate mollit quis pariatur ipsum ipsum id amet Lorem.
+<InfoTable>
+  <TableHead>
+    <TableRow>
+      <TableCell>Component</TableCell>
+      <TableCell>Usage Context</TableCell>
+      <TableCell>Links to Libraries</TableCell>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    <TableRow>
+      <TableCell>Stepper</TableCell>
+      <TableCell>Some blurb on how the component is useful in this taskflow</TableCell>
+      <TableCell><a href="https://mui.com/material-ui/react-stepper/" target="_blank">MUI links to start with</a></TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Data Grid</TableCell>
+      <TableCell>Some blurb on how the component is useful in this taskflow</TableCell>
+      <TableCell><a href="https://mui.com/x/react-data-grid/" target="_blank">MUI links to start with</a></TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Date Picker</TableCell>
+      <TableCell>Some blurb on how the component is useful in this taskflow</TableCell>
+      <TableCell><a href="https://mui.com/x/react-date-pickers/" target="_blank">MUI links to start with</a></TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Select</TableCell>
+      <TableCell>Some blurb on how the component is useful in this taskflow</TableCell>
+      <TableCell><a href="https://mui.com/material-ui/react-select/">MUI links to start with</a></TableCell>
+    </TableRow>
+  </TableBody>
+</InfoTable>
 
 ## Other Relevant Task Flows
 
