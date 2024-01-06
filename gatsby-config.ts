@@ -1,6 +1,3 @@
-import * as dotenv from 'dotenv'
-dotenv.config({ path: __dirname + `/.env.${process.env.NODE_ENV}` });
-
 import type { GatsbyConfig } from "gatsby"
 
 /**
@@ -51,7 +48,7 @@ const config: GatsbyConfig = {
       options: {
         trackingIds: [
           /** Google Analytics Measurement ID */
-          process.env.STRUDEL_GA_ID,
+          'TEMP',
         ],
         /**
          * This object gets passed directly to the gtag config command
