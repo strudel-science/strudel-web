@@ -20,6 +20,12 @@ a, a:visited {
  * The first-child pseudo class can't be used inside of a server-side component on the sx prop
  * so it must added as a global css rule.
  */
-.styled-markdown > *:first-child {
+.styled-markdown h1:first-child,
+.styled-markdown h2:first-child,
+.styled-markdown h3:first-child,
+.styled-markdown h4:first-child,
+.styled-markdown h5:first-child,
+.styled-markdown h6:first-child,
+.styled-markdown p:first-child {
   margin-top: 0;
 }

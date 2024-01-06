@@ -20,6 +20,7 @@ export const Hero: React.FC<HeroProps> = ({
       sx={{
         backgroundColor: 'info.main',
         color: 'white',
+        fontSize: '1.15em',
       }}
     >
       {children}

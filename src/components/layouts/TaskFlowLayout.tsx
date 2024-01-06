@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Grid, Link as MuiLink, Stack, Typography } from '@mui/material';
+import { Box, Grid, Link as MuiLink, Stack, Typography } from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import CodeIcon from '@mui/icons-material/Code';
 import DrawIcon from '@mui/icons-material/Draw';
@@ -47,10 +47,10 @@ const TaskFlowLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }
           >
             Intent
           </Typography>
-          <Typography>
+          <p>
             {pageContext.frontmatter.intent}
-          </Typography>
-          <Stack direction="row">
+          </p>
+          <Box>
             <Grid container spacing={2} width="75%">
               <Grid item md={4}>
                 <MuiLink href={pageContext.frontmatter.exampleUrl} target='_blank'>
@@ -74,7 +74,7 @@ const TaskFlowLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }
                 </MuiLink>
               </Grid>
             </Grid>
-          </Stack>
+          </Box>
         </Stack>
       </Hero>
       <PageContainer>

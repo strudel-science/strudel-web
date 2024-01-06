@@ -20,7 +20,7 @@ export const StyledMarkdown: React.FC<PropsWithChildren> = ({ children }) => {
           borderTopColor: 'error.light',
           paddingTop: 2,
         },
-        '& > *:last-child': {
+        '& *:last-child': {
           marginBottom: 0,
         },
       }}

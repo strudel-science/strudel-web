@@ -61,11 +61,14 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({
               {breadcrumbs.map((breadcrumb, i) => {
                 if (i === breadcrumbs.length - 1) {
                   return (
-                    <Typography color="text.primary">{breadcrumb.label}</Typography>
+                    <Typography key={`${breadcrumb.label}-${i}`} color="text.primary">{breadcrumb.label}</Typography>
                   )
                 } else {
                   return (
-                    <Link to={breadcrumb.path || '#'}>
+                    <Link 
+                      key={`${breadcrumb.label}-${i}`}
+                      to={breadcrumb.path || '#'}
+                    >
                       {breadcrumb.path === '/' && (
                         <Box
                           sx={{

@@ -11,6 +11,7 @@ import { StyledMarkdown } from '../StyledMarkdown';
  * Markdown content is rendered underneath the PageHeader using the children prop.
  */
 const PageLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) => {
+  console.log(pageContext);
   return (
     <BaseLayout hasSidebar>
       <PageHeader>

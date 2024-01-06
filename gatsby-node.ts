@@ -82,6 +82,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
               exampleUrl
               codeUrl
               figmaUrl
+              subtitle
             }
             internal {
               contentFilePath

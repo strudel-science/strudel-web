@@ -1,13 +1,41 @@
 ---
 id: 'design-system-overview'
-title: 'Design System'
+title: 'Design Systems'
 subtitle: 'UI guides, task flows & interactive components'
 ---
+import { Grid } from '@mui/material';
 import { Hero } from '/src/components/Hero';
 import { PageContainer } from '/src/components/PageContainer';
+import { ContentCard } from '/src/components/ContentCard';
 
 <Hero>
   The Design System provides a set of reusable components and patterns along with guidelines for designing and implementing user interfaces.
+
+  ## The STRUDEL Design System
+
+  <Grid container spacing={4}>
+    <Grid item md={4}>
+      <ContentCard>
+        #### Designed for the sciences
+
+        Specifically designed for common patterns seen in scientific UIs that can be applied across different scientific domains
+      </ContentCard>
+    </Grid>
+    <Grid item md={4}>
+      <ContentCard>
+        #### Designed for the sciences
+
+        Specifically designed for common patterns seen in scientific UIs that can be applied across different scientific domains
+      </ContentCard>
+    </Grid>
+    <Grid item md={4}>
+      <ContentCard>
+        #### Designed for the sciences
+
+        Specifically designed for common patterns seen in scientific UIs that can be applied across different scientific domains
+      </ContentCard>
+    </Grid>
+  </Grid>
 </Hero>
 <PageContainer>
   ## How to use the STRUDEL Design System
