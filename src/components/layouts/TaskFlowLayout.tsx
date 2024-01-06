@@ -4,12 +4,13 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import CodeIcon from '@mui/icons-material/Code';
 import DrawIcon from '@mui/icons-material/Draw';
 import BaseLayout from './BaseLayout';
-import { PageProps, Link } from 'gatsby';
+import { PageProps, Link, HeadProps } from 'gatsby';
 import { PageHeader } from '../PageHeader';
 import { Hero } from '../Hero';
 import { Button } from 'gatsby-theme-material-ui';
 import { StyledMarkdown } from '../StyledMarkdown';
 import { PageContainer } from '../PageContainer';
+import Seo from '../Seo';
 
 /**
  * Layout for Task Flow pages.
@@ -85,5 +86,11 @@ const TaskFlowLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }
     </BaseLayout>
   )
 };
+
+export const Head:React.FC<HeadProps<any, any>> = ({ pageContext }) => {
+  return (
+    <Seo title={pageContext.frontmatter.title} />
+  );
+}
 
 export default TaskFlowLayout;

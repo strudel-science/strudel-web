@@ -5,7 +5,8 @@ import { Navbar } from '../Navbar';
 import { Footer } from '../Footer';
 import { Sidebar } from '../Sidebar';
 import { useBreadcrumbs } from '../../hooks/useBreadcrumbs';
-import { Link } from 'gatsby';
+import { HeadProps, Link } from 'gatsby';
+import Seo from '../Seo';
 
 interface BaseLayoutProps extends React.PropsWithChildren {
   hasSidebar?: boolean;
@@ -99,5 +100,11 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({
     </Box>
   )
 };
+
+export const Head:React.FC<HeadProps<any, any>> = ({ pageContext }) => {
+  return (
+    <Seo title={pageContext.frontmatter.title} />
+  );
+}
 
 export default BaseLayout;

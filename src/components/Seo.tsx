@@ -5,6 +5,9 @@ interface SeoProps {
   title: string;
 }
 
+/**
+ * Metadata to display in the web page's head for Search Engine Optimization
+ */
 const Seo: React.FC<SeoProps> = ({ title }) => {
   const data = useStaticQuery(graphql`
     query {

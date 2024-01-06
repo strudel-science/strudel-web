@@ -2,8 +2,9 @@ import * as React from 'react';
 import { Stack, Typography } from '@mui/material';
 import BaseLayout from './BaseLayout';
 import { PageHeader } from '../PageHeader';
-import { PageProps } from 'gatsby';
+import { HeadProps, PageProps } from 'gatsby';
 import { StyledMarkdown } from '../StyledMarkdown';
+import Seo from '../Seo';
 
 /**
  * Layout for general pages.
@@ -37,5 +38,11 @@ const PageLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) =>
     </BaseLayout>
   )
 };
+
+export const Head:React.FC<HeadProps<any, any>> = ({ pageContext }) => {
+  return (
+    <Seo title={pageContext.frontmatter.title} />
+  );
+}
 
 export default PageLayout;
