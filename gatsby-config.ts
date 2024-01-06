@@ -67,6 +67,16 @@ const config: GatsbyConfig = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'STRUDEL',
+        short_name: 'STRUDEL',
+        start_url: '/',
+        display: 'browser',
+        icon: 'content/images/strudel-logo-icon.png'
+      },
+    },
   ],
 }
 
