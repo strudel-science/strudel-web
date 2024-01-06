@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, Container, Grid, Stack, Typography } from '@mui/material';
+import { Box, Grid, Link as MuiLink, Stack, Typography } from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import CodeIcon from '@mui/icons-material/Code';
 import DrawIcon from '@mui/icons-material/Draw';
@@ -9,8 +9,16 @@ import { PageHeader } from '../PageHeader';
 import { Hero } from '../Hero';
 import { Button } from 'gatsby-theme-material-ui';
 import { StyledMarkdown } from '../StyledMarkdown';
+import { PageContainer } from '../PageContainer';
 
-const TaskFlowDetailsLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) => {
+/**
+ * Layout for Task Flow pages.
+ * Includes everything in the BaseLayout plus a sidebar, 
+ * PageHeader section, Hero section, and a main content container.
+ * Markdown content is rendered inside the main content container (PageContainer)
+ * using the children prop.
+ */
+const TaskFlowLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) => {
   return (
     <BaseLayout hasSidebar>
       <PageHeader>
@@ -39,50 +47,43 @@ const TaskFlowDetailsLayout: React.FC<PageProps<any, any>> = ({ pageContext, chi
           >
             Intent
           </Typography>
-          <Typography>
+          <p>
             {pageContext.frontmatter.intent}
-          </Typography>
-          <Stack direction="row" justifyContent="center">
+          </p>
+          <Box>
             <Grid container spacing={2} width="75%">
               <Grid item md={4}>
-                <Link to={pageContext.frontmatter.exampleUrl} target='_blank'>
+                <MuiLink href={pageContext.frontmatter.exampleUrl} target='_blank'>
                   <Button variant="contained" fullWidth startIcon={<VisibilityIcon />}>
                     Live Example
                   </Button>
-                </Link>
+                </MuiLink>
               </Grid>
               <Grid item md={4}>
-                <Link to={pageContext.frontmatter.codeUrl} target='_blank'>
+                <MuiLink href={pageContext.frontmatter.codeUrl} target='_blank'>
                   <Button variant="contained" fullWidth startIcon={<CodeIcon />}>
                     Code
                   </Button>
-                </Link>
+                </MuiLink>
               </Grid>
               <Grid item md={4}>
-                <Link to={pageContext.frontmatter.figmaUrl} target='_blank'>
+                <MuiLink href={pageContext.frontmatter.figmaUrl} target='_blank'>
                   <Button variant="contained" fullWidth startIcon={<DrawIcon />}>
-                    Figma
+                    Design Templates
                   </Button>
-                </Link>
+                </MuiLink>
               </Grid>
             </Grid>
-          </Stack>
+          </Box>
         </Stack>
       </Hero>
-      <Container 
-        component="article" 
-        maxWidth="md"
-        sx={{
-          paddingBottom: 4,
-          paddingTop: 4,
-        }}
-      >
+      <PageContainer>
         <StyledMarkdown>
           {children}  
         </StyledMarkdown>
-      </Container>
+      </PageContainer>
     </BaseLayout>
   )
 };
 
-export default TaskFlowDetailsLayout;
+export default TaskFlowLayout;

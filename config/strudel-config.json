@@ -8,19 +8,19 @@
       "name": "Planning Framework",
       "path": "/planning-framework",
       "markdownId": "planning-framework",
-      "layoutComponent": "SidebarLayout",
+      "layoutComponent": "PageLayout",
       "children": [
         {
           "name": "Getting Started",
           "path": "/planning-framework/getting-started",
           "markdownId": "planning-framework-getting-started",
-          "layoutComponent": "SidebarLayout"
+          "layoutComponent": "PageLayout"
         },
         {
           "name": "Facets",
           "path": "/planning-framework/facets",
           "markdownId": "planning-framework-facets",
-          "layoutComponent": "SidebarLayout"
+          "layoutComponent": "PageLayout"
         }
       ]
     },
@@ -32,55 +32,59 @@
           "name": "Overview",
           "path": "/design-system",
           "markdownId": "design-system-overview",
-          "layoutComponent": "SidebarLayout"
+          "layoutComponent": "PageLayout"
         },
         {
           "name": "Getting Started",
           "path": "/design-system/getting-started",
           "markdownId": "design-system-getting-started",
-          "layoutComponent": "SidebarLayout"
+          "layoutComponent": "PageLayout"
         },
         {
           "name": "Task Flows",
           "path": "/design-system/task-flows",
-          "markdownId": "task-flows",
-          "layoutComponent": "SidebarLayout",
           "children": [
+            {
+              "name": "Overview",
+              "path": "/design-system/task-flows",
+              "markdownId": "task-flows-overview",
+              "layoutComponent": "PageLayout"
+            },
             {
               "name": "Comparison",
               "path": "/design-system/task-flows/comparison",
               "markdownId": "task-flows-comparison",
-              "layoutComponent": "TaskFlowDetailsLayout"
+              "layoutComponent": "TaskFlowLayout"
             },
             {
               "name": "Contributing Data",
               "path": "/design-system/task-flows/contributing-data",
               "markdownId": "task-flows-contributing-data",
-              "layoutComponent": "TaskFlowDetailsLayout"
+              "layoutComponent": "TaskFlowLayout"
             },
             {
               "name": "Exploring Datasets",
               "path": "/design-system/task-flows/exploring-datasets",
               "markdownId": "task-flows-exploring-datasets",
-              "layoutComponent": "TaskFlowDetailsLayout"
+              "layoutComponent": "TaskFlowLayout"
             },
             {
               "name": "Exploring Entities",
               "path": "/design-system/task-flows/exploring-entities",
               "markdownId": "task-flows-exploring-entities",
-              "layoutComponent": "TaskFlowDetailsLayout"
+              "layoutComponent": "TaskFlowLayout"
             },
             {
               "name": "Monitoring",
               "path": "/design-system/task-flows/monitoring",
               "markdownId": "task-flows-monitoring",
-              "layoutComponent": "TaskFlowDetailsLayout"
+              "layoutComponent": "TaskFlowLayout"
             },
             {
               "name": "Optimization",
               "path": "/design-system/task-flows/optimization",
               "markdownId": "task-flows-optimization",
-              "layoutComponent": "TaskFlowDetailsLayout"
+              "layoutComponent": "TaskFlowLayout"
             }
           ]
         },
@@ -88,19 +92,19 @@
           "name": "UI Library",
           "path": "/design-system/ui-library",
           "markdownId": "ui-library",
-          "layoutComponent": "SidebarLayout",
+          "layoutComponent": "PageLayout",
           "children": [
             {
               "name": "Getting Started",
               "path": "/design-system/ui-library/getting-started",
               "markdownId": "ui-library-getting-started",
-              "layoutComponent": "SidebarLayout"
+              "layoutComponent": "PageLayout"
             },
             {
               "name": "React Templates",
               "path": "/design-system/ui-library/react-templates",
               "markdownId": "ui-library-react-templates",
-              "layoutComponent": "SidebarLayout"
+              "layoutComponent": "PageLayout"
             }
           ]
         }

@@ -10,8 +10,7 @@ export const PageHeader: React.FC<PropsWithChildren> = ({ children }) => {
       containerWidth="md"
       sx={{
         backgroundColor: 'neutral.main',
-        color: 'info.main',
-        textAlign: 'center',
+        color: 'info.main'
       }}
     >
       {children}

@@ -29,7 +29,7 @@ interface TaskFlowsResult {
 export const useTaskFlow = (name: string) => {
   const { configJson, allMdx } = useStaticQuery<TaskFlowsResult>(
     graphql`
-      query TaskFlows {
+      query {
         configJson {
           pages {
             name

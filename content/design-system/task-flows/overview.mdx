@@ -1,0 +1,24 @@
+---
+id: 'task-flows-overview'
+title: 'Task Flows'
+subtitle: 'Task flow examples and starter templates with UX guidelines'
+---
+import { Stack } from '@mui/material';
+import { Hero } from '/src/components/Hero';
+import { PageContainer } from '/src/components/PageContainer';
+import { TaskFlowCard } from '/src/components/TaskFlowCard';
+
+<Hero>
+  STRUDEL Design System is framed and guided by Task Flows, which are a set of steps (represented by a series of screens) that help to accomplish a task and represent how a user progresses through a UI.
+</Hero>
+<PageContainer> 
+  ## Browse the task flows
+  <Stack spacing={2}>
+    <TaskFlowCard name="Comparison" showDescription />
+    <TaskFlowCard name="Contributing Data" showDescription />
+    <TaskFlowCard name="Exploring Datasets" showDescription />
+    <TaskFlowCard name="Exploring Entities" showDescription />
+    <TaskFlowCard name="Monitoring" showDescription />
+    <TaskFlowCard name="Optimization" showDescription />
+  </Stack>
+</PageContainer> 
