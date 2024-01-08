@@ -29,10 +29,8 @@ export const Sidebar: React.FC = () => {
     query {
       configJson {
         pages {
-          markdownId
           name
           path
-          layoutComponent
           children {
             markdownId
             name
