@@ -6,11 +6,10 @@ import { About } from '../components/home/About';
 import { Background } from '../components/home/Background';
 import { Vision } from '../components/home/Vision';
 import { Team } from '../components/home/Team';
-import { Navbar } from '../components/Navbar';
 
 const IndexPage: React.FC = () => {
   return (
-    <BaseLayout>
+    <BaseLayout hasBreadcrumbs={false}>
       <Hero />
       <About />
       <Background />
