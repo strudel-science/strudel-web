@@ -107,14 +107,15 @@ export const TaskFlowCardBase: React.FC<TaskFlowCardBaseProps> = ({
             {title}
           </Typography>
           <Typography>
-            {tagline}
+            {description || tagline}
           </Typography>
+          {/* TODO: Add tag chips? */}
+          {/* {description && (
+            <Typography>
+              {description}
+            </Typography>
+          )} */}
         </Stack>
-        {description && (
-          <Typography>
-            {description}
-          </Typography>
-        )}
       </Stack>
     </Link>
   );
