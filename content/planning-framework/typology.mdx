@@ -3,9 +3,56 @@ id: 'planning-framework-typology'
 title: 'STRUDEL Typology'
 subtitle: 'Classifying scientific software development work'
 ---
-# Overview
-The STRUDEL Typology is a conceptual tool for categorizing elements of scientific projects building and using software products. The typology helps identify and compare common activities in scientific work that should be considered when focusing on requirements, user experience, software sustainability, and so on for software. The focus on software production and use, especially its UX and sustainability, is a key distinction and bias of the STRUDEL Typology
+import { Grid, StepLabel, StepContent } from '@mui/material';
+import { Hero } from '/src/components/Hero';
+import { PageContainer } from '/src/components/PageContainer';
+import { ContentCard } from '/src/components/ContentCard';
+import { ContentStepper, ContentStep } from '/src/components/ContentStepper';
+import { Link } from '@mui/material';
 
-# Motivation
-STRUDEL 
-A typology enables a user to systematically analyze & compare diverse scientific projects. This analysis helps surface commonalities that impact user experiences & sustainability of the software being produced and used.
+<Hero>
+    STRUDEL research and design developed a wide ranging sociotechnical typology to categorize aspects of scientific software development.
+
+## Three interconnected elements shaping this typology
+
+<Grid container spacing={4}>
+    <Grid item md={4}>
+      <ContentCard>
+        #### Organizational issues
+
+        The bounding, bedrock contexts shaping work at hand
+      </ContentCard>
+    </Grid>
+    <Grid item md={4}>
+      <ContentCard>
+        #### Social concerns
+
+        The dynamics of people arranged into teams doing work
+      </ContentCard>
+    </Grid>
+    <Grid item md={4}>
+      <ContentCard>
+        #### Technical matters
+
+        The details shaping software product(s) & affecting a user’s experience
+      </ContentCard>
+    </Grid>
+  </Grid>
+
+</Hero>
+
+<PageContainer>
+
+# Overview
+The STRUDEL Typology is a conceptual tool for categorizing elements of scientific projects building and using software products. The typology helps identify and compare common activities in scientific work that should be considered when focusing on requirements, user experience, software sustainability, and so on for software. The focus on software production and use, especially its UX and sustainability, is a key distinction and bias of the STRUDEL Typology.
+
+## Motivation
+The STRUDEL Typology enables a user to systematically analyze & compare diverse scientific projects. This analysis helps surface commonalities that impact user experiences & sustainability of the software being produced and used.
+
+## Usage
+TBD
+
+# TBD
+TBD
+
+</PageContainer>
