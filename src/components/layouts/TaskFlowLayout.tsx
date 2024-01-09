@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, Grid, Link as MuiLink, Stack, Typography } from '@mui/material';
+import { Box, Chip, Grid, Link as MuiLink, Stack, Typography } from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import CodeIcon from '@mui/icons-material/Code';
 import DrawIcon from '@mui/icons-material/Draw';
@@ -11,6 +11,11 @@ import { Button } from 'gatsby-theme-material-ui';
 import { StyledMarkdown } from '../StyledMarkdown';
 import { PageContainer } from '../PageContainer';
 import Seo from '../Seo';
+import { TaskFlowFrontmatter } from '../../types/strudel-config';
+
+interface TaskFlowPageContext {
+  frontmatter: TaskFlowFrontmatter
+}
 
 /**
  * Layout for Task Flow pages.
@@ -19,7 +24,7 @@ import Seo from '../Seo';
  * Markdown content is rendered inside the main content container (PageContainer)
  * using the children prop.
  */
-const TaskFlowLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) => {
+const TaskFlowLayout: React.FC<PageProps<any, TaskFlowPageContext>> = ({ pageContext, children }) => {
   return (
     <BaseLayout hasSidebar>
       <PageHeader>
@@ -31,12 +36,15 @@ const TaskFlowLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }
           >
             {pageContext.frontmatter.title}
           </Typography>
-          <Typography 
-            variant="h6" 
-            fontWeight="normal"
-          >
-            {pageContext.frontmatter.tagline}
-          </Typography>
+          <Stack direction="row" spacing={1}>
+            {pageContext.frontmatter.tags?.map((tag, i) => (
+              <Chip 
+                key={`${tag}-${i}`}
+                label={tag}
+                variant="outlined"
+              />
+            ))}
+          </Stack>
         </Stack>
       </PageHeader>
       <Hero>
