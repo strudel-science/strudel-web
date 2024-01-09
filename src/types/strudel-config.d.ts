@@ -6,6 +6,7 @@ export interface StrudelPage {
   path: string;
   markdownId?: string;
   layoutComponent?: string;
+  redirectTo?: string;
   /** 
    * The parent property is only present when pages are 
    * retrieved or flattened with one of the util functions 

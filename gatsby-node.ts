@@ -54,10 +54,8 @@ export const createPages: GatsbyNode["createPages"] = async ({
       {
         configJson {
           pages {
-            markdownId
             name
             path
-            layoutComponent
             children {
               markdownId
               name

@@ -7,19 +7,18 @@
     {
       "name": "Planning Framework",
       "path": "/planning-framework",
-      "markdownId": "planning-framework",
-      "layoutComponent": "PageLayout",
+      "redirectTo": "/planning-framework/overview",
       "children": [
         {
-          "name": "Getting Started",
-          "path": "/planning-framework/getting-started",
-          "markdownId": "planning-framework-getting-started",
+          "name": "Overview",
+          "path": "/planning-framework/overview",
+          "markdownId": "planning-framework-overview",
           "layoutComponent": "PageLayout"
         },
         {
-          "name": "Facets",
-          "path": "/planning-framework/facets",
-          "markdownId": "planning-framework-facets",
+          "name": "Typology",
+          "path": "/planning-framework/typology",
+          "markdownId": "planning-framework-typology",
           "layoutComponent": "PageLayout"
         }
       ]
@@ -27,17 +26,12 @@
     {
       "name": "Design System",
       "path": "/design-system",
+      "redirectTo": "/design-system/overview",
       "children": [
         {
           "name": "Overview",
-          "path": "/design-system",
+          "path": "/design-system/overview",
           "markdownId": "design-system-overview",
-          "layoutComponent": "PageLayout"
-        },
-        {
-          "name": "Getting Started",
-          "path": "/design-system/getting-started",
-          "markdownId": "design-system-getting-started",
           "layoutComponent": "PageLayout"
         },
         {
@@ -89,32 +83,82 @@
           ]
         },
         {
-          "name": "UI Library",
-          "path": "/design-system/ui-library",
-          "markdownId": "ui-library",
+          "name": "Code Library",
+          "path": "/design-system/code-library",
+          "markdownId": "code-library",
           "layoutComponent": "PageLayout",
           "children": [
             {
               "name": "Getting Started",
-              "path": "/design-system/ui-library/getting-started",
-              "markdownId": "ui-library-getting-started",
+              "path": "/design-system/code-library/getting-started",
+              "markdownId": "code-library-getting-started",
               "layoutComponent": "PageLayout"
             },
             {
               "name": "React Templates",
-              "path": "/design-system/ui-library/react-templates",
-              "markdownId": "ui-library-react-templates",
+              "path": "/design-system/code-library/react-templates",
+              "markdownId": "code-library-react-templates",
               "layoutComponent": "PageLayout"
             }
           ]
+        },
+        {
+          "name": "Status Tracker",
+          "path": "/design-system/status-tracker",
+          "markdownId": "design-system-status-tracker",
+          "layoutComponent": "PageLayout"
         }
       ]
     },
     {
-      "name": "Get Involved",
-      "path": "/get-involved",
-      "markdownId": "get-involved",
-      "layoutComponent": "ContainerLayout"
+      "name": "Engage",
+      "path": "/engage",
+      "redirectTo": "/engage/contribute",
+      "children": [
+        {
+          "name": "Contribute",
+          "path": "/engage/contribute",
+          "markdownId": "engage-contribute",
+          "layoutComponent": "PageLayout"
+        },
+        {
+          "name": "Events",
+          "path": "/engage/events",
+          "markdownId": "engage-events",
+          "layoutComponent": "PageLayout"
+        },
+        {
+          "name": "News",
+          "path": "/engage/news",
+          "markdownId": "engage-news",
+          "layoutComponent": "PageLayout"
+        }
+      ]
+    },
+    {
+      "name": "About",
+      "path": "/about",
+      "redirectTo": "/about/background",
+      "children": [
+        {
+          "name": "Background",
+          "path": "/about/background",
+          "markdownId": "about-background",
+          "layoutComponent": "PageLayout"
+        },
+        {
+          "name": "Glossary",
+          "path": "/about/glossary",
+          "markdownId": "about-glossary",
+          "layoutComponent": "PageLayout"
+        },
+        {
+          "name": "Team",
+          "path": "/about/team",
+          "markdownId": "about-team",
+          "layoutComponent": "PageLayout"
+        }
+      ]
     }
   ]
 }

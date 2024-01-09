@@ -5,8 +5,9 @@ import { Link, graphql, useStaticQuery } from 'gatsby';
 import { useLocation, useMatch } from '@gatsbyjs/reach-router';
 import { NavigationActionType, NavigationState, useNavigation } from '../context/NavigationProvider';
 import { useEffect } from 'react';
-import { findPageByPath, flattenPages, getCurrentPath } from '../utils/utils';
+import { findPageByPath, flattenPages, getCurrentPath, getTopLevelParent } from '../utils/utils';
 import { StrudelPage } from '../types/strudel-config';
+import { usePage } from '../hooks/usePage';
 
 interface PagesResult {
   configJson: {
@@ -23,16 +24,14 @@ interface PagesResult {
  * The architecture and link metadata are pulled from strudel-config.json.
  */
 export const Sidebar: React.FC = () => {
-  const { pathname } = useLocation();
   const navigation = useNavigation();
+  const page = usePage();
   const result = useStaticQuery<PagesResult>(graphql`
     query {
       configJson {
         pages {
-          markdownId
           name
           path
-          layoutComponent
           children {
             markdownId
             name
@@ -53,22 +52,25 @@ export const Sidebar: React.FC = () => {
     }
   `);
   const pages = result.configJson.pages;
-  const pathPrefix = result.site.pathPrefix;
-  const currentPath = getCurrentPath(pathname, pathPrefix);
-  const sidebarRootPath = `/${currentPath.split('/')[1]}`;
-  const sidebarRootPage = pages.find((page) => page.path === sidebarRootPath);
-
+  const currentPath = page?.path;
+  const topLevelParentPage = page && getTopLevelParent(page);
+  const sidebarRootPage = pages.find((page) => page.path === topLevelParentPage?.path);
+  
+  console.log(topLevelParentPage);
+  
   /**
    * If the current page is within a collapsible section,
    * make sure its section is open on load.
    */
   useEffect(() => {
-    const currentPage = findPageByPath(currentPath, pages);
-    if (currentPage?.parent?.parent) {
-      navigation.dispatch({
-        type: NavigationActionType.EXPAND_SIDEBAR_SECTION,
-        payload: currentPage.parent.path
-      });
+    if (currentPath) {
+      const currentPage = findPageByPath(currentPath, pages);
+      if (currentPage?.parent?.parent) {
+        navigation.dispatch({
+          type: NavigationActionType.EXPAND_SIDEBAR_SECTION,
+          payload: currentPage.parent.path
+        });
+      }
     }
   }, []);
 
@@ -218,7 +220,7 @@ export const Sidebar: React.FC = () => {
   )
 };
 
-const getSideBarItemStyles = (page: StrudelPage, currentPath: string, isAccordionRoot?: boolean) => {
+const getSideBarItemStyles = (page: StrudelPage, currentPath?: string, isAccordionRoot?: boolean) => {
   return {
     backgroundColor: page.path === currentPath && !isAccordionRoot ? 'secondary.main' : 'inherit',
     color: page.path === currentPath && !isAccordionRoot ? 'info.main' : 'inherit',
