@@ -1,7 +1,7 @@
 import path from "path";
 import type { GatsbyNode } from "gatsby";
 import { flattenPages } from "./src/utils/utils";
-import { StrudelPage } from "./src/types/strudel-config";
+import { PageFrontmatter, StrudelPage, TaskFlowFrontmatter } from "./src/types/strudel-config";
 
 /**
  * Shape of the result from the graphql query
@@ -16,15 +16,7 @@ interface Result {
     },
     allMdx: {
       nodes: {
-        frontmatter: {
-          id: string;
-          title: string;
-          tagline: string;
-          intent: string;
-          exampleUrl: string;
-          codeUrl: string;
-          figmaUrl: string;
-        },
+        frontmatter: TaskFlowFrontmatter | PageFrontmatter,
         internal: {
           contentFilePath: string;
         }
@@ -76,6 +68,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
               id
               title
               tagline
+              tags
               intent
               exampleUrl
               codeUrl

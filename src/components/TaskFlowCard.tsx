@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from 'react';
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Chip, Stack, Typography } from '@mui/material';
 import { StaticImage } from 'gatsby-plugin-image';
 import { Link } from 'gatsby';
 import { useTaskFlow } from '../hooks/useTaskFlow';
@@ -9,6 +9,8 @@ interface TaskFlowCardProps {
   name: string;
   /** Optionally display the full task flow description in the card */
   showDescription?: boolean;
+  /** Optionally display the task flow tags in the card */
+  showTags?: boolean;
 }
 
 /**
@@ -18,7 +20,8 @@ interface TaskFlowCardProps {
  */
 export const TaskFlowCard: React.FC<TaskFlowCardProps> = ({ 
   name,
-  showDescription = false
+  showDescription = false,
+  showTags = false
 }) => {
   const taskFlow = useTaskFlow(name);
 
@@ -29,6 +32,7 @@ export const TaskFlowCard: React.FC<TaskFlowCardProps> = ({
         tagline={taskFlow?.tagline}
         description={showDescription ? taskFlow.intent : undefined}
         path={taskFlow?.path}
+        tags={showTags ? taskFlow?.tags : undefined}
       />
     );
   } else {
@@ -41,6 +45,7 @@ interface TaskFlowCardBaseProps {
   tagline?: string;
   description?: string;
   path?: string;
+  tags?: string[];
 }
 
 /**
@@ -51,7 +56,8 @@ export const TaskFlowCardBase: React.FC<TaskFlowCardBaseProps> = ({
   title,
   tagline,
   description,
-  path = '#'
+  path = '#',
+  tags
 }) => {
   return (
     <Link
@@ -98,7 +104,7 @@ export const TaskFlowCardBase: React.FC<TaskFlowCardBaseProps> = ({
             width={110}
           />
         </Box>
-        <Stack>
+        <Stack spacing={1}>
           <Typography 
             variant="h6" 
             component="p" 
@@ -109,12 +115,17 @@ export const TaskFlowCardBase: React.FC<TaskFlowCardBaseProps> = ({
           <Typography>
             {description || tagline}
           </Typography>
-          {/* TODO: Add tag chips? */}
-          {/* {description && (
-            <Typography>
-              {description}
-            </Typography>
-          )} */}
+          {tags && (
+            <Stack direction="row" spacing={1}>
+              {tags.map((tag, i) => (
+                <Chip 
+                  key={`${tag}-${i}`}
+                  label={tag}
+                  variant="outlined"
+                />
+              ))}
+            </Stack>
+          )}
         </Stack>
       </Stack>
     </Link>

@@ -11,6 +11,7 @@ interface TaskFlowsResult {
       frontmatter: {
         id: string;
         title: string;
+        tags: string[];
         tagline: string;
         intent: string;
       },
@@ -49,6 +50,7 @@ export const useTaskFlow = (name: string) => {
               id
               title
               tagline
+              tags
               intent
             }
           }
