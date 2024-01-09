@@ -45,39 +45,39 @@
               "layoutComponent": "PageLayout"
             },
             {
-              "name": "Comparison",
-              "path": "/design-system/task-flows/comparison",
-              "markdownId": "task-flows-comparison",
+              "name": "Compare Data",
+              "path": "/design-system/task-flows/compare-data",
+              "markdownId": "task-flows-compare-data",
               "layoutComponent": "TaskFlowLayout"
             },
             {
-              "name": "Contributing Data",
-              "path": "/design-system/task-flows/contributing-data",
-              "markdownId": "task-flows-contributing-data",
+              "name": "Contribute Data",
+              "path": "/design-system/task-flows/contribute-data",
+              "markdownId": "task-flows-contribute-data",
               "layoutComponent": "TaskFlowLayout"
             },
             {
-              "name": "Exploring Datasets",
-              "path": "/design-system/task-flows/exploring-datasets",
-              "markdownId": "task-flows-exploring-datasets",
+              "name": "Search Data Repositories",
+              "path": "/design-system/task-flows/search-data-repositories",
+              "markdownId": "task-flows-search-data-repositories",
               "layoutComponent": "TaskFlowLayout"
             },
             {
-              "name": "Exploring Entities",
-              "path": "/design-system/task-flows/exploring-entities",
-              "markdownId": "task-flows-exploring-entities",
+              "name": "Explore Data",
+              "path": "/design-system/task-flows/explore-data",
+              "markdownId": "task-flows-explore-data",
               "layoutComponent": "TaskFlowLayout"
             },
             {
-              "name": "Monitoring",
-              "path": "/design-system/task-flows/monitoring",
-              "markdownId": "task-flows-monitoring",
+              "name": "Monitor Activities",
+              "path": "/design-system/task-flows/monitor-activities",
+              "markdownId": "task-flows-monitor-activities",
               "layoutComponent": "TaskFlowLayout"
             },
             {
-              "name": "Optimization",
-              "path": "/design-system/task-flows/optimization",
-              "markdownId": "task-flows-optimization",
+              "name": "Run Computation",
+              "path": "/design-system/task-flows/run-computation",
+              "markdownId": "task-flows-run-computation",
               "layoutComponent": "TaskFlowLayout"
             }
           ]
