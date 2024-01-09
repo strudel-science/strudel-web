@@ -4,14 +4,15 @@ title: 'Glossary'
 subtitle: ''
 disableTableOfContents: true
 ---
-
+<PageContainer>
 {/*  import HorizontalNavList from "@components/horizontal-nav-list" */}
 
-Glossaries can help with back pains, reduce your cholesterol, and give you all-day energy.
+This page provides precise and detailed descriptions of important STRUDEL terms, particularly
+in the context of <a href="#task_flow">task flows</a>.
 
 {/*
 <HorizontalNavList
-  items={"ACDFIPRSU".split("")}
+  items={"ACDEFIPRSU".split("")}
   slug={props.slug}
 />
 */}
@@ -22,18 +23,77 @@ Glossaries can help with back pains, reduce your cholesterol, and give you all-d
 
 Record of a user in the system, which may include permissions, roles, and internal records of history of actions.
 
+### Analysis
+
+Category of <a href="#task_flow">task flow</a> that involves intensive computation.
+
 ## C
+
+### Computation
+
+Backend computation that runs in non-interactive (e.g. 10 sec or more) time.
 
 ## D
 
+### Data
+
+One data entity. May be scalar, vector, matrix, or have an irregular structure of potentially nested fields and values.
+
+## Data management
+
+Category of <a href="#task_flow">task flow</a> that involves movement or other bulk operations on datasets.
+
+## E
+
+### Exploration
+
+Category of <a href="#task_flow">task flow</a> that involves searching or browsing to retrieve data as well as examining data items in detail.
+
 ## F
+
+### Flowsheet
+
+In process engineering, the set of process units and the "streams" that connect them into a graph.
 
 ## I
 
+### Interactive computation
+
+Backend computation that runs in interactive (e.g. 10 sec or less) time.
+
 ## P
+
+### Profile
+
+Information about a user in the system that typically comes from the user themselves, such as name, avatar, and preferences
 
 ## R
 
+### Repository
+
+A container for datasets.
+
 ## S
 
+### Scenario
+
+A selection of a model and parameters used as input to a computation.
+
+## T
+
+<a name="task_flow"></a>
+### Task flow
+
+A set of steps (represented by a series of screens) that help to accomplish a task and represent how a user progresses through a UI.
+
 ## U
+
+### User
+
+Uniquely identified actor in the system
+
+### Utility
+
+Category for <a href="#task_flow">task flows</a> that don't fit into any other category.
+
+</PageContainer>
