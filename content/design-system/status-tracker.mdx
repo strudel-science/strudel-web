@@ -1,5 +1,128 @@
 ---
 id: 'design-system-status-tracker'
 title: 'Status Tracker'
-subtitle: ''
+subtitle: 'Status & roadmap of task flows and corresponding resources'
 ---
+import { TableHead, TableRow, TableCell, TableBody } from '@mui/material';
+import { PageContainer } from '/src/components/PageContainer';
+import { InfoTable } from '/src/components/InfoTable';
+import { StatusChip } from '/src/components/StatusChip';
+
+<PageContainer>
+  <InfoTable>
+  <TableHead>
+    <TableRow>
+      <TableCell>
+        Task Flow
+      </TableCell>
+      <TableCell>
+        Visual Template
+      </TableCell>
+      <TableCell>
+        Code Template
+      </TableCell>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    <TableRow>
+      <TableCell>
+        Compare Data
+      </TableCell>
+      <TableCell>
+        <StatusChip status="released" />
+      </TableCell>
+      <TableCell>
+        <StatusChip status="released" />
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>
+        Contribute Data
+      </TableCell>
+      <TableCell>
+        <StatusChip status="released" />
+      </TableCell>
+      <TableCell>
+        <StatusChip status="released" />
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>
+        Search Data Repositories
+      </TableCell>
+      <TableCell>
+        <StatusChip status="released" />
+      </TableCell>
+      <TableCell>
+        <StatusChip status="released" />
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>
+        Explore Data
+      </TableCell>
+      <TableCell>
+        <StatusChip status="released" />
+      </TableCell>
+      <TableCell>
+        <StatusChip status="released" />
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>
+        Monitor Activities
+      </TableCell>
+      <TableCell>
+        <StatusChip status="released" />
+      </TableCell>
+      <TableCell>
+        <StatusChip status="released" />
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>
+        Run Computation
+      </TableCell>
+      <TableCell>
+        <StatusChip status="released" />
+      </TableCell>
+      <TableCell>
+        <StatusChip status="released" />
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>
+        Run Interactive Computation
+      </TableCell>
+      <TableCell>
+        <StatusChip status="draft" />
+      </TableCell>
+      <TableCell>
+        <StatusChip status="planned" />
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>
+        Manage Account
+      </TableCell>
+      <TableCell>
+        <StatusChip status="draft" />
+      </TableCell>
+      <TableCell>
+        <StatusChip status="planned" />
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>
+        Track State
+      </TableCell>
+      <TableCell>
+        <StatusChip status="draft" />
+      </TableCell>
+      <TableCell>
+        <StatusChip status="planned" />
+      </TableCell>
+    </TableRow>
+  </TableBody>
+</InfoTable>
+</PageContainer>

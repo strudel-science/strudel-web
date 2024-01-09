@@ -20,10 +20,10 @@ const theme: Theme = createTheme({
         main: '#180333'
       },
       success: {
-        main: '#0143CF'
+        main: '#C8E6C9'
       },
       warning: {
-        main: '#D6B5FF'
+        main: '#FFE0B2'
       },
       error: {
         main: '#FF4D4D'
