@@ -148,12 +148,18 @@ export default TeamPage
 
 This website is built with [Gatsby](https://www.gatsbyjs.com/docs), a React-based framework for building websites. 
 
+0.  **Prerequisites**
+
+    - [NodeJS version 18+](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+    - [NPM version 9+](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+    - [Git version 2+](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+
 1.  **Clone the repo and install dependencies**
 
     Clone the strudel repo onto your local machine.
 
     ```shell
-    git clone git@github.com:lbl-ux/strudel.git
+    git clone git@github.com:strudel-science/strudel-web.git
     ```
 
     Navigate into the new strudel directory and install the dependencies.
