@@ -14,3 +14,28 @@ export interface StrudelPage {
   parent?: StrudelPage;
   children?: StrudelPage[];
 }
+
+/**
+ * Properties that can exist in the markdown frontmatter
+ * for a Task Flow.
+ */
+export interface TaskFlowFrontmatter {
+  id?: string;
+  title?: string;
+  tagline?: string;
+  tags?: string[];
+  intent?: string;
+  exampleUrl?: string;
+  codeUrl?: string;
+  figmaUrl?: string;
+}
+
+/**
+ * Properties that can exist in the markdown frontmatter
+ * for a typical page.
+ */
+export interface PageFrontmatter {
+  id?: string;
+  title?: string;
+  subtitle?: string;
+}
