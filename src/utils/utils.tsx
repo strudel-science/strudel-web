@@ -35,6 +35,25 @@ export const findPageByName = (name: string, pages: StrudelPage[]) => {
 };
 
 /**
+ * Get the top-level parent of a given page.
+ * This assumes the page argument is from usePage or findPage so that 
+ * it has a reference to its parent nodes.
+ */
+export const getTopLevelParent = (page: StrudelPage) => {
+  console.log(page);
+  const parent = page.parent;
+  const grandparent = page.parent?.parent;
+  if (parent && grandparent) {
+    if (grandparent.path === '/') {
+      return parent;
+    } else if (grandparent.parent && grandparent.parent.path === '/') {
+      return grandparent;
+    }
+  }
+  return;
+};
+
+/**
  * Remove single trailing slash from a string
  */
 const removeTrailingSlash = (str: string) => {     

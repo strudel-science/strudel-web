@@ -26,6 +26,7 @@ export const Navbar: React.FC = () => {
         pages {
           name
           path
+          redirectTo
         }
       }
       site {
@@ -86,7 +87,7 @@ export const Navbar: React.FC = () => {
                 }
               }}
             >
-              <Link to={page.path} style={{ padding: '0.5rem' }}> 
+              <Link to={page.redirectTo || page.path} style={{ padding: '0.5rem' }}> 
                 {page.name}
               </Link>
               {page.path !== '/' && currentPath.indexOf(page.path) > -1 && (

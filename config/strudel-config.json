@@ -7,10 +7,11 @@
     {
       "name": "Planning Framework",
       "path": "/planning-framework",
+      "redirectTo": "/planning-framework/overview",
       "children": [
         {
           "name": "Overview",
-          "path": "/planning-framework",
+          "path": "/planning-framework/overview",
           "markdownId": "planning-framework-overview",
           "layoutComponent": "PageLayout"
         },
@@ -25,10 +26,11 @@
     {
       "name": "Design System",
       "path": "/design-system",
+      "redirectTo": "/design-system/overview",
       "children": [
         {
           "name": "Overview",
-          "path": "/design-system",
+          "path": "/design-system/overview",
           "markdownId": "design-system-overview",
           "layoutComponent": "PageLayout"
         },
@@ -110,7 +112,8 @@
     },
     {
       "name": "Engage",
-      "path": "/engage/contribute",
+      "path": "/engage",
+      "redirectTo": "/engage/contribute",
       "children": [
         {
           "name": "Contribute",
@@ -134,10 +137,11 @@
     },
     {
       "name": "About",
-      "path": "/about/background",
+      "path": "/about",
+      "redirectTo": "/about/background",
       "children": [
         {
-          "name": "History & Background",
+          "name": "Background",
           "path": "/about/background",
           "markdownId": "about-background",
           "layoutComponent": "PageLayout"
