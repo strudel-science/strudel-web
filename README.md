@@ -90,7 +90,7 @@ For a markdown file to be turned into a page, you must add an `id` to the top of
 
 ```
 ---
-id: 'task-flows-comparison'
+id: 'task-flows-compare-data'
 ---
 ```
 
@@ -108,12 +108,12 @@ For example, take the following page object from `strudel-config.json`:
 {
     "name": "Comparison",
     "path": "/design-system/task-flows/comparison",
-    "markdownId": "task-flows-comparison",
+    "markdownId": "task-flows-compare-data",
     "layoutComponent": "PageLayout"
 },
 ```
 
-This tells the sidebar menu to render a link to "/design-system/task-flows/comparison" with the text "Comparison". It also looks for a markdown file in the `content` directory that has `id: task-flows-comparison`. The `layoutComponent` property is telling the app which layout component to use to wrap the markdown content in.
+This tells the sidebar menu to render a link to "/design-system/task-flows/comparison" with the text "Comparison". It also looks for a markdown file in the `content` directory that has `id: task-flows-compare-data`. The `layoutComponent` property is telling the app which layout component to use to wrap the markdown content in.
 
 The `path` you supply to the object should be the full absolute path to the URL that should render the page.
 
@@ -192,6 +192,8 @@ This website is built with [Gatsby](https://www.gatsbyjs.com/docs), a React-base
     - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
     - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
     - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+
+If you don't see your change reflected right away, you may need to cancel the running process (ctrl + C) and restart the app (`npm start`). If you've made configuration changes you may also need to run `gatsby clean` before restarting the app.
 
 ## About STRUDEL
 
