@@ -1,23 +1,56 @@
 ---
 id: 'engage-contribute'
-title: 'Contribute'
-subtitle: ''
+title: 'Connect & Contribute'
+subtitle: 'Help grow & sustain the STRUDEL community'
 ---
-## Connect with STRUDEL
+import { Grid } from '@mui/material';
+import { PageContainer } from '/src/components/PageContainer';
+import { Hero } from '/src/components/Hero';
+import { ContentCard } from '/src/components/ContentCard';
+import { Link } from '@mui/material';
+
+<Hero>
+
 ***Want to stay up to date?***
 
 ***Have questions or ideas?***
-- Get in touch with the core team at <em><a href="mailto:strudel@lbl.gov">strudel@lbl.gov</a></em>
-- Join our mailing list by sending a message to <em><a href="mailto:strudel-community+subscribe@lbl.gov">strudel-community+subscribe@lbl.gov</a></em>
-- Contribute to the <a href='https://github.com/orgs/strudel-science/discussions/' target='_blank'>Discussion on GitHub</a>
+
+<Grid container spacing={4}>
+    <Grid item md={4}>
+      <ContentCard>
+        #### Get in touch
+
+        E-mail the core team at <Link href="mailto:strudel@lbl.gov">strudel@lbl.gov</Link>
+      </ContentCard>
+    </Grid>
+    <Grid item md={4}>
+      <ContentCard>
+        #### Join our mailing list
+
+        Send a message to <Link href="mailto:strudel-community+subscribe@lbl.gov">strudel-community+subscribe@lbl.gov</Link>
+      </ContentCard>
+    </Grid>
+    <Grid item md={4}>
+      <ContentCard>
+        #### Contribute to the Discussion
+
+        See the latest <Link href='https://github.com/orgs/strudel-science/discussions/' target='_blank'>Discussion on GitHub</Link>
+      </ContentCard>
+    </Grid>
+  </Grid>
+
+</Hero>
+
+<PageContainer>
 
 
 ## Contributing to STRUDEL
 The STRUDEL project is eager for community contributions. 
 
-*A complete guide on contributing to the STRUDEL Planning Framework and the STRUDEL Design System is coming soon.*
+***A complete guide on contributing to the STRUDEL Planning Framework and the STRUDEL Design System is coming soon.***
 
 For now, please contribute to the STRUDEL project by:
 
 - Sharing feedback on the STRUDEL Planning Framework or Design System through one of the avenues above. 
-- We are planning tutorial workshops & hackathons for Q1/Q 2024. Reach out to learn about joining!
+- We are planning tutorial workshops & hackathons for Q1 2024. Reach out or visit our <Link href='/engage/events'>Events</Link> page to learn about joining!
+</PageContainer>
