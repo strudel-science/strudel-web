@@ -23,6 +23,9 @@ export const StyledMarkdown: React.FC<PropsWithChildren> = ({ children }) => {
         '& *:last-child': {
           marginBottom: 0,
         },
+        '& a, & a:visited': {
+          color: 'primary.main'
+        }
       }}
     >
       {children}
