@@ -1,6 +1,6 @@
 import { navigate } from 'gatsby';
 import React, { useEffect } from 'react';
-import Seo from '../components/Seo';
+import Seo from '../../components/Seo';
 
 /**
  * Redirect to /design-system/overview because there is no top-level /design-system page
