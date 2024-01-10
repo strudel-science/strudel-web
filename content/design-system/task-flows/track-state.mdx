@@ -1,0 +1,70 @@
+---
+id: 'task-flows-track-state'
+title: 'Track State'
+tagline: 'Mollit laboris nulla consectetur sint sunt.'
+tags: ['account history', 'system status']
+intent: 'Enables users to look at historical status of an activity or document which can aid issue debugging or retrieval of old data.'
+exampleUrl: ''
+codeUrl: ''
+figmaUrl: ''
+---
+import { Grid, TableHead, TableRow, TableCell, TableBody } from '@mui/material';
+import { TaskFlowCard } from '/src/components/TaskFlowCard';
+import { InfoTable } from '/src/components/InfoTable';
+
+## Overview
+
+Tempor irure voluptate Lorem ea elit laborum laborum laboris voluptate id irure proident. Lorem fugiat ut mollit ad eiusmod minim voluptate. Officia ea non voluptate voluptate amet veniam ipsum aute. Eu velit consectetur velit adipisicing Lorem et ex ullamco consequat pariatur mollit excepteur dolore occaecat. Et velit pariatur ipsum quis amet sint dolore. Voluptate elit deserunt consequat minim velit qui nostrud proident sint ut. Ut officia sunt sit nulla.
+
+### Dos and Don'ts
+
+Occaecat irure qui mollit aliqua cupidatat aute. Esse commodo non sunt tempor. Irure elit occaecat aute est ullamco tempor ullamco magna est ut. Sint cupidatat et aliquip est ullamco. Incididunt irure velit qui incididunt laborum ullamco veniam sit excepteur fugiat cillum. Cupidatat excepteur velit dolore proident laboris dolor.
+
+## Variations & Examples
+
+Aliquip ea ipsum Lorem amet incididunt excepteur Lorem aute proident deserunt commodo. Officia ipsum magna laborum dolore mollit adipisicing eiusmod. Duis irure ullamco in aliquip eu ad aliquip elit cupidatat.
+
+## Components & Patterns Used
+
+<InfoTable>
+  <TableHead>
+    <TableRow>
+      <TableCell>Component</TableCell>
+      <TableCell>Usage Context</TableCell>
+      <TableCell>Links to Libraries</TableCell>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    <TableRow>
+      <TableCell>Stepper</TableCell>
+      <TableCell>Some blurb on how the component is useful in this taskflow</TableCell>
+      <TableCell><a href="https://mui.com/material-ui/react-stepper/" target="_blank">MUI links to start with</a></TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Data Grid</TableCell>
+      <TableCell>Some blurb on how the component is useful in this taskflow</TableCell>
+      <TableCell><a href="https://mui.com/x/react-data-grid/" target="_blank">MUI links to start with</a></TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Date Picker</TableCell>
+      <TableCell>Some blurb on how the component is useful in this taskflow</TableCell>
+      <TableCell><a href="https://mui.com/x/react-date-pickers/" target="_blank">MUI links to start with</a></TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Select</TableCell>
+      <TableCell>Some blurb on how the component is useful in this taskflow</TableCell>
+      <TableCell><a href="https://mui.com/material-ui/react-select/">MUI links to start with</a></TableCell>
+    </TableRow>
+  </TableBody>
+</InfoTable>
+
+## Other Relevant Task Flows
+
+<Grid container spacing={4}>
+  <Grid item md={6}>
+    <TaskFlowCard name="Compare Data" />
+  </Grid>
+  <Grid item md={6}>
+    <TaskFlowCard name="Compare Data" />
+  </Grid>
+</Grid>
