@@ -3,8 +3,11 @@ id: 'about-background'
 title: 'Background'
 subtitle: ''
 ---
+import { StepLabel, StepContent } from '@mui/material';
 import { Hero } from '/src/components/Hero';
 import { PageContainer } from '/src/components/PageContainer';
+import { ContentStepper, ContentStep } from '/src/components/ContentStepper';
+
 
 <Hero>
 The objective of the STRUDEL project is to support scientific software development by improving the user experience, software quality, and software sustainability
@@ -16,6 +19,16 @@ The objective of the STRUDEL project is to support scientific software developme
 
 The user experience and sustainability of scientific software are pressing challenges which  impact the production of knowledge and scientific progress. But user experience is often an afterthought in scientific software that impacts usability, accessibility, design, & functionality of science products.
 
-
+## Project History
+<ContentStepper>
+    <ContentStep>
+      <StepLabel>
+        ### Scan the Task Flows list
+      </StepLabel>
+      <StepContent>
+        Analyze from summary description which of the task flows can suit your software features & user interface.
+      </StepContent>
+    </ContentStep>
+</ContentStepper>
 
 </PageContainer>
