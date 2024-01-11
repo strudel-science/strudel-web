@@ -1,4 +1,6 @@
 import { StrudelPage } from "../types/strudel-config";
+import { FileNode } from 'gatsby-plugin-image/dist/src/components/hooks';
+import { getImage } from "gatsby-plugin-image"
 
 /**
  * Build a flat list of page objects from the json.
@@ -74,4 +76,16 @@ export const getCurrentPath = (pathname: string, pathPrefix?: string) => {
     currentPath = `/${currentPath}`;
   }
   return currentPath;
+}
+
+export const getImageFromFileNode = (image?: FileNode | string) => {
+  if (
+    typeof image !== 'string' &&
+    image?.hasOwnProperty('childImageSharp') &&
+    image.childImageSharp?.gatsbyImageData
+  ) {
+    return getImage(image?.childImageSharp?.gatsbyImageData);
+  } else {
+    return;
+  }
 }
