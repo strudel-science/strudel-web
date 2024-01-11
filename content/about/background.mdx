@@ -3,14 +3,13 @@ id: 'about-background'
 title: 'About STRUDEL'
 subtitle: ''
 ---
-import { Grid, StepLabel, StepContent } from '@mui/material';
+import { Box, Grid, Stack, Typography, StepLabel, StepContent } from '@mui/material';
 import { Hero } from '/src/components/Hero';
 import { PageContainer } from '/src/components/PageContainer';
 import { ContentCard } from '/src/components/ContentCard';
 import { ProjectHistoryStepper, ProjectHistoryStep } from '/src/components/ProjectHistoryStepper';
 import { Background } from '/src/components/home/Background';
-import { Vision } from '/src/components/home/Vision';
-
+import { Link } from '@mui/material';
 
 <Hero>
 ## Mission
@@ -18,20 +17,84 @@ import { Vision } from '/src/components/home/Vision';
 STRUDEL is an open source science project advocating for and advancing the inclusion of User Experience (UX) practices & tools in scientific software development.
 </Hero>
 
-<Background />
-
-{/*
-# Why UX matters for scientific software development
-
-The user experience and sustainability of scientific software are pressing challenges which  impact the production of knowledge and scientific progress. But user experience is often an afterthought in scientific software that impacts usability, accessibility, design, & functionality of science products.
-*/}
-
-<Vision />
-
 <PageContainer>
 
+## Motivation for User Experience in Science Software
+<Grid container columnSpacing={4}>
+    <Grid item sm={4}>
+        The user experience and sustainability of scientific software are pressing challenges since these foundational products impact the production of knowledge and scientific progress.
+    </Grid>
+    <Grid item sm={8}>
+        <Stack spacing={2}>
+            <Box >
+              <Grid container columnSpacing={4}>
+                <Grid item sm={3}>
+                    <Box sx={{
+                        backgroundColor: 'neutral.light',
+                        borderRadius: 4,
+                        height: '100%',
+                        padding: 1,
+                    }}>
+                    Iterative scientific inquiry results in constantly evolving user needs
+                    </Box>
+                </Grid>
+                <Grid item sm={3}>
+                    <Box sx={{
+                        backgroundColor: 'neutral.light',
+                        borderRadius: 4,
+                        height: '100%',
+                        padding: 1,
+                    }}>
+                    Software sustainability & efficiency requires regular UX investment
+                    </Box>
+                </Grid>
+                <Grid item sm={3}>
+                    <Box sx={{
+                        backgroundColor: 'neutral.light',
+                        borderRadius: 4,
+                        height: '100%',
+                        padding: 1,
+                    }}>
+                    Science projects often lack UX processes & best practices
+                    </Box>
+                </Grid>
+                <Grid item sm={3}>
+                    <Box sx={{
+                        backgroundColor: 'neutral.light',
+                        borderRadius: 4,
+                        height: '100%',
+                        padding: 1,
+                    }}>
+                    Commercial software practices require translation to science contexts
+                    </Box>
+                </Grid>
+              </Grid>
+            </Box>
+            <Typography>User experience is often an afterthought in scientific software that impacts usability, accessibility, design, & functionality of products. Today the UX community for scientific software is growing and tackling these challenges.</Typography>
+          </Stack>
+    </Grid>
+</Grid>
+
+## Our Vision
+<Grid container columnSpacing={4}>
+    <Grid item sm={3}>
+        STRUDEL is supporting scientific software development, and the growing science software UX community, through advocacy and the stewardship of key products. We aim to make adopting UX in science easier and more effective from project planning through product development.
+    </Grid>
+    <Grid item sm={9}>
+        ![STRUDEL storyboard comic](../../content/images/strudel-storyboard.png)
+    </Grid>
+</Grid>
+
 ## Funding
-STRUDEL is generously funded by the Sloan Foundation. {/* maybe we want a nicely styled custom component for this */}
+<Grid container columnSpacing={4}>
+    <Grid item sm={5}>
+        STRUDEL is generously funded by the Alfred P. Sloan Foundation, Liz Vu & Josh Greenberg Program Officers, initial grant <Link href="https://sloan.org/grant-detail/10074" target="_blank">#10074</Link>.
+    </Grid>
+    <Grid item sm={7}>
+        ![Sloan Foundation Logo](../../content/images/sloan-logo.png)
+    </Grid>
+
+</Grid>
 
 ## Project History
 <ProjectHistoryStepper>
