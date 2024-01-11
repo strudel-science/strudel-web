@@ -36,7 +36,12 @@ This guide is for STRUDEL team members who have permission to create branches an
 
 #### 1. Create a new branch called `update/short-description-of-change`
 
-You can do this from the command line or from the [github branches page](https://github.com/strudel-science/strudel-web/branches). Make sure that you source the new branch from the latest version of the `main` branch.
+You can do this from the command line or from the [github branches page](https://github.com/strudel-science/strudel-web/branches). Make sure that you source the new branch from the latest version of the `main` branch by running the following from the `main` branch:
+
+```
+git pull origin main
+git checkout -b update/my-new-branch
+```
 
 #### 2. Make your changes
 
