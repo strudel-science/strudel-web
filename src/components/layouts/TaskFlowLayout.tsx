@@ -79,7 +79,7 @@ const TaskFlowLayout: React.FC<PageProps<any, TaskFlowPageContext>> = ({ pageCon
           </Typography>
           <p>
             {pageContext.frontmatter.intent}
-         <br/>
+            <br/>
             {pageContext.frontmatter.intentDetails}
           </p>
           <Box>
