@@ -3,7 +3,8 @@ id: 'task-flows-monitor-activities'
 title: 'Monitor Activities'
 tagline: 'Ullamco et dolor enim mollit aliqua.'
 tags: ['jobs', 'experiments', 'observations']
-intent: 'Minim tempor velit exercitation pariatur duis labore qui. Occaecat reprehenderit commodo eu non eu. Est mollit adipisicing exercitation non fugiat labore sint ex nisi in non dolore in.'
+intent: 'Enables users to monitor running tasks, jobs, experiments, and observational studies and make decisions based on the status of those activities.'
+intentDetails: 'Monitoring can be both real-time and asynchronous. Live monitoring of experiments helps teams determine if something has gone wrong and the experiment needs to be stopped (such as in cases where there are problems with an instrument). Asynchronous task monitoring can be used to determine if the task should be run again in cases of failures.'
 exampleUrl: 'https://strudel.science/strudel-kit/#/monitor-tasks'
 codeUrl: 'https://github.com/strudel-science/strudel-kit/tree/main/src/app/monitor-tasks'
 figmaUrl: 'https://www.figma.com/file/UQT4iRirRG9lrgzayfzswY/STRUDEL-task-flows?type=design&node-id=10%3A67734&mode=design&t=YPdwq8c0BdXx5Um8-1'
@@ -27,11 +28,41 @@ import { InfoTable } from '/src/components/InfoTable';
   </Grid>
 </Grid>
 
-Tempor irure voluptate Lorem ea elit laborum laborum laboris voluptate id irure proident. Lorem fugiat ut mollit ad eiusmod minim voluptate. Officia ea non voluptate voluptate amet veniam ipsum aute. Eu velit consectetur velit adipisicing Lorem et ex ullamco consequat pariatur mollit excepteur dolore occaecat. Et velit pariatur ipsum quis amet sint dolore. Voluptate elit deserunt consequat minim velit qui nostrud proident sint ut. Ut officia sunt sit nulla.
+### Guidelines
 
-### Dos and Don'ts
-
-Occaecat irure qui mollit aliqua cupidatat aute. Esse commodo non sunt tempor. Irure elit occaecat aute est ullamco tempor ullamco magna est ut. Sint cupidatat et aliquip est ullamco. Incididunt irure velit qui incididunt laborum ullamco veniam sit excepteur fugiat cillum. Cupidatat excepteur velit dolore proident laboris dolor.
+<ul>
+  <li>
+    <b>Real-time experiments</b>
+    <ul>
+      <li>
+        The display should refresh to show new data as the data becomes available.
+      </li>
+      <li>
+        If data or events need to be reviewed, highlight the new data / events to draw attention to the ones needing review.
+      </li>
+      <li>
+        To support real-time decision making, keep the display as simple as possible with only what data is needed to make decisions. Plots and other quick analysis methods can be useful for these determinations.
+      </li>
+      <li>
+        Consider providing a simple way for users to add notes alongside monitored events.
+      </li>
+      <li>
+        If the monitor is to be used alongside other software, consider providing a smaller aspect ratio app for monitoring events. Provide a full desktop ratio version for more detailed work.
+      </li>
+    </ul>
+  </li>
+  <li>
+    <b>Asynchronous monitors</b>
+    <ul>
+      <li>
+        Users may rely on scanning states to help determine next steps. For example, in a job monitor, some indication if the job failed is helpful to determine if the job should be re-run. In cases of experimental observations, the state can determine if more observations are needed.
+      </li>
+      <li>
+        While real-time monitors should be kept simple, asynchronous monitors can be much more data dense, since time is not as constrained. Rich data access can help users determine next steps.
+      </li>
+    </ul>
+  </li>
+</ul>
 
 {/*
 ## Variations & Examples

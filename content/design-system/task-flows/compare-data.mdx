@@ -3,7 +3,8 @@ id: 'task-flows-compare-data'
 title: 'Compare Data'
 tagline: 'Comparing Scenarios/ Analyses / Simulations'
 tags: ['comparison', 'differences', 'analysis']
-intent: 'It enables users to scan and compare multiple complex entities with similar information categories and helps them make decisions based on the differences.'
+intent: 'Enables users to scan and compare multiple complex entities with similar information categories to support decision making based on the differences.'
+intentDetails: 'Comparison may be between just two entities requiring a dedicated focus on differences in values, shown visually or numerically. Comparison may also be between multiple attributes — requiring a soft highlight on all differences and other visual representations.'
 exampleUrl: 'https://strudel.science/strudel-kit/#/compare-scenarios'
 codeUrl: 'https://github.com/strudel-science/strudel-kit/tree/main/src/app/compare-scenarios'
 figmaUrl: 'https://www.figma.com/file/UQT4iRirRG9lrgzayfzswY/STRUDEL-task-flows?type=design&node-id=10%3A65420&mode=design&t=w7GGrEXSOV1T8UCr-1'
@@ -27,11 +28,36 @@ import { InfoTable } from '/src/components/InfoTable';
   </Grid>
 </Grid>
 
-Tempor irure voluptate Lorem ea elit laborum laborum laboris voluptate id irure proident. Lorem fugiat ut mollit ad eiusmod minim voluptate. Officia ea non voluptate voluptate amet veniam ipsum aute. Eu velit consectetur velit adipisicing Lorem et ex ullamco consequat pariatur mollit excepteur dolore occaecat. Et velit pariatur ipsum quis amet sint dolore. Voluptate elit deserunt consequat minim velit qui nostrud proident sint ut. Ut officia sunt sit nulla.
+### Guidelines
 
-### Dos and Don'ts
-
-Occaecat irure qui mollit aliqua cupidatat aute. Esse commodo non sunt tempor. Irure elit occaecat aute est ullamco tempor ullamco magna est ut. Sint cupidatat et aliquip est ullamco. Incididunt irure velit qui incididunt laborum ullamco veniam sit excepteur fugiat cillum. Cupidatat excepteur velit dolore proident laboris dolor.
+<ul>
+  <li>
+    Consider whether the users would want to compare 2 sets of attributes or more than 2 sets. 
+    <ul>
+      <li>
+        When comparing 2 sets of attributes, you can represent the differences between the sets as a subtraction between values or showing side by side values. These deltas can also be represented as a plot. 
+      </li>
+      <li>
+        When comparing more than 2 sets of attributes, you can consider displaying values of each set as columns in a table. Also consider visualizations to aid in comparison.
+      </li>
+    </ul>
+  </li>
+  <li>
+    Data visualizations like graphs and charts can help to highlight the differences and similarities between  sets being compared.
+  </li>
+  <li>
+    Prioritize the attributes which are critical for comparison instead of exposing all of the attributes in a single view.
+  </li>
+  <li>
+    If there are too many attributes to compare, allow users to prioritize comparisons by providing ways to search & filter the attributes. This makes it easier for them to focus on their interests instead of getting overwhelmed by a large comparison matrix.
+  </li>
+  <li>
+   Consider offering an expanded view of a selected set or attribute to view additional related details, data tables, or diagrams. The expanded view could be displayed in a pop-up or a vertical or horizontal slide out panel.
+  </li>
+  <li>
+   Consider providing the ability to save or export comparison results.
+  </li>
+</ul>
 
 {/*
 ## Variations & Examples

@@ -46,6 +46,7 @@ const TaskFlowLayout: React.FC<PageProps<any, TaskFlowPageContext>> = ({ pageCon
                   key={`${tag}-${i}`}
                   label={tag}
                   variant="outlined"
+                  color="info"
                 />
               ))}
             </Stack>
@@ -78,6 +79,8 @@ const TaskFlowLayout: React.FC<PageProps<any, TaskFlowPageContext>> = ({ pageCon
           </Typography>
           <p>
             {pageContext.frontmatter.intent}
+            <br/>
+            {pageContext.frontmatter.intentDetails}
           </p>
           <Box>
             <Grid container spacing={2} width="75%">

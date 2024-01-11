@@ -19,7 +19,7 @@ export const InfoTable: React.FC<TableContainerProps> = ({ children, ...rest }) 
           fontWeight: 'bold',
         },
         '& .MuiTableCell-root': {
-          padding: 1,
+          padding: 2,
         },
         '& a, & a:visited': {
           color: 'primary.main'
