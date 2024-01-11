@@ -15,6 +15,7 @@ const config: GatsbyConfig = {
     'gatsby-theme-material-ui',
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     'gatsby-transformer-json',
     {
       resolve: 'gatsby-source-filesystem',

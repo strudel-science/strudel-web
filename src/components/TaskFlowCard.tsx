@@ -1,8 +1,10 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, ReactNode } from 'react';
 import { Box, Chip, Stack, Typography } from '@mui/material';
-import { StaticImage } from 'gatsby-plugin-image';
 import { Link } from 'gatsby';
 import { useTaskFlow } from '../hooks/useTaskFlow';
+import { FileNode } from 'gatsby-plugin-image/dist/src/components/hooks';
+import { getImageFromFileNode } from '../utils/utils';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 interface TaskFlowCardProps {
   /** Name of a task flow as specified in strudel-config.json */
@@ -33,6 +35,7 @@ export const TaskFlowCard: React.FC<TaskFlowCardProps> = ({
         description={showDescription ? taskFlow.intent : undefined}
         path={taskFlow?.path}
         tags={showTags ? taskFlow?.tags : undefined}
+        thumbnail={typeof taskFlow.iconImage !== 'string' ? taskFlow.iconImage : undefined}
       />
     );
   } else {
@@ -46,6 +49,12 @@ interface TaskFlowCardBaseProps {
   description?: string;
   path?: string;
   tags?: string[];
+  /** 
+   * This must be a FileNode returned from GraphQL for an image field.
+   * This is so its gatsbyImageData can be transformed to support <GatsbyImage>
+   */
+  thumbnail?: FileNode;
+  thumbnailComponent?: ReactNode;
 }
 
 /**
@@ -57,12 +66,16 @@ export const TaskFlowCardBase: React.FC<TaskFlowCardBaseProps> = ({
   tagline,
   description,
   path = '#',
-  tags
+  tags,
+  thumbnail,
+  thumbnailComponent
 }) => {
+  const thumbnailImg = getImageFromFileNode(thumbnail);
   return (
     <Link
       to={path}
       style={{
+        color: 'inherit',
         position: 'relative',
       }}
     >
@@ -79,7 +92,7 @@ export const TaskFlowCardBase: React.FC<TaskFlowCardBaseProps> = ({
       />
       <Stack
         direction="row"
-        spacing={4}
+        spacing={3}
         sx={{
           alignItems: 'center',
           border: '2px dotted',
@@ -94,15 +107,18 @@ export const TaskFlowCardBase: React.FC<TaskFlowCardBaseProps> = ({
       >
         <Box
           sx={{
-            flexShrink: 0
+            flexShrink: 0,
+            height: 110,
+            width: 110,
           }}
         >
-          <StaticImage
-            alt="STRUDEL team member photo"
-            src="../../content/images/wallpaper.jpg"
-            height={110}
-            width={110}
-          />
+          {!thumbnailImg && thumbnailComponent}
+          {thumbnailImg && (
+            <GatsbyImage
+              image={thumbnailImg} 
+              alt="Test"
+            />
+          )}
         </Box>
         <Stack spacing={1}>
           <Typography 
