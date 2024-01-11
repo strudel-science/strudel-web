@@ -12,9 +12,6 @@ const IndexPage: React.FC = () => {
     <BaseLayout hasBreadcrumbs={false}>
       <Hero />
       <About />
-      <Background />
-      <Vision />
-      <Team />
     </BaseLayout>
   );
 };
