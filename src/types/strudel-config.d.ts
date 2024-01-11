@@ -27,6 +27,7 @@ export interface TaskFlowFrontmatter {
   tagline?: string;
   tags?: string[];
   intent?: string;
+  intentDetails?: string;
   exampleUrl?: string;
   codeUrl?: string;
   figmaUrl?: string;

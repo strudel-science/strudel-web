@@ -46,6 +46,7 @@ const TaskFlowLayout: React.FC<PageProps<any, TaskFlowPageContext>> = ({ pageCon
                   key={`${tag}-${i}`}
                   label={tag}
                   variant="outlined"
+                  color="info"
                 />
               ))}
             </Stack>

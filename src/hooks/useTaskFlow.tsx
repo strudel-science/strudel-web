@@ -46,6 +46,7 @@ export const useTaskFlow = (name: string) => {
               tagline
               tags
               intent
+              intentDetails
               iconImage {
                 childImageSharp {
                   gatsbyImageData(width: 800)
