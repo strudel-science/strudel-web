@@ -1,27 +1,37 @@
 ---
 id: 'about-background'
-title: 'Background'
+title: 'About STRUDEL'
 subtitle: ''
 ---
-import { StepLabel, StepContent } from '@mui/material';
+import { Grid, StepLabel, StepContent } from '@mui/material';
 import { Hero } from '/src/components/Hero';
 import { PageContainer } from '/src/components/PageContainer';
+import { ContentCard } from '/src/components/ContentCard';
 import { ProjectHistoryStepper, ProjectHistoryStep } from '/src/components/ProjectHistoryStepper';
 import { Background } from '/src/components/home/Background';
+import { Vision } from '/src/components/home/Vision';
 
 
 <Hero>
-The objective of the STRUDEL project is to support scientific software development by improving the user experience, software quality, and software sustainability
+## Mission
+
+STRUDEL is an open source science project advocating for and advancing the inclusion of User Experience (UX) practices & tools in scientific software development.
 </Hero>
 
 <Background />
 
+{/*
+# Why UX matters for scientific software development
+
+The user experience and sustainability of scientific software are pressing challenges which  impact the production of knowledge and scientific progress. But user experience is often an afterthought in scientific software that impacts usability, accessibility, design, & functionality of science products.
+*/}
+
+<Vision />
 
 <PageContainer>
 
-## Why UX matters for scientific software development
-
-The user experience and sustainability of scientific software are pressing challenges which  impact the production of knowledge and scientific progress. But user experience is often an afterthought in scientific software that impacts usability, accessibility, design, & functionality of science products.
+## Funding
+STRUDEL is generously funded by the Sloan Foundation. {/* maybe we want a nicely styled custom component for this */}
 
 ## Project History
 <ProjectHistoryStepper>

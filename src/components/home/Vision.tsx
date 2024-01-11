@@ -18,7 +18,7 @@ export const Vision: React.FC = () => {
               Our Vision
             </HomeSectionTitle>
             <HomeSectionDescription>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque explicabo beatae numquam nam ab! Dolores magni labore aliquid eaque. Accusamus maiores harum, dolores id natus quisquam odit autem at tenetur?
+              STRUDEL is supporting scientific software development, and the growing science software UX community, through advocacy and the stewardship of key products. We aim to make adopting UX in science easier and more effective from project planning through product development.
             </HomeSectionDescription>
           </>
         }
