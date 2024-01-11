@@ -36,7 +36,12 @@ This guide is for STRUDEL team members who have permission to create branches an
 
 #### 1. Create a new branch called `update/short-description-of-change`
 
-You can do this from the command line or from the [github branches page](https://github.com/strudel-science/strudel-web/branches). Make sure that you source the new branch from the latest version of the `main` branch.
+You can do this from the command line or from the [github branches page](https://github.com/strudel-science/strudel-web/branches). Make sure that you source the new branch from the latest version of the `main` branch by running the following from the `main` branch:
+
+```
+git pull origin main
+git checkout -b update/my-new-branch
+```
 
 #### 2. Make your changes
 
@@ -44,9 +49,17 @@ Update any markdown, config, or typescript files that you need to.
 
 #### 3. Commit your changes
 
-#### 4. Create a PR to merge changes to the `main` branch
+#### 4. Create a PR on GitHub to merge changes to the `main` branch
 
-Request that your changes get merged into the `main` branch.
+Request that changes from your branch get merged into the `main` branch.
+
+If the PR thread indicates that there are not conflicts, then you are ready for step 6. If there are conflicts, first try to run the following from **your update branch**:
+```
+git merge origin main
+```
+(This may be equivalent to "Update your branch from main" if you are using a git GUI)
+
+If you are not able to manage the conflicts, reach out for help before continuing :smile:.
 
 #### 5. Merge the PR and delete your branch
 
@@ -193,7 +206,13 @@ This website is built with [Gatsby](https://www.gatsbyjs.com/docs), a React-base
     - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
     - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
-If you don't see your change reflected right away, you may need to cancel the running process (ctrl + C) and restart the app (`npm start`). If you've made configuration changes you may also need to run `gatsby clean` before restarting the app.
+### Troubleshooting
+
+If you don't see your change reflected right away, you may need to cancel the running process (ctrl + C) and restart the app (`npm start`).
+
+If new packages have been added to the project since since your last merge, you will need to run `npm install --legacy-peer-deps` to install the new packages.
+
+If you've made configuration changes you may also need to run `npm run clean` aka (`gatsby clean`) before restarting the app.
 
 ## About STRUDEL
 

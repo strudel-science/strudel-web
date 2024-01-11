@@ -1,0 +1,98 @@
+---
+id: 'task-flows-track-state'
+title: 'Track State'
+tagline: 'Mollit laboris nulla consectetur sint sunt.'
+tags: ['account history', 'system status']
+intent: 'Enables users to look at historical status of an activity or document which can aid issue debugging or retrieval of old data.'
+intentDetails: ''
+exampleUrl: ''
+codeUrl: ''
+figmaUrl: 'https://www.figma.com/file/UQT4iRirRG9lrgzayfzswY/STRUDEL-task-flows?type=design&node-id=16%3A69738&mode=design&t=YPdwq8c0BdXx5Um8-1'
+iconImage: '../../images/task-flows/overview-icons/track-state.png'
+---
+import { Grid, TableHead, TableRow, TableCell, TableBody } from '@mui/material';
+import { TaskFlowCard } from '/src/components/TaskFlowCard';
+import { InfoTable } from '/src/components/InfoTable';
+
+## Overview
+
+<Grid container spacing={4}>
+  <Grid item md={4}>
+    ![TODO alt text](../../images/task-flows/track-state/1.History-list-view.png)
+  </Grid>
+  <Grid item md={4}>
+    ![TODO alt text](../../images/task-flows/track-state/2.Filter.png)
+  </Grid>
+</Grid>
+
+### Guidelines
+
+<ul>
+  <li>
+    Determine what entity history is important for users, and why
+  </li>
+  <li>
+    Determine the statuses if any associated with the entity, and the various data points relevant for the history of the entity
+  </li>
+  <li>
+    Consider a timeline graph or other visualization that will help give an overview of history
+  </li>
+  <li>
+    Determine the actions users can take from the history view
+  </li>
+  <li>
+    Give search and filter options, specially on date & time data points for users to easily access the data they are looking for.
+  </li>
+</ul>
+
+
+{/*
+## Variations & Examples
+
+Aliquip ea ipsum Lorem amet incididunt excepteur Lorem aute proident deserunt commodo. Officia ipsum magna laborum dolore mollit adipisicing eiusmod. Duis irure ullamco in aliquip eu ad aliquip elit cupidatat.
+
+## Components & Patterns Used
+
+<InfoTable>
+  <TableHead>
+    <TableRow>
+      <TableCell>Component</TableCell>
+      <TableCell>Usage Context</TableCell>
+      <TableCell>Links to Libraries</TableCell>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    <TableRow>
+      <TableCell>Stepper</TableCell>
+      <TableCell>Some blurb on how the component is useful in this taskflow</TableCell>
+      <TableCell><a href="https://mui.com/material-ui/react-stepper/" target="_blank">MUI links to start with</a></TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Data Grid</TableCell>
+      <TableCell>Some blurb on how the component is useful in this taskflow</TableCell>
+      <TableCell><a href="https://mui.com/x/react-data-grid/" target="_blank">MUI links to start with</a></TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Date Picker</TableCell>
+      <TableCell>Some blurb on how the component is useful in this taskflow</TableCell>
+      <TableCell><a href="https://mui.com/x/react-date-pickers/" target="_blank">MUI links to start with</a></TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Select</TableCell>
+      <TableCell>Some blurb on how the component is useful in this taskflow</TableCell>
+      <TableCell><a href="https://mui.com/material-ui/react-select/">MUI links to start with</a></TableCell>
+    </TableRow>
+  </TableBody>
+</InfoTable>
+*/}
+
+## Other Relevant Task Flows
+
+<Grid container spacing={4}>
+  <Grid item md={6}>
+    <TaskFlowCard name="Compare Data" />
+  </Grid>
+  <Grid item md={6}>
+    <TaskFlowCard name="Compare Data" />
+  </Grid>
+</Grid>

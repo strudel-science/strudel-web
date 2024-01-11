@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from "gatsby"
 import { findPageByName } from "../utils/utils";
-import { StrudelPage } from "../types/strudel-config";
+import { StrudelPage, TaskFlowFrontmatter } from "../types/strudel-config";
 
 interface TaskFlowsResult {
   configJson: {
@@ -8,13 +8,7 @@ interface TaskFlowsResult {
   },
   allMdx: {
     nodes: {
-      frontmatter: {
-        id: string;
-        title: string;
-        tags: string[];
-        tagline: string;
-        intent: string;
-      },
+      frontmatter: TaskFlowFrontmatter,
       internal: {
         contentFilePath: string;
       }
@@ -52,6 +46,12 @@ export const useTaskFlow = (name: string) => {
               tagline
               tags
               intent
+              intentDetails
+              iconImage {
+                childImageSharp {
+                  gatsbyImageData(width: 800)
+                }
+              }
             }
           }
         }

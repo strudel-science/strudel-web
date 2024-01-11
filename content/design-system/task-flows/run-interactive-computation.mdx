@@ -1,0 +1,103 @@
+---
+id: 'task-flows-run-interactive-computation'
+title: 'Run Interactive Computation'
+tagline: 'Mollit laboris nulla consectetur sint sunt.'
+tags: ['execution', 'scenario','data analysis']
+intent: 'Enables querying, computation, and visual analysis of single or combined data entities to instantly derive insights, and create reports or dashboards.'
+intentDetails: ''
+exampleUrl: ''
+codeUrl: ''
+figmaUrl: 'https://www.figma.com/file/UQT4iRirRG9lrgzayfzswY/STRUDEL-task-flows?type=design&node-id=19%3A73770&mode=design&t=YPdwq8c0BdXx5Um8-1'
+iconImage: '../../images/task-flows/overview-icons/run-interactive-computation.png'
+---
+import { Grid, TableHead, TableRow, TableCell, TableBody } from '@mui/material';
+import { TaskFlowCard } from '/src/components/TaskFlowCard';
+import { InfoTable } from '/src/components/InfoTable';
+
+## Overview
+
+<Grid container spacing={4}>
+  <Grid item md={4}>
+    ![TODO alt text](../../images/task-flows/run-interactive-computation/1.Initiate-task-from-list-view-action.png)
+  </Grid>
+  <Grid item md={4}>
+    ![TODO alt text](../../images/task-flows/run-interactive-computation/2.Analyze-scenarios.png)
+  </Grid>
+  <Grid item md={4}>
+    ![TODO alt text](../../images/task-flows/run-interactive-computation/3.Results.png)
+  </Grid>
+</Grid>
+
+### Guidelines
+
+<ul>
+  <li>
+    Start with a clear intent of what kind of insights users should be able to derive.
+  </li>
+  <li>
+    Organize the data points, constraints and controls in clear categories & groups which would be required to derive the analysis.
+  </li>
+  <li>
+    Try to reduce user mental effort by giving default values selected for analysis wherever possible.
+  </li>
+  <li>
+    Make selected variables / options visible if possible, to help users relate the selections to the analysis.
+  </li>
+  <li>
+    The layout should reflect these organized categories of data and controls, and should support the regeneration of insights with different controls & constraints of the user
+  </li>
+  <li>
+    Support the UI with export & save report features - users may want to save the reports or dashboard for quick access.
+  </li>
+</ul>
+
+{/*
+## Variations & Examples
+
+Aliquip ea ipsum Lorem amet incididunt excepteur Lorem aute proident deserunt commodo. Officia ipsum magna laborum dolore mollit adipisicing eiusmod. Duis irure ullamco in aliquip eu ad aliquip elit cupidatat.
+
+## Components & Patterns Used
+
+<InfoTable>
+  <TableHead>
+    <TableRow>
+      <TableCell>Component</TableCell>
+      <TableCell>Usage Context</TableCell>
+      <TableCell>Links to Libraries</TableCell>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    <TableRow>
+      <TableCell>Stepper</TableCell>
+      <TableCell>Some blurb on how the component is useful in this taskflow</TableCell>
+      <TableCell><a href="https://mui.com/material-ui/react-stepper/" target="_blank">MUI links to start with</a></TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Data Grid</TableCell>
+      <TableCell>Some blurb on how the component is useful in this taskflow</TableCell>
+      <TableCell><a href="https://mui.com/x/react-data-grid/" target="_blank">MUI links to start with</a></TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Date Picker</TableCell>
+      <TableCell>Some blurb on how the component is useful in this taskflow</TableCell>
+      <TableCell><a href="https://mui.com/x/react-date-pickers/" target="_blank">MUI links to start with</a></TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Select</TableCell>
+      <TableCell>Some blurb on how the component is useful in this taskflow</TableCell>
+      <TableCell><a href="https://mui.com/material-ui/react-select/">MUI links to start with</a></TableCell>
+    </TableRow>
+  </TableBody>
+</InfoTable>
+*/}
+
+## Other Relevant Task Flows
+
+<Grid container spacing={4}>
+  <Grid item md={6}>
+    <TaskFlowCard name="Compare Data" />
+  </Grid>
+  <Grid item md={6}>
+    <TaskFlowCard name="Compare Data" />
+  </Grid>
+</Grid>

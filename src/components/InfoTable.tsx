@@ -9,16 +9,17 @@ export const InfoTable: React.FC<TableContainerProps> = ({ children, ...rest }) 
     <TableContainer
       {...rest}
       sx={{
-        '& .MuiTableHead-root .MuiTableRow-root': {
-          border: '2px dashed',
-          borderColor: 'error.main',
-        },
+        // '& .MuiTableHead-root .MuiTableRow-root': {
+        //   border: '2px dashed',
+        //   borderColor: 'error.main',
+        // },
         '& .MuiTableHead-root .MuiTableRow-root .MuiTableCell-root': {
+          backgroundColor: 'neutral.main',
           borderBottom: 'none',
           fontWeight: 'bold',
         },
         '& .MuiTableCell-root': {
-          padding: 1,
+          padding: 2,
         },
         '& a, & a:visited': {
           color: 'primary.main'

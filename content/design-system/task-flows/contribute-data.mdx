@@ -4,9 +4,11 @@ title: 'Contribute Data'
 tagline: 'Consectetur magna ad non enim mollit ea Lorem ullamco.'
 tags: ['upload', 'dataset', 'register', 'repository']
 intent: 'Enables users to upload their work and data to a community managed repository.'
+intentDetails: 'This type of Task Flow promotes community sharing of research data / knowledge and is essential for growth & promotion of open science.'
 exampleUrl: 'https://strudel.science/strudel-kit/#/contributing-data'
 codeUrl: 'https://github.com/strudel-science/strudel-kit/tree/main/src/app/contributing-data'
-figmaUrl: ''
+figmaUrl: 'https://www.figma.com/file/UQT4iRirRG9lrgzayfzswY/STRUDEL-task-flows?type=design&node-id=1%3A62422&mode=design&t=YPdwq8c0BdXx5Um8-1'
+iconImage: '../../images/task-flows/overview-icons/contribute-data.png'
 ---
 import { Grid, TableHead, TableRow, TableCell, TableBody } from '@mui/material';
 import { TaskFlowCard } from '/src/components/TaskFlowCard';
@@ -14,12 +16,57 @@ import { InfoTable } from '/src/components/InfoTable';
 
 ## Overview
 
-Tempor irure voluptate Lorem ea elit laborum laborum laboris voluptate id irure proident. Lorem fugiat ut mollit ad eiusmod minim voluptate. Officia ea non voluptate voluptate amet veniam ipsum aute. Eu velit consectetur velit adipisicing Lorem et ex ullamco consequat pariatur mollit excepteur dolore occaecat. Et velit pariatur ipsum quis amet sint dolore. Voluptate elit deserunt consequat minim velit qui nostrud proident sint ut. Ut officia sunt sit nulla.
+<Grid container spacing={4}>
+  <Grid item md={4}>
+    ![TODO alt text](../../images/task-flows/contribute-data/1.Initiate-task-from-list-view-action.png)
+  </Grid>
+  <Grid item md={4}>
+    ![TODO alt text](../../images/task-flows/contribute-data/2.Upload-dataset.png)
+  </Grid>
+  <Grid item md={4}>
+    ![TODO alt text](../../images/task-flows/contribute-data/3.Run-checks.png)
+  </Grid>
+  <Grid item md={4}>
+    ![TODO alt text](../../images/task-flows/contribute-data/4.Check-results.png)
+  </Grid>
+</Grid>
 
-### Dos and Don'ts
+### Guidelines
 
-Occaecat irure qui mollit aliqua cupidatat aute. Esse commodo non sunt tempor. Irure elit occaecat aute est ullamco tempor ullamco magna est ut. Sint cupidatat et aliquip est ullamco. Incididunt irure velit qui incididunt laborum ullamco veniam sit excepteur fugiat cillum. Cupidatat excepteur velit dolore proident laboris dolor.
+<ul>
+  <li>
+    Determine the primary information required to identify a contributed dataset, and use this to display the contribution table to the user
+  </li>
+  <li>
+    Define the process of data contribution and the stages involved in the verification and acceptance of submitted data. 
+  </li>
+  <li>
+    Group the data required from users into relevant categories and split the process into a small number of steps to keep the flow simple.
+  </li>
+  <li>
+    Give a progress indicator showing users where they are at in the overall flow.
+  </li>
+  <li>
+    The first step of collecting meta data and uploading files could get complex.  Users may need to work on the this step over multiple sessions and would need a ‘Save as draft’ option.
+  </li>
+  <li>
+    Uploading files could take long time and running in the background should be supported.
+  </li>
+  <li>
+    Provide a review step to confirm user submission details.
+  </li>
+  <li>
+    Provide a status indicator to show users where they are in the contribution lifecycle (i.e. draft, in review, etc) and whether their dataset is currently public or private.
+  </li>
+  <li>
+    A dataset submitted to a community repository will need to be verified for quality control and it will likely take some time before it is published. Associate statuses with every submission to show users what stage the submitted dataset is at in the process.
+  </li>
+  <li>
+    Consider offering an automated validation step to check file formats, sizes, and any other basic data checks which can save time during further manual verification work.
+  </li>
+</ul>
 
+{/*
 ## Variations & Examples
 
 Aliquip ea ipsum Lorem amet incididunt excepteur Lorem aute proident deserunt commodo. Officia ipsum magna laborum dolore mollit adipisicing eiusmod. Duis irure ullamco in aliquip eu ad aliquip elit cupidatat.
@@ -57,6 +104,7 @@ Aliquip ea ipsum Lorem amet incididunt excepteur Lorem aute proident deserunt co
     </TableRow>
   </TableBody>
 </InfoTable>
+*/}
 
 ## Other Relevant Task Flows
 

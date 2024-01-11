@@ -1,3 +1,5 @@
+import { FileNode } from 'gatsby-plugin-image/dist/src/components/hooks';
+
 /**
  * Possible properties for a page object in strudel-config.json.
  */
@@ -25,9 +27,11 @@ export interface TaskFlowFrontmatter {
   tagline?: string;
   tags?: string[];
   intent?: string;
+  intentDetails?: string;
   exampleUrl?: string;
   codeUrl?: string;
   figmaUrl?: string;
+  iconImage?: string | FileNode;
 }
 
 /**

@@ -4,98 +4,120 @@ title: 'Glossary'
 subtitle: ''
 disableTableOfContents: true
 ---
-import { PageContainer } from '/src/components/PageContainer';
+import {PageContainer} from '/src/components/PageContainer';
+import {Link} from 'gatsby';
 
 <PageContainer>
-{/*  import HorizontalNavList from "@components/horizontal-nav-list" */}
+    {/*  import HorizontalNavList from "@components/horizontal-nav-list" */}
 
-This page provides precise and detailed descriptions of important STRUDEL terms, particularly
-in the context of <a href="#task_flow">task flows</a>.
+    This page provides precise and detailed descriptions of important STRUDEL terms,
+    particularly
+    in the context of <Link to="#task-flow">task flows</Link>.
 
-{/*
+    {/*
 <HorizontalNavList
   items={"ACDEFIPRSU".split("")}
   slug={props.slug}
 />
 */}
 
-## A
+    ## A
 
-### Account
+    ### <span id="account">Account</span>
 
-Record of a user in the system, which may include permissions, roles, and internal records of history of actions.
+    Record of a user in the system, which may include permissions, roles, and internal
+    records of history of actions.
 
-### Analysis
+    ### <span id="analysis">Analysis</span>
 
-Category of <a href="#task_flow">task flow</a> that involves intensive computation.
+    Category of <Link to="#task-flow">task flow</Link> that involves intensive
+    computation.
 
-## C
+    ## C
 
-### Computation
+    ### <span id="computation">Computation</span>
 
-Backend computation that runs in non-interactive (e.g. 10 sec or more) time.
+    Backend computation that runs in non-interactive (e.g. 10 sec or more) time.
 
-## D
+    ## D
 
-### Data
+    ### <span id="data">Data</span>
 
-One data entity. May be scalar, vector, matrix, or have an irregular structure of potentially nested fields and values.
+    One data entity. May be scalar, vector, matrix, or have an irregular structure of
+    potentially nested fields and values.
 
-## Data management
+    ### <span id="data-management">Data management</span>
 
-Category of <a href="#task_flow">task flow</a> that involves movement or other bulk operations on datasets.
+    Category of <Link to="#Task-flow">task flow</Link> that involves movement or other
+    bulk operations on datasets.
 
-## E
+    ### <span id="design-system">Design System</span>
 
-### Exploration
+    A Design System is a set of reusable components and patterns along with guidelines for designing and implementing user interfaces in science and research domains.
 
-Category of <a href="#task_flow">task flow</a> that involves searching or browsing to retrieve data as well as examining data items in detail.
+    See <Link to="/design-system">this page for details on the STRUDEL Design System</Link>.
 
-## F
+    ## E
 
-### Flowsheet
+    ### <span id="exploration">Exploration</span>
 
-In process engineering, the set of process units and the "streams" that connect them into a graph.
+    Category of <Link to="#task-flow">task flow</Link> that involves searching or
+    browsing to retrieve data as well as examining data items in detail.
 
-## I
+    ## F
 
-### Interactive computation
+    ### <span id="flowsheet">Flowsheet</span>
 
-Backend computation that runs in interactive (e.g. 10 sec or less) time.
+    In process engineering, the set of process units and the "streams" that connect them
+    into a graph.
 
-## P
+    ## I
 
-### Profile
+    ### <span id="interactive-computation">Interactive computation</span>
 
-Information about a user in the system that typically comes from the user themselves, such as name, avatar, and preferences
+    Backend computation that runs in interactive (e.g. 10 sec or less) time.
 
-## R
+    ## P
 
-### Repository
+    ### <span id="planning-framework">Planning Framework</span>
 
-A container for datasets.
+    A Planning Framework is a set of guides and questions that will help scientific teams incorporate UX practices in their software production.
 
-## S
+    See <Link to="/planning-framework">this page for details about the STRUDEL Planning Framework</Link>.
 
-### Scenario
+    ### <span id="profile">Profile</span>
 
-A selection of a model and parameters used as input to a computation.
+    Information about a user in the system that typically comes from the user
+    themselves, such as name, avatar, and preferences
 
-## T
+    ## R
 
-<a name="task_flow"></a>
-### Task flow
+    ### <span id="repository">Repository</span>
 
-A set of steps (represented by a series of screens) that help to accomplish a task and represent how a user progresses through a UI.
+    A container for datasets.
 
-## U
+    ## S
 
-### User
+    ### <span id="scenario">Scenario</span>
 
-Uniquely identified actor in the system
+    A selection of a model and parameters used as input to a computation.
 
-### Utility
+    ## T
 
-Category for <a href="#task_flow">task flows</a> that don't fit into any other category.
+    ### <span id="task-flow">Task flow</span>
+
+    A set of steps (represented by a series of screens) that help to accomplish a task
+    and represent how a user progresses through a UI.
+
+    ## U
+
+    ### <span id="user">User</span>
+
+    Uniquely identified actor in the system
+
+    ### <span id="utility">Utility</span>
+
+    Category for <Link to="#task-flow">task flows</Link> that don't fit into any other
+    category.
 
 </PageContainer>

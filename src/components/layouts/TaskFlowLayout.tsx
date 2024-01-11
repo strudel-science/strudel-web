@@ -12,6 +12,8 @@ import { StyledMarkdown } from '../StyledMarkdown';
 import { PageContainer } from '../PageContainer';
 import Seo from '../Seo';
 import { TaskFlowFrontmatter } from '../../types/strudel-config';
+import { getImageFromFileNode } from '../../utils/utils';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 interface TaskFlowPageContext {
   frontmatter: TaskFlowFrontmatter
@@ -25,26 +27,45 @@ interface TaskFlowPageContext {
  * using the children prop.
  */
 const TaskFlowLayout: React.FC<PageProps<any, TaskFlowPageContext>> = ({ pageContext, children }) => {
+  const thumbnailImg = getImageFromFileNode(pageContext.frontmatter.iconImage);
   return (
     <BaseLayout hasSidebar>
       <PageHeader>
-        <Stack spacing={2}>
-          <Typography 
-            component="h1"
-            variant="h3" 
-            fontWeight="bold"
-          >
-            {pageContext.frontmatter.title}
-          </Typography>
-          <Stack direction="row" spacing={1}>
-            {pageContext.frontmatter.tags?.map((tag, i) => (
-              <Chip 
-                key={`${tag}-${i}`}
-                label={tag}
-                variant="outlined"
-              />
-            ))}
+        <Stack direction="row" justifyContent="space-between">
+          <Stack spacing={2}>
+            <Typography 
+              component="h1"
+              variant="h3" 
+              fontWeight="bold"
+            >
+              {pageContext.frontmatter.title}
+            </Typography>
+            <Stack direction="row" spacing={1}>
+              {pageContext.frontmatter.tags?.map((tag, i) => (
+                <Chip 
+                  key={`${tag}-${i}`}
+                  label={tag}
+                  variant="outlined"
+                  color="info"
+                />
+              ))}
+            </Stack>
           </Stack>
+          {thumbnailImg && (
+            <Box
+              sx={{
+                width: '100px',
+                '& .gatsby-image-wrapper': {
+                  borderRadius: '50%',
+                }
+              }}
+            >
+              <GatsbyImage
+                image={thumbnailImg} 
+                alt="Test"
+              />
+            </Box>
+          )}
         </Stack>
       </PageHeader>
       <Hero>
@@ -58,6 +79,9 @@ const TaskFlowLayout: React.FC<PageProps<any, TaskFlowPageContext>> = ({ pageCon
           </Typography>
           <p>
             {pageContext.frontmatter.intent}
+          </p>
+          <p>
+            {pageContext.frontmatter.intentDetails}
           </p>
           <Box>
             <Grid container spacing={2} width="75%">

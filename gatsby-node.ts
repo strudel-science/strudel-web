@@ -70,9 +70,15 @@ export const createPages: GatsbyNode["createPages"] = async ({
               tagline
               tags
               intent
+              intentDetails
               exampleUrl
               codeUrl
               figmaUrl
+              iconImage {
+                childImageSharp {
+                  gatsbyImageData(width: 800)
+                }
+              }
               subtitle
             }
             internal {

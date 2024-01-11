@@ -37,10 +37,11 @@
         {
           "name": "Task Flows",
           "path": "/design-system/task-flows",
+          "redirectTo": "/design-system/task-flows/overview",
           "children": [
             {
               "name": "Overview",
-              "path": "/design-system/task-flows",
+              "path": "/design-system/task-flows/overview",
               "markdownId": "task-flows-overview",
               "layoutComponent": "PageLayout"
             },
@@ -57,15 +58,15 @@
               "layoutComponent": "TaskFlowLayout"
             },
             {
-              "name": "Search Data Repositories",
-              "path": "/design-system/task-flows/search-data-repositories",
-              "markdownId": "task-flows-search-data-repositories",
-              "layoutComponent": "TaskFlowLayout"
-            },
-            {
               "name": "Explore Data",
               "path": "/design-system/task-flows/explore-data",
               "markdownId": "task-flows-explore-data",
+              "layoutComponent": "TaskFlowLayout"
+            },
+            {
+              "name": "Manage Account",
+              "path": "/design-system/task-flows/manage-account",
+              "markdownId": "task-flows-manage-account",
               "layoutComponent": "TaskFlowLayout"
             },
             {
@@ -78,6 +79,24 @@
               "name": "Run Computation",
               "path": "/design-system/task-flows/run-computation",
               "markdownId": "task-flows-run-computation",
+              "layoutComponent": "TaskFlowLayout"
+            },
+            {
+              "name": "Run Interactive Computation",
+              "path": "/design-system/task-flows/run-interactive-computation",
+              "markdownId": "task-flows-run-interactive-computation",
+              "layoutComponent": "TaskFlowLayout"
+            },
+            {
+              "name": "Search Data Repositories",
+              "path": "/design-system/task-flows/search-data-repositories",
+              "markdownId": "task-flows-search-data-repositories",
+              "layoutComponent": "TaskFlowLayout"
+            },
+            {
+              "name": "Track State",
+              "path": "/design-system/task-flows/track-state",
+              "markdownId": "task-flows-track-state",
               "layoutComponent": "TaskFlowLayout"
             }
           ]
