@@ -4,7 +4,7 @@ title: 'Run Computation'
 tagline: 'Running optimizations, simulations, analyses'
 tags: ['execution', 'scenario', 'job', 'simulation', 'optimization', 'stepper', 'wizard']
 intent: 'Enables users to run computation(s) through a multi-step flow to generate results.'
-intentDetails: ''
+intentDetails: 'Computations could be optimizations, calculations, or simulations for a model, scenario, or experiment with attributes to observe and compare results. Attributes may include input data and settings. Computations may be long running and require the ability for a user to leave the flow and return later.'
 exampleUrl: 'https://strudel.science/strudel-kit/#/optimization'
 codeUrl: 'https://github.com/strudel-science/strudel-kit/tree/main/src/app/optimization'
 figmaUrl: 'https://www.figma.com/file/UQT4iRirRG9lrgzayfzswY/STRUDEL-task-flows?type=design&node-id=1%3A26644&mode=design&t=YPdwq8c0BdXx5Um8-1'
@@ -37,11 +37,40 @@ import { InfoTable } from '/src/components/InfoTable';
   </Grid>
 </Grid>
 
-Tempor irure voluptate Lorem ea elit laborum laborum laboris voluptate id irure proident. Lorem fugiat ut mollit ad eiusmod minim voluptate. Officia ea non voluptate voluptate amet veniam ipsum aute. Eu velit consectetur velit adipisicing Lorem et ex ullamco consequat pariatur mollit excepteur dolore occaecat. Et velit pariatur ipsum quis amet sint dolore. Voluptate elit deserunt consequat minim velit qui nostrud proident sint ut. Ut officia sunt sit nulla.
+### Guidelines
 
-### Dos and Don'ts
-
-Occaecat irure qui mollit aliqua cupidatat aute. Esse commodo non sunt tempor. Irure elit occaecat aute est ullamco tempor ullamco magna est ut. Sint cupidatat et aliquip est ullamco. Incididunt irure velit qui incididunt laborum ullamco veniam sit excepteur fugiat cillum. Cupidatat excepteur velit dolore proident laboris dolor.
+<ul>
+  <li>
+    Break the task flow into multiple workable steps and use a progress indicator / stepper to help users see the progress and remaining steps in the process to complete.
+  </li>
+  <li>
+    Organize information into sections that are easy to digest. This helps improve the readability and searchability.
+  </li>
+  <li>
+    Offer guidance, tips, and links to detailed documentation for complex inputs & interactions.
+  </li>
+  <li>
+    Pre-fill the forms with sensible default values wherever possible, especially if data inputs require long forms.
+  </li>
+  <li>
+    Consider allowing users to upload input data as external files or spreadsheets, especially for computations that require large amounts of input data. 
+  </li>
+  <li>
+    Make attributes searchable and filterable to make it easy to find attributes of interests.
+  </li>
+  <li>
+    Give real time error warnings for mis-configurations, especially for long complex forms. For example, specify bounds for values and provide warnings if values are outside of bounds.
+  </li>
+  <li>
+    Help users recover from failed computations by providing meaningful and actionable error messages and allow them to go back and change configurations and inputs.
+  </li>
+  <li>
+    Don’t break the workflow into too many small steps. Users may perceive this as a long and overwhelming process to complete.
+  </li>
+  <li>
+    Don’t assume users will understand each input field and the values to configure it. Provide contextual information when able.
+  </li>
+</ul>
 
 {/*
 ## Variations & Examples
