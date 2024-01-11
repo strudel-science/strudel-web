@@ -44,9 +44,17 @@ Update any markdown, config, or typescript files that you need to.
 
 #### 3. Commit your changes
 
-#### 4. Create a PR to merge changes to the `main` branch
+#### 4. Create a PR on GitHub to merge changes to the `main` branch
 
-Request that your changes get merged into the `main` branch.
+Request that changes from your branch get merged into the `main` branch.
+
+If the PR thread indicates that there are not conflicts, then you are ready for step 6. If there are conflicts, first try to run the following from **your update branch**:
+```
+git merge origin main
+```
+(This may be equivalent to "Update your branch from main" if you are using a git GUI)
+
+If you are not able to manage the conflicts, reach out for help before continuing :smile:.
 
 #### 5. Merge the PR and delete your branch
 
