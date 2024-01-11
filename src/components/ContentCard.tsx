@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Box, BoxProps } from '@mui/material';
 
-interface ContentCardProps extends React.PropsWithChildren {
+interface ContentCardProps extends BoxProps {
   variant?: 'dark' | 'light' | 'outlined';
 }
 
@@ -10,10 +10,13 @@ interface ContentCardProps extends React.PropsWithChildren {
  */
 export const ContentCard: React.FC<ContentCardProps> = ({
   variant = 'dark',
-  children
+  children,
+  sx,
+  ...rest
 }) => {
   return (
     <Box
+      {...rest}
       sx={{
         backgroundColor: variant === 'dark' ? 'secondary.main' : variant === 'light' ? 'secondary.light' : 'none',
         borderColor: variant === 'outlined' ? 'primary.main' : 'none',
@@ -23,6 +26,7 @@ export const ContentCard: React.FC<ContentCardProps> = ({
         color: variant === 'outlined' ? 'white' : 'black',
         fontSize: '1rem',
         padding: 3,
+        ...sx
       }}
     >
       {children}
