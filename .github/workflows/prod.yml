@@ -56,5 +56,5 @@ jobs:
           destination-github-username: 'strudel-science'
           destination-repository-name: 'strudel-science.github.io'
           user-email: ctodonnell@lbl.gov
-          target-branch: test/gatsby-prod
+          target-branch: main
           create-target-branch-if-needed: true
