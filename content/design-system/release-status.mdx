@@ -3,7 +3,7 @@ id: 'design-system-release-status'
 title: 'Release Status'
 subtitle: 'Status of task flows and corresponding resources'
 ---
-import { TableHead, TableRow, TableCell, TableBody } from '@mui/material';
+import { TableHead, TableRow, TableCell, TableBody, Box, Stack, Typography } from '@mui/material';
 import { PageContainer } from '/src/components/PageContainer';
 import { InfoTable } from '/src/components/InfoTable';
 import { StatusChip } from '/src/components/StatusChip';
@@ -125,4 +125,15 @@ import { StatusChip } from '/src/components/StatusChip';
     </TableRow>
   </TableBody>
 </InfoTable>
+<Stack spacing={2} sx={{ marginTop: 4 }}>
+  <Typography variant="body2">
+    <StatusChip status="released" /> = Completed and available to the community
+  </Typography>
+  <Typography variant="body2">
+    <StatusChip status="draft" /> = Initial version completed and partially available to the community
+  </Typography>
+  <Typography variant="body2">
+    <StatusChip status="planned" /> = On the roadmap but not ready for the community
+  </Typography>
+</Stack>
 </PageContainer>
