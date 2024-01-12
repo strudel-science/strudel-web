@@ -1,53 +1,53 @@
 ---
 id: 'design-system-overview'
 title: 'Design System'
-subtitle: 'UI guides, task flows & interactive components'
+subtitle: 'UI templates, Task Flows, & interactive components'
 ---
 import { Grid, StepLabel, StepContent } from '@mui/material';
 import { Hero } from '/src/components/Hero';
 import { PageContainer } from '/src/components/PageContainer';
 import { ContentCard } from '/src/components/ContentCard';
 import { ContentStepper, ContentStep } from '/src/components/ContentStepper';
+import { Link } from 'gatsby';
 
 <Hero>
-  STRUDEL Design System provides a set of reusable components and patterns along with guidelines for designing and implementing user interfaces in science and research domains. It is framed and guided by ‘Task flows’, which are step wise flows through a user interface to accomplish particular tasks. 
+  STRUDEL Design System provides a set of reusable components and patterns along with guidelines for designing and implementing user interfaces for scientific software. This design system is distinct since it is organized around 'Task Flows', which are the step wise flows a user takes to accomplish specified tasks. 
 
   ## The STRUDEL Design System
 
   <Grid container spacing={4}>
     <Grid item md={4}>
       <ContentCard>
-        #### Designed for the sciences
+        #### Designed for scientific software
 
         Specifically designed for common patterns seen in scientific UIs that can be applied across different scientific domains
       </ContentCard>
     </Grid>
     <Grid item md={4}>
       <ContentCard>
-        #### Focuses on how the UI should function
+        #### Focused on UI functionality
 
-       It focuses on the series of steps taken as part of a larger workflow. This provides the big picture of user journeys & aid to improve user experience
+       Focuses on the series of steps users take as part of a larger journey to improve a <Link href="/about/glossary#workflow">workflow's</Link> user experience
       </ContentCard>
     </Grid>
     <Grid item md={4}>
       <ContentCard>
-        #### Good UX from experts in the sciences is baked in
+        #### Built on 10+ years of science UX expertise
 
-        Informed by over a decade of collective UX experience in the sciences and encapsulates good UX practices
+        Informed by collective UX experience in science software to encapsulate strong UX practices
       </ContentCard>
     </Grid>
   </Grid>
 </Hero>
 <PageContainer>
   ## STRUDEL products
-  STRUDEL task flows consists of a visual documentation and coded library:
+  STRUDEL Task Flows consists of a visual design template and a code library.
   
   ### Design template
-  Task Flows are visualized through step-by-step mockups (UI screens) documenting the process of completing a task and illustrating a user's journey through a UI. They also have corresponding design & usage guidelines.
+  Task Flows are visualized through step-by-step mockups (UI screens) documenting the process of completing a task and illustrating a user's journey through a GUI. They also have corresponding design & usage guidelines.
 
   ### Code library
-  The task-flows have their coded templates in the UI code library. This library uses the React JavaScript framework and is based on the popular Material UI (MUI) Components library.
-
+  Task Flows have their code templates implemented in the STRUDEL UI Code Library ('strudel-kit'). The Strudel UI Code Library uses the React JavaScript framework and is based on the popular Material UI (MUI) Components library.
 
   ## How to use the STRUDEL Design System
 
@@ -57,39 +57,39 @@ import { ContentStepper, ContentStep } from '/src/components/ContentStepper';
         ### Scan the Task Flows list
       </StepLabel>
       <StepContent>
-        Analyze from summary description which of the task flows can suit your software features & user interface.
+        Use summary description to identify which of the Task Flows may suit your software features & user interface.
       </StepContent>
     </ContentStep>
     <ContentStep>
       <StepLabel>
-        ### See the Task Flow details
+        ### Examine the Task Flow details
       </StepLabel>
       <StepContent>
-        Understand the mockups, examples and guidelines  to decide if the task flow fits your software needs or it will need further customizations.
+        Examine the mockups, examples, and guidelines to decide if the Task Flow fits your software needs or further customizations are required.
       </StepContent>
     </ContentStep>
     <ContentStep>
       <StepLabel>
-        ### Plan the customizations
+        ### Plan customizations
       </StepLabel>
       <StepContent>
-        Discuss with your team and plan the changes to selected task flows via rough sketches on paper, or via using the Figma files.
+        Discuss with your team, research & evaluate user needs, and plan the changes to chosen Task Flows via rough sketches on paper, or using the Figma files.
       </StepContent>
     </ContentStep>
     <ContentStep>
       <StepLabel>
-        ### See code implementation guide
+        ### Consult code implementation guide
       </StepLabel>
       <StepContent>
-        Go through the implementation guide to install the STRUDEL UI Code Library framework for your software.
+        Go through the implementation guide to install the STRUDEL UI Code Library to use with your software product.
       </StepContent>
     </ContentStep>
     <ContentStep>
       <StepLabel>
-        ### Integrate your changes, data, APIs
+        ### Integrate your design changes, data, APIs
       </StepLabel>
       <StepContent>
-        Using the detailed implementation  guide, make customizations to downloaded templates and integrate the code with your software data and APIs.
+        Using the implementation guide make your customizations to downloaded templates and integrate the code with your software, data, and APIs.
       </StepContent>
     </ContentStep>
   </ContentStepper>
