@@ -3,7 +3,7 @@
     {
       "name": "Home",
       "path": "/",
-      "layoutComponent": "BaseLayout",
+      "layoutComponent": "HomeLayout",
       "markdownId": "home"
     },
     {
