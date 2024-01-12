@@ -124,9 +124,9 @@
           ]
         },
         {
-          "name": "Status Tracker",
-          "path": "/design-system/status-tracker",
-          "markdownId": "design-system-status-tracker",
+          "name": "Release Status",
+          "path": "/design-system/release-status",
+          "markdownId": "design-system-release-status",
           "layoutComponent": "PageLayout"
         }
       ]
