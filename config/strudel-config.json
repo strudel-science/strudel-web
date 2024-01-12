@@ -106,27 +106,19 @@
         {
           "name": "Code Library",
           "path": "/design-system/code-library",
-          "markdownId": "code-library",
-          "layoutComponent": "PageLayout",
-          "children": [
-            {
-              "name": "Overview",
-              "path": "/design-system/code-library/overview",
-              "markdownId": "code-library-overview",
-              "layoutComponent": "PageLayout"
-            },
-            {
-              "name": "Tutorials",
-              "path": "/design-system/code-library/tutorials",
-              "markdownId": "code-library-tutorials",
-              "layoutComponent": "PageLayout"
-            }
-          ]
+          "markdownId": "design-system-code-library",
+          "layoutComponent": "PageLayout"
         },
         {
-          "name": "Status Tracker",
-          "path": "/design-system/status-tracker",
-          "markdownId": "design-system-status-tracker",
+          "name": "Tutorials",
+          "path": "/design-system/tutorials",
+          "markdownId": "design-system-tutorials",
+          "layoutComponent": "PageLayout"
+        },
+        {
+          "name": "Release Status",
+          "path": "/design-system/release-status",
+          "markdownId": "design-system-release-status",
           "layoutComponent": "PageLayout"
         }
       ]
