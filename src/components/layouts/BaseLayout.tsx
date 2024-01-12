@@ -24,7 +24,6 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({
   children
 }) => {
   const breadcrumbs = useBreadcrumbs();
-  console.log(breadcrumbs);
   return (
     <Box
       id="base-layout"

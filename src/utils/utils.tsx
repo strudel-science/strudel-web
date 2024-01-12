@@ -42,7 +42,6 @@ export const findPageByName = (name: string, pages: StrudelPage[]) => {
  * it has a reference to its parent nodes.
  */
 export const getTopLevelParent = (page: StrudelPage) => {
-  console.log(page);
   const parent = page.parent;
   const grandparent = page.parent?.parent;
   if (parent && grandparent) {

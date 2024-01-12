@@ -14,7 +14,6 @@ interface Breadcrumb {
  */
 export const useBreadcrumbs = () => {
   const page = usePage();
-  console.log(page);
   const breadcrumbs: Breadcrumb[] = [
     {
       label: page?.name,

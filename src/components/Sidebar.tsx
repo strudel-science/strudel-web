@@ -55,9 +55,7 @@ export const Sidebar: React.FC = () => {
   const currentPath = page?.path;
   const topLevelParentPage = page && getTopLevelParent(page);
   const sidebarRootPage = pages.find((page) => page.path === topLevelParentPage?.path);
-  
-  console.log(topLevelParentPage);
-  
+    
   /**
    * If the current page is within a collapsible section,
    * make sure its section is open on load.
