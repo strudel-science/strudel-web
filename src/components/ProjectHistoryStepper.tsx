@@ -15,27 +15,28 @@ export const ProjectHistoryStepper: React.FC<PropsWithChildren> = ({ children })
         sx={{
           '& .MuiStepIcon-root.Mui-active.MuiSvgIcon-root': {
             overflow: 'visible',
-            color: 'black',
+            color: 'error.main',
             '& circle': {
-              fill: 'none',
-              r: 15,
-              stroke: theme.palette.success.main,
-              strokeWidth: 3,
-            },
+              fill: 'error.main',
+              r: 5,
+              stroke: theme.palette.error.main,
+              strokeWidth: 2,
+            }
+            ,
             '& text': {
-              fill: 'white',
+              display: 'none',
               fontSize: '1rem',
             }
           },
           '& .MuiStepConnector-line': {
-            borderColor: 'success.main',
+            borderColor: 'error.main',
             borderLeftStyle: 'dashed',
-            borderLeftWidth: 3
+            borderLeftWidth: 2
           },
           '& .MuiStep-root:not(:last-child) .MuiStepContent-root': {
-            borderColor: 'success.main',
+            borderColor: 'error.main',
             borderLeftStyle: 'dashed',
-            borderLeftWidth: 3,
+            borderLeftWidth: 2,
           },
           '& .MuiStepContent-root': {
             paddingLeft: 3.25,
