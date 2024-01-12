@@ -29,9 +29,12 @@ export const StyledMarkdown: React.FC<PropsWithChildren> = ({ children }) => {
         '& a:visited:not(.MuiButton-root)': {
           color: 'purple'
         },
-        '& a p': {
+        '& a p, & ul li p': {
           marginBottom: 0,
           marginTop: 0,
+        },
+        '& ul li:not(:last-of-type)': {
+          marginBottom: 1
         }
       }}
     >

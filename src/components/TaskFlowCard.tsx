@@ -76,6 +76,7 @@ export const TaskFlowCardBase: React.FC<TaskFlowCardBaseProps> = ({
       to={path}
       style={{
         color: 'inherit',
+        display: 'block',
         position: 'relative',
       }}
     >
