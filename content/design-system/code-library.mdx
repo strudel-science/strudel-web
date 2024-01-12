@@ -1,18 +1,31 @@
 ---
-id: 'code-library-overview'
+id: 'design-system-code-library'
 title: 'STRUDEL Kit'
 subtitle: 'Code templates for scientific task flow UIs'
 ---
+import { Link as MuiLink, Button, Box } from '@mui/material';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import { Hero } from '/src/components/Hero';
 import { PageContainer } from '/src/components/PageContainer';
 
 <Hero>
   STRUDEL Kit is a React-based JavaScript library for building scientific UIs based on the STRUDEL Design System and Task Flows. The library provides scaffolding and templates to help scientific teams jumpstart their adaptation and use of common task flows in their products.
+
+  <Box
+    sx={{
+      display: 'inline-block',
+      marginTop: 2
+    }}
+  >
+    <MuiLink href="https://github.com/strudel-science/strudel-kit" target='_blank'>
+      <Button variant="contained" startIcon={<GitHubIcon />}>
+        Checkout on GitHub
+      </Button>
+    </MuiLink>
+  </Box>
 </Hero>
 <PageContainer> 
   ## Getting Started with STRUDEL Kit
-  
-  [Checkout the project on GitHub](https://github.com/strudel-science/strudel-kit).
 
   More details coming soon!
 </PageContainer> 
