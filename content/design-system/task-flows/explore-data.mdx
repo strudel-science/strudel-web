@@ -3,7 +3,8 @@ id: 'task-flows-explore-data'
 title: 'Explore Data'
 tagline: 'Esse exercitation cupidatat commodo eiusmod aliquip id ad.'
 tags: ['data table', 'data grid', 'summary', 'filter', 'facets', 'search']
-intent: 'Lorem fugiat culpa labore proident incididunt. Aliqua velit officia consectetur reprehenderit dolore dolore dolor labore laborum velit duis ullamco exercitation non.'
+intent: 'Enables users to view and work with data in a tabular layout with search, sort, filter, and summary view interactions.'
+intentDetails: 'It is the most commonly used task flow to showcase any entity and make it easily consumable and accessible.'
 exampleUrl: 'https://strudel.science/strudel-kit/#/exploring-entities'
 codeUrl: 'https://github.com/strudel-science/strudel-kit/tree/main/src/app/exploring-entities'
 figmaUrl: 'https://www.figma.com/file/UQT4iRirRG9lrgzayfzswY/STRUDEL-task-flows?type=design&node-id=1%3A52634&mode=design&t=YPdwq8c0BdXx5Um8-1'
@@ -30,11 +31,53 @@ import { InfoTable } from '/src/components/InfoTable';
   </Grid>
 </Grid>
 
-Tempor irure voluptate Lorem ea elit laborum laborum laboris voluptate id irure proident. Lorem fugiat ut mollit ad eiusmod minim voluptate. Officia ea non voluptate voluptate amet veniam ipsum aute. Eu velit consectetur velit adipisicing Lorem et ex ullamco consequat pariatur mollit excepteur dolore occaecat. Et velit pariatur ipsum quis amet sint dolore. Voluptate elit deserunt consequat minim velit qui nostrud proident sint ut. Ut officia sunt sit nulla.
+### Guidelines
 
-### Dos and Don'ts
-
-Occaecat irure qui mollit aliqua cupidatat aute. Esse commodo non sunt tempor. Irure elit occaecat aute est ullamco tempor ullamco magna est ut. Sint cupidatat et aliquip est ullamco. Incididunt irure velit qui incididunt laborum ullamco veniam sit excepteur fugiat cillum. Cupidatat excepteur velit dolore proident laboris dolor.
+<ul>
+ <li>
+  <b>Data table:</b>
+    <ul>
+    <li>
+      Search and filter capabilities are very important to make information findable and accessible.
+    </li>
+    <li>
+      Data tables can have pagination or lazy load with scrolling option. Pagination is usually better interaction for data as users can refer to the page numbers to jump further to find a particular piece of information if they don’t want to use search and filter options. 
+    </li>
+    <li>
+      Consider giving options for number of rows that can be viewed in single page.
+    </li>
+    <li>
+      Clicking on row can trigger opening summary view in side panel for the selected entity.
+    </li>
+    <li>
+      Consider not displaying all data values in the data table to optimize signal to noise. Focus on showing only important fields, with ancillary fields as optional hidden fields or available through detail views. 
+    </li>
+    <li>
+      Pay attention to the principles of recognition over recall. Display as many fields in the data table as are necessary to accomplish a task or goal without needing further reference.
+    </li>
+    <li>
+      For a more detailed view, link the entity name or identifier to navigate to the detailed view page. It may also be triggered via a primary button on a summary view panel.
+    </li>
+    <li>
+      Data table can be accompanied with a graph or summary statistics to give overview about important data points. Consider brushing and linking between the graphs / plots and the data table. 
+    </li>
+    <li>
+      Individual rows may require actions. A single button may be displayed as a column at the end of the row. If there are multiple actions available, consider icons or a dropdown actions menu on each row. 
+    </li>
+    </ul>
+  </li>
+  <li>
+    <b>Data detail view:</b>
+    <ul>
+      <li>
+        Give proper title and breadcrumb navigation on top header to go back to main data table.
+      </li>
+      <li>
+        Consider giving in-page navigation section if it contains too many sections with lot of data.
+      </li>
+    </ul>
+  </li>
+</ul>
 
 {/*
 ## Variations & Examples
@@ -80,9 +123,9 @@ Aliquip ea ipsum Lorem amet incididunt excepteur Lorem aute proident deserunt co
 
 <Grid container spacing={4}>
   <Grid item md={6}>
-    <TaskFlowCard name="Compare Data" />
+    <TaskFlowCard name="Run Computation" />
   </Grid>
   <Grid item md={6}>
-    <TaskFlowCard name="Compare Data" />
+    <TaskFlowCard name="Contribute Data" />
   </Grid>
 </Grid>

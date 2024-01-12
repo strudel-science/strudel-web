@@ -23,6 +23,7 @@ export const StatusChip: React.FC<StatusChipProps> = ({ status }) => {
       label={statusProps.label}
       icon={statusProps.icon}
       color={statusProps.color}
+      size="small"
     />
   );
 };

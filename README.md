@@ -206,7 +206,13 @@ This website is built with [Gatsby](https://www.gatsbyjs.com/docs), a React-base
     - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
     - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
-If you don't see your change reflected right away, you may need to cancel the running process (ctrl + C) and restart the app (`npm start`). If you've made configuration changes you may also need to run `gatsby clean` before restarting the app.
+### Troubleshooting
+
+If you don't see your change reflected right away, you may need to cancel the running process (ctrl + C) and restart the app (`npm start`).
+
+If new packages have been added to the project since since your last merge, you will need to run `npm install --legacy-peer-deps` to install the new packages.
+
+If you've made configuration changes you may also need to run `npm run clean` aka (`gatsby clean`) before restarting the app.
 
 ## About STRUDEL
 

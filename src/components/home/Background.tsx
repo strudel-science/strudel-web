@@ -14,10 +14,10 @@ export const Background: React.FC = () => {
         leftContent={
           <>
             <HomeSectionTitle>
-              Background
+              Motivation
             </HomeSectionTitle>
             <HomeSectionDescription>
-              The user experience and sustainability of scientific software are pressing challenges that our community is working to address since this essential product impacts the production of knowledge and scientific progress.
+              The user experience and sustainability of scientific software are pressing challenges since these foundational products impact the production of knowledge and scientific progress.
             </HomeSectionDescription>
           </>
         }
@@ -31,33 +31,33 @@ export const Background: React.FC = () => {
                 fontWeight: 'bold',
               }}
             >
-              User Experience in Research Softwares
+              User Experience in Research Software
             </Typography>
             <Box>
               <Grid container columnSpacing={4}>
                 <Grid item sm={3}>
                   <InnerCardItem>
-                    Iterative scientific inquiry results in always evolving user needs
+                    Iterative scientific inquiry results in constantly evolving user needs
                   </InnerCardItem>
                 </Grid>
                 <Grid item sm={3}>
                   <InnerCardItem>
-                    Software sustainability & efficiency needs regular UX investment
+                    Software sustainability & efficiency requires regular UX investment
                   </InnerCardItem>
                 </Grid>
                 <Grid item sm={3}>
                   <InnerCardItem>
-                    Science projects often lack the UX processes & best practices
+                    Science projects often lack UX processes & best practices
                   </InnerCardItem>
                 </Grid>
                 <Grid item sm={3}>
                   <InnerCardItem>
-                    Commercial software practices can’t be directly applied to science softwares
+                    Commercial software practices require translation to science contexts
                   </InnerCardItem>
                 </Grid>
               </Grid>
             </Box>
-            <Typography>User experience is often an afterthought in scientific software that impacts usability, accessibility, design, & functionality of products.</Typography>
+            <Typography>User experience is often an afterthought in scientific software that impacts usability, accessibility, design, & functionality of products. Today the UX community for scientific software is growing and tackling these challenges.</Typography>
           </Stack>
         }
       />            

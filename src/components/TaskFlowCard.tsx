@@ -31,7 +31,7 @@ export const TaskFlowCard: React.FC<TaskFlowCardProps> = ({
     return (
       <TaskFlowCardBase
         title={taskFlow.name}
-        tagline={taskFlow?.tagline}
+        //tagline={taskFlow?.tagline}
         description={showDescription ? taskFlow.intent : undefined}
         path={taskFlow?.path}
         tags={showTags ? taskFlow?.tags : undefined}

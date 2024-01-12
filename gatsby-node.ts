@@ -72,6 +72,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
               tagline
               tags
               intent
+              intentDetails
               exampleUrl
               codeUrl
               figmaUrl
