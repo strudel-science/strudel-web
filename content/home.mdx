@@ -6,10 +6,11 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Hero } from '/src/components/Hero';
 import { PageSection } from '/src/components/PageSection';
 import { ContentCard } from '/src/components/ContentCard';
+import { ResponsiveImageWrapper } from '/src/components/ResponsiveImageWrapper';
 import { Button } from 'gatsby-theme-material-ui';
 import { Link } from 'gatsby';
 
-<PageSection>
+<PageSection containerWidth="lg">
   <Stack
     sx={{
       alignItems: 'center',
@@ -21,6 +22,7 @@ import { Link } from 'gatsby';
         flexShrink: 0,
         maxWidth: '650px',
         minWidth: '300px',
+        pointerEvents: 'none',
         width: '75%',
       }}
     >
@@ -37,45 +39,60 @@ import { Link } from 'gatsby';
     </Typography>
   </Stack>
 </PageSection>
-<Hero containerWidth="xl">
+<Hero containerWidth="lg" sideRibbon="left">
   <Stack spacing={4}>
     <Typography 
       sx={{
-        fontSize: '1.25rem',
+        fontSize: '1.5rem',
         textAlign: 'center',
+        '& > *': {
+          marginBottom: 0,
+          marginTop: 0,
+        }
       }}
     >
-      STRUDEL enables teams to create user-centered software for scientific communities. Plan, Design, & Build better projects using STRUDEL Planning Framework and Design System.
+      STRUDEL enables teams to create user-centered software for scientific communities.
+      
+      Plan, Design, & Build better projects using STRUDEL Planning Framework and Design System.
     </Typography>
     <ContentCard variant="outlined" sx={{ padding: 0 }}>
-      <Grid container>
+      <Grid container sx={{ minHeight: '250px' }}>
         <Grid item md={4}>
-          <Box
+          <Stack
             sx={{
+              justifyContent: 'space-between',
+              height: '100%',
               padding: 3,
             }}
           >
-            ## Get started building
+            <Box>
+              ## Build Scientific UIs
 
-            UI task-flow library & guides to streamline scientific software UI design and development.
-
-            <Button 
-              to="/"
-              size="large"
-              endIcon={<ArrowForwardIcon />}
-              sx={{ color: '#ffffff !important' }}
-            >
-              Learn more
-            </Button>
-          </Box>
+              UI task flow library & guides to streamline scientific software UI design and development.
+            </Box>
+            <Box>
+              <Button 
+                to="/design-system/overview"
+                size="large"
+                variant="contained"
+                endIcon={<ArrowForwardIcon />}
+                sx={{ color: '#ffffff !important' }}
+              >
+                Get started
+              </Button>
+            </Box>
+          </Stack>
         </Grid>
         <Grid item md={8}>
           <Box
             sx={{
+              alignItems: 'center',
               backgroundColor: 'neutral.main',
               borderRadius: '0 4px 4px 0',
+              display: 'flex',
               height: '100%',
               overflow: 'hidden',
+              pointerEvents: 'none',
             }}
           >
             <Grid container spacing={2} padding={2}>
@@ -94,30 +111,128 @@ import { Link } from 'gatsby';
       </Grid>
     </ContentCard>
     <ContentCard variant="outlined" sx={{ padding: 0 }}>
-      <Grid container>
-        <Grid item md={4}>
-          <Box
+      <Grid container sx={{ height: '250px' }}>
+        <Grid item md={4} sx={{ height: '100%' }}>
+          <Stack
             sx={{
+              justifyContent: 'space-between',
+              height: '100%',
               padding: 3,
             }}
           >
-            ## Learn about planning framework
+            <Box>
+              ## Plan your UX strategy
 
-            Framework to help strategize and plan software project is underway.
-          </Box>
+              Framework to help teams incorporate UX into their project plans.
+            </Box>
+            <Box>
+              <Button 
+                to="/planning-framework/overview"
+                size="large"
+                variant="contained"
+                endIcon={<ArrowForwardIcon />}
+                sx={{ color: '#ffffff !important' }}
+              >
+                Learn more
+              </Button>
+            </Box>
+          </Stack>
         </Grid>
-        <Grid item md={8}>
+        <Grid item md={8} sx={{ height: '100%' }}>
           <Box
             sx={{
               backgroundColor: 'neutral.main',
               borderRadius: '0 4px 4px 0',
+              height: '100%',
               overflow: 'hidden',
+              pointerEvents: 'none',
             }}
           >
-            ![STRUDEL header logo](./images/strudel-logo-transp.png)
+            <ResponsiveImageWrapper>
+              ![STRUDEL header logo](./images/typology-diagram.png)
+            </ResponsiveImageWrapper>
           </Box>
         </Grid>
       </Grid>
     </ContentCard>
   </Stack>
 </Hero>
+<PageSection containerWidth="lg" sideRibbon="right">
+  ## Events & News
+
+  <Grid container spacing={4} sx={{ minHeight: '300px' }}>
+    <Grid item md={4}>
+      <ContentCard variant="light" sx={{ height: '100%' }}>
+        <Stack
+          sx={{
+            justifyContent: 'space-between',
+            height: '100%',
+          }}
+        >
+          <Box>
+            ## US-RSE UX working group
+
+            Coming soon!
+          </Box>
+          <Box>
+            <Button 
+              to="/engage/events"
+              size="large"
+              endIcon={<ArrowForwardIcon />}
+            >
+              Read more
+            </Button>
+          </Box>
+        </Stack>
+      </ContentCard>
+    </Grid>
+    <Grid item md={4}>
+      <ContentCard variant="light" sx={{ height: '100%' }}>
+        <Stack
+          sx={{
+            justifyContent: 'space-between',
+            height: '100%',
+          }}
+        >
+          <Box>
+            ## Intro to UX community call
+
+            Coming soon!
+          </Box>
+          <Box>
+            <Button 
+              to="/engage/events"
+              size="large"
+              endIcon={<ArrowForwardIcon />}
+            >
+              Read more
+            </Button>
+          </Box>
+        </Stack>
+      </ContentCard>
+    </Grid>
+    <Grid item md={4}>
+      <ContentCard variant="outlined" sx={{ height: '100%' }}>
+        <Stack
+          sx={{
+            justifyContent: 'space-between',
+            height: '100%',
+          }}
+        >
+          <Typography fontSize="1.25rem">
+            Catch up on our news, events, blogs and more.
+          </Typography>
+          <Box>
+            <Button 
+              to="/engage/news"
+              size="large"
+              variant="contained"
+            >
+              See all updates
+            </Button>
+          </Box>
+        </Stack>
+      </ContentCard>
+    </Grid>
+  </Grid>
+</PageSection>
