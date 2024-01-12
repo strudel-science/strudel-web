@@ -31,7 +31,8 @@ export const ProjectHistoryStepper: React.FC<PropsWithChildren> = ({ children })
           '& .MuiStepConnector-line': {
             borderColor: 'error.main',
             borderLeftStyle: 'dashed',
-            borderLeftWidth: 2
+            borderLeftWidth: 2,
+            minHeight: 32
           },
           '& .MuiStep-root:not(:last-child) .MuiStepContent-root': {
             borderColor: 'error.main',
