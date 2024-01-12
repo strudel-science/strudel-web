@@ -178,7 +178,7 @@ This website is built with [Gatsby](https://www.gatsbyjs.com/docs), a React-base
     Navigate into the new strudel directory and install the dependencies.
 
     ```shell
-    cd strudel
+    cd strudel-web
     npm install --legacy-peer-deps
     ```
     The `--legacy-peer-deps` flag is required any time you use `npm install` in this repo. This is because the gatsby-theme-material-ui library does not fully support gatsby 5.x.x yet, however there are currently no issues using them together.
