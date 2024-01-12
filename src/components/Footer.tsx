@@ -22,7 +22,13 @@ export const Footer: React.FC<FooterProps> = ({
         maxWidth={containerWidth}
         sx={{
           paddingTop: 8,
-          paddingBottom: 8
+          paddingBottom: 8,
+          '& a': {
+            color: 'primary.main'
+          },
+          '& a:visited': {
+            color: 'purple'
+          }
         }}
       >
        

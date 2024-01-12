@@ -20,7 +20,7 @@ const globalTheme: Theme = createTheme({
         main: '#D6B5FF'
       },
       info: {
-        main: '#180333'
+        main: '#180333',
       },
       success: {
         main: '#C8E6C9'
