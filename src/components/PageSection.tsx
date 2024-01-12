@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Box, Container, Breakpoint, BoxProps } from '@mui/material';
 import { PageContainer } from './PageContainer';
 
-interface PageSectionProps extends BoxProps {
+export interface PageSectionProps extends BoxProps {
   /** Optionally wrap the inner content in its own container and give it a max width. */
   containerWidth?: false | Breakpoint | undefined;
   /** Optionally include red ribbon on the left or right side */
@@ -25,6 +25,7 @@ export const PageSection: React.FC<PageSectionProps> = ({
       sx={{
         paddingBottom: 4,
         paddingTop: 4,
+        position: 'relative',
         ...sx
       }} 
       {...rest}

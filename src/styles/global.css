@@ -11,7 +11,7 @@ body,
   min-height: 100vh;
 }
 
-a, a:visited {
+a:not(.MuiButton-root), a:visited:not(.MuiButton-root) {
   text-decoration: none;
   color: inherit;
 }

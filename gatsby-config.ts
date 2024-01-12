@@ -1,4 +1,5 @@
 import type { GatsbyConfig } from "gatsby"
+import { round } from "lodash"
 
 /**
  * Gatsby site configuration options and plugins
@@ -39,6 +40,7 @@ const config: GatsbyConfig = {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 1200,
+              wrapperStyle: (fluidResult: any) => `flex:${round(fluidResult.aspectRatio, 2)};`,
             },
           },
         ],

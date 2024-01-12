@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from 'react';
-import { PageSection } from './PageSection';
+import { PageSection, PageSectionProps } from './PageSection';
 import { Breakpoint } from '@mui/material';
 
 interface HeroProps extends PropsWithChildren {
@@ -10,13 +10,15 @@ interface HeroProps extends PropsWithChildren {
 /**
  * Full width purple page section for area towards the top of a page.
  */
-export const Hero: React.FC<HeroProps> = ({
+export const Hero: React.FC<PageSectionProps> = ({
   containerWidth = 'md',
+  sideRibbon,
   children 
 }) => {
   return (
     <PageSection
       containerWidth={containerWidth}
+      sideRibbon={sideRibbon}
       sx={{
         backgroundColor: 'info.main',
         color: 'white',

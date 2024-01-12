@@ -23,8 +23,12 @@ export const StyledMarkdown: React.FC<PropsWithChildren> = ({ children }) => {
         '& *:last-child': {
           marginBottom: 0,
         },
-        '& a, & a:visited': {
+        '& a:not(.MuiButton-root), & a:visited:not(.MuiButton-root)': {
           color: 'primary.main'
+        },
+        '& a p': {
+          marginBottom: 0,
+          marginTop: 0,
         }
       }}
     >
