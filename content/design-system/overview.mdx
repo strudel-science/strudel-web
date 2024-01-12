@@ -3,52 +3,102 @@ id: 'design-system-overview'
 title: 'Design System'
 subtitle: 'UI templates, Task Flows, & interactive components'
 ---
-import { Grid, StepLabel, StepContent } from '@mui/material';
+import { Box, Grid, StepLabel, StepContent, Button, Typography } from '@mui/material';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Hero } from '/src/components/Hero';
 import { PageContainer } from '/src/components/PageContainer';
 import { ContentCard } from '/src/components/ContentCard';
+import { PageSection } from '/src/components/PageSection';
 import { ContentStepper, ContentStep } from '/src/components/ContentStepper';
 import { Link } from 'gatsby';
 
 <Hero>
-  STRUDEL Design System provides a set of reusable components and patterns along with guidelines for designing and implementing user interfaces for scientific software. This design system is distinct since it is organized around 'Task Flows', which are the step wise flows a user takes to accomplish specified tasks. 
+  STRUDEL Design System provides a set of reusable components and patterns along with guidelines for designing and implementing user interfaces for scientific software. This design system is distinct since it is organized around Task Flows, which are the stepwise flows a user takes to accomplish specified tasks. 
 
-  ## The STRUDEL Design System
+  <Box
+    sx={{
+      display: 'inline-block',
+      marginTop: 2
+    }}
+  >
+    <Link to="/design-system/task-flows/overview">
+      <Button variant="contained">
+        Explore Task Flows
+      </Button>
+    </Link>
+  </Box>
+</Hero>
+<PageSection>
+  ## Why STRUDEL Design System?
 
   <Grid container spacing={4}>
     <Grid item md={4}>
-      <ContentCard>
+      <ContentCard sx={{ height: '100%' }}>
         #### Designed for scientific software
 
-        Specifically designed for common patterns seen in scientific UIs that can be applied across different scientific domains
+        Specifically designed for common patterns seen in scientific UIs that can be applied across different scientific domains.
       </ContentCard>
     </Grid>
     <Grid item md={4}>
-      <ContentCard>
-        #### Focused on UI functionality
+      <ContentCard sx={{ height: '100%' }}>
+        #### Focuses on how the UI should function
 
-       Focuses on the series of steps users take as part of a larger journey to improve a <Link href="/about/glossary#workflow">workflow's</Link> user experience
+       It focuses on the series of steps taken as part of a larger workflow. This provides the big picture of user journeys & aid to improve user experience.
       </ContentCard>
     </Grid>
     <Grid item md={4}>
-      <ContentCard>
-        #### Built on 10+ years of science UX expertise
+      <ContentCard sx={{ height: '100%' }}>
+        #### Good UX from experts in the sciences is baked in
 
-        Informed by collective UX experience in science software to encapsulate strong UX practices
+        Informed by over a decade of collective UX experience in the sciences and encapsulates good UX practices.
       </ContentCard>
+    </Grid>
+  </Grid>
+</PageSection>
+<Hero>
+  ## STRUDEL Products
+  <Grid container spacing={4}>
+    <Grid item md={6}>
+      <Link to="/design-system/task-flows/compare-data">
+        <Button 
+          size="large" 
+          endIcon={<ArrowForwardIcon />} 
+          sx={{ 
+            color: 'secondary.main',
+            paddingLeft: 0,
+            paddingRight: 0,
+            '& h3': {
+              marginBottom: 0
+            }
+          }}
+        >
+          ### Design Templates
+        </Button>
+      </Link>
+      Task Flows are visualized through step-by-step mockups (UI screens) documenting the process of completing a task and illustrating a user's journey through a GUI. They also have corresponding design & usage guidelines.
+    </Grid>
+    <Grid item md={6}>
+      <Link to="/design-system/code-library">
+        <Button 
+          size="large" 
+          endIcon={<ArrowForwardIcon />} 
+          sx={{ 
+            color: 'secondary.main',
+            paddingLeft: 0,
+            paddingRight: 0,
+            '& h3': {
+              marginBottom: 0
+            }
+          }}
+        >
+          ### Code Library
+        </Button>
+      </Link>
+      Task Flows have code templates implemented in our developer toolkit, STRUDEL Kit. STRUDEL Kit uses the React JavaScript framework and is based on the popular Material UI (MUI) Components library.
     </Grid>
   </Grid>
 </Hero>
 <PageContainer>
-  ## STRUDEL products
-  STRUDEL Task Flows consists of a visual design template and a code library.
-  
-  ### Design template
-  Task Flows are visualized through step-by-step mockups (UI screens) documenting the process of completing a task and illustrating a user's journey through a GUI. They also have corresponding design & usage guidelines.
-
-  ### Code library
-  Task Flows have their code templates implemented in the STRUDEL UI Code Library ('strudel-kit'). The Strudel UI Code Library uses the React JavaScript framework and is based on the popular Material UI (MUI) Components library.
-
   ## How to use the STRUDEL Design System
 
   <ContentStepper>

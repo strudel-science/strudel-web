@@ -13,7 +13,7 @@ export interface PageSectionProps extends BoxProps {
  * Generic wrapper component for sections in a page.
  */
 export const PageSection: React.FC<PageSectionProps> = ({
-  containerWidth,
+  containerWidth = 'md',
   sideRibbon,
   children,
   sx,
