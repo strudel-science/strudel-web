@@ -28,6 +28,10 @@ interface TaskFlowPageContext {
  */
 const TaskFlowLayout: React.FC<PageProps<any, TaskFlowPageContext>> = ({ pageContext, children }) => {
   const thumbnailImg = getImageFromFileNode(pageContext.frontmatter.iconImage);
+  const hasLiveExample = pageContext.frontmatter.exampleUrl && pageContext.frontmatter.exampleUrl !== '';
+  const hasCode = pageContext.frontmatter.codeUrl && pageContext.frontmatter.codeUrl !== '';
+  const hasFigma = pageContext.frontmatter.figmaUrl && pageContext.frontmatter.figmaUrl !== '';
+
   return (
     <BaseLayout hasSidebar>
       <PageHeader>
@@ -77,38 +81,67 @@ const TaskFlowLayout: React.FC<PageProps<any, TaskFlowPageContext>> = ({ pageCon
           >
             Intent
           </Typography>
-          <p>
-            {pageContext.frontmatter.intent}
-          </p>
-          <p>
-            {pageContext.frontmatter.intentDetails}
-          </p>
-          <Box>
-            <Grid container spacing={2} width="75%">
-              <Grid item md={4}>
-                <MuiLink href={pageContext.frontmatter.exampleUrl} target='_blank'>
-                  <Button variant="contained" fullWidth startIcon={<VisibilityIcon />}>
-                    Live Example
-                  </Button>
-                </MuiLink>
-              </Grid>
-              <Grid item md={4}>
-                <MuiLink href={pageContext.frontmatter.codeUrl} target='_blank'>
-                  <Button variant="contained" fullWidth startIcon={<CodeIcon />}>
-                    Code
-                  </Button>
-                </MuiLink>
-              </Grid>
-              <Grid item md={4}>
+          {pageContext.frontmatter.intent && (
+            <p>
+              {pageContext.frontmatter.intent}
+            </p>
+          )}
+          {pageContext.frontmatter.intentDetails && (
+            <p>
+              {pageContext.frontmatter.intentDetails}
+            </p>
+          )}
+        </Stack>
+        <Box
+          sx={{
+            marginTop: 4,
+          }}
+        >
+          <Grid container spacing={2} width="75%">
+            <Grid item md={4}>
+              {hasFigma && (
                 <MuiLink href={pageContext.frontmatter.figmaUrl} target='_blank'>
                   <Button variant="contained" fullWidth startIcon={<DrawIcon />}>
                     Design Templates
                   </Button>
                 </MuiLink>
-              </Grid>
+              )}
+              {!hasFigma && (
+                <Button variant="contained" fullWidth startIcon={<DrawIcon />} disabled aria-label="Design templates coming soon!">
+                  Coming soon!
+                </Button>
+              )}
             </Grid>
-          </Box>
-        </Stack>
+            <Grid item md={4}>
+              {hasLiveExample && (
+                <MuiLink href={pageContext.frontmatter.exampleUrl} target='_blank'>
+                  <Button variant="contained" fullWidth startIcon={<VisibilityIcon />}>
+                    Live Example
+                  </Button>
+                </MuiLink>
+              )}
+              {!hasLiveExample && (
+                <Button variant="contained" fullWidth startIcon={<VisibilityIcon />} disabled aria-label="Live example coming soon!">
+                  Coming soon!
+                </Button>
+              )}
+            </Grid>
+            <Grid item md={4}>
+              {hasCode && (
+                <MuiLink href={pageContext.frontmatter.codeUrl} target='_blank'>
+                  <Button variant="contained" fullWidth startIcon={<CodeIcon />}>
+                    Code
+                  </Button>
+                </MuiLink>
+              )}
+              {!hasCode && (
+                <Button variant="contained" fullWidth startIcon={<CodeIcon />} disabled aria-label="Code templates coming soon!">
+                  Coming soon!
+                </Button>
+              )}
+            </Grid>
+          </Grid>
+        </Box>
       </Hero>
       <PageContainer>
         <StyledMarkdown>

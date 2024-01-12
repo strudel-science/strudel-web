@@ -2,10 +2,13 @@ import { Theme, createTheme } from "@mui/material";
 
 /**
  * Material UI custom theme object.
- * This is where the color palette and default 
- * component styles and props can be defined.
+ * This is where the color palette and other default
+ * static theme values are defined.
+ * 
+ * This gets passed into `theme` to create the final theme object.
+ * This is done so that component themes have access to globalTheme values.
  */
-const theme: Theme = createTheme({
+const globalTheme: Theme = createTheme({
     palette: {
       primary: {
         main: '#0143CF',
@@ -33,26 +36,31 @@ const theme: Theme = createTheme({
         light: '#F5F4F9',
         dark: '#675E73'
       }
-    },
+    }
+});
+
+/**
+ * Using the globalTheme, set default component styles and props
+ */
+const theme: Theme = createTheme({
     components: {
-      // Name of the component
       MuiButtonBase: {
         defaultProps: {
-          // The props to change the default for.
-          disableRipple: true, // No more ripple, on the whole application 💣!
+          disableRipple: true,
         },
+        styleOverrides: {
+          root: {
+            '&.Mui-disabled.MuiButton-contained': {
+              backgroundColor: globalTheme.palette.neutral?.light,
+              color: globalTheme.palette.neutral?.dark,
+              cursor: 'not-allowed',
+              opacity: 0.6,
+              pointerEvents: 'all',
+            }
+          }
+        }
       },
-      // MuiToolbar: {
-      //   styleOverrides: {
-      //     regular: {
-      //       '@media (min-width: 0px)': {
-      //         paddingLeft: 0,
-      //         paddingRight: 0
-      //       }
-      //     }
-      //   }
-      // }
     },
-});
+}, globalTheme);
 
 export default theme;
