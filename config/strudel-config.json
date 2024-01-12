@@ -110,15 +110,15 @@
           "layoutComponent": "PageLayout",
           "children": [
             {
-              "name": "Getting Started",
-              "path": "/design-system/code-library/getting-started",
-              "markdownId": "code-library-getting-started",
+              "name": "Overview",
+              "path": "/design-system/code-library/overview",
+              "markdownId": "code-library-overview",
               "layoutComponent": "PageLayout"
             },
             {
-              "name": "React Templates",
-              "path": "/design-system/code-library/react-templates",
-              "markdownId": "code-library-react-templates",
+              "name": "Tutorials",
+              "path": "/design-system/code-library/tutorials",
+              "markdownId": "code-library-tutorials",
               "layoutComponent": "PageLayout"
             }
           ]
