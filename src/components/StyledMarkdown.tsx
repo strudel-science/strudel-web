@@ -13,12 +13,12 @@ export const StyledMarkdown: React.FC<PropsWithChildren> = ({ children }) => {
       sx={{
         '& h1, & h2, & h3, & h4, & h5, & h6': {
           marginBottom: 2,
-          marginTop: 2,
+          marginTop: 6,
         },
         '& h2:not(:first-of-type)': {
           borderTop: '2px dotted',
           borderTopColor: 'error.light',
-          paddingTop: 2,
+          paddingTop: 3,
         },
         '& *:last-child': {
           marginBottom: 0,
