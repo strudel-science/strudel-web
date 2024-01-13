@@ -13,6 +13,7 @@ interface HeroProps extends PropsWithChildren {
 export const Hero: React.FC<PageSectionProps> = ({
   containerWidth = 'md',
   sideRibbon,
+  sx,
   children 
 }) => {
   return (
@@ -23,6 +24,7 @@ export const Hero: React.FC<PageSectionProps> = ({
         backgroundColor: 'info.main',
         color: 'white',
         fontSize: '1.15em',
+        ...sx
       }}
     >
       {children}

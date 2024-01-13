@@ -17,7 +17,8 @@ export const Footer: React.FC<FooterProps> = ({
       sx={{
         borderTop: '1px solid',
         borderTopColor: 'neutral.main',
-        backgroundColor:'neutral.main'
+        backgroundColor:'neutral.main',
+        marginTop: 4,
       }}
     >
       <Container
