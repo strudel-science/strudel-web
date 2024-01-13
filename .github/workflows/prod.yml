@@ -43,9 +43,7 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Gatsby
-        env:
-          PREFIX_PATHS: 'true'
-        run: ${{ steps.detect-package-manager.outputs.manager }} run build --prefix-paths
+        run: ${{ steps.detect-package-manager.outputs.manager }} run build
       - name: Pushes to another repository
         uses: cpina/github-action-push-to-another-repository@main
         env:
