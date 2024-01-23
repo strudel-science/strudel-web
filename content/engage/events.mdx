@@ -4,13 +4,80 @@ title: 'Events'
 subtitle: ''
 ---
 
+import { Box, Grid, Stack, Typography, StepLabel, StepContent } from '@mui/material';
 import { Hero } from '/src/components/Hero';
 import { PageContainer } from '/src/components/PageContainer';
+import { ContentCard } from '/src/components/ContentCard';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Button } from 'gatsby-theme-material-ui';
+import EventIcon from '@mui/icons-material/Event';
+import { ResponsiveImageWrapper } from '/src/components/ResponsiveImageWrapper';
 
 <Hero>
   
-  ## Coming Soon!
+  ## Upcoming Events
+
+  <ContentCard variant="outlined" sx={{ 
+    marginTop: '32px',
+    padding: 0 }}>
+     <Grid container sx={{ minHeight: '250px' }}>
+        <Grid item md={8}>
+          <Stack
+            sx={{
+              minHeight: '250px',
+              justifyContent: 'space-between',
+              height: '100%',
+              padding: 3,
+            }}
+          >
+            <Box>
+              ### Community call: Intro to UX
+              <Stack 
+                sx={{
+                spacing: 1,
+                }}
+              >
+                <EventIcon />  Wednesday, Feb 21, 9am PST
+              </Stack>
+
+              Intro to UX blurb...
+
+            </Box>
+            <Box>
+              <Button 
+                to="/engage/event-details/Feb-2024-intro-to-ux"
+                size="large"
+                variant="contained"
+                endIcon={<ArrowForwardIcon />}
+                sx={{ color: '#ffffff !important' }}
+              >
+                Learn more
+              </Button>
+            </Box>
+          </Stack>
+        </Grid>
+        <Grid item md={4} sx={{ height: '100%' }}>
+          <Box
+            sx={{
+              backgroundColor: 'neutral.main',
+              borderRadius: '0 10px 10px 0',
+              height: '100%',
+              overflow: 'hidden',
+              pointerEvents: 'none',
+            }}
+          >
+            <ResponsiveImageWrapper>
+              ![Intro to UX image](./images/news-and-events/intro-to-ux.png)
+            </ResponsiveImageWrapper>
+          </Box>
+        </Grid>
+      </Grid>
+    </ContentCard>
+    
 
 </Hero>
 <PageContainer>
+
+
+
 </PageContainer>
