@@ -156,8 +156,21 @@
         {
           "name": "News",
           "path": "/engage/news",
-          "markdownId": "engage-news",
-          "layoutComponent": "PageLayout"
+          "redirectTo": "/engage/news/overview",
+          "children": [
+            {
+              "name": "Overview",
+              "path": "/engage/news/overview",
+              "markdownId": "news-overview",
+              "layoutComponent": "PageLayout"
+            },
+            {
+              "name": "STRUDEL Design System: First Release",
+              "path": "/engage/news/strudel-design-system-first-release",
+              "markdownId": "news-ds-first-release",
+              "layoutComponent": "PageLayout"
+            }
+          ]
         }
       ]
     },

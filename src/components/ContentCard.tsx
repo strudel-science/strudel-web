@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Box, BoxProps } from '@mui/material';
 
 interface ContentCardProps extends BoxProps {
-  variant?: 'dark' | 'light' | 'outlined';
+  variant?: 'dark' | 'light' | 'outlined' | 'dot-outlined';
 }
 
 /**
@@ -19,10 +19,10 @@ export const ContentCard: React.FC<ContentCardProps> = ({
       {...rest}
       sx={{
         backgroundColor: variant === 'dark' ? 'secondary.main' : variant === 'light' ? 'neutral.main' : 'none',
-        borderColor: 'primary.main',
+        borderColor: variant === 'dot-outlined' ? 'error.main' : 'primary.main',
         borderRadius: 4,
-        borderStyle: 'solid',
-        borderWidth: variant === 'outlined' ? 1 : 0,
+        borderStyle: variant === 'dot-outlined' ? 'dotted' : 'solid',
+        borderWidth: variant === 'outlined' ? 1 : variant === 'dot-outlined' ? 2 : 0,
         color: variant === 'outlined' ? 'inherit' : 'black',
         fontSize: '1rem',
         padding: 3,

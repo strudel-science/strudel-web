@@ -1,0 +1,42 @@
+---
+id: 'news-ds-first-release'
+title: 'STRUDEL Design System is Live!'
+subtitle: 'By Author - Feb 21, 2024'
+---
+
+import { Hero } from '/src/components/Hero';
+import { PageContainer } from '/src/components/PageContainer';
+import { Box, Grid, Stack, Typography} from '@mui/material';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { ResponsiveImageWrapper } from '/src/components/ResponsiveImageWrapper';
+
+<Hero>
+
+  <Grid container minHeight='250px' spacing={8} alignItems='center'>
+        <Grid item md={8}>
+            Lede / Overview blurrrb Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque elit eu magna eleifend interdum. Aenean posuere accumsan aliquet
+        </Grid>
+        <Grid item md={4}>
+            <Box
+                sx={{
+                backgroundColor: 'neutral.main',
+                height: '100%',
+                overflow: 'hidden',
+                pointerEvents: 'none',
+                }}
+            >
+                <ResponsiveImageWrapper>
+                ![Intro to UX image](../../../content/images/news-and-events/intro-to-ux.png)
+                </ResponsiveImageWrapper>
+            </Box>
+        </Grid>
+    </Grid>
+
+</Hero>
+<PageContainer>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+    ## Section
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+
+</PageContainer>
