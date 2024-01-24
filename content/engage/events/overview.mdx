@@ -1,5 +1,5 @@
 ---
-id: 'engage-events'
+id: 'events-overview'
 title: 'Events'
 subtitle: ''
 ---
@@ -34,6 +34,7 @@ import { ResponsiveImageWrapper } from '/src/components/ResponsiveImageWrapper';
               ### Community call: Intro to UX
               <Stack 
                 sx={{
+                direction: 'row',
                 spacing: 1,
                 }}
               >
@@ -45,7 +46,7 @@ import { ResponsiveImageWrapper } from '/src/components/ResponsiveImageWrapper';
             </Box>
             <Box>
               <Button 
-                to="/engage/event-details/Feb-2024-intro-to-ux"
+                to="/engage/events/feb-21-2024-intro-to-ux"
                 size="large"
                 variant="contained"
                 endIcon={<ArrowForwardIcon />}
@@ -56,7 +57,7 @@ import { ResponsiveImageWrapper } from '/src/components/ResponsiveImageWrapper';
             </Box>
           </Stack>
         </Grid>
-        <Grid item md={4} sx={{ height: '100%' }}>
+        <Grid item md={4} sx={{ minHeight: '250px' }}>
           <Box
             sx={{
               backgroundColor: 'neutral.main',
@@ -67,7 +68,7 @@ import { ResponsiveImageWrapper } from '/src/components/ResponsiveImageWrapper';
             }}
           >
             <ResponsiveImageWrapper>
-              ![Intro to UX image](./images/news-and-events/intro-to-ux.png)
+              ![Intro to UX image](../../../content/images/news-and-events/intro-to-ux.png)
             </ResponsiveImageWrapper>
           </Box>
         </Grid>
