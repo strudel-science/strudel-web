@@ -137,8 +137,21 @@
         {
           "name": "Events",
           "path": "/engage/events",
-          "markdownId": "engage-events",
-          "layoutComponent": "PageLayout"
+          "redirectTo": "/engage/events/overview",
+          "children": [
+            {
+              "name": "Overview",
+              "path": "/engage/events/overview",
+              "markdownId": "events-overview",
+              "layoutComponent": "PageLayout"
+            },
+            {
+              "name": "Feb 21 - Intro to UX",
+              "path": "/engage/events/feb-21-2024-intro-to-ux",
+              "markdownId": "events-feb-21-2024-intro-to-ux",
+              "layoutComponent": "PageLayout"
+            }
+          ]
         },
         {
           "name": "News",
