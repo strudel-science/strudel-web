@@ -108,13 +108,13 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({
   )
 };
 
-const DesktopOnly = styled(Box)(({ theme }) => ({
+export const DesktopOnly = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     display: 'none',
   },
 }));
 
-const MobileOnly = styled(Box)(({ theme }) => ({
+export const MobileOnly = styled(Box)(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     display: 'none',
   },

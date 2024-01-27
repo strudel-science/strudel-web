@@ -44,7 +44,7 @@ const TaskFlowLayout: React.FC<PageProps<any, TaskFlowPageContext>> = ({ pageCon
             >
               {pageContext.frontmatter.title}
             </Typography>
-            <Stack direction="row" spacing={1}>
+            <Stack direction="row" spacing={1} flexWrap="wrap">
               {pageContext.frontmatter.tags?.map((tag, i) => (
                 <Chip 
                   key={`${tag}-${i}`}
