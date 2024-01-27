@@ -9,6 +9,7 @@ import { PageSection } from '/src/components/PageSection';
 import { ContentCard } from '/src/components/ContentCard';
 import { ResponsiveImageWrapper } from '/src/components/ResponsiveImageWrapper';
 import { Button } from 'gatsby-theme-material-ui';
+import { useTheme } from '@mui/system';
 
 <PageSection containerWidth="lg">
   <Stack
@@ -59,7 +60,7 @@ import { Button } from 'gatsby-theme-material-ui';
     </Typography>
     <ContentCard variant="outlined" sx={{ padding: 0 }}>
       <Grid container sx={{ minHeight: '250px' }}>
-        <Grid item md={4}>
+        <Grid item md={4} xs={12}>
           <Stack
             sx={{
               justifyContent: 'space-between',
@@ -78,14 +79,14 @@ import { Button } from 'gatsby-theme-material-ui';
                 size="large"
                 variant="contained"
                 endIcon={<ArrowForwardIcon />}
-                sx={{ color: '#ffffff !important' }}
+                sx={{ color: '#ffffff !important', marginTop: '16px'}}
               >
                 Get started
               </Button>
             </Box>
           </Stack>
         </Grid>
-        <Grid item md={8}>
+        <Grid item md={8} xs={12}>
           <Box
             sx={{
               alignItems: 'center',
@@ -98,14 +99,14 @@ import { Button } from 'gatsby-theme-material-ui';
             }}
           >
             <Grid container spacing={2} padding={2}>
-              <Grid item md={4}>
+              <Grid item md={4} xs={4}>
                 ![Search-filter-repository](./images/task-flows/search-data-repository/1.Search-filter-repository.png)
               </Grid>
-              <Grid item md={4}>
-                ![Search-filter-repository](./images/task-flows/search-data-repository/2.Dataset-details.png)
+              <Grid item md={4} xs={4}>
+                ![Dataset details](./images/task-flows/search-data-repository/2.Dataset-details.png)
               </Grid>
-              <Grid item md={4}>
-                ![Search-filter-repository](./images/task-flows/search-data-repository/3.Download-queue.png)
+              <Grid item md={4} xs={4}>
+                ![Download queue](./images/task-flows/search-data-repository/3.Download-queue.png)
               </Grid>
             </Grid>
           </Box>
@@ -113,8 +114,8 @@ import { Button } from 'gatsby-theme-material-ui';
       </Grid>
     </ContentCard>
     <ContentCard variant="outlined" sx={{ padding: 0 }}>
-      <Grid container sx={{ height: '250px' }}>
-        <Grid item md={4} sx={{ height: '100%' }}>
+      <Grid container sx={{ minHeight: '250px' }}>
+        <Grid item md={4} xs={12} >
           <Stack
             sx={{
               justifyContent: 'space-between',
@@ -133,26 +134,31 @@ import { Button } from 'gatsby-theme-material-ui';
                 size="large"
                 variant="contained"
                 endIcon={<ArrowForwardIcon />}
-                sx={{ color: '#ffffff !important' }}
+                sx={{ color: '#ffffff !important' ,  marginTop: '16px'}}
               >
                 Learn more
               </Button>
             </Box>
           </Stack>
         </Grid>
-        <Grid item md={8} sx={{ height: '100%' }}>
+        <Grid item md={8} xs={12}>
           <Box
             sx={{
+              alignItems: 'center',
               backgroundColor: 'neutral.main',
               borderRadius: '0 15px 15px 0',
+              display: 'flex',
               height: '100%',
               overflow: 'hidden',
               pointerEvents: 'none',
             }}
           >
-            <ResponsiveImageWrapper>
-              ![STRUDEL header logo](./images/typology-diagram.png)
-            </ResponsiveImageWrapper>
+            <Grid container spacing={2} padding={2}>
+              <Grid item  xs={12}>
+                ![STRUDEL header logo](./images/typology-diagram.png)
+              </Grid>
+            </Grid>
+
           </Box>
         </Grid>
       </Grid>
@@ -176,7 +182,7 @@ import { Button } from 'gatsby-theme-material-ui';
 
             Details coming soon!
           </Box>
-          <Box>
+          <Box marginTop="16px">
             <Button 
               to="/engage/events/overview"
               size="large"
@@ -201,7 +207,7 @@ import { Button } from 'gatsby-theme-material-ui';
 
             STRUDEL helped form a working group dedicated to UX in the US-RSE community. Visit the US-RSE site for more information and join us on Slack!
           </Box>
-          <Box>
+          <Box marginTop="16px">
             <Button 
               to="https://us-rse.org/wg/ux/"
               target="_blank"
@@ -225,7 +231,7 @@ import { Button } from 'gatsby-theme-material-ui';
           <Typography fontSize="1.25rem">
             Catch up on our news, events, blogs and more.
           </Typography>
-          <Box>
+          <Box marginTop="16px">
             <Button 
               to="/engage/news"
               size="large"

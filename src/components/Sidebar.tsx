@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Accordion, AccordionDetails, AccordionSummary, Box, List, ListItem, Stack, Typography } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Box, BoxProps, List, ListItem, Stack, Typography, styled } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Link, graphql, useStaticQuery } from 'gatsby';
 import { useLocation, useMatch } from '@gatsbyjs/reach-router';
@@ -18,12 +18,16 @@ interface PagesResult {
   }
 }
 
+interface SidebarProps extends BoxProps {
+  rootPage?: StrudelPage;
+}
+
 /**
  * Sidebar component that dynamically displays page links based on the current 
  * page and its position in the navigational architecture.
  * The architecture and link metadata are pulled from strudel-config.json.
  */
-export const Sidebar: React.FC = () => {
+export const Sidebar: React.FC<SidebarProps> = ({ rootPage, sx, ...rest }) => {
   const navigation = useNavigation();
   const page = usePage();
   const result = useStaticQuery<PagesResult>(graphql`
@@ -54,7 +58,7 @@ export const Sidebar: React.FC = () => {
   const pages = result.configJson.pages;
   const currentPath = page?.path;
   const topLevelParentPage = page && getTopLevelParent(page);
-  const sidebarRootPage = pages.find((page) => page.path === topLevelParentPage?.path);
+  const sidebarRootPage = rootPage || pages.find((page) => page.path === topLevelParentPage?.path);
     
   /**
    * If the current page is within a collapsible section,
@@ -75,25 +79,28 @@ export const Sidebar: React.FC = () => {
   return (
     <Box
       component="aside"
-      sx={{ 
-        position: 'relative', 
-        width: '250px' 
+      {...rest}
+      sx={{
+        backgroundColor: 'info.main', 
+        borderRight: '1px solid',
+        borderRightColor: 'neutral.main',
+        height: '100%',
+        position: 'fixed', 
+        width: '250px',
+        zIndex: 100,
+        ...sx
       }}
     >
       <Box
         component="nav"
         sx={{ 
-          backgroundColor: 'info.main', 
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          zIndex: 100,
-          paddingTop: '3rem',
-          width: '250px',
-          height: '100%',
-          borderRight: '1px solid',
-          borderRightColor: 'neutral.main',
           color: 'secondary.main',
+          height: '100%',
+          left: 0,
+          paddingTop: '3rem',
+          position: 'absolute',
+          top: 0,
+          width: '100%',
         }}
       >
         <List>
@@ -218,7 +225,7 @@ export const Sidebar: React.FC = () => {
   )
 };
 
-const getSideBarItemStyles = (page: StrudelPage, currentPath?: string, isAccordionRoot?: boolean) => {
+export const getSideBarItemStyles = (page: StrudelPage, currentPath?: string, isAccordionRoot?: boolean) => {
   return {
     backgroundColor: page.path === currentPath && !isAccordionRoot ? 'secondary.main' : 'inherit',
     color: page.path === currentPath && !isAccordionRoot ? 'info.main' : 'inherit',
