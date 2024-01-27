@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, Breadcrumbs, Stack, Typography } from '@mui/material';
+import { Box, Breadcrumbs, Stack, Typography, styled } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import { Navbar } from '../Navbar';
 import { Footer } from '../Footer';
@@ -7,6 +7,7 @@ import { Sidebar } from '../Sidebar';
 import { useBreadcrumbs } from '../../hooks/useBreadcrumbs';
 import { HeadProps, Link } from 'gatsby';
 import Seo from '../Seo';
+import { MobileNav } from '../MobileNav';
 
 interface BaseLayoutProps extends React.PropsWithChildren {
   hasSidebar?: boolean;
@@ -32,7 +33,12 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({
         flexDirection: 'column'
       }}
     >
-      <Navbar />
+      <DesktopOnly>
+        <Navbar />
+      </DesktopOnly>
+      <MobileOnly>
+        <MobileNav />
+      </MobileOnly>
       <Stack
         direction="row"
         sx={{
@@ -40,7 +46,9 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({
         }}
       >
         {hasSidebar && (
-          <Sidebar />
+          <DesktopOnly>
+            <Sidebar />
+          </DesktopOnly>
         )}
         <Box
           sx={{
@@ -99,6 +107,18 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({
     </Box>
   )
 };
+
+const DesktopOnly = styled(Box)(({ theme }) => ({
+  [theme.breakpoints.down('md')]: {
+    display: 'none',
+  },
+}));
+
+const MobileOnly = styled(Box)(({ theme }) => ({
+  [theme.breakpoints.up('md')]: {
+    display: 'none',
+  },
+}));
 
 export const Head:React.FC<HeadProps<any, any>> = ({ pageContext }) => {
   return (
