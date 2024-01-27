@@ -5,9 +5,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import CloseIcon from '@mui/icons-material/Close';
 import { Link, graphql, useStaticQuery } from 'gatsby';
-import { useLocation, useMatch } from '@gatsbyjs/reach-router';
-import { NavigationActionType, NavigationState, useNavigation } from '../context/NavigationProvider';
-import { findPageByPath, flattenPages, getCurrentPath, getTopLevelParent } from '../utils/utils';
 import { StrudelPage } from '../types/strudel-config';
 import { usePage } from '../hooks/usePage';
 import { Sidebar, getSideBarItemStyles } from './Sidebar';
@@ -260,6 +257,7 @@ export const MobileNav: React.FC = () => {
                     >
                       {navbarPage.children && (
                         <Button
+                          endIcon={<ExpandMoreIcon sx={{ transform: 'rotate(270deg)' }} />}
                           onClick={() => handleTopLevelNavClick(navbarPage)}
                           sx={{
                             borderBottom: '1px solid',
@@ -268,7 +266,8 @@ export const MobileNav: React.FC = () => {
                             borderTop: i === 0 ? '1px solid' : 'none',
                             borderTopColor: 'secondary.dark',
                             color: 'secondary.main',
-                            display: 'block',
+                            display: 'flex',
+                            justifyContent: 'space-between',
                             fontSize: '1rem',
                             fontWeight: 'normal',
                             padding: '0.5rem 1rem',
