@@ -73,6 +73,8 @@ export const getCurrentPath = (pathname: string, pathPrefix?: string) => {
   if (pathPrefix && `/${pathSegments[0]}` === pathPrefix) {
     currentPath = pathSegments.filter((d, i) => i > 0).join('/');
     currentPath = `/${currentPath}`;
+  } else if (currentPath === '') {
+    currentPath = '/';
   }
   return currentPath;
 }

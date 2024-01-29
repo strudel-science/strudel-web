@@ -26,7 +26,13 @@ interface PagesResult {
 export const MobileNav: React.FC = () => {
   const page = usePage();
   const [showSidebar, setShowSidebar] = useState(false);
-  const [showRootPages, setShowRootPages] = useState(page?.parent ? false : true);
+  const [showRootPages, setShowRootPages] = useState(() => {
+    if (!page || page?.parent?.path === '/') {
+      return true;
+    } else {
+      return false;
+    }
+  });
   const [sidebarRootPage, setSidebarRootPage] = useState<StrudelPage>();
   const result = useStaticQuery<PagesResult>(graphql`
     query {
@@ -139,8 +145,24 @@ export const MobileNav: React.FC = () => {
           </Toolbar>
         </AppBar>
       </Box>
+      {showSidebar && (
+        <Box
+          onClick={handleToggleSidebar}
+          sx={{
+            backgroundColor: 'black',
+            height: '100%',
+            opacity: 0.5,
+            position: 'fixed',
+            width: '100%',
+            zIndex: 600,
+          }}
+        />
+      )}
       <Box
         sx={{
+          backgroundColor: 'info.main',
+          borderRight: '1px solid',
+          borderRightColor: 'neutral.main',
           height: '100%',
           left: showSidebar ? 0 : '-85vw',
           overflow: 'auto',
@@ -154,8 +176,6 @@ export const MobileNav: React.FC = () => {
         <Box
           sx={{
             backgroundColor: 'info.main', 
-            borderRight: '1px solid',
-            borderRightColor: 'neutral.main',
             height: '50px',
             padding: '0.5rem 1rem',
             position: 'absolute',
@@ -229,8 +249,6 @@ export const MobileNav: React.FC = () => {
             component="nav"
             sx={{ 
               backgroundColor: 'info.main', 
-              borderRight: '1px solid',
-              borderRightColor: 'neutral.main',
               color: 'secondary.main',
               height: '100%',
               left: 0,
@@ -309,10 +327,12 @@ export const MobileNav: React.FC = () => {
         )}
         {!showRootPages && (
           <Sidebar 
-            rootPage={sidebarRootPage} 
-            sx={{ 
+            rootPage={sidebarRootPage}
+            component="div"
+            sx={{
+              borderRight: 'none',
+              position: 'absolute',
               width: '100%', 
-              position: 'absolute' 
             }} 
           />
         )}

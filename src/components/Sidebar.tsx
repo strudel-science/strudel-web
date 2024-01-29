@@ -85,7 +85,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ rootPage, sx, ...rest }) => {
         borderRight: '1px solid',
         borderRightColor: 'neutral.main',
         height: '100%',
-        position: 'fixed', 
+        position: 'relative', 
         width: '250px',
         zIndex: 100,
         ...sx
