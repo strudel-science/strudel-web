@@ -26,7 +26,13 @@ interface PagesResult {
 export const MobileNav: React.FC = () => {
   const page = usePage();
   const [showSidebar, setShowSidebar] = useState(false);
-  const [showRootPages, setShowRootPages] = useState(page?.parent ? false : true);
+  const [showRootPages, setShowRootPages] = useState(() => {
+    if (!page || page?.parent?.path === '/') {
+      return true;
+    } else {
+      return false;
+    }
+  });
   const [sidebarRootPage, setSidebarRootPage] = useState<StrudelPage>();
   const result = useStaticQuery<PagesResult>(graphql`
     query {
