@@ -139,6 +139,19 @@ export const MobileNav: React.FC = () => {
           </Toolbar>
         </AppBar>
       </Box>
+      {showSidebar && (
+        <Box
+          onClick={handleToggleSidebar}
+          sx={{
+            backgroundColor: 'black',
+            height: '100%',
+            opacity: 0.5,
+            position: 'fixed',
+            width: '100%',
+            zIndex: 600,
+          }}
+        />
+      )}
       <Box
         sx={{
           backgroundColor: 'info.main',
@@ -157,8 +170,6 @@ export const MobileNav: React.FC = () => {
         <Box
           sx={{
             backgroundColor: 'info.main', 
-            borderRight: '1px solid',
-            borderRightColor: 'neutral.main',
             height: '50px',
             padding: '0.5rem 1rem',
             position: 'absolute',
@@ -232,8 +243,6 @@ export const MobileNav: React.FC = () => {
             component="nav"
             sx={{ 
               backgroundColor: 'info.main', 
-              borderRight: '1px solid',
-              borderRightColor: 'neutral.main',
               color: 'secondary.main',
               height: '100%',
               left: 0,
