@@ -141,6 +141,9 @@ export const MobileNav: React.FC = () => {
       </Box>
       <Box
         sx={{
+          backgroundColor: 'info.main',
+          borderRight: '1px solid',
+          borderRightColor: 'neutral.main',
           height: '100%',
           left: showSidebar ? 0 : '-85vw',
           overflow: 'auto',
@@ -309,10 +312,12 @@ export const MobileNav: React.FC = () => {
         )}
         {!showRootPages && (
           <Sidebar 
-            rootPage={sidebarRootPage} 
-            sx={{ 
+            rootPage={sidebarRootPage}
+            component="div"
+            sx={{
+              borderRight: 'none',
+              position: 'absolute',
               width: '100%', 
-              position: 'absolute' 
             }} 
           />
         )}
