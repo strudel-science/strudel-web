@@ -43,3 +43,18 @@ export interface PageFrontmatter {
   title?: string;
   subtitle?: string;
 }
+
+/**
+ * Properties expected to exist in the markdown frontmatter
+ * for an event page.
+ */
+export interface EventFrontmatter {
+  title?: string;
+  slug?: string;
+  date?: string;
+  format?: string;
+  location?: string;
+  virtualEventLink?: string;
+  image?: string;
+  shortDescription?: string;
+}

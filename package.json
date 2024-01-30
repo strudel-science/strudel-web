@@ -28,6 +28,7 @@
     "gatsby-plugin-image": "^3.12.3",
     "gatsby-plugin-manifest": "^5.13.0",
     "gatsby-plugin-mdx": "^5.12.3",
+    "gatsby-plugin-mdx-source-name": "^1.0.1",
     "gatsby-plugin-sharp": "^5.12.3",
     "gatsby-remark-images": "^7.12.3",
     "gatsby-source-filesystem": "^5.12.1",

@@ -63,7 +63,10 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({
               aria-label="breadcrumb"
               sx={{
                 alignItems: 'center',
-                padding: 2,
+                paddingBottom: 2,
+                paddingLeft: 4,
+                paddingRight: 4,
+                paddingTop: 2,
               }}
             >
               {breadcrumbs.map((breadcrumb, i) => {

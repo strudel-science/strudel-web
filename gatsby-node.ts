@@ -1,7 +1,7 @@
 import path from "path";
 import type { GatsbyNode } from "gatsby";
 import { flattenPages } from "./src/utils/utils";
-import { PageFrontmatter, StrudelPage, TaskFlowFrontmatter } from "./src/types/strudel-config";
+import { EventFrontmatter, PageFrontmatter, StrudelPage, TaskFlowFrontmatter } from "./src/types/strudel-config";
 
 /**
  * Shape of the result from the graphql query
@@ -14,11 +14,22 @@ interface Result {
     configJson: {
       pages: StrudelPage[]
     },
-    allMdx: {
+    content: {
       nodes: {
         frontmatter: TaskFlowFrontmatter | PageFrontmatter,
         internal: {
           contentFilePath: string;
+        }
+      }[]
+    }
+    events: {
+      nodes: {
+        frontmatter: EventFrontmatter,
+        internal: {
+          contentFilePath: string;
+        },
+        fields: {
+          source: string;
         }
       }[]
     }
@@ -41,6 +52,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
    * Graphql query for the page objects in strudel-config.json
    * and the mdx files in the content directory.
    */
+  // TODO: separate into multiple queries
   const result: Result = await graphql(
     `
       {
@@ -64,7 +76,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
             }
           }
         }
-        allMdx {
+        content: allMdx {
           nodes {
             frontmatter {
               id
@@ -88,6 +100,30 @@ export const createPages: GatsbyNode["createPages"] = async ({
             }
           }
         }
+        events: allMdx(filter: {fields: {source: {eq: "events"}}}) {
+          nodes {
+            fields {
+              source
+            }
+            frontmatter {
+              title
+              slug
+              date
+              format
+              location
+              virtualEventLink
+              shortDescription
+              image {
+                childImageSharp {
+                  gatsbyImageData(width: 800)
+                }
+              }
+            }
+            internal {
+              contentFilePath
+            }
+          }
+        }
       }
     `
   );
@@ -99,7 +135,8 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
   const nestedPages = result.data?.configJson.pages;
   const pages = nestedPages && flattenPages(nestedPages);
-  const mdxPages = result.data?.allMdx.nodes;
+  const mdxPages = result.data?.content.nodes;
+  const events = result.data?.events.nodes;
 
   /**
    * Create a page for each page object that has an associated markdown file.
@@ -136,6 +173,19 @@ export const createPages: GatsbyNode["createPages"] = async ({
         }
       }
     });
+  }
+
+  if (events) {
+    const eventTemplate = path.resolve(`src/components/layouts/EventLayout.tsx`)
+    events.forEach((event) => {
+      createPage({
+        path: `/engage/events/${event.frontmatter.slug}`,
+        component: `${eventTemplate}?__contentFilePath=${event.internal.contentFilePath}`,
+        context: {
+          frontmatter: event.frontmatter,
+        }
+      });
+    })
   }
 };
 
