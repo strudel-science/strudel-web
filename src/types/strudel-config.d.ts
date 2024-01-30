@@ -52,6 +52,7 @@ export interface EventFrontmatter {
   title?: string;
   slug?: string;
   date?: string;
+  upcoming?: boolean;
   format?: string;
   location?: string;
   virtualEventLink?: string;

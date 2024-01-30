@@ -19,6 +19,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
  * Layout for Event pages.
  * Event frontmatter data is plugged into this template.
  * Main markdown content is rendered underneath the "About this Event" heading.
+ * Event pages are generated dynamically based on the event files in /content/engage/events
  */
 const EventLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) => {
   const thumbnailImg = getImageFromFileNode(pageContext.frontmatter.image);
