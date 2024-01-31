@@ -49,13 +49,14 @@ export interface PageFrontmatter {
  * for an event page.
  */
 export interface EventFrontmatter {
-  title?: string;
-  slug?: string;
-  date?: string;
+  title: string;
+  slug: string;
+  date: string;
   upcoming?: boolean;
-  format?: string;
-  location?: string;
+  format: string;
+  location: string;
   virtualEventLink?: string;
   image?: string;
-  shortDescription?: string;
+  imageData?: IGatsbyImageData;
+  shortDescription: string;
 }

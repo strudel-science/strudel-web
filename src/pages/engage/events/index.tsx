@@ -12,21 +12,47 @@ import { ResponsiveImageWrapper } from '../../../components/ResponsiveImageWrapp
 import { Button } from 'gatsby-theme-material-ui';
 import { PageContainer } from '../../../components/PageContainer';
 import { ContentStepper, ContentStep } from '../../../components/ContentStepper';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import { getImageFromFileNode } from '../../../utils/utils';
+import { EventFrontmatter } from '../../../types/strudel-config';
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+import advancedFormat from 'dayjs/plugin/advancedFormat'
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
+dayjs.extend(advancedFormat);
 
 interface DataProps {
   allMdx: {
     nodes: {
       id: string;
       excerpt: string;
-      frontmatter: any
+      frontmatter: EventFrontmatter;
     }[]
   }
 }
 
 const EventsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
-  const upcomingEvents = data.allMdx.nodes.filter(d => d.frontmatter.upcoming === true);
+  const upcomingEvents = data.allMdx.nodes.filter(d => {
+    if (d.frontmatter.upcoming === true) {
+      d.frontmatter.imageData = getImageFromFileNode(d.frontmatter.image);
+      return d;
+    }
+  });
   const pastEvents = data.allMdx.nodes.filter(d => !d.frontmatter.upcoming);
-  console.log(upcomingEvents);
+
+  /** Sort upcoming events so that soonest events are first */
+  upcomingEvents.sort((a, b) => {
+    return dayjs(a.frontmatter.date).isAfter(dayjs(b.frontmatter.date)) ? 1 : -1
+  });
+
+  /** Sort past events so that most recent events are first */
+  pastEvents.sort((a, b) => {
+    return dayjs(a.frontmatter.date).isAfter(dayjs(b.frontmatter.date)) ? -1 : 1
+  });
+  
   return (
     <BaseLayout hasSidebar>
       <PageHeader>
@@ -68,33 +94,31 @@ const EventsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                     padding: 3,
                   }}
                 >
-                  <Box>
-                    <Typography variant="h6">
-                      {event.frontmatter.title}
+                  <Stack spacing={2}>
+                    <Box>
+                      <Typography variant="h6">
+                        {event.frontmatter.title}
+                      </Typography>
+                      <Stack direction="row" spacing={1}>
+                        <EventIcon /> 
+                        <Typography>{dayjs(event.frontmatter.date).format('MMMM D, YYYY H:mm A z')}</Typography>
+                      </Stack>
+                    </Box>
+                    <Typography>
+                      {event.frontmatter.shortDescription}
                     </Typography>
-                    <Stack 
-                      sx={{
-                      direction: 'row',
-                      spacing: 1,
-                      }}
-                    >
-                      <EventIcon />  {event.frontmatter.date}
-                    </Stack>
-
-                    {event.frontmatter.shortDescription}
-
-                  </Box>
-                  <Box>
-                    <Button 
-                      to={`/engage/events/${event.frontmatter.slug}`}
-                      size="large"
-                      variant="contained"
-                      endIcon={<ArrowForwardIcon />}
-                      sx={{ color: '#ffffff !important' }}
-                    >
-                      Learn more
-                    </Button>
-                  </Box>
+                    <Box>
+                      <Button 
+                        to={`/engage/events/${event.frontmatter.slug}`}
+                        size="large"
+                        variant="contained"
+                        endIcon={<ArrowForwardIcon />}
+                        sx={{ color: '#ffffff !important' }}
+                      >
+                        Learn more
+                      </Button>
+                    </Box>
+                  </Stack>
                 </Stack>
               </Grid>
               <Grid item md={4} sx={{ minHeight: '250px' }}>
@@ -107,20 +131,31 @@ const EventsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                     pointerEvents: 'none',
                   }}
                 >
-                  <ResponsiveImageWrapper>
-                    ![Intro to UX image](../../../content/images/news-and-events/intro-to-ux.png)
-                  </ResponsiveImageWrapper>
+                  {event.frontmatter.imageData && (
+                    <ResponsiveImageWrapper>
+                      <GatsbyImage
+                        image={event.frontmatter.imageData} 
+                        alt="Test"
+                      />
+                    </ResponsiveImageWrapper>
+                  )}
                 </Box>
               </Grid>
             </Grid>
           </ContentCard>
         ))}
+        {upcomingEvents.length === 0 && (
+          <Stack spacing={1}>
+            <Box>There are no upcoming events scheduled. Check back soon for updates!</Box>
+            <Box>Want to collaborate on a webinar? Reach out to strudel@lbl.gov</Box>
+          </Stack>
+        )}
       </Hero>
       <PageContainer>
         <Typography variant="h5" component="h2" fontWeight="bold">
           Past Events
         </Typography>
-        <ContentStepper>
+        <ContentStepper numbered={false}>
           {pastEvents.map((event) => (
             <ContentStep key={event.frontmatter.slug}>
               <StepLabel>
@@ -130,9 +165,18 @@ const EventsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                 <Stack spacing={1}>
                   <Stack direction="row" spacing={1}>
                     <EventIcon fontSize="small" sx={{ color: 'error.main' }} />
-                    <Typography variant="body2">{event.frontmatter.date}</Typography>
+                    <Typography variant="body2">{dayjs(event.frontmatter.date).format('MMMM D, YYYY')}</Typography>
                   </Stack>
                   <Box>{event.frontmatter.shortDescription}</Box>
+                  <Box>
+                    <Button 
+                      to={`/engage/events/${event.frontmatter.slug}`}
+                      size="small"
+                      endIcon={<ArrowForwardIcon />}
+                    >
+                      More details
+                    </Button>
+                  </Box>
                 </Stack>
               </StepContent>
             </ContentStep>

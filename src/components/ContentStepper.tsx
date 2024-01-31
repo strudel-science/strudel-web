@@ -1,11 +1,18 @@
 import React, { PropsWithChildren } from 'react';
-import { Box, Button, Paper, Step, StepContent, StepLabel, StepProps, Stepper, Typography, useTheme } from '@mui/material';
+import { Box, Button, Paper, Step, StepContent, StepLabel, StepProps, Stepper, StepperProps, Typography, useTheme } from '@mui/material';
 
+interface ContentStepperProps extends StepperProps {
+  numbered?: boolean;
+}
 /**
  * Customized MUI Stepper component that is styled to our theme
  * and used for content display only, not navigational stepping.
  */
-export const ContentStepper: React.FC<PropsWithChildren> = ({ children }) => {
+export const ContentStepper: React.FC<ContentStepperProps> = ({ 
+  numbered = true, 
+  children,
+  ...rest
+}) => {
   const theme = useTheme();
 
   return (
@@ -15,14 +22,15 @@ export const ContentStepper: React.FC<PropsWithChildren> = ({ children }) => {
         sx={{
           '& .MuiStepIcon-root.Mui-active.MuiSvgIcon-root': {
             overflow: 'visible',
-            color: 'black',
+            color: numbered ? 'black' : 'error.main',
             '& circle': {
-              fill: 'none',
-              r: 15,
+              fill: numbered ? 'none' : 'error.main',
+              r: numbered ? 15 : 5,
               stroke: theme.palette.error.main,
               strokeWidth: 2,
             },
             '& text': {
+              display: numbered ? 'inline-block' : 'none',
               fill: 'black',
               fontSize: '1rem',
             }
