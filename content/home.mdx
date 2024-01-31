@@ -2,7 +2,7 @@
 id: 'home'
 title: 'STRUDEL'
 ---
-import { Grid, Stack, Box, Typography } from '@mui/material';
+import { Grid, Stack, Box } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Hero } from '/src/components/Hero';
 import { PageSection } from '/src/components/PageSection';
@@ -31,7 +31,7 @@ import { useTheme } from '@mui/system';
     >
       ![STRUDEL header logo](./images/strudel-logo-transp.png)
     </Box>
-    <Typography 
+    <Box 
       sx={{
         fontSize: '1.5rem',
         maxWidth: '650px',
@@ -39,12 +39,12 @@ import { useTheme } from '@mui/system';
       }}
     >
       Scientific sofTware Research for User experience, Design, Engagement, and Learning
-    </Typography>
+    </Box>
   </Stack>
 </PageSection>
 <Hero containerWidth="lg" sideRibbon="left">
   <Stack spacing={4}>
-    <Typography 
+    <Box 
       sx={{
         fontSize: '1.25rem',
         textAlign: 'center',
@@ -57,7 +57,7 @@ import { useTheme } from '@mui/system';
       STRUDEL enables teams to create user-centered software for scientific communities.
       
       Plan, design, and build better projects using STRUDEL Planning Framework and Design System.
-    </Typography>
+    </Box>
     <ContentCard variant="outlined" sx={{ padding: 0 }}>
       <Grid container sx={{ minHeight: '250px' }}>
         <Grid item md={4} xs={12}>
@@ -228,9 +228,9 @@ import { useTheme } from '@mui/system';
             height: '100%',
           }}
         >
-          <Typography fontSize="1.25rem">
+          <Box fontSize="1.25rem">
             Catch up on our news, events, blogs and more.
-          </Typography>
+          </Box>
           <Box marginTop="16px">
             <Button 
               to="/engage/news"
