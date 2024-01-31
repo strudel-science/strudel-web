@@ -59,6 +59,7 @@ const EventsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
     return dayjs(a.frontmatter.date).isAfter(dayjs(b.frontmatter.date)) ? -1 : 1
   });
 
+  console.log(pastEvents)
   return (
     <BaseLayout hasSidebar>
       <PageHeader>
@@ -84,6 +85,7 @@ const EventsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
         </Typography>
         {upcomingEvents.map((event) => (
           <ContentCard 
+            key={event.frontmatter.slug}
             variant="outlined" 
             sx={{ 
               marginTop: '32px',
