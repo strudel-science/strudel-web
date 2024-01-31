@@ -328,12 +328,19 @@ export const MobileNav: React.FC = () => {
         {!showRootPages && (
           <Sidebar 
             rootPage={sidebarRootPage}
+            navProps={{
+              sx: {
+                borderRight: 'none',
+                position: 'absolute',
+                width: '100%',
+              }
+            }}
             component="div"
             sx={{
               borderRight: 'none',
               position: 'absolute',
               width: '100%', 
-            }} 
+            }}
           />
         )}
       </Box>
