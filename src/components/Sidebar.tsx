@@ -20,6 +20,7 @@ interface PagesResult {
 
 interface SidebarProps extends BoxProps {
   rootPage?: StrudelPage;
+  navProps?: BoxProps;
 }
 
 /**
@@ -27,7 +28,7 @@ interface SidebarProps extends BoxProps {
  * page and its position in the navigational architecture.
  * The architecture and link metadata are pulled from strudel-config.json.
  */
-export const Sidebar: React.FC<SidebarProps> = ({ rootPage, sx, ...rest }) => {
+export const Sidebar: React.FC<SidebarProps> = ({ rootPage, navProps, sx, ...rest }) => {
   const navigation = useNavigation();
   const page = usePage();
   const result = useStaticQuery<PagesResult>(graphql`
@@ -81,9 +82,6 @@ export const Sidebar: React.FC<SidebarProps> = ({ rootPage, sx, ...rest }) => {
       component="aside"
       {...rest}
       sx={{
-        backgroundColor: 'info.main', 
-        borderRight: '1px solid',
-        borderRightColor: 'neutral.main',
         height: '100%',
         position: 'relative', 
         width: '250px',
@@ -93,14 +91,19 @@ export const Sidebar: React.FC<SidebarProps> = ({ rootPage, sx, ...rest }) => {
     >
       <Box
         component="nav"
-        sx={{ 
+        {...navProps}
+        sx={{
+          backgroundColor: 'info.main', 
+          borderRight: '1px solid',
+          borderRightColor: 'neutral.main',
           color: 'secondary.main',
           height: '100%',
           left: 0,
           paddingTop: '3rem',
-          position: 'absolute',
+          position: 'fixed',
           top: 0,
-          width: '100%',
+          width: '250px',
+          ...navProps?.sx
         }}
       >
         <List>
