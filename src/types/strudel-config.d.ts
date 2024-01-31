@@ -56,7 +56,7 @@ export interface EventFrontmatter {
   speakers: string[];
   format: string;
   location: string;
-  virtualEventLink?: string;
+  virtualEventLink?: string | null;
   image?: string;
   imageData?: IGatsbyImageData;
   shortDescription: string;

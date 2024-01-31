@@ -191,6 +191,9 @@ const EventsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
             </ContentStep>
           ))}
         </ContentStepper>
+        {pastEvents.length === 0 && (
+          <Typography>No past events to show</Typography>
+        )}
       </PageContainer>
     </BaseLayout>
   );
