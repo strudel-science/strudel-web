@@ -50,10 +50,11 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({
             <Sidebar />
           </DesktopOnly>
         )}
-        <Box
+        <Stack
           sx={{
             flex: 1,
             height: '100%',
+            minHeight: '100vh',
             width: '100%',
             paddingTop: '3rem'
           }}
@@ -101,11 +102,12 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({
           )}
           <Box
             component="main"
+            flexGrow={1}
           >
             {children}
           </Box>
           <Footer containerWidth={hasSidebar ? 'md' : 'lg'} />
-        </Box>
+        </Stack>
       </Stack>
     </Box>
   )
