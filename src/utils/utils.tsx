@@ -127,3 +127,17 @@ const removeLastPathSegment = (path: string) => {
   segments.splice(segments.length - 1, 1);
   return `/${segments.join('/')}`;
 };
+
+/**
+ * Convert a list of strings into a grammatically correct sentence fragment.
+ */
+export const arrayToSentence = (arr: string[]) => {
+  if (arr.length === 1) {
+    return arr[0];
+  } else if (arr.length === 2) {
+    return arr.join(' and ');
+  } else {
+    const last = arr.pop();
+    return arr.join(', ') + ' and ' + last;
+  }
+}

@@ -110,6 +110,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
               slug
               date
               upcoming
+              speakers
               format
               location
               virtualEventLink

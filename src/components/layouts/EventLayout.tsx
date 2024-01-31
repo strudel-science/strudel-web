@@ -4,6 +4,7 @@ import EventIcon from '@mui/icons-material/Event';
 import PlaceIcon from '@mui/icons-material/Place';
 import VideocamIcon from '@mui/icons-material/Videocam';
 import CircleIcon from '@mui/icons-material/Circle';
+import PersonIcon from '@mui/icons-material/Person';
 import BaseLayout from './BaseLayout';
 import { PageHeader } from '../PageHeader';
 import { HeadProps, PageProps } from 'gatsby';
@@ -12,8 +13,16 @@ import { StyledMarkdown } from '../StyledMarkdown';
 import Seo from '../Seo';
 import { PageContainer } from '../PageContainer';
 import { Hero } from '../Hero';
-import { getImageFromFileNode } from '../../utils/utils';
+import { arrayToSentence, getImageFromFileNode } from '../../utils/utils';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+import advancedFormat from 'dayjs/plugin/advancedFormat'
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
+dayjs.extend(advancedFormat);
 
 /**
  * Layout for Event pages.
@@ -43,7 +52,7 @@ const EventLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) =
               alignItems: 'center',
             }}
           >
-            <span>{pageContext.frontmatter.date}</span>
+            <span>{dayjs(pageContext.frontmatter.date).format('MMMM D, YYYY H:mm A z')}</span>
             <CircleIcon sx={{ fontSize: '0.75rem' }} />
             <span>{pageContext.frontmatter.format}</span>
           </Stack>
@@ -95,7 +104,7 @@ const EventLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) =
               When:
             </Typography>
             <Typography>
-              {pageContext.frontmatter.date}
+              {dayjs(pageContext.frontmatter.date).format('MMMM D, YYYY H:mm A z')}
             </Typography>
           </Stack>
           <Stack direction="row" spacing={1}>
@@ -118,6 +127,15 @@ const EventLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) =
               </MuiLink>
             </Stack>
           )}
+          <Stack direction="row" spacing={1}>
+            <PersonIcon />  
+            <Typography fontWeight="bold">
+              {pageContext.frontmatter.speakers.length === 1 ? 'Presenter:' : 'Presenters:'}
+            </Typography>
+            <Typography>
+              {arrayToSentence(pageContext.frontmatter.speakers)}
+            </Typography>
+          </Stack>
         </Stack>
         <Typography variant="h5" component="h2" fontWeight="bold">
           About this Event

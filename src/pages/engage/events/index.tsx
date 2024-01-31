@@ -13,7 +13,7 @@ import { Button } from 'gatsby-theme-material-ui';
 import { PageContainer } from '../../../components/PageContainer';
 import { ContentStepper, ContentStep } from '../../../components/ContentStepper';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import { getImageFromFileNode } from '../../../utils/utils';
+import { arrayToSentence, getImageFromFileNode } from '../../../utils/utils';
 import { EventFrontmatter } from '../../../types/strudel-config';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
@@ -59,7 +59,7 @@ const EventsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
     return dayjs(a.frontmatter.date).isAfter(dayjs(b.frontmatter.date)) ? -1 : 1
   });
 
-  console.log(pastEvents)
+  console.log(upcomingEvents)
   return (
     <BaseLayout hasSidebar>
       <PageHeader>
@@ -104,14 +104,15 @@ const EventsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                 >
                   <Stack spacing={2}>
                     <Box>
-                      <Typography variant="h6">
-                        {event.frontmatter.title}
-                      </Typography>
-                      <Stack direction="row" spacing={1}>
-                        <EventIcon /> 
-                        <Typography>{dayjs(event.frontmatter.date).format('MMMM D, YYYY H:mm A z')}</Typography>
-                      </Stack>
+                      <Box>
+                        <Typography variant="h6" sx={{ marginBottom: '0 !important' }}>{event.frontmatter.title}</Typography>
+                        <Typography>{arrayToSentence(event.frontmatter.speakers)}</Typography>
+                      </Box>
                     </Box>
+                    <Stack direction="row" spacing={1}>
+                      <EventIcon /> 
+                      <Typography>{dayjs(event.frontmatter.date).format('MMMM D, YYYY H:mm A z')}</Typography>
+                    </Stack>
                     <Typography>
                       {event.frontmatter.shortDescription}
                     </Typography>
@@ -211,6 +212,7 @@ export const query = graphql`
           slug
           date
           upcoming
+          speakers
           format
           location
           virtualEventLink

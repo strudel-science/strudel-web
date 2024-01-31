@@ -53,6 +53,7 @@ export interface EventFrontmatter {
   slug: string;
   date: string;
   upcoming?: boolean;
+  speakers: string[];
   format: string;
   location: string;
   virtualEventLink?: string;
