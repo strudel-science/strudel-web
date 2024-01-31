@@ -18,11 +18,20 @@ const config: GatsbyConfig = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-transformer-json',
+    'gatsby-plugin-mdx-source-name',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'blog',
+        name: 'content',
         path: `${__dirname}/content`,
+        ignore: [`**/engage/events/*`],
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'events',
+        path: `${__dirname}/content/engage/events`,
       }
     },
     {

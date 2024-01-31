@@ -3,7 +3,7 @@ id: 'engage-contribute'
 title: 'Connect & Contribute'
 subtitle: 'Help grow and sustain the STRUDEL community'
 ---
-import { Grid } from '@mui/material';
+import { Grid, Link as MuiLink } from '@mui/material';
 import { PageContainer } from '/src/components/PageContainer';
 import { Hero } from '/src/components/Hero';
 import { ContentCard } from '/src/components/ContentCard';
@@ -18,21 +18,21 @@ import { Link } from 'gatsby';
       <ContentCard>
         #### Get in touch
 
-        E-mail the team at <Link href="mailto:strudel@lbl.gov">strudel@lbl.gov</Link>
+        E-mail the team at <MuiLink href="mailto:strudel@lbl.gov">strudel@lbl.gov</MuiLink>
       </ContentCard>
     </Grid>
     <Grid item md={4}>
       <ContentCard>
         #### Join our mailing list
 
-        Send a message to <Link href="mailto:strudel-community+subscribe@lbl.gov">strudel-community+subscribe@lbl.gov</Link>
+        Send a message to <MuiLink href="mailto:strudel-community+subscribe@lbl.gov">strudel-community+subscribe@lbl.gov</MuiLink>
       </ContentCard>
     </Grid>
     <Grid item md={4}>
       <ContentCard>
         #### Contribute to the Discussion
 
-        See the latest <Link href='https://github.com/orgs/strudel-science/discussions/' target='_blank'>Discussion on GitHub</Link>
+        See the latest <MuiLink href='https://github.com/orgs/strudel-science/discussions/' target='_blank'>Discussion on GitHub</MuiLink>
       </ContentCard>
     </Grid>
   </Grid>
@@ -48,5 +48,5 @@ import { Link } from 'gatsby';
 The STRUDEL project is eager for community contributions. For now, please contribute to the STRUDEL project by:
 
 - Sharing feedback on the STRUDEL Planning Framework or Design System through one of the avenues above. 
-- We are planning tutorial workshops & hackathons for Q1 2024. Visit our <Link href='/engage/events'>Events</Link> page to learn about joining!
+- We are planning tutorial workshops & hackathons for Q1 2024. Visit our <Link to='/engage/events'>Events</Link> page to learn about joining!
 </PageContainer>

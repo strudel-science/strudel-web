@@ -1,5 +1,5 @@
 import { useStaticQuery, graphql } from "gatsby"
-import { findPageByPath, getCurrentPath } from "../utils/utils";
+import { findDynamicPageByPath, findPageByPath, getCurrentPath } from "../utils/utils";
 import { useLocation } from "@gatsbyjs/reach-router";
 
 /**
@@ -32,5 +32,12 @@ export const usePage = () => {
   const { pathname } = useLocation();
   const pathPrefix = site.pathPrefix;
   const currentPath = getCurrentPath(pathname, pathPrefix);
-  return findPageByPath(currentPath, configJson.pages);
+  const page = findPageByPath(currentPath, configJson.pages);
+  if (page) {
+    return page;
+  } else {
+    const dynamicPage = findDynamicPageByPath(currentPath, configJson.pages);
+    if (dynamicPage) return dynamicPage;
+  }
+  return;
 }

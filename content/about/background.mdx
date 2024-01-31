@@ -3,7 +3,7 @@ id: 'about-background'
 title: 'About STRUDEL'
 subtitle: ''
 ---
-import { Box, Grid, Stack, Typography, StepLabel, StepContent } from '@mui/material';
+import { Box, Grid, Stack, Link as MuiLink, StepLabel, StepContent } from '@mui/material';
 import { Hero } from '/src/components/Hero';
 import { PageContainer } from '/src/components/PageContainer';
 import { ContentCard } from '/src/components/ContentCard';
@@ -20,9 +20,9 @@ STRUDEL is an open source science project advocating for and advancing the inclu
 
 ## Motivation for User Experience in Science Software
 <Stack spacing={3}>
-    <p>
+    <Box>
         The user experience and sustainability of scientific software are pressing challenges since these foundational products impact the production of knowledge and scientific progress.
-    </p>
+    </Box>
     <Box>
               <Grid container spacing={4}>
                 <Grid item sm={3}>
@@ -67,14 +67,14 @@ STRUDEL is an open source science project advocating for and advancing the inclu
                 </Grid>
               </Grid>
             </Box>
-            <Typography>User experience is often an afterthought in scientific software that impacts usability, accessibility, design, & functionality of products. Today the UX community for scientific software is growing and tackling these challenges.</Typography>
+            <Box>User experience is often an afterthought in scientific software that impacts usability, accessibility, design, & functionality of products. Today the UX community for scientific software is growing and tackling these challenges.</Box>
 </Stack>
 
 ## Our Vision
 <Stack>
-    <p>
+    <Box>
         STRUDEL is supporting scientific software development, and the growing science software UX community, through advocacy and the stewardship of key products. We aim to make adopting UX in science easier and more effective from project planning through product development.
-    </p>
+    </Box>
     <Box>
         ![STRUDEL storyboard comic](../../content/images/strudel-storyboard.png)
     </Box>
@@ -83,7 +83,7 @@ STRUDEL is an open source science project advocating for and advancing the inclu
 ## Funding
 <Grid container columnSpacing={4}>
     <Grid item sm={8}>
-        STRUDEL is generously funded by the Alfred P. Sloan Foundation, Liz Vu & Josh Greenberg Program Officers, initial grant <Link href="https://sloan.org/grant-detail/10074" target="_blank" rel="noreferrer">#10074</Link>.
+        STRUDEL is generously funded by the Alfred P. Sloan Foundation, Liz Vu & Josh Greenberg Program Officers, initial grant <MuiLink href="https://sloan.org/grant-detail/10074" target="_blank" rel="noreferrer">#10074</MuiLink>.
     </Grid>
     <Grid item sm={4}>
         ![Sloan Foundation Logo](../../content/images/sloan-logo.png)
@@ -101,7 +101,7 @@ The STRUDEL project emerged from the experiences of members in Lawrence Berkeley
         ### STRUDEL Design System v1.0 — Winter 2024
       </StepLabel>
       <StepContent>
-        STRUDEL launched the initial version of a design system oriented around <Link href="/about/glossary#task-flow">Task Flows</Link>, including visual design templates, guidelines, and code.
+        STRUDEL launched the initial version of a design system oriented around <Link to="about/glossary#task-flow">Task Flows</Link>, including visual design templates, guidelines, and code.
       </StepContent>
     </ProjectHistoryStep>
     <ProjectHistoryStep>
@@ -133,7 +133,7 @@ The STRUDEL project emerged from the experiences of members in Lawrence Berkeley
         ### Conceptualization & design of Task Flows — Winter - Spring 2023
       </StepLabel>
       <StepContent>
-        STRUDEL team generalized common patterns uncovered during the audit to generate <Link href="/about/glossary#task-flow">Task Flows</Link> which can be used across different science domains and use cases.  
+        STRUDEL team generalized common patterns uncovered during the audit to generate <Link to="about/glossary#task-flow">Task Flows</Link> which can be used across different science domains and use cases.  
       </StepContent>
     </ProjectHistoryStep>
     <ProjectHistoryStep>
@@ -149,7 +149,7 @@ The STRUDEL project emerged from the experiences of members in Lawrence Berkeley
         ### STRUDEL project founded — 2022
       </StepLabel>
       <StepContent>
-        The Alfred P. Sloan Foundation <Link href="https://sloan.org/grant-detail/10074" target="_blank"> funded</Link> the team at LBNL to create a typology and design system for scientific software after team participated in a <Link href="https://web.cvent.com/event/1b7d7c3a-e9b4-409d-ae2b-284779cfe72f/summary" target="_blank">DOE workshop</Link> on the Science of Scientific Software Development and Use.
+        The Alfred P. Sloan Foundation <MuiLink href="https://sloan.org/grant-detail/10074" target="_blank"> funded</MuiLink> the team at LBNL to create a typology and design system for scientific software after team participated in a <MuiLink href="https://web.cvent.com/event/1b7d7c3a-e9b4-409d-ae2b-284779cfe72f/summary" target="_blank">DOE workshop</MuiLink> on the Science of Scientific Software Development and Use.
       </StepContent>
     </ProjectHistoryStep>
     <ProjectHistoryStep>
@@ -161,7 +161,7 @@ The STRUDEL project emerged from the experiences of members in Lawrence Berkeley
         ### <em>“Experiences with a Flexible User Research Process to Build Data Change Tools”</em> paper — Sept 2020
       </StepLabel>
       <StepContent>
-        Team members <Link href="https://dx.doi.org/10.5334/jors.284" target="_blank">published</Link> experiences with adopting a flexible UX research process to influence scientific software development to raise awareness of user experience challenges.
+        Team members <MuiLink href="https://dx.doi.org/10.5334/jors.284" target="_blank">published</MuiLink> experiences with adopting a flexible UX research process to influence scientific software development to raise awareness of user experience challenges.
       </StepContent>
     </ProjectHistoryStep>
     <ProjectHistoryStep>
@@ -169,7 +169,7 @@ The STRUDEL project emerged from the experiences of members in Lawrence Berkeley
         ### <em>“Ten Principles for Creating Usable Software for Science”</em> paper - Oct 2017
       </StepLabel>
       <StepContent>
-        Data Science & Technology group leaders published eScience conference paper outlining <Link href="https://ieeexplore.ieee.org/document/8109139" target="_blank">core principles</Link> for building usable science software based on team’s experiences.
+        Data Science & Technology group leaders published eScience conference paper outlining <MuiLink href="https://ieeexplore.ieee.org/document/8109139" target="_blank">core principles</MuiLink> for building usable science software based on team’s experiences.
       </StepContent>
     </ProjectHistoryStep>
     <ProjectHistoryStep>
@@ -177,7 +177,7 @@ The STRUDEL project emerged from the experiences of members in Lawrence Berkeley
             ### Experiences applying user centered design to workflow APIs paper — 2014
         </StepLabel>
         <StepContent>
-            Team <Link href="https://ieeexplore.ieee.org/document/6972276" target="_blank">published</Link> experiences applying user centered design practices to scientific workflow API development.
+            Team <MuiLink href="https://ieeexplore.ieee.org/document/6972276" target="_blank">published</MuiLink> experiences applying user centered design practices to scientific workflow API development.
         </StepContent>
     </ProjectHistoryStep>
     <ProjectHistoryStep>
@@ -185,7 +185,7 @@ The STRUDEL project emerged from the experiences of members in Lawrence Berkeley
             ### UX research & design across projects to create usable data abstractions, APIs, and more – 2013 - 2020
         </StepLabel>
         <StepContent>
-            Data Science & Technology Department <Link href="https://ux.lbl.gov" target="_blank">UX group</Link> funded by <Link href="https://science.osti.gov/ascr" target="_blank">DOE ASCR</Link> to conduct foundational R&D with UX approach across variety of products. 
+            Data Science & Technology Department <MuiLink href="https://ux.lbl.gov" target="_blank">UX group</MuiLink> funded by <MuiLink href="https://science.osti.gov/ascr" target="_blank">DOE ASCR</MuiLink> to conduct foundational R&D with UX approach across variety of products. 
         </StepContent>
     </ProjectHistoryStep>
     <ProjectHistoryStep>
@@ -193,7 +193,7 @@ The STRUDEL project emerged from the experiences of members in Lawrence Berkeley
         ### Initial application of user centered design in LBNL projects -  2006 - 2012
       </StepLabel>
       <StepContent>
-        Teams in Data Science & Technology Department (now <Link href="https://crd.lbl.gov/divisions/scidata/" target="_blank">Scientific Data Division</Link>) began adopting user centered design practices when building scientific software.
+        Teams in Data Science & Technology Department (now <MuiLink href="https://crd.lbl.gov/divisions/scidata/" target="_blank">Scientific Data Division</MuiLink>) began adopting user centered design practices when building scientific software.
       </StepContent>
     </ProjectHistoryStep>
 </ProjectHistoryStepper>

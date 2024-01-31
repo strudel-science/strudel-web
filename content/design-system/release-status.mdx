@@ -3,137 +3,140 @@ id: 'design-system-release-status'
 title: 'Release Status'
 subtitle: 'Status of task flows and corresponding resources'
 ---
-import { TableHead, TableRow, TableCell, TableBody, Box, Stack, Typography } from '@mui/material';
+import { TableHead, TableRow, TableCell, TableBody, Box, Stack } from '@mui/material';
 import { PageContainer } from '/src/components/PageContainer';
 import { InfoTable } from '/src/components/InfoTable';
 import { StatusChip } from '/src/components/StatusChip';
 
 <PageContainer>
   <InfoTable>
-  <TableHead>
-    <TableRow>
-      <TableCell>
-        Task Flow
-      </TableCell>
-      <TableCell>
-        Visual Template
-      </TableCell>
-      <TableCell>
-        Code Template
-      </TableCell>
-    </TableRow>
-  </TableHead>
-  <TableBody>
-    <TableRow>
-      <TableCell>
-        Compare Data
-      </TableCell>
-      <TableCell>
-        <StatusChip status="released" />
-      </TableCell>
-      <TableCell>
-        <StatusChip status="released" />
-      </TableCell>
-    </TableRow>
-    <TableRow>
-      <TableCell>
-        Contribute Data
-      </TableCell>
-      <TableCell>
-        <StatusChip status="released" />
-      </TableCell>
-      <TableCell>
-        <StatusChip status="released" />
-      </TableCell>
-    </TableRow>
-    <TableRow>
-      <TableCell>
-        Search Data Repositories
-      </TableCell>
-      <TableCell>
-        <StatusChip status="released" />
-      </TableCell>
-      <TableCell>
-        <StatusChip status="released" />
-      </TableCell>
-    </TableRow>
-    <TableRow>
-      <TableCell>
-        Explore Data
-      </TableCell>
-      <TableCell>
-        <StatusChip status="released" />
-      </TableCell>
-      <TableCell>
-        <StatusChip status="released" />
-      </TableCell>
-    </TableRow>
-    <TableRow>
-      <TableCell>
-        Monitor Activities
-      </TableCell>
-      <TableCell>
-        <StatusChip status="released" />
-      </TableCell>
-      <TableCell>
-        <StatusChip status="released" />
-      </TableCell>
-    </TableRow>
-    <TableRow>
-      <TableCell>
-        Run Computation
-      </TableCell>
-      <TableCell>
-        <StatusChip status="released" />
-      </TableCell>
-      <TableCell>
-        <StatusChip status="released" />
-      </TableCell>
-    </TableRow>
-    <TableRow>
-      <TableCell>
-        Run Interactive Computation
-      </TableCell>
-      <TableCell>
-        <StatusChip status="draft" />
-      </TableCell>
-      <TableCell>
-        <StatusChip status="planned" />
-      </TableCell>
-    </TableRow>
-    <TableRow>
-      <TableCell>
-        Manage Account
-      </TableCell>
-      <TableCell>
-        <StatusChip status="draft" />
-      </TableCell>
-      <TableCell>
-        <StatusChip status="planned" />
-      </TableCell>
-    </TableRow>
-    <TableRow>
-      <TableCell>
-        Track State
-      </TableCell>
-      <TableCell>
-        <StatusChip status="draft" />
-      </TableCell>
-      <TableCell>
-        <StatusChip status="planned" />
-      </TableCell>
-    </TableRow>
-  </TableBody>
-</InfoTable>
-<Stack spacing={2} sx={{ marginTop: 4 }}>
-  <Typography variant="body2">
-    <StatusChip status="released" /> = Completed and available to the community
-  </Typography>
-  <Typography variant="body2">
-    <StatusChip status="draft" /> = Initial version completed and partially available to the community
-  </Typography>
-  <Typography variant="body2">
-    <StatusChip status="planned" /> = On the roadmap but not ready for the community
-  </Typography>
-</Stack>
+    <TableHead>
+      <TableRow>
+        <TableCell>
+          Task Flow
+        </TableCell>
+        <TableCell>
+          Visual Template
+        </TableCell>
+        <TableCell>
+          Code Template
+        </TableCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      <TableRow>
+        <TableCell>
+          Compare Data
+        </TableCell>
+        <TableCell>
+          <StatusChip status="released" />
+        </TableCell>
+        <TableCell>
+          <StatusChip status="released" />
+        </TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>
+          Contribute Data
+        </TableCell>
+        <TableCell>
+          <StatusChip status="released" />
+        </TableCell>
+        <TableCell>
+          <StatusChip status="released" />
+        </TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>
+          Search Data Repositories
+        </TableCell>
+        <TableCell>
+          <StatusChip status="released" />
+        </TableCell>
+        <TableCell>
+          <StatusChip status="released" />
+        </TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>
+          Explore Data
+        </TableCell>
+        <TableCell>
+          <StatusChip status="released" />
+        </TableCell>
+        <TableCell>
+          <StatusChip status="released" />
+        </TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>
+          Monitor Activities
+        </TableCell>
+        <TableCell>
+          <StatusChip status="released" />
+        </TableCell>
+        <TableCell>
+          <StatusChip status="released" />
+        </TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>
+          Run Computation
+        </TableCell>
+        <TableCell>
+          <StatusChip status="released" />
+        </TableCell>
+        <TableCell>
+          <StatusChip status="released" />
+        </TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>
+          Run Interactive Computation
+        </TableCell>
+        <TableCell>
+          <StatusChip status="draft" />
+        </TableCell>
+        <TableCell>
+          <StatusChip status="planned" />
+        </TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>
+          Manage Account
+        </TableCell>
+        <TableCell>
+          <StatusChip status="draft" />
+        </TableCell>
+        <TableCell>
+          <StatusChip status="planned" />
+        </TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>
+          Track State
+        </TableCell>
+        <TableCell>
+          <StatusChip status="draft" />
+        </TableCell>
+        <TableCell>
+          <StatusChip status="planned" />
+        </TableCell>
+      </TableRow>
+    </TableBody>
+  </InfoTable>
+  <Stack spacing={2} sx={{ marginTop: 4 }}>
+    <Stack direction="row" spacing={1} fontSize="small" alignItems="center">
+      <StatusChip status="released" />
+      <Box>= Completed and available to the community</Box>
+    </Stack>
+    <Stack direction="row" spacing={1} fontSize="small" alignItems="center">
+      <StatusChip status="draft" />
+      <Box>= Initial version completed and partially available to the community</Box>
+    </Stack>
+    <Stack direction="row" spacing={1} fontSize="small" alignItems="center">
+      <StatusChip status="planned" />
+      <Box>= On the roadmap but not ready for the community</Box>
+    </Stack>
+  </Stack>
 </PageContainer>
