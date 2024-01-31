@@ -34,6 +34,12 @@ interface DataProps {
   }
 }
 
+/**
+ * Page to display upcoming and past events.
+ * Events are pulled from the /content/engage/events folder.
+ * Each markdown file in this folder is considered an event and includes 
+ * metadata and details about the event.
+ */
 const EventsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
   const upcomingEvents = data.allMdx.nodes.filter(d => {
     if (d.frontmatter.upcoming === true) {
@@ -52,7 +58,7 @@ const EventsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
   pastEvents.sort((a, b) => {
     return dayjs(a.frontmatter.date).isAfter(dayjs(b.frontmatter.date)) ? -1 : 1
   });
-  
+
   return (
     <BaseLayout hasSidebar>
       <PageHeader>
@@ -187,6 +193,10 @@ const EventsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
   );
 };
 
+/**
+ * Query for event mdx nodes from the "events" source.
+ * Everything in the /content/engage/events folder is part of the "events" source.
+ */
 export const query = graphql`
   query {
     allMdx(filter: {fields: {source: {eq: "events"}}}) {
