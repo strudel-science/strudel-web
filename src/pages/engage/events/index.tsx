@@ -218,7 +218,7 @@ export const query = graphql`
           speakers
           format
           location
-          virtualEventLink
+          registrationLink
           shortDescription
           image {
             childImageSharp {

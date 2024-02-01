@@ -113,7 +113,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
               speakers
               format
               location
-              virtualEventLink
+              registrationLink
               shortDescription
               image {
                 childImageSharp {

@@ -5,6 +5,7 @@ import PlaceIcon from '@mui/icons-material/Place';
 import VideocamIcon from '@mui/icons-material/Videocam';
 import CircleIcon from '@mui/icons-material/Circle';
 import PersonIcon from '@mui/icons-material/Person';
+import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 import BaseLayout from './BaseLayout';
 import { PageHeader } from '../PageHeader';
 import { HeadProps, PageProps } from 'gatsby';
@@ -67,11 +68,18 @@ const EventLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) =
                 marginTop: 2
               }}
             >
-              <MuiLink href={''} target='_blank'>
-                <Button variant="contained" startIcon={<EventIcon />} disabled>
-                  Add to Calendar
+              {pageContext.frontmatter.registrationLink && (
+                <MuiLink href={pageContext.frontmatter.registrationLink} target='_blank'>
+                  <Button variant="contained" startIcon={<AssignmentIndIcon />}>
+                    Register for this event
+                  </Button>
+                </MuiLink>
+              )}
+              {!pageContext.frontmatter.registrationLink && (
+                <Button variant="contained" startIcon={<AssignmentIndIcon />} disabled>
+                  Registration is not open yet
                 </Button>
-              </MuiLink>
+              )}
             </Box>
           </Grid>
           <Grid item md={4}>
@@ -116,14 +124,14 @@ const EventLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) =
               {pageContext.frontmatter.location}
             </Typography>
           </Stack>
-          {pageContext.frontmatter.virtualEventLink && (
+          {pageContext.frontmatter.registrationLink && (
             <Stack direction="row" spacing={1}>
-              <VideocamIcon />  
+              <AssignmentIndIcon />  
               <Typography fontWeight="bold">
-                Attend Online:
+                Register:
               </Typography>
-              <MuiLink href={pageContext.frontmatter.virtualEventLink}>
-                {pageContext.frontmatter.virtualEventLink}
+              <MuiLink href={pageContext.frontmatter.registrationLink}>
+                {pageContext.frontmatter.registrationLink}
               </MuiLink>
             </Stack>
           )}
