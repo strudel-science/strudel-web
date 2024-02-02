@@ -56,8 +56,21 @@ export interface EventFrontmatter {
   speakers: string[];
   format: string;
   location: string;
-  virtualEventLink?: string | null;
+  registrationLink?: string | null;
   image?: string;
   imageData?: IGatsbyImageData;
   shortDescription: string;
+}
+
+/**
+ * Properties expected to exist in the markdown frontmatter
+ * for a news post.
+ */
+export interface NewsFrontmatter {
+  title: string;
+  slug: string;
+  date: string;
+  author: string;
+  thumbnail?: string;
+  thumbnailData?: IGatsbyImageData;
 }

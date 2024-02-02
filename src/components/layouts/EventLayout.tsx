@@ -5,6 +5,7 @@ import PlaceIcon from '@mui/icons-material/Place';
 import VideocamIcon from '@mui/icons-material/Videocam';
 import CircleIcon from '@mui/icons-material/Circle';
 import PersonIcon from '@mui/icons-material/Person';
+import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 import BaseLayout from './BaseLayout';
 import { PageHeader } from '../PageHeader';
 import { HeadProps, PageProps } from 'gatsby';
@@ -19,6 +20,7 @@ import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
 import advancedFormat from 'dayjs/plugin/advancedFormat'
+import { ResponsiveImageWrapper } from '../ResponsiveImageWrapper';
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -32,7 +34,7 @@ dayjs.extend(advancedFormat);
  */
 const EventLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) => {
   const thumbnailImg = getImageFromFileNode(pageContext.frontmatter.image);
-  const containerWidth = 'lg';
+  const containerWidth = 'md';
   return (
     <BaseLayout>
       <PageHeader containerWidth={containerWidth}>
@@ -67,18 +69,24 @@ const EventLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) =
                 marginTop: 2
               }}
             >
-              <MuiLink href={''} target='_blank'>
-                <Button variant="contained" startIcon={<EventIcon />} disabled>
-                  Add to Calendar
+              {pageContext.frontmatter.registrationLink && (
+                <MuiLink href={pageContext.frontmatter.registrationLink} target='_blank'>
+                  <Button variant="contained" startIcon={<AssignmentIndIcon />}>
+                    Register for this event
+                  </Button>
+                </MuiLink>
+              )}
+              {!pageContext.frontmatter.registrationLink && (
+                <Button variant="contained" startIcon={<AssignmentIndIcon />} disabled>
+                  Registration is not open yet
                 </Button>
-              </MuiLink>
+              )}
             </Box>
           </Grid>
           <Grid item md={4}>
             {thumbnailImg && (
-              <Box
+              <ResponsiveImageWrapper
                 sx={{
-                  width: '200px',
                   '& .gatsby-image-wrapper': {
                     borderRadius: '4px',
                   }
@@ -88,7 +96,7 @@ const EventLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) =
                   image={thumbnailImg} 
                   alt="Test"
                 />
-              </Box>
+              </ResponsiveImageWrapper>
             )}
           </Grid>
         </Grid>
@@ -116,14 +124,14 @@ const EventLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) =
               {pageContext.frontmatter.location}
             </Typography>
           </Stack>
-          {pageContext.frontmatter.virtualEventLink && (
+          {pageContext.frontmatter.registrationLink && (
             <Stack direction="row" spacing={1}>
-              <VideocamIcon />  
+              <AssignmentIndIcon />  
               <Typography fontWeight="bold">
-                Attend Online:
+                Register:
               </Typography>
-              <MuiLink href={pageContext.frontmatter.virtualEventLink}>
-                {pageContext.frontmatter.virtualEventLink}
+              <MuiLink href={pageContext.frontmatter.registrationLink}>
+                {pageContext.frontmatter.registrationLink}
               </MuiLink>
             </Stack>
           )}

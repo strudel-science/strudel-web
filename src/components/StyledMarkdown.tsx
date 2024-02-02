@@ -26,7 +26,7 @@ export const StyledMarkdown: React.FC<PropsWithChildren> = ({ children }) => {
         '& a:not(.MuiButton-root)': {
           color: 'primary.main'
         },
-        '& a:visited:not(.MuiButton-root)': {
+        '& a:visited:not(.MuiButton-root):not(h1 a):not(h2 a):not(h3 a):not(h4 a):not(h5 a):not(h6 a)': {
           color: 'purple'
         },
         '& a p, & ul li p': {

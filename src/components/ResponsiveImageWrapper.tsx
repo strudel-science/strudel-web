@@ -1,12 +1,14 @@
 import React, { PropsWithChildren } from 'react';
-import { Box } from '@mui/material';
+import { Box, BoxProps } from '@mui/material';
 
 /**
- * Wrapper component for 
+ * Wrapper component for GatsbyImages that will ensure their width expands
+ * to the width of the parent.
  */
-export const ResponsiveImageWrapper: React.FC<PropsWithChildren> = ({ children }) => {
+export const ResponsiveImageWrapper: React.FC<BoxProps> = ({ sx, children, ...rest }) => {
   return (
     <Box
+      {...rest}
       sx={{
         height: '100%',
         '& .gatsby-resp-image-wrapper': {
@@ -20,6 +22,7 @@ export const ResponsiveImageWrapper: React.FC<PropsWithChildren> = ({ children }
         '& .gatsby-resp-image-wrapper .gatsby-resp-image-link': {
           width: 'auto !important'
         },
+        ...sx
       }}
     >
       {children}

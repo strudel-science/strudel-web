@@ -40,7 +40,7 @@ export const findDynamicPageByPath = (path: string, pages: StrudelPage[]): Strud
   const wordsInName = segments[segments.length - 1].split('-');
   const capitalizedWords = wordsInName.map((word) =>  word.charAt(0).toUpperCase() + word.slice(1));
   const name = capitalizedWords.join(' ');
-  console.log(parentPage);
+
   if (parentPage) {
     return {
       name,

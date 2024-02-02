@@ -59,7 +59,6 @@ const EventsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
     return dayjs(a.frontmatter.date).isAfter(dayjs(b.frontmatter.date)) ? -1 : 1
   });
 
-  console.log(upcomingEvents)
   return (
     <BaseLayout hasSidebar>
       <PageHeader>
@@ -113,7 +112,14 @@ const EventsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                       <EventIcon /> 
                       <Typography>{dayjs(event.frontmatter.date).format('MMMM D, YYYY H:mm A z')}</Typography>
                     </Stack>
-                    <Typography>
+                    <Typography
+                      sx={{
+                        display: '-webkit-box',
+                        WebkitLineClamp: '2',
+                        WebkitBoxOrient: 'vertical',
+                        overflow: 'hidden',
+                      }}
+                    >
                       {event.frontmatter.shortDescription}
                     </Typography>
                     <Box>
@@ -145,6 +151,9 @@ const EventsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                       <GatsbyImage
                         image={event.frontmatter.imageData} 
                         alt="Test"
+                        style={{
+                          height: '100%',
+                        }}
                       />
                     </ResponsiveImageWrapper>
                   )}
@@ -218,7 +227,7 @@ export const query = graphql`
           speakers
           format
           location
-          virtualEventLink
+          registrationLink
           shortDescription
           image {
             childImageSharp {
