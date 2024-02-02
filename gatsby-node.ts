@@ -1,7 +1,7 @@
 import path from "path";
 import type { GatsbyNode } from "gatsby";
 import { flattenPages } from "./src/utils/utils";
-import { EventFrontmatter, PageFrontmatter, StrudelPage, TaskFlowFrontmatter } from "./src/types/strudel-config";
+import { EventFrontmatter, NewsFrontmatter, PageFrontmatter, StrudelPage, TaskFlowFrontmatter } from "./src/types/strudel-config";
 
 /**
  * Shape of the result from the graphql query
@@ -33,6 +33,17 @@ interface Result {
         }
       }[]
     }
+    news: {
+      nodes: {
+        frontmatter: NewsFrontmatter,
+        internal: {
+          contentFilePath: string;
+        },
+        fields: {
+          source: string;
+        }
+      }[]
+    }
   }
 }
 
@@ -52,7 +63,6 @@ export const createPages: GatsbyNode["createPages"] = async ({
    * Graphql query for the page objects in strudel-config.json
    * and the mdx files in the content directory.
    */
-  // TODO: separate into multiple queries
   const result: Result = await graphql(
     `
       {
@@ -126,6 +136,27 @@ export const createPages: GatsbyNode["createPages"] = async ({
             }
           }
         }
+        news: allMdx(filter: {fields: {source: {eq: "news"}}}) {
+          nodes {
+            fields {
+              source
+            }
+            frontmatter {
+              title
+              slug
+              date
+              author
+              thumbnail {
+                childImageSharp {
+                  gatsbyImageData(width: 800)
+                }
+              }
+            }
+            internal {
+              contentFilePath
+            }
+          }
+        }
       }
     `
   );
@@ -138,7 +169,8 @@ export const createPages: GatsbyNode["createPages"] = async ({
   const nestedPages = result.data?.configJson.pages;
   const pages = nestedPages && flattenPages(nestedPages);
   const mdxPages = result.data?.content.nodes;
-  const events = result.data?.events.nodes;
+  const eventPages = result.data?.events.nodes;
+  const newsPages = result.data?.news.nodes;
 
   /**
    * Create a page for each page object that has an associated markdown file.
@@ -177,14 +209,33 @@ export const createPages: GatsbyNode["createPages"] = async ({
     });
   }
 
-  if (events) {
+  /**
+   * Create a page for each event mdx node.
+   */
+  if (eventPages) {
     const eventTemplate = path.resolve(`src/components/layouts/EventLayout.tsx`)
-    events.forEach((event) => {
+    eventPages.forEach((eventPage) => {
       createPage({
-        path: `/engage/events/${event.frontmatter.slug}`,
-        component: `${eventTemplate}?__contentFilePath=${event.internal.contentFilePath}`,
+        path: `/engage/events/${eventPage.frontmatter.slug}`,
+        component: `${eventTemplate}?__contentFilePath=${eventPage.internal.contentFilePath}`,
         context: {
-          frontmatter: event.frontmatter,
+          frontmatter: eventPage.frontmatter,
+        }
+      });
+    })
+  }
+
+  /**
+   * Create a page for each news mdx node.
+   */
+  if (newsPages) {
+    const newsTemplate = path.resolve(`src/components/layouts/NewsLayout.tsx`)
+    newsPages.forEach((newsPage) => {
+      createPage({
+        path: `/engage/news/${newsPage.frontmatter.slug}`,
+        component: `${newsTemplate}?__contentFilePath=${newsPage.internal.contentFilePath}`,
+        context: {
+          frontmatter: newsPage.frontmatter,
         }
       });
     })

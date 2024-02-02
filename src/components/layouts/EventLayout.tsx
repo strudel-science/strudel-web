@@ -34,7 +34,7 @@ dayjs.extend(advancedFormat);
  */
 const EventLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) => {
   const thumbnailImg = getImageFromFileNode(pageContext.frontmatter.image);
-  const containerWidth = 'lg';
+  const containerWidth = 'md';
   return (
     <BaseLayout>
       <PageHeader containerWidth={containerWidth}>

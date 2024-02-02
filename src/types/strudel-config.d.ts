@@ -61,3 +61,16 @@ export interface EventFrontmatter {
   imageData?: IGatsbyImageData;
   shortDescription: string;
 }
+
+/**
+ * Properties expected to exist in the markdown frontmatter
+ * for a news post.
+ */
+export interface NewsFrontmatter {
+  title: string;
+  slug: string;
+  date: string;
+  author: string;
+  thumbnail?: string;
+  thumbnailData?: IGatsbyImageData;
+}
