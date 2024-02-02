@@ -55,7 +55,7 @@ const NewsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
   });
 
   const latestNewsItem = allNews.shift();
-  console.log(allNews)
+
   return (
     <BaseLayout hasSidebar>
       <PageHeader>

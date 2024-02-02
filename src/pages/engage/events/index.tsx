@@ -59,7 +59,6 @@ const EventsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
     return dayjs(a.frontmatter.date).isAfter(dayjs(b.frontmatter.date)) ? -1 : 1
   });
 
-  console.log(upcomingEvents)
   return (
     <BaseLayout hasSidebar>
       <PageHeader>
