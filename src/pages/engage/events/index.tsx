@@ -113,7 +113,14 @@ const EventsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                       <EventIcon /> 
                       <Typography>{dayjs(event.frontmatter.date).format('MMMM D, YYYY H:mm A z')}</Typography>
                     </Stack>
-                    <Typography>
+                    <Typography
+                      sx={{
+                        display: '-webkit-box',
+                        '-webkit-line-clamp': '2',
+                        '-webkit-box-orient': 'vertical',
+                        overflow: 'hidden',
+                      }}
+                    >
                       {event.frontmatter.shortDescription}
                     </Typography>
                     <Box>
@@ -145,6 +152,9 @@ const EventsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                       <GatsbyImage
                         image={event.frontmatter.imageData} 
                         alt="Test"
+                        style={{
+                          height: '100%',
+                        }}
                       />
                     </ResponsiveImageWrapper>
                   )}

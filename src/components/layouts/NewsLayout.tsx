@@ -1,21 +1,12 @@
 import * as React from 'react';
-import { Box, Grid, Stack, Typography, Link as MuiLink } from '@mui/material';
-import EventIcon from '@mui/icons-material/Event';
-import PlaceIcon from '@mui/icons-material/Place';
-import VideocamIcon from '@mui/icons-material/Videocam';
+import { Stack, Typography } from '@mui/material';
 import CircleIcon from '@mui/icons-material/Circle';
-import PersonIcon from '@mui/icons-material/Person';
-import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 import BaseLayout from './BaseLayout';
 import { PageHeader } from '../PageHeader';
 import { HeadProps, PageProps } from 'gatsby';
-import { Button } from 'gatsby-theme-material-ui';
 import { StyledMarkdown } from '../StyledMarkdown';
 import Seo from '../Seo';
 import { PageContainer } from '../PageContainer';
-import { Hero } from '../Hero';
-import { arrayToSentence, getImageFromFileNode } from '../../utils/utils';
-import { GatsbyImage } from 'gatsby-plugin-image';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
@@ -32,7 +23,7 @@ dayjs.extend(advancedFormat);
  * News pages are generated dynamically based on the mdx files in /content/engage/news
  */
 const NewsLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) => {
-  const thumbnailImg = getImageFromFileNode(pageContext.frontmatter.thumbnailImg);
+  // const thumbnailImg = getImageFromFileNode(pageContext.frontmatter.thumbnail);
   const containerWidth = 'md';
   return (
     <BaseLayout>
