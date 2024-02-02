@@ -20,6 +20,7 @@ import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
 import advancedFormat from 'dayjs/plugin/advancedFormat'
+import { ResponsiveImageWrapper } from '../ResponsiveImageWrapper';
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -84,9 +85,8 @@ const EventLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) =
           </Grid>
           <Grid item md={4}>
             {thumbnailImg && (
-              <Box
+              <ResponsiveImageWrapper
                 sx={{
-                  width: '200px',
                   '& .gatsby-image-wrapper': {
                     borderRadius: '4px',
                   }
@@ -96,7 +96,7 @@ const EventLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) =
                   image={thumbnailImg} 
                   alt="Test"
                 />
-              </Box>
+              </ResponsiveImageWrapper>
             )}
           </Grid>
         </Grid>
