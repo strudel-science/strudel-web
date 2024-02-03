@@ -21,7 +21,7 @@ const HomeLayout: React.FC<PageProps<any, any>> = ({ children }) => {
 
 export const Head:React.FC<HeadProps<any, any>> = ({ pageContext }) => {
   return (
-    <Seo title={pageContext.frontmatter.title} />
+    <Seo fullTitle="STRUDEL | Create user-centered software for scientific communities" />
   );
 }
 
