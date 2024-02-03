@@ -1,4 +1,4 @@
-import { PageProps, graphql, navigate } from 'gatsby';
+import { Link, PageProps, graphql, navigate } from 'gatsby';
 import React, { useEffect } from 'react';
 import Seo from '../../../components/Seo';
 import { Box, Grid, Stack, StepContent, StepLabel, Typography } from '@mui/material';
@@ -103,10 +103,21 @@ const EventsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                 >
                   <Stack spacing={2}>
                     <Box>
-                      <Box>
-                        <Typography variant="h6" sx={{ marginBottom: '0 !important' }}>{event.frontmatter.title}</Typography>
-                        <Typography>{arrayToSentence(event.frontmatter.speakers)}</Typography>
-                      </Box>
+                      <Typography 
+                        variant="h6" 
+                        sx={{
+                          fontWeight: 'bold',
+                          marginBottom: '0 !important',
+                          '&.MuiTypography-root a': {
+                            color: 'white'
+                          }
+                        }}
+                      >
+                        <Link to={`/engage/events/${event.frontmatter.slug}`}>
+                          {event.frontmatter.title}
+                        </Link>
+                      </Typography>
+                      <Typography>{arrayToSentence(event.frontmatter.speakers)}</Typography>
                     </Box>
                     <Stack direction="row" spacing={1}>
                       <EventIcon /> 
