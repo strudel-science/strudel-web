@@ -67,7 +67,7 @@ const config: GatsbyConfig = {
       options: {
         trackingIds: [
           /** Google Analytics Measurement ID */
-          'TEMP',
+          'G-LS4NMH3JY3',
         ],
         /**
          * This object gets passed directly to the gtag config command
