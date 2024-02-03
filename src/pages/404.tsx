@@ -1,49 +1,64 @@
 import * as React from "react"
-import { Link, HeadFC, PageProps } from "gatsby"
+import { Link, PageProps } from "gatsby"
 import Seo from "../components/Seo"
-
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+import BaseLayout from "../components/layouts/BaseLayout"
+import { Button, Grid, Stack, Typography } from "@mui/material"
+import { PageContainer } from "../components/PageContainer"
+import { PageHeader } from "../components/PageHeader"
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
-  )
-}
+    <BaseLayout hasBreadcrumbs={false}>
+      <PageHeader>
+        <Stack spacing={2}>
+          <Typography 
+            component="h1"
+            variant="h3" 
+            fontWeight="bold"
+          >
+            Page Not Found
+          </Typography>
+        </Stack>
+      </PageHeader>
+      <PageContainer>
+        <Typography variant="h5" component="h2">
+          There's no page at that URL. Try one of the links below.
+        </Typography>
+        <Grid container spacing={2}>
+          <Grid item xs={6}>
+            <Link to="/design-system/overview">
+              <Button variant="outlined" size="large" sx={{ height: '100%', width: '100%' }}>
+                Design System
+              </Button>
+            </Link>
+          </Grid>
+          <Grid item xs={6}>
+            <Link to="/design-system/task-flows/overview">
+              <Button variant="outlined" size="large" sx={{ height: '100%', width: '100%' }}>
+                Task Flows
+              </Button>
+            </Link>
+          </Grid>
+          <Grid item xs={6}>
+            <Link to="/planning-framework/overview">
+              <Button variant="outlined" size="large" sx={{ height: '100%', width: '100%' }}>
+                Planning Framework
+              </Button>
+            </Link>
+          </Grid>
+          <Grid item xs={6}>
+            <Link to="/engage/events">
+              <Button variant="outlined" size="large" sx={{ height: '100%', width: '100%' }}>
+                Events
+              </Button>
+            </Link>
+          </Grid>
+        </Grid>
+      
+      </PageContainer>
+    </BaseLayout>
+  );
+};
 
 export default NotFoundPage
 
