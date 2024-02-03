@@ -212,7 +212,7 @@ const EventsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
           ))}
         </ContentStepper>
         {pastEvents.length === 0 && (
-          <Typography>No past events to show</Typography>
+          <Typography>No past events at this time</Typography>
         )}
       </PageContainer>
     </BaseLayout>

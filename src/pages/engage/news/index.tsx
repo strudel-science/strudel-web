@@ -234,6 +234,9 @@ const NewsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
               </Grid>
             </ContentCard>
           ))}
+          {!allNews || allNews.length === 0 && (
+            <Typography>No other news at this time</Typography>
+          )}
         </Stack>
       </PageContainer>
     </BaseLayout>
