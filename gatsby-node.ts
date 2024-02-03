@@ -241,6 +241,10 @@ export const createPages: GatsbyNode["createPages"] = async ({
     })
   }
 
+  /**
+   * Add redirects for top-level routes that 
+   * don't have specific pages associated with them.
+   */
   createRedirect({
     fromPath: `/design-system/`,
     toPath: `/design-system/overview/`,
