@@ -57,7 +57,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
   actions,
   reporter
 }) => {
-  const { createPage } = actions;
+  const { createPage, createRedirect } = actions;
 
   /**
    * Graphql query for the page objects in strudel-config.json
@@ -240,5 +240,45 @@ export const createPages: GatsbyNode["createPages"] = async ({
       });
     })
   }
+
+  createRedirect({
+    fromPath: `/design-system/`,
+    toPath: `/design-system/overview/`,
+    isPermanent: true, 
+    force: true, 
+    redirectInBrowser: true,
+  });
+
+  createRedirect({
+    fromPath: `/design-system/task-flows/`,
+    toPath: `/design-system/task-flows/overview/`,
+    isPermanent: true, 
+    force: true, 
+    redirectInBrowser: true,
+  });
+
+  createRedirect({
+    fromPath: `/planning-framework/`,
+    toPath: `/planning-framework/overview/`,
+    isPermanent: true, 
+    force: true, 
+    redirectInBrowser: true,
+  });
+
+  createRedirect({
+    fromPath: `/engage/`,
+    toPath: `/engage/contribute/`,
+    isPermanent: true, 
+    force: true, 
+    redirectInBrowser: true,
+  });
+
+  createRedirect({
+    fromPath: `/about/`,
+    toPath: `/about/background/`,
+    isPermanent: true, 
+    force: true, 
+    redirectInBrowser: true,
+  });
 };
 
