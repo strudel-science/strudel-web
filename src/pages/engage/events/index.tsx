@@ -117,7 +117,7 @@ const EventsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                           {event.frontmatter.title}
                         </Link>
                       </Typography>
-                      <Typography>{arrayToSentence(event.frontmatter.speakers)}</Typography>
+                      <Typography sx={{color: 'secondary.main'}}>{arrayToSentence(event.frontmatter.speakers)}</Typography>
                     </Box>
                     <Stack direction="row" spacing={1}>
                       <EventIcon /> 
