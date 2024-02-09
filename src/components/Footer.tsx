@@ -58,7 +58,7 @@ export const Footer: React.FC<FooterProps> = ({
         <br />
         <em>STRUDEL is an effort of the Lawrence Berkeley National Lab Scientific Data <Link href="https://crd.lbl.gov/divisions/scidata/" target="_blank" rel="noreferrer">(SciData)</Link> Division <Link href="https://ux.lbl.gov" target="_blank" rel="noreferrer">UX team</Link></em>.
         <br />
-        <em>The project is generously funded by the Alfred P. Sloan Foundation, Liz Vu & Josh Greenberg Program Officers, initial grant <Link href="https://sloan.org/grant-detail/10074" target="_blank" rel="noreferrer">#10074</Link></em>
+        <em>The project is generously funded by the Alfred P. Sloan Foundation, Liz Vu & Josh Greenberg Program Officers, grants <Link href="https://sloan.org/grant-detail/10074" target="_blank" rel="noreferrer">#10074</Link> and <Link href="https://sloan.org/grant-detail/10572" target="_blank" rel="noreferrer">#10572</Link></em>
         
       </Container>
     </Box>
