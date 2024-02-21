@@ -76,7 +76,7 @@ const EventLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) =
                   </Button>
                 </MuiLink>
               )}
-              {!pageContext.frontmatter.registrationLink && (
+              {!pageContext.frontmatter.registrationLink && pageContext.frontmatter.upcoming && (
                 <Button variant="contained" startIcon={<AssignmentIndIcon />} disabled>
                   Registration is not open yet
                 </Button>
@@ -93,8 +93,8 @@ const EventLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) =
                 }}
               >
                 <GatsbyImage
-                  image={thumbnailImg} 
-                  alt="Test"
+                  image={thumbnailImg}
+                  alt={`Thumbnail banner for ${pageContext.frontmatter.title}`}
                 />
               </ResponsiveImageWrapper>
             )}

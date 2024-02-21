@@ -161,7 +161,7 @@ const EventsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                     <ResponsiveImageWrapper>
                       <GatsbyImage
                         image={event.frontmatter.imageData} 
-                        alt="Test"
+                        alt={`Thumbnail banner for ${event.frontmatter.title}`}
                         style={{
                           height: '100%',
                         }}

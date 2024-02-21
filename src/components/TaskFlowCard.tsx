@@ -117,7 +117,7 @@ export const TaskFlowCardBase: React.FC<TaskFlowCardBaseProps> = ({
           {thumbnailImg && (
             <GatsbyImage
               image={thumbnailImg} 
-              alt="Test"
+              alt={`${title} icon`}
             />
           )}
         </Box>

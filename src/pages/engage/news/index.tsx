@@ -155,7 +155,7 @@ const NewsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                     <ResponsiveImageWrapper>
                       <GatsbyImage
                         image={latestNewsItem.frontmatter.thumbnailData} 
-                        alt="Test"
+                        alt={`Thumbnail banner for ${latestNewsItem.frontmatter.title}`}
                       />
                     </ResponsiveImageWrapper>
                   )}
@@ -225,7 +225,7 @@ const NewsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                       <ResponsiveImageWrapper>
                         <GatsbyImage
                           image={newsItem.frontmatter.thumbnailData} 
-                          alt="Test"
+                          alt={`Thumbnail banner for ${newsItem.frontmatter.title}`}
                         />
                       </ResponsiveImageWrapper>
                     )}

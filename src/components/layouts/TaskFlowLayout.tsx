@@ -66,7 +66,7 @@ const TaskFlowLayout: React.FC<PageProps<any, TaskFlowPageContext>> = ({ pageCon
             >
               <GatsbyImage
                 image={thumbnailImg} 
-                alt="Test"
+                alt={`${pageContext.frontmatter.title} icon`}
               />
             </Box>
           )}
