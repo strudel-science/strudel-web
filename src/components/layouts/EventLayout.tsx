@@ -54,7 +54,7 @@ const EventLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) =
               alignItems: 'center',
             }}
           >
-            <span>{dayjs(pageContext.frontmatter.date).format('MMMM D, YYYY H:mm A z')}</span>
+            <span>{dayjs(pageContext.frontmatter.date).format('MMMM D, YYYY h:mm A z')}</span>
             <CircleIcon sx={{ fontSize: '0.75rem' }} />
             <span>{pageContext.frontmatter.format}</span>
           </Stack>

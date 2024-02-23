@@ -121,7 +121,7 @@ const EventsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                     </Box>
                     <Stack direction="row" spacing={1}>
                       <EventIcon /> 
-                      <Typography>{dayjs(event.frontmatter.date).format('MMMM D, YYYY H:mm A z')}</Typography>
+                      <Typography>{dayjs(event.frontmatter.date).format('MMMM D, YYYY h:mm A z')}</Typography>
                     </Stack>
                     <Typography
                       sx={{
