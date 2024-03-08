@@ -188,7 +188,7 @@ const EventsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
           {pastEvents.map((event) => (
             <ContentStep key={event.frontmatter.slug}>
               <StepLabel>
-                {event.frontmatter.title}
+                <Typography variant="h6">{event.frontmatter.title}</Typography>
               </StepLabel>
               <StepContent>
                 <Stack spacing={1}>
@@ -199,7 +199,7 @@ const EventsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                   <Box>{event.frontmatter.shortDescription}</Box>
                   <Box>
                     <Button 
-                      to={`/engage/events/${event.frontmatter.slug}`}
+                      to={event.frontmatter.newsUrl || `/engage/events/${event.frontmatter.slug}`}
                       size="small"
                       endIcon={<ArrowForwardIcon />}
                     >
@@ -235,6 +235,7 @@ export const query = graphql`
           slug
           date
           upcoming
+          newsUrl
           speakers
           format
           location
