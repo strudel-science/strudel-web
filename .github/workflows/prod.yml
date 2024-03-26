@@ -1,4 +1,4 @@
-name: Copy Build to Production Repo
+name: Deploy to Production
 
 on:
   workflow_dispatch:
