@@ -9,6 +9,7 @@ import { PageSection } from '/src/components/PageSection';
 import { ContentCard } from '/src/components/ContentCard';
 import { Button } from 'gatsby-theme-material-ui';
 import EventIcon from '@mui/icons-material/Event';
+import { Link } from '@mui/material';
 
 <PageSection containerWidth="lg">
   <Stack
@@ -177,19 +178,12 @@ import EventIcon from '@mui/icons-material/Event';
           }}
         >
           <Box>
-            ## Announcing the STRUDEL Event Series
+            ## Interested in co-hosting a local hackathon? 
+
           
-            Join the STRUDEL project’s upcoming series of events designed to help support adoption of user experience (UX) approaches in scientific software development.
+            Get in touch with us at <Link href="mailto:strudel@lbl.gov" target="_blank">strudel@lbl.gov</Link>
           </Box>
-          <Box marginTop="16px">
-            <Button 
-              to="/engage/news/02-05-2024-strudel-event-series/"
-              size="large"
-              endIcon={<ArrowForwardIcon />}
-            >
-              Read more
-            </Button>
-          </Box>
+          
         </Stack>
       </ContentCard>
     </Grid>
