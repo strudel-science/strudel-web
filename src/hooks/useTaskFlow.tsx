@@ -60,6 +60,7 @@ export const useTaskFlow = (name: string) => {
   );
   const taskFlowConfig = findPageByName(name, configJson.pages);
   if (taskFlowConfig) {
+    console.log(allMdx);
     const mdx = allMdx.nodes?.find((md) => md.frontmatter.id === taskFlowConfig.markdownId);
     return {
       ...taskFlowConfig,
