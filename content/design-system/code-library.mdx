@@ -3,7 +3,8 @@ id: 'design-system-code-library'
 title: 'STRUDEL Kit'
 subtitle: 'Code templates for scientific task flow UIs'
 ---
-import { Link as MuiLink, Button, Box } from '@mui/material';
+import { Link as MuiLink, Button, Stack } from '@mui/material';
+import ArticleIcon from '@mui/icons-material/Article';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { Hero } from '/src/components/Hero';
 import { PageContainer } from '/src/components/PageContainer';
@@ -11,52 +12,36 @@ import { PageContainer } from '/src/components/PageContainer';
 <Hero>
   STRUDEL Kit is a React-based JavaScript library for building scientific UIs based on the STRUDEL Design System and Task Flows. The library provides scaffolding and templates to help scientific teams jumpstart their adaptation and use of common task flows in their products.
 
-  <Box
-    sx={{
-      display: 'inline-block',
-      marginTop: 2
-    }}
+  <Stack
+    direction="row"
+    spacing={2}
   >
-    <MuiLink href="https://github.com/strudel-science/strudel-kit" target='_blank'>
-      <Button variant="contained" startIcon={<GitHubIcon />}>
-        Checkout on GitHub
+    <MuiLink href="https://strudel.science/strudel-kit/docs/" target='_blank'>
+      <Button variant="contained" startIcon={<ArticleIcon />}>
+        Documentation
       </Button>
     </MuiLink>
-  </Box>
+    <MuiLink href="https://github.com/strudel-science/strudel-kit" target='_blank'>
+      <Button variant="contained" startIcon={<GitHubIcon />}>
+        GitHub
+      </Button>
+    </MuiLink>
+  </Stack>
 </Hero>
 <PageContainer>
-  ## STRUDEL Tech Stack
+  STRUDEL Kit is made up of two main products: **strudel-cli**, a command-line tool for quickly generating Task Flow template code, and the **STRUDEL React templates**, code templates for building STRUDEL Task Flows using the React web library. Check out the list of resources below to start learning the skills you need to get started building web applicaitons with STRUDEL Kit.
 
-  STRUDEL Kit is made up of two main products: **strudel-cli**, a command-line tool for quickly generating Task Flow template code, and the **STRUDEL React templates**, code templates for building STRUDEL Task Flows using the React web library.
+  **STRUDEL Kit**
 
-  **strudel-cli**
-
-  - [Command line](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line)
-  - [Python](https://www.python.org/)
-  - [Cookiecutter](https://cookiecutter.readthedocs.io/en/latest/README.html)
-  - [JSON](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON)
-
-  **STRUDEL React Templates**
-
-  - [TypeScript](https://www.typescriptlang.org/)
-  - [React](https://react.dev/)
-  - [Material UI Components](https://mui.com/material-ui/getting-started/)
-  - [Plotly.js](https://plotly.com/javascript/)
-
-  ## Learning Resources
-
-  **STRUDEL**
-
+  - [Introduction and Getting Started](https://strudel.science/strudel-kit/docs/)
   - [Tutorials](https://strudel.science/design-system/tutorials/)
-  - [Task Flows](https://strudel.science/design-system/task-flows/overview/)
   - [Community Discussions](https://github.com/orgs/strudel-science/discussions)
-  - [Events](https://strudel.science/engage/events/)
-  - [Connect and Contribute](https://strudel.science/engage/contribute/)
 
   **Web Development**
 
   - [Beginner's Guide to React](https://egghead.io/courses/the-beginner-s-guide-to-react)
-  - [TypeScript for JavaScript Programmers](https://www.typescriptlang.org/docs/handbook/-typescript-in-5-minutes.html)
+  - [Learn React: Describing the UI](https://react.dev/learn/describing-the-ui)
+  - [Learn TypeScript](https://www.typescriptlang.org/docs/)
 
   **Material UI**
 

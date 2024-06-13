@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Box, Chip, Grid, Link as MuiLink, Stack, Typography } from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import GitHubIcon from '@mui/icons-material/GitHub';
+import CodeIcon from '@mui/icons-material/Code';
 import DrawIcon from '@mui/icons-material/Draw';
 import BaseLayout from './BaseLayout';
 import { PageProps, Link, HeadProps } from 'gatsby';
@@ -129,13 +129,13 @@ const TaskFlowLayout: React.FC<PageProps<any, TaskFlowPageContext>> = ({ pageCon
             <Grid item md={4}>
               {hasCode && (
                 <MuiLink href={pageContext.frontmatter.codeUrl} target='_blank'>
-                  <Button variant="contained" fullWidth startIcon={<GitHubIcon />}>
+                  <Button variant="contained" fullWidth startIcon={<CodeIcon />}>
                     Code
                   </Button>
                 </MuiLink>
               )}
               {!hasCode && (
-                <Button variant="contained" fullWidth startIcon={<GitHubIcon />} disabled aria-label="Code templates on GitHub coming soon!">
+                <Button variant="contained" fullWidth startIcon={<CodeIcon />} disabled aria-label="Code templates on GitHub coming soon!">
                   Coming soon!
                 </Button>
               )}
