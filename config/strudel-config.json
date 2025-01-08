@@ -141,6 +141,12 @@
         {
           "name": "News",
           "path": "/engage/news"
+        },
+        {
+          "name": "Blog",
+          "path": "/engage/blog",
+          "markdownId": "engage-blog",
+          "layoutComponent": "PageLayout"
         }
       ]
     },
