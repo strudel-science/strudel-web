@@ -93,34 +93,17 @@ const MediumFeed: React.FC = () => {
                         <span>{post.pubDate}</span>
                     </Stack>
                 </Grid>
-                <Grid item md={3}>
-            {/* <div>
-              <h3 style={{ margin: 0, marginBottom: '10px' }}>
-                <a
-                  href={post.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: '#2b6cb0', textDecoration: 'none' }}
-                >
-                  {post.title}
-                </a>
-              </h3>
-              <p style={{ margin: 0, color: '#555' }}>{post.pubDate}</p>
-              <p style={{ color: '#333', marginTop: '10px', fontSize: '0.9em', lineHeight: '1.4' }}>
-                {post.description}
-              </p>
-            </div> */}
-        
-                <img
-                src={post.thumbnail}
-                alt="Thumbnail"
-                style={{
-                    width: '200px',
-                    height: '200px',
-                    objectFit: 'cover',
-                    borderRadius: '8px',
-                }}
-                />
+                <Grid item md={3}>        
+                  <img
+                  src={post.thumbnail}
+                  alt="Thumbnail"
+                  style={{
+                      width: '200px',
+                      height: '200px',
+                      objectFit: 'cover',
+                      borderRadius: '8px',
+                  }}
+                  />
                 </Grid>
             </Grid>
           </ContentCard>
