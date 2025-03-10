@@ -1,7 +1,4 @@
 # Sample workflow for building and deploying a Gatsby site to GitHub Pages
-#
-# To get started with Gatsby see: https://www.gatsbyjs.com/docs/quick-start/
-#
 name: Deploy to Staging
 
 on:
@@ -59,11 +56,6 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
-        # with:
-        #   # Automatically inject pathPrefix in your Gatsby configuration file.
-        #   #
-        #   # You may remove this line if you want to manage the configuration yourself.
-        #   static_site_generator: gatsby
       - name: Restore cache
         uses: actions/cache@v3
         with:
@@ -79,6 +71,23 @@ jobs:
         env:
           PREFIX_PATHS: "true"
         run: ${{ steps.detect-package-manager.outputs.manager }} run build --prefix-paths
+
+      # Debug steps
+      - name: Check artifact size
+        run: du -sh ./public
+      - name: Check for symlinks
+        run: |
+          echo "Checking for symlinks in ./public directory..."
+          find ./public -type l -exec ls -la {} \;
+
+      # Fix symlinks
+      - name: Copy files (remove symlinks)
+        run: |
+          mkdir -p fixed_public
+          cp -Lr ./public/* fixed_public/
+          rm -rf ./public
+          mv fixed_public ./public
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
