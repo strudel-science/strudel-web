@@ -70,26 +70,9 @@ jobs:
       - name: Build with Gatsby
         env:
           PREFIX_PATHS: "true"
-        run: ${{ steps.detect-package-manager.outputs.manager }} run build --prefix-paths
-
-      # Debug steps
-      - name: Check artifact size
-        run: du -sh ./public
-      - name: Check for symlinks
-        run: |
-          echo "Checking for symlinks in ./public directory..."
-          find ./public -type l -exec ls -la {} \;
-
-      # Fix symlinks
-      - name: Copy files (remove symlinks)
-        run: |
-          mkdir -p fixed_public
-          cp -Lr ./public/* fixed_public/
-          rm -rf ./public
-          mv fixed_public ./public
-
+        run: ${{ steps.detect-package-manager.outputs.manager }} run build --prefix-paths]
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           name: "github-pages"
           path: ./public
