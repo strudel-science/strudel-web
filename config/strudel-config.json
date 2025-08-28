@@ -48,6 +48,12 @@
               "layoutComponent": "PageLayout"
             },
             {
+              "name": "Add Notes",
+              "path": "/design-system/task-flows/add-notes",
+              "markdownId": "task-flows-add-notes",
+              "layoutComponent": "TaskFlowLayout"
+            },
+            {
               "name": "Compare Data",
               "path": "/design-system/task-flows/compare-data",
               "markdownId": "task-flows-compare-data",
@@ -57,6 +63,12 @@
               "name": "Contribute Data",
               "path": "/design-system/task-flows/contribute-data",
               "markdownId": "task-flows-contribute-data",
+              "layoutComponent": "TaskFlowLayout"
+            },
+            {
+              "name": "Create Process Graph",
+              "path": "/design-system/task-flows/create-process-graph",
+              "markdownId": "task-flows-create-process-graph",
               "layoutComponent": "TaskFlowLayout"
             },
             {
@@ -75,6 +87,12 @@
               "name": "Monitor Activities",
               "path": "/design-system/task-flows/monitor-activities",
               "markdownId": "task-flows-monitor-activities",
+              "layoutComponent": "TaskFlowLayout"
+            },
+            {
+              "name": "Review AI Feature Extraction",
+              "path": "/design-system/task-flows/review-ai-feature-extraction",
+              "markdownId": "task-flows-review-ai-feature-extraction",
               "layoutComponent": "TaskFlowLayout"
             },
             {
@@ -99,24 +117,6 @@
               "name": "Track State",
               "path": "/design-system/task-flows/track-state",
               "markdownId": "task-flows-track-state",
-              "layoutComponent": "TaskFlowLayout"
-            },
-            {
-              "name": "Add Notes",
-              "path": "/design-system/task-flows/add-notes",
-              "markdownId": "task-flows-add-notes",
-              "layoutComponent": "TaskFlowLayout"
-            },
-            {
-              "name": "Create Process Graph",
-              "path": "/design-system/task-flows/create-process-graph",
-              "markdownId": "task-flows-create-process-graph",
-              "layoutComponent": "TaskFlowLayout"
-            },
-            {
-              "name": "Review AI Feature Extraction",
-              "path": "/design-system/task-flows/review-ai-feature-extraction",
-              "markdownId": "task-flows-review-ai-feature-extraction",
               "layoutComponent": "TaskFlowLayout"
             }
           ]
