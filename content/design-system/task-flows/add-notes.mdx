@@ -1,0 +1,76 @@
+---
+id: 'task-flows-add-notes'
+title: 'Add Notes'
+tagline: ''
+tags: ['comments', 'notes']
+intent: 'Enables users to add, edit or reply to notes for entities to further annotate, clarify or provide additional context to existing information.'
+intentDetails: 'Teams and communities working with scientific interfaces depend on clear communication and collaboration. Adding notes or comments directly in the interface makes it easier to share insights and coordinate effectively.'
+exampleUrl: ''
+codeUrl: ''
+figmaUrl: 'https://www.figma.com/design/UQT4iRirRG9lrgzayfzswY/STRUDEL-Task-Flows?node-id=838-2&t=hIWwOhiqAdYd9nZj-1'
+iconImage: '../../images/task-flows/overview-icons/add-notes.png'
+---
+import { Grid, TableHead, TableRow, TableCell, TableBody } from '@mui/material';
+import { TaskFlowCard } from '/src/components/TaskFlowCard';
+import { InfoTable } from '/src/components/InfoTable';
+
+## Overview
+
+<Grid container spacing={4}>
+  <Grid item xs={6} md={4}>
+    ![TODO alt text](../../images/task-flows/add-notes/1.Single-experimental-events.png)
+  </Grid>
+  <Grid item xs={6} md={4}>
+    ![TODO alt text](../../images/task-flows/add-notes/2.Add-notes-empty-state.png)
+  </Grid>
+  <Grid item xs={6} md={4}>
+    ![TODO alt text](../../images/task-flows/add-notes/3.Multiple-notes-with-nested-replies.png)
+  </Grid>
+  <Grid item xs={6} md={4}>
+    ![TODO alt text](../../images/task-flows/add-notes/4.Reply-to-note.png)
+  </Grid>
+  <Grid item xs={6} md={4}>
+    ![TODO alt text](../../images/task-flows/add-notes/5.Resolved-comments.png)
+  </Grid>
+</Grid>
+
+### Guidelines for adapting the Task Flow
+
+<ul>
+  <li>
+    Determine if the entity needs simple linear notes, or complex notes/ comments with nested replies and resolve actions
+  </li>
+  <li>
+    Give a clear and visible call-to-action button on entity details view, and if necessary -- on the entities datatable overview. 
+  </li>
+  <li>
+    Assess how important and frequently accessed the notes are, and, if justified, display a truncated notes column in the list view to enable quick scanning.
+  </li>
+  <li>
+    Assess how much context should be preserved. Based on this, decide whether to allow users to edit or delete their notes, and display timestamps for when each note was created or last modified.
+  </li>
+  <li>
+    Determine if actions like resolving or reopening notes/comments are needed. They are most useful in structured collaboration, such as reviews, approvals, or issue tracking.
+  </li>
+  <li>
+    In case of tasks which can accumulate lot of notes/ comments, consider giving options to search notes and filter “All,” “Open,” and “Resolved” notes/ comments.
+  </li>
+</ul>
+
+{/*
+## Variations & Examples
+
+Aliquip ea ipsum Lorem amet incididunt excepteur Lorem aute proident deserunt commodo. Officia ipsum magna laborum dolore mollit adipisicing eiusmod. Duis irure ullamco in aliquip eu ad aliquip elit cupidatat.
+
+*/}
+
+## Related Task Flows
+
+<Grid container spacing={4}>
+  <Grid item md={6}>
+    <TaskFlowCard name="Explore Data" />
+  </Grid>
+  <Grid item md={6}>
+    <TaskFlowCard name="Run Computation" />
+  </Grid>
+</Grid>

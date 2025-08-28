@@ -100,6 +100,24 @@
               "path": "/design-system/task-flows/track-state",
               "markdownId": "task-flows-track-state",
               "layoutComponent": "TaskFlowLayout"
+            },
+            {
+              "name": "Add Notes",
+              "path": "/design-system/task-flows/add-notes",
+              "markdownId": "task-flows-add-notes",
+              "layoutComponent": "TaskFlowLayout"
+            },
+            {
+              "name": "Create Process Graph",
+              "path": "/design-system/task-flows/create-process-graph",
+              "markdownId": "task-flows-create-process-graph",
+              "layoutComponent": "TaskFlowLayout"
+            },
+            {
+              "name": "Review AI Feature Extraction",
+              "path": "/design-system/task-flows/review-ai-feature-extraction",
+              "markdownId": "task-flows-review-ai-feature-extraction",
+              "layoutComponent": "TaskFlowLayout"
             }
           ]
         },
