@@ -1,9 +1,9 @@
 ---
-id: 'engage-contribute'
-title: 'Connect & Contribute'
-subtitle: 'Help grow and sustain the STRUDEL community'
+id: 'engage-get-involved'
+title: 'Get Involved'
+subtitle: 'Connect. Collaborate. Contribute.'
 ---
-import { Grid, Link as MuiLink } from '@mui/material';
+import { Box, Grid, Button, Link as MuiLink } from '@mui/material';
 import { PageContainer } from '/src/components/PageContainer';
 import { Hero } from '/src/components/Hero';
 import { ContentCard } from '/src/components/ContentCard';
@@ -11,28 +11,38 @@ import { Link } from 'gatsby';
 
 <Hero>
 
-***Want to stay up to date? Have questions or ideas?***
+***Explore ways to Get Involved!***
 
 <Grid container spacing={4}>
     <Grid item md={4}>
       <ContentCard>
-        #### Get in touch
+        #### Monthly Office Hours
 
-        E-mail the team at <MuiLink href="mailto:strudel@lbl.gov">strudel@lbl.gov</MuiLink>
+        Need support for using STRUDEL or have questions about UX? <br/> <br/>
+        Join our monthly office hours to connect, share challenges, and get feedback from UX experts.
+        
+        <MuiLink href='/engage/get-involved/#sec-monthly-office-hrs'>**Learn more**</MuiLink>
       </ContentCard>
     </Grid>
     <Grid item md={4}>
       <ContentCard>
-        #### Join our mailing list
+        #### US-RSE UX Working Group
 
-        Send a message to <MuiLink href="mailto:strudel-community+subscribe@lbl.gov">strudel-community+subscribe@lbl.gov</MuiLink>
+        Passionate about making scientific software more usable and user-friendly?  <br/> <br/>
+        Connect with other researchers, developers, and designers to learn and share experiences & practices.
+        
+        <MuiLink href='/engage/get-involved/#sec-contribute-details'>**Learn more**</MuiLink>
       </ContentCard>
     </Grid>
     <Grid item md={4}>
       <ContentCard>
-        #### Contribute to the Discussion
+        #### Contribute to STRUDEL
 
-        See the latest <MuiLink href='https://github.com/orgs/strudel-science/discussions/' target='_blank'>Discussion on GitHub</MuiLink>
+        Have ideas for STRUDEL?<br/><br/>
+        Help shape STRUDEL into the best tool it can be. From feedback to code, every contribution helps us grow—and we’d love to have you involved.
+        
+        <MuiLink href='/engage/get-involved/#sec-contribute-details'>**Learn more**</MuiLink>
+        
       </ContentCard>
     </Grid>
   </Grid>
@@ -41,8 +51,66 @@ import { Link } from 'gatsby';
 
 <PageContainer>
 
+<h2 id="sec-monthly-office-hrs">Attend Upcoming Community Events</h2>
 
-## Contributing to STRUDEL
+Join the STRUDEL community for webinars, workshops, and other events focused on building more usable scientific software. 
+You can also partner with us to co-host an event, reach out to <MuiLink href='mailto:strudel@lbl.gov' target='_blank'>strudel@lbl.gov</MuiLink> to collaborate.
+
+  <Box
+      sx={{
+        display: 'inline-block',
+        marginTop: 2
+      }}
+    >
+    <Link to="/engage/events">
+        <Button variant="contained">
+          Explore Upcoming Events
+        </Button>
+    </Link>
+  </Box>
+  
+
+<h2 id="sec-monthly-office-hrs">Join our Monthly Office Hours</h2>
+
+Are you looking for support on a current project utilizing STRUDEL, interested in getting started with the STRUDEL Kit, or exploring how to better incorporate UX in your product planning and roadmap? 
+<br/><br/>Get help directly from the STRUDEL team during our monthly office hours. 
+<br/>Sign up for a 15-30 minute timeslot during our next office hours via registration link below:
+
+<Box
+      sx={{
+        display: 'inline-block',
+        marginTop: 2
+      }}
+    >
+    <Link to="">
+        <Button variant="contained">
+          Register for Office Hours
+        </Button>
+    </Link>
+  </Box>
+
+<h2 id="sec-us-rse-wg">Join the US-RSE UX Working Group</h2>
+
+We invite you to join the US-RSE User Experience (UX) Working Group (UXWG). This working group advocates for increased awareness and adoption of UX methods in research software engineering. The STRUDEL team regularly joins these monthly meetings.
+
+Working group members have a variety of backgrounds and professional roles. During meetings, they share knowledge, experiences, and challenges and to foster a diverse and inclusive community for research software UX practitioners and research software engineers (RSEs) who are interested in UX. Doing so will collectively help us advocate for and demystify UX to the larger RSE community, scientists across domains, and funding agency staff who support products and services.
+
+To get involved, <MuiLink href='https://docs.google.com/forms/d/e/1FAIpQLSdJbPczGHFN8mfMFu_YQym508OzFtOZxfSzr1sOoINxaMmiaw/viewform' target='_blank'>join the US-RSE community on Slack</MuiLink> and visit us on the <MuiLink href='https://usrse.slack.com/messages/wg-ux' target='_blank'>#wg-ux</MuiLink>  channel. You can also directly contact the working group co-chairs (Drew Paine & Hannah Cohoon) at <MuiLink href='mailto:wg-ux@us-rse.org' target='_blank'>wg-ux@us-rse.org</MuiLink>.
+
+<Box
+      sx={{
+        display: 'inline-block',
+        marginTop: 2
+      }}
+    >
+    <Link to="https://docs.google.com/forms/d/e/1FAIpQLSdJbPczGHFN8mfMFu_YQym508OzFtOZxfSzr1sOoINxaMmiaw/viewform">
+        <Button variant="contained">
+          Join US-RSE Community
+        </Button>
+    </Link>
+  </Box>
+
+<h2 id="sec-contribute-details">Contribute to STRUDEL</h2>
 
 
 STRUDEL is a way to plan, design, and build usable scientific software. STRUDEL will be a better tool if it is anchored in community needs and insights, so your engagement and contributions are very valuable. We recommend you get involved with STRUDEL through one of the activities listed below and elaborated on elsewhere in this guide. If you have another idea of how you can support that mission, we encourage you to pursue it. Contributions come in all shapes and sizes and we value them all. Let us know if you <MuiLink href='https://github.com/strudel-science/strudel-kit/blob/main/CONTRIBUTING.md#getting-help' target='_blank'>need help</MuiLink>.

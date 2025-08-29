@@ -144,12 +144,12 @@
     {
       "name": "Engage",
       "path": "/engage",
-      "redirectTo": "/engage/contribute",
+      "redirectTo": "/engage/get-involved",
       "children": [
         {
-          "name": "Contribute",
-          "path": "/engage/contribute",
-          "markdownId": "engage-contribute",
+          "name": "Get Involved",
+          "path": "/engage/get-involved",
+          "markdownId": "engage-get-involved",
           "layoutComponent": "PageLayout"
         },
         {
