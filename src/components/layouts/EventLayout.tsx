@@ -64,6 +64,14 @@ const EventLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) =
         <Grid container minHeight='250px' spacing={8}>
           <Grid item md={8}>
             {pageContext.frontmatter.shortDescription}
+            
+            {pageContext.frontmatter.registrationCode && (
+                <div>
+                  <br/>
+                  Registeration code: <b>{pageContext.frontmatter.registrationCode}</b>
+                  <br/>
+                </div>
+              )}
             <Box
               sx={{
                 marginTop: 2
@@ -130,9 +138,14 @@ const EventLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) =
               <Typography fontWeight="bold">
                 Register:
               </Typography>
-              <MuiLink href={pageContext.frontmatter.registrationLink}>
+              <MuiLink href={pageContext.frontmatter.registrationLink } target='_blank'>
                 {pageContext.frontmatter.registrationLink}
               </MuiLink>
+              {pageContext.frontmatter.registrationCode && (
+                <div>
+                  using code: <b>{pageContext.frontmatter.registrationCode}</b>
+                </div>
+              )}
             </Stack>
           )}
           <Stack direction="row" spacing={1}>

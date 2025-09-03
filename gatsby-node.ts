@@ -125,6 +125,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
               location
               registrationLink
               shortDescription
+              registrationCode
               image {
                 childImageSharp {
                   gatsbyImageData(width: 800)
