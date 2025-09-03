@@ -68,7 +68,7 @@ const EventLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) =
             {pageContext.frontmatter.registrationCode && (
                 <div>
                   <br/>
-                  Registeration code: <b>{pageContext.frontmatter.registrationCode}</b>
+                  Registration code: <b>{pageContext.frontmatter.registrationCode}</b>
                   <br/>
                 </div>
               )}
