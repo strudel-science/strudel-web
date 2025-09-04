@@ -33,7 +33,6 @@ dayjs.extend(advancedFormat);
  * Event pages are generated dynamically based on the event files in /content/engage/events
  */
 const EventLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) => {
-  console.log(pageContext);
   const thumbnailImg = getImageFromFileNode(pageContext.frontmatter.image);
   const containerWidth = 'md';
   return (
