@@ -33,6 +33,7 @@ dayjs.extend(advancedFormat);
  * Event pages are generated dynamically based on the event files in /content/engage/events
  */
 const EventLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) => {
+  console.log(pageContext);
   const thumbnailImg = getImageFromFileNode(pageContext.frontmatter.image);
   const containerWidth = 'md';
   return (
@@ -54,7 +55,7 @@ const EventLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) =
               alignItems: 'center',
             }}
           >
-            <span>{dayjs(pageContext.frontmatter.date).format('MMMM D, YYYY h:mm A z')}</span>
+            <span>{dayjs(pageContext.frontmatter.date).tz(pageContext.frontmatter.timezone || undefined).format('MMMM D, YYYY h:mm A z')}</span>
             <CircleIcon sx={{ fontSize: '0.75rem' }} />
             <span>{pageContext.frontmatter.format}</span>
           </Stack>
@@ -120,7 +121,7 @@ const EventLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) =
               When:
             </Typography>
             <Typography>
-              {dayjs(pageContext.frontmatter.date).format('MMMM D, YYYY H:mm A z')}
+              {dayjs(pageContext.frontmatter.date).tz(pageContext.frontmatter.timezone || undefined).format('MMMM D, YYYY H:mm A z')}
             </Typography>
           </Stack>
           <Stack direction="row" spacing={1}>
