@@ -119,6 +119,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
               title
               slug
               date
+              timezone
               upcoming
               speakers
               format

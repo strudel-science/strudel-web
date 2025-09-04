@@ -52,6 +52,7 @@ export interface EventFrontmatter {
   title: string;
   slug: string;
   date: string;
+  timezone?: string;
   upcoming?: boolean;
   newsUrl?: string;
   speakers: string[];

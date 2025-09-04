@@ -121,7 +121,7 @@ const EventsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                     </Box>
                     <Stack direction="row" spacing={1}>
                       <EventIcon /> 
-                      <Typography>{dayjs(event.frontmatter.date).format('MMMM D, YYYY h:mm A z')}</Typography>
+                      <Typography>{dayjs(event.frontmatter.date).tz(event.frontmatter.timezone || undefined).format('MMMM D, YYYY h:mm A z')}</Typography>
                     </Stack>
                     <Typography
                       sx={{
@@ -234,6 +234,7 @@ export const query = graphql`
           title
           slug
           date
+          timezone
           upcoming
           newsUrl
           speakers
