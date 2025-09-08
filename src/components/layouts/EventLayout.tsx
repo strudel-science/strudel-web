@@ -6,6 +6,7 @@ import VideocamIcon from '@mui/icons-material/Videocam';
 import CircleIcon from '@mui/icons-material/Circle';
 import PersonIcon from '@mui/icons-material/Person';
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
+import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 import BaseLayout from './BaseLayout';
 import { PageHeader } from '../PageHeader';
 import { HeadProps, PageProps } from 'gatsby';
@@ -68,7 +69,7 @@ const EventLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) =
             {pageContext.frontmatter.registrationCode && (
                 <div>
                   <br/>
-                  Registration code: <b>{pageContext.frontmatter.registrationCode}</b>
+                  Registration code: {pageContext.frontmatter.registrationCode}
                   <br/>
                 </div>
               )}
@@ -141,13 +142,20 @@ const EventLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) =
               <MuiLink href={pageContext.frontmatter.registrationLink } target='_blank'>
                 {pageContext.frontmatter.registrationLink}
               </MuiLink>
-              {pageContext.frontmatter.registrationCode && (
-                <div>
-                  using code: <b>{pageContext.frontmatter.registrationCode}</b>
-                </div>
-              )}
             </Stack>
+            
           )}
+          {pageContext.frontmatter.registrationCode && (
+            <Stack direction="row" spacing={1}>
+                <AssignmentTurnedInIcon />  
+                <Typography fontWeight="bold">
+                  Registration Code:
+                </Typography>
+                <div>
+                  {pageContext.frontmatter.registrationCode}
+                </div>
+            </Stack>
+              )}
           <Stack direction="row" spacing={1}>
             <PersonIcon />  
             <Typography fontWeight="bold">
