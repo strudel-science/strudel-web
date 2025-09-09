@@ -273,7 +273,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
   createRedirect({
     fromPath: `/engage/`,
-    toPath: `/engage/contribute/`,
+    toPath: `/engage/get-involved/`,
     isPermanent: true, 
     force: true, 
     redirectInBrowser: true,
