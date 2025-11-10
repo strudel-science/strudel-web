@@ -211,12 +211,12 @@ const NewsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                     </Stack>
                   </Stack>
                 </Grid>
-                <Grid item md={3} >
+                <Grid item md={3} sx={{ minHeight: '200px'}} >
                   <Box
                     sx={{
                       // backgroundColor: 'neutral.main',
                       borderRadius: '0 10px 10px 0',
-                      width: '100%',
+                      height: '100%',
                       overflow: 'hidden',
                       pointerEvents: 'none',
                     }}
