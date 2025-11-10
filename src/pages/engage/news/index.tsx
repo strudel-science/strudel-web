@@ -141,10 +141,10 @@ const NewsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                   </Stack>
                 </Stack>
               </Grid>
-              <Grid item md={4} sx={{ minHeight: '250px' }}>
+              <Grid item md={4} sx={{ minHeight: '250px'}}>
                 <Box
                   sx={{
-                    backgroundColor: 'neutral.main',
+                    // backgroundColor: 'neutral.main',
                     borderRadius: '0 10px 10px 0',
                     height: '100%',
                     overflow: 'hidden',
@@ -152,7 +152,7 @@ const NewsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                   }}
                 >
                   {latestNewsItem.frontmatter.thumbnailData && (
-                    <ResponsiveImageWrapper>
+                    <ResponsiveImageWrapper sx={{ display: 'flex', verticalAlign: 'middle' }}>
                       <GatsbyImage
                         image={latestNewsItem.frontmatter.thumbnailData} 
                         alt={`Thumbnail banner for ${latestNewsItem.frontmatter.title}`}
@@ -211,10 +211,10 @@ const NewsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                     </Stack>
                   </Stack>
                 </Grid>
-                <Grid item md={3}>
+                <Grid item md={3} >
                   <Box
                     sx={{
-                      backgroundColor: 'neutral.main',
+                      // backgroundColor: 'neutral.main',
                       borderRadius: '0 10px 10px 0',
                       width: '100%',
                       overflow: 'hidden',
@@ -222,7 +222,7 @@ const NewsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                     }}
                   >
                     {newsItem.frontmatter.thumbnailData && (
-                      <ResponsiveImageWrapper>
+                      <ResponsiveImageWrapper sx={{ display: 'flex', verticalAlign: 'middle' }}>
                         <GatsbyImage
                           image={newsItem.frontmatter.thumbnailData} 
                           alt={`Thumbnail banner for ${newsItem.frontmatter.title}`}
