@@ -34,7 +34,7 @@ const GalleryDetailLayout: React.FC<PageProps<any, any>> = ({ pageContext, child
   const otherImages = pageContext.frontmatter.otherImages.map((image: any) => {
     return getImageFromFileNode(image);
   });
-  console.log(otherImages);
+
   return (
     <BaseLayout>
       <PageHeader containerWidth={containerWidth}>

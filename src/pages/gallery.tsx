@@ -64,7 +64,7 @@ const GalleryPage: React.FC<PageProps<DataProps>> = ({ data }) => {
             variant="h6" 
             fontWeight="normal"
           >
-            Explore from examples of apps built using STRUDEL
+            Explore examples of apps built using STRUDEL
           </Typography>
         </Stack>
       </PageHeader>
@@ -147,7 +147,7 @@ export const query = graphql`
           liveUrl
           primaryImage {
             childImageSharp {
-              gatsbyImageData(width: 1600)
+              gatsbyImageData(width: 2000)
             }
           }
         }
