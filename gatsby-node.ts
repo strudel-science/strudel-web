@@ -1,7 +1,7 @@
 import path from "path";
 import type { GatsbyNode } from "gatsby";
 import { flattenPages } from "./src/utils/utils";
-import { EventFrontmatter, NewsFrontmatter, PageFrontmatter, StrudelPage, TaskFlowFrontmatter } from "./src/types/strudel-config";
+import { EventFrontmatter, GalleryFrontmatter, NewsFrontmatter, PageFrontmatter, StrudelPage, TaskFlowFrontmatter } from "./src/types/strudel-config";
 
 /**
  * Shape of the result from the graphql query
@@ -36,6 +36,17 @@ interface Result {
     news: {
       nodes: {
         frontmatter: NewsFrontmatter,
+        internal: {
+          contentFilePath: string;
+        },
+        fields: {
+          source: string;
+        }
+      }[]
+    }
+    gallery: {
+      nodes: {
+        frontmatter: GalleryFrontmatter,
         internal: {
           contentFilePath: string;
         },
@@ -159,6 +170,29 @@ export const createPages: GatsbyNode["createPages"] = async ({
             }
           }
         }
+        gallery: allMdx(filter: {fields: {source: {eq: "gallery"}}}) {
+          nodes {
+            fields {
+              source
+            }
+            frontmatter {
+              title
+              contributors
+              appType
+              repoUrl
+              liveUrl
+              primaryImage {
+                childImageSharp {
+                  gatsbyImageData(width: 800)
+                }
+              }
+            }
+            excerpt
+            internal {
+              contentFilePath
+            }
+          }
+        }
       }
     `
   );
@@ -173,6 +207,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
   const mdxPages = result.data?.content.nodes;
   const eventPages = result.data?.events.nodes;
   const newsPages = result.data?.news.nodes;
+  const galleryPages = result.data?.gallery.nodes;
 
   /**
    * Create a page for each page object that has an associated markdown file.
@@ -238,6 +273,22 @@ export const createPages: GatsbyNode["createPages"] = async ({
         component: `${newsTemplate}?__contentFilePath=${newsPage.internal.contentFilePath}`,
         context: {
           frontmatter: newsPage.frontmatter,
+        }
+      });
+    })
+  }
+
+  /**
+   * Create a page for each gallery mdx node.
+   */
+  if (galleryPages) {
+    const newsTemplate = path.resolve(`src/components/layouts/NewsLayout.tsx`)
+    galleryPages.forEach((galleryPage) => {
+      createPage({
+        path: `/gallery/${galleryPage.frontmatter.slug}`,
+        component: `${newsTemplate}?__contentFilePath=${galleryPage.internal.contentFilePath}`,
+        context: {
+          frontmatter: galleryPage.frontmatter,
         }
       });
     })

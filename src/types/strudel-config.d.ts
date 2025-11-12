@@ -76,3 +76,19 @@ export interface NewsFrontmatter {
   thumbnail?: string;
   thumbnailData?: IGatsbyImageData;
 }
+
+/**
+ * Properties expected to exist in the markdown frontmatter
+ * for an app gallery item.
+ */
+export interface GalleryFrontmatter {
+  title: string;
+  slug: string;
+  contributors: string[];
+  appType: string;
+  repoUrl?: string;
+  liveUrl?: string;
+  primaryImage?: string;
+  primaryImageData?: IGatsbyImageData;
+  otherImages?: string[];
+}

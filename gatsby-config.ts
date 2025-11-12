@@ -24,7 +24,7 @@ const config: GatsbyConfig = {
       options: {
         name: 'content',
         path: `${__dirname}/content`,
-        ignore: [`**/engage/events/*`, `**/engage/news/*`],
+        ignore: [`**/engage/events/*`, `**/engage/news/*`, `${__dirname}/content/gallery/*`],
       }
     },
     {
@@ -39,6 +39,13 @@ const config: GatsbyConfig = {
       options: {
         name: 'news',
         path: `${__dirname}/content/engage/news`,
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'gallery',
+        path: `${__dirname}/content/gallery`,
       }
     },
     {
