@@ -177,14 +177,22 @@ export const createPages: GatsbyNode["createPages"] = async ({
             }
             frontmatter {
               title
+              slug
               contributors
               appType
               repoUrl
               liveUrl
               primaryImage {
                 childImageSharp {
-                  gatsbyImageData(width: 800)
+                  gatsbyImageData
                 }
+                absolutePath
+              }
+              otherImages {
+                childImageSharp {
+                  gatsbyImageData
+                }
+                absolutePath
               }
             }
             excerpt
@@ -282,11 +290,11 @@ export const createPages: GatsbyNode["createPages"] = async ({
    * Create a page for each gallery mdx node.
    */
   if (galleryPages) {
-    const newsTemplate = path.resolve(`src/components/layouts/NewsLayout.tsx`)
+    const galleryTemplate = path.resolve(`src/components/layouts/GalleryDetailLayout.tsx`)
     galleryPages.forEach((galleryPage) => {
       createPage({
         path: `/gallery/${galleryPage.frontmatter.slug}`,
-        component: `${newsTemplate}?__contentFilePath=${galleryPage.internal.contentFilePath}`,
+        component: `${galleryTemplate}?__contentFilePath=${galleryPage.internal.contentFilePath}`,
         context: {
           frontmatter: galleryPage.frontmatter,
         }

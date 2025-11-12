@@ -17,6 +17,8 @@ import timezone from 'dayjs/plugin/timezone';
 import advancedFormat from 'dayjs/plugin/advancedFormat'
 import { getImageFromFileNode } from '../utils/utils';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import 'react-photo-view/dist/react-photo-view.css';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -80,7 +82,7 @@ const GalleryPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                       {node.frontmatter.title}
                     </Typography>
                     <Typography>
-                      Contributors: {node.frontmatter.contributors.join(', ')}
+                      Contributed by {node.frontmatter.contributors.join(', ')}
                     </Typography>
                     <Stack direction="row">
                       <Chip label={node.frontmatter.appType} />
@@ -89,30 +91,24 @@ const GalleryPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                       {node.excerpt}
                     </Typography>
                     <Stack direction="row" spacing={2}>
-                      {node.frontmatter.repoUrl && (
-                        <MuiLink  href={node.frontmatter.repoUrl} target="_blank">
+                        <Link to={`/gallery/${node.frontmatter.slug}`} target="_blank">
                           <Button 
                             variant="contained"
                             color="primary"
+                            endIcon={<ArrowForwardIcon />}
                           >
-                            View Code
+                            View Details
                           </Button>
-                        </MuiLink>
-                      )}
-                      {node.frontmatter.liveUrl && (
-                        <MuiLink  href={node.frontmatter.liveUrl} target="_blank">
-                          <Button 
-                            variant="contained"
-                            color="primary"
-                          >
-                            View Live
-                          </Button>
-                        </MuiLink>
-                      )}
+                        </Link>
                     </Stack>
                   </Stack>
                 </Grid>
                 <Grid item xs={12} md={5} sx={{ minHeight: '250px'}}>
+                  {/* <PhotoProvider>
+                    <PhotoView src={node.frontmatter.primaryImageData!.images.fallback.src}>
+                      <img src={node.frontmatter.primaryImageData!.images.fallback.src} alt="" />
+                    </PhotoView>
+                  </PhotoProvider> */}
                   <ResponsiveImageWrapper sx={{ display: 'flex', verticalAlign: 'middle' }}>
                     <GatsbyImage 
                       image={node.frontmatter.primaryImageData!} 
@@ -123,6 +119,7 @@ const GalleryPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                 </Grid>
               </Grid>
             </ContentCard>
+            
           ))}
         </Stack>
       </PageContainer>
@@ -143,6 +140,7 @@ export const query = graphql`
         }
         frontmatter {
           title
+          slug
           contributors
           appType
           repoUrl
