@@ -22,6 +22,11 @@ export const ResponsiveImageWrapper: React.FC<BoxProps> = ({ sx, children, ...re
         '& .gatsby-resp-image-wrapper .gatsby-resp-image-link': {
           width: 'auto !important'
         },
+        '& > img': {
+          width: '100%',
+          height: 'auto',
+          cursor: 'pointer',
+        },
         ...sx
       }}
     >

@@ -192,6 +192,10 @@
           "layoutComponent": "PageLayout"
         }
       ]
+    },
+    {
+      "name": "Gallery",
+      "path": "/gallery"
     }
   ]
 }
