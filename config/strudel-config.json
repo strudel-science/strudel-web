@@ -168,6 +168,10 @@
         }
       ]
     },
+        {
+      "name": "Gallery",
+      "path": "/gallery"
+    },
     {
       "name": "About",
       "path": "/about",
@@ -192,10 +196,6 @@
           "layoutComponent": "PageLayout"
         }
       ]
-    },
-    {
-      "name": "Gallery",
-      "path": "/gallery"
     }
   ]
 }
