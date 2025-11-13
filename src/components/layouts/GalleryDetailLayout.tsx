@@ -55,15 +55,18 @@ const GalleryDetailLayout: React.FC<PageProps<any, any>> = ({ pageContext, child
           >
             {pageContext.frontmatter.title}
           </Typography>
-          <Typography fontSize="large">
-            Contributed by {pageContext.frontmatter.contributors.join(', ')}
-          </Typography>
+          <Stack direction="row" spacing={2} alignItems="center">
+            <Chip label={pageContext.frontmatter.appType} variant="outlined" />
+            <Typography fontSize="large">
+              Contributed by {pageContext.frontmatter.contributors.join(', ')}
+            </Typography>
+          </Stack>
         </Stack>
       </PageHeader>
       <Hero>
         <Stack spacing={2}>
           <Stack direction="row" spacing={2}>
-            <Chip label={pageContext.frontmatter.appType} variant="outlined" sx={{ color: 'white' }} />
+            {/* <Chip label={pageContext.frontmatter.appType} variant="outlined" sx={{ color: 'white' }} /> */}
             {pageContext.frontmatter.liveUrl && (
               <MuiLink  href={pageContext.frontmatter.liveUrl} target="_blank">
                 <Button 
@@ -71,7 +74,7 @@ const GalleryDetailLayout: React.FC<PageProps<any, any>> = ({ pageContext, child
                   color="primary"
                   startIcon={<VisibilityIcon />}
                 >
-                  Go to Live Project
+                  Live Demo
                 </Button>
               </MuiLink>
             )}
@@ -95,7 +98,7 @@ const GalleryDetailLayout: React.FC<PageProps<any, any>> = ({ pageContext, child
       <PageContainer maxWidth={containerWidth}>
         <PhotoProvider>
           <PhotoView src={primaryImage?.images.fallback?.src}>
-            <ResponsiveImageWrapper>
+            <ResponsiveImageWrapper sx={{ boxShadow: 3 }}>
               <img src={primaryImage?.images.fallback?.src} alt="Primary Gallery Image" />
             </ResponsiveImageWrapper>
           </PhotoView>
@@ -103,7 +106,7 @@ const GalleryDetailLayout: React.FC<PageProps<any, any>> = ({ pageContext, child
             {otherImages.map((image: any, index: number) => (
               <Grid item xs={12} sm={6} key={index}>
                 <PhotoView src={image?.images.fallback?.src}>
-                  <ResponsiveImageWrapper>
+                  <ResponsiveImageWrapper sx={{ boxShadow: 3 }}>
                     <img 
                       src={image?.images.fallback?.src} 
                       alt={`Gallery Image ${index + 1}`} 
