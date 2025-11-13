@@ -65,31 +65,33 @@ const GalleryDetailLayout: React.FC<PageProps<any, any>> = ({ pageContext, child
       </PageHeader>
       <Hero>
         <Stack spacing={2}>
-          <Stack direction="row" spacing={2}>
-            {/* <Chip label={pageContext.frontmatter.appType} variant="outlined" sx={{ color: 'white' }} /> */}
-            {pageContext.frontmatter.liveUrl && (
-              <MuiLink  href={pageContext.frontmatter.liveUrl} target="_blank">
-                <Button 
-                  variant="contained"
-                  color="primary"
-                  startIcon={<VisibilityIcon />}
-                >
-                  Live Demo
-                </Button>
-              </MuiLink>
-            )}
-            {pageContext.frontmatter.repoUrl && (
-              <MuiLink  href={pageContext.frontmatter.repoUrl} target="_blank">
-                <Button
-                  variant="contained"
-                  color="primary"
-                  startIcon={<CodeIcon />}
-                >
-                  Code
-                </Button>
-              </MuiLink>
-            )}
-          </Stack>
+          {(pageContext.frontmatter.liveUrl || pageContext.frontmatter.repoUrl) && (
+            <Stack direction="row" spacing={2}>
+              {/* <Chip label={pageContext.frontmatter.appType} variant="outlined" sx={{ color: 'white' }} /> */}
+              {pageContext.frontmatter.liveUrl && (
+                <MuiLink  href={pageContext.frontmatter.liveUrl} target="_blank">
+                  <Button 
+                    variant="contained"
+                    color="primary"
+                    startIcon={<VisibilityIcon />}
+                  >
+                    Live Demo
+                  </Button>
+                </MuiLink>
+              )}
+              {pageContext.frontmatter.repoUrl && (
+                <MuiLink  href={pageContext.frontmatter.repoUrl} target="_blank">
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    startIcon={<CodeIcon />}
+                  >
+                    Code
+                  </Button>
+                </MuiLink>
+              )}
+            </Stack>
+          )}
           <StyledMarkdown>
             {children}
           </StyledMarkdown>
