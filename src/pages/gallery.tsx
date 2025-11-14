@@ -2,7 +2,7 @@ import { Link, PageProps, graphql, navigate } from 'gatsby';
 import React, { useEffect } from 'react';
 import Seo from '../components/Seo';
 import { Box, Chip, Grid, Stack, Link as MuiLink, Typography } from '@mui/material';
-import EventIcon from '@mui/icons-material/Event';
+import CircleIcon from '@mui/icons-material/Circle';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { PageHeader } from '../components/PageHeader';
 import BaseLayout from '../components/layouts/BaseLayout';
@@ -69,7 +69,7 @@ const GalleryPage: React.FC<PageProps<DataProps>> = ({ data }) => {
         </Stack>
       </PageHeader>
       <PageContainer>
-        <Stack>
+        <Stack spacing={3}>
           {allItems.map((node) => (
             <ContentCard key={node.id} variant="outlined" sx={{ padding: 0 }}>
               <Grid container spacing={2}>
@@ -81,12 +81,23 @@ const GalleryPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                     >
                       {node.frontmatter.title}
                     </Typography>
-                    <Typography>
+                    <Stack 
+                        direction="row"
+                        spacing={1}
+                        sx={{
+                          alignItems: 'center',
+                        }}
+                      >
+                        <Chip label={node.frontmatter.appType} variant="outlined"/>
+                        <CircleIcon sx={{ fontSize: '0.75rem' }} />
+                        <span>Contributed by {node.frontmatter.contributors.join(', ')}</span>
+                      </Stack>
+                    {/* <Typography>
                       Contributed by {node.frontmatter.contributors.join(', ')}
                     </Typography>
                     <Stack direction="row">
                       <Chip label={node.frontmatter.appType} />
-                    </Stack>
+                    </Stack> */}
                     <Typography>
                       {node.excerpt}
                     </Typography>
