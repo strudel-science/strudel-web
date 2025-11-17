@@ -169,7 +169,7 @@ import { Link } from '@mui/material';
 <PageSection containerWidth="lg" sideRibbon="right" sx={{ paddingBottom: 8 }}>
   ## Events & News
 
-  <Grid container spacing={4} sx={{ minHeight: '300px' }}>
+  <Grid container spacing={4} sx={{ minHeight: '300px', marginBottom: '2.5rem' }}>
     <Grid item md={4}>
       <ContentCard variant="light" sx={{ height: '100%' }}>
         <Stack
@@ -251,4 +251,123 @@ import { Link } from '@mui/material';
       </ContentCard>
     </Grid>
   </Grid>
+
+  ## App Gallery
+
+  <Grid container spacing={4} sx={{ minHeight: '200px' }}>
+   <Grid item md={4} sm={6} xs={12}>
+      <ContentCard variant="light" sx={{ height: '100%' }}>
+        
+        <Stack
+        sx={{
+          justifyContent: 'space-between',
+          height: '100%',
+        }}>
+          
+          <Box
+            sx={{
+              width: '100%',
+              paddingBottom: '12px',
+              '& .gatsby-image-wrapper': {
+              borderRadius: '50%',
+              display: 'flex',
+              overflow: 'hidden',
+              pointerEvents: 'none'
+              }
+            }}
+            >
+              ![Ameriflux Dashboard UI](./images/gallery/ameriflux-1.png)
+          </Box>
+
+          <Box>
+            ### Ameriflux Dashboard
+            
+            Contributed by Sy-Toan Ngo
+          </Box>
+          <Box marginTop="16px">
+            <Button 
+              to="/gallery/ameriflux-dashboard/"
+              target="_blank"
+              size="large"
+              endIcon={<ArrowForwardIcon />}
+            >
+              View Details
+            </Button>
+          </Box>
+        </Stack>
+         
+      </ContentCard>
+    </Grid>
+    <Grid item md={4} sm={6} xs={12}>
+      <ContentCard variant="light" sx={{ height: '100%' }}>
+        
+        <Stack
+        sx={{
+          justifyContent: 'space-between',
+          height: '100%',
+        }}>
+          
+          <Box
+            sx={{
+              width: '100%',
+              paddingBottom: '12px',
+              '& .gatsby-image-wrapper': {
+              borderRadius: '50%',
+              display: 'flex',
+              overflow: 'hidden',
+              pointerEvents: 'none',
+              }
+            }}
+            >
+              ![Ameriflux Dashboard UI](./images/gallery/beamline-data-explorer-1.png)
+          </Box>
+
+          <Box>
+            ### Explorer for Beamline Data
+            
+            Contributed by Seij De Leon
+          </Box>
+          <Box marginTop="16px">
+            <Button 
+              to="gallery/beamline-data-explorer/"
+              target="_blank"
+              size="large"
+              endIcon={<ArrowForwardIcon />}
+            >
+              View Details
+            </Button>
+          </Box>
+        </Stack>
+         
+      </ContentCard>
+    </Grid>
+   <Grid item md={4} sm={6} xs={12}>
+      <ContentCard variant="outlined" sx={{ height: '100%' }}>
+        <Stack
+          sx={{
+            justifyContent: 'space-between',
+            height: '100%',
+          }}>
+          <Box>
+            ## Explore App Gallery
+            
+            <Box  sx={{fontSize: '1.25rem'}}> View more examples of apps built using STRUDEL </Box>
+          </Box>
+          <Box marginTop="16px">
+            <Button 
+              to="/gallery/"
+              target="_blank"
+              size="large"
+              variant="contained"
+              endIcon={<ArrowForwardIcon />}
+            >
+              View App Gallery
+            </Button>
+          </Box>
+        
+        </Stack>
+      </ContentCard>
+    </Grid>
+  </Grid>
+  
 </PageSection>
