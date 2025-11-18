@@ -17,7 +17,7 @@ import { ResponsiveImageWrapper } from '../ResponsiveImageWrapper';
 import { Button } from 'gatsby-theme-material-ui';
 import { Hero } from '../Hero';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
-import { getImageFromFileNode } from '../../utils/utils';
+import { arrayToSentence, getImageFromFileNode } from '../../utils/utils';
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -58,7 +58,7 @@ const GalleryDetailLayout: React.FC<PageProps<any, any>> = ({ pageContext, child
           <Stack direction="row" spacing={2} alignItems="center">
             <Chip label={pageContext.frontmatter.appType} variant="outlined" />
             <Typography fontSize="large">
-              Contributed by {pageContext.frontmatter.contributors.join(', ')}
+              Contributed by {arrayToSentence(pageContext.frontmatter.contributors)}
             </Typography>
           </Stack>
         </Stack>

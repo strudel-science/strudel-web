@@ -15,7 +15,7 @@ import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
 import advancedFormat from 'dayjs/plugin/advancedFormat'
-import { getImageFromFileNode } from '../utils/utils';
+import { arrayToSentence, getImageFromFileNode } from '../utils/utils';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import 'react-photo-view/dist/react-photo-view.css';
 
@@ -92,7 +92,7 @@ const GalleryPage: React.FC<PageProps<DataProps>> = ({ data }) => {
                       >
                         <Chip label={node.frontmatter.appType} variant="outlined"/>
                         <CircleIcon sx={{ fontSize: '0.75rem' }} />
-                        <span>Contributed by {node.frontmatter.contributors.join(', ')}</span>
+                        <span>Contributed by {arrayToSentence(node.frontmatter.contributors)}</span>
                       </Stack>
                     {/* <Typography>
                       Contributed by {node.frontmatter.contributors.join(', ')}
