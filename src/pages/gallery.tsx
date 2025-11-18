@@ -18,7 +18,6 @@ import advancedFormat from 'dayjs/plugin/advancedFormat'
 import { getImageFromFileNode } from '../utils/utils';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import 'react-photo-view/dist/react-photo-view.css';
-import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -41,12 +40,15 @@ interface DataProps {
  * metadata and details about the event.
  */
 const GalleryPage: React.FC<PageProps<DataProps>> = ({ data }) => {
-  console.log(data);
   const allItems = data.allMdx.nodes.map(d => {
     if (d.frontmatter.primaryImage) {
       d.frontmatter.primaryImageData = getImageFromFileNode(d.frontmatter.primaryImage);
     }
     return d;
+  });
+
+  allItems.sort((a, b) => { 
+    return a.frontmatter.title.localeCompare(b.frontmatter.title);
   });
 
   return (
