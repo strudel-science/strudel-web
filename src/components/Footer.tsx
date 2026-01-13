@@ -4,6 +4,7 @@ import SendIcon from '@mui/icons-material/Send';
 import MarkAsUnreadIcon from '@mui/icons-material/MarkAsUnread';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { Link } from '@mui/material';
+import { StaticImage } from 'gatsby-plugin-image';
 
 interface FooterProps {
   containerWidth?: false | Breakpoint
@@ -39,8 +40,16 @@ export const Footer: React.FC<FooterProps> = ({
           <Stack direction="row" spacing={1}>
             <SendIcon />
             <Typography>
-              Get in touch at <Link href="mailto:strudel@lbl.gov" target="_blank">strudel@lbl.gov</Link>
+              Get in touch at 
             </Typography>
+            <StaticImage
+                  alt="strudel at lbl dot gov"
+                  loading="eager"
+                  placeholder="none"
+                  src="../../content/images/strudel-email-id.svg"
+                  style={{ maxWidth: '200px', height: 'auto' }}
+                  imgStyle={{ objectFit: 'contain' }}
+                />
           </Stack>
           <Stack direction="row" spacing={1}>
             <MarkAsUnreadIcon />

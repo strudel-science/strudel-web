@@ -12,7 +12,8 @@ image: '../../../content/images/news-and-events/strudel-contributor-workshop.png
 shortDescription: 'The STRUDEL team is excited to host an in-person contribution event at the AI Futures Lab on Tuesday February 10th, 2026. This event will foster a wide range of contributions to the STRUDEL open source project that is creating and stewarding resources to enable more usable scientific software experiences.'
 registrationCode: ''
 ---
-import { Grid, Box } from '@mui/material';
+import { Grid, Box , Stack, Typography} from '@mui/material';
+import emailIdSvg from '../../../content/images/strudel-email-id.svg';
 
 The STRUDEL team is excited to host an <b>in-person</b> contribution event at the AI Futures Lab on Tuesday February 10th, 2026. This event will foster a wide range of contributions to the STRUDEL open source project that is creating and stewarding resources to enable more usable scientific software experiences. Experience with the STRUDEL resources is NOT required! We anticipate sessions between 9am-4:30pm with a networking hour afterwards. Dropping in & out as your schedule allows is completely fine. <b>Light breakfast, lunch, and snacks will be provided along with opportunities to network with a range of community members.</b>
 
@@ -51,4 +52,14 @@ Activities throughout the day will include:
 - Showcase and networking time
 
 ## Questions?<br/>
-Have additional questions, reach out to strudel@lbl.gov
+<Stack direction="row" spacing={1} alignItems="center">
+    <Typography>
+      Have additional questions, reach out to 
+    </Typography>
+    <Box
+      component="img"
+      src={emailIdSvg}
+      alt="strudel [at] lbl [dot] gov"
+      sx={{ maxWidth: '200px', height: 'auto', objectFit: 'contain' }}
+    />
+</Stack>

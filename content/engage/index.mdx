@@ -3,12 +3,13 @@ id: 'engage-get-involved'
 title: 'Get Involved'
 subtitle: 'Connect. Collaborate. Contribute.'
 ---
-import { TableHead, TableRow, TableCell, TableBody, Box, Grid, Button, Link as MuiLink } from '@mui/material';
+import { TableHead, TableRow, TableCell, TableBody, Box, Grid, Button,  Stack, Typography, Link as MuiLink } from '@mui/material';
 import { PageContainer } from '/src/components/PageContainer';
 import { Hero } from '/src/components/Hero';
 import { ContentCard } from '/src/components/ContentCard';
 import { Link } from 'gatsby';
 import { InfoTable } from '/src/components/InfoTable';
+import emailIdSvg from '../images/strudel-email-id.svg';
 
 <Hero>
 
@@ -55,7 +56,20 @@ import { InfoTable } from '/src/components/InfoTable';
 <h2 id="sec-community-events">Attend Upcoming Community Events</h2>
 
 Join the STRUDEL community for webinars, workshops, and other events focused on building more usable scientific software. 
-You can also partner with us to co-host an event, reach out to <MuiLink href='mailto:strudel@lbl.gov' target='_blank'>strudel@lbl.gov</MuiLink> to collaborate.
+ <Stack direction="row" spacing={1} alignItems="center">
+    <Typography>
+      You can also partner with us to co-host an event, reach out at
+    </Typography>
+    <Box
+      component="img"
+      src={emailIdSvg}
+      alt="strudel [at] lbl [dot] gov"
+      sx={{ maxWidth: '200px', height: 'auto', objectFit: 'contain' }}
+    />
+    <Typography>
+      to collaborate.
+    </Typography>
+  </Stack>
 
   <Box
       sx={{
@@ -105,7 +119,7 @@ Are you looking for support on a current project utilizing STRUDEL, interested i
           1:00 PM ET / 10:00 AM PT
         </TableCell>
         <TableCell>
-          <MuiLink href='https://us02web.zoom.us/j/86900543275' target='_blank'>https://us02web.zoom.us/j/86900543275</MuiLink>
+          Expired
         </TableCell>
       </TableRow>
       
@@ -120,7 +134,7 @@ Are you looking for support on a current project utilizing STRUDEL, interested i
           12:00 PM ET / 9:00 AM PT
         </TableCell>
         <TableCell>
-          <MuiLink href='https://lbnl.zoom.us/j/92080995396?pwd=vki18jjUb5OC0whdVMbb9bEJAGR6Gw.1&jst=2' target='_blank'>https://lbnl.zoom.us/j/92080995396?pwd=vki18jjUb5OC0whdVMbb9bEJAGR6Gw.1&jst=2</MuiLink>
+          Expired
         </TableCell>
       </TableRow>
 
@@ -135,7 +149,7 @@ Are you looking for support on a current project utilizing STRUDEL, interested i
           12:00 PM ET / 9:00 AM PT
         </TableCell>
         <TableCell>
-          <MuiLink href='https://us02web.zoom.us/j/86900543275' target='_blank'>https://us02web.zoom.us/j/86900543275</MuiLink>
+          Expired
         </TableCell>
       </TableRow>
 
@@ -150,7 +164,7 @@ Are you looking for support on a current project utilizing STRUDEL, interested i
           12:00 PM ET / 9:00 AM PT
         </TableCell>
         <TableCell>
-          <MuiLink href='https://lbnl.zoom.us/j/92413708138?pwd=zL0VDOwXQabJ7KkmumQWELlY6t2aSs.1&jst=2' target='_blank'>Join meeting</MuiLink>
+          Expired
         </TableCell>
       </TableRow>
 
@@ -180,14 +194,13 @@ Are you looking for support on a current project utilizing STRUDEL, interested i
           12:00 PM ET / 9:00 AM PT
         </TableCell>
         <TableCell>
-          <MuiLink href='https://lbnl.zoom.us/j/92080995396?pwd=vki18jjUb5OC0whdVMbb9bEJAGR6Gw.1&jst=2' target='_blank'>https://lbnl.zoom.us/j/92080995396?pwd=vki18jjUb5OC0whdVMbb9bEJAGR6Gw.1&jst=2</MuiLink>
+          <MuiLink href='https://lbnl.zoom.us/j/92413708138?pwd=zL0VDOwXQabJ7KkmumQWELlY6t2aSs.1&jst=2' target='_blank'>Join meeting</MuiLink>
         </TableCell>
       </TableRow>
 
     </TableBody>
   </InfoTable>
 <br/>
-Reach out to  <MuiLink href='mailto:strudel@lbl.gov' target='_blank'>strudel@lbl.gov</MuiLink> for any other requests. 
 
 {/*
 <br/>Sign up for a 15-30 minute timeslot during our next office hours via registration link below:
