@@ -323,8 +323,8 @@ export const createPages: GatsbyNode["createPages"] = async ({
   });
 
   createRedirect({
-    fromPath: `/planning-framework/`,
-    toPath: `/planning-framework/overview/`,
+    fromPath: `/ux-training-&-planning/`,
+    toPath: `/ux-training-&-planning/overview/`,
     isPermanent: true, 
     force: true, 
     redirectInBrowser: true,

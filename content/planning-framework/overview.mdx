@@ -1,47 +1,181 @@
 ---
-id: 'planning-framework-overview'
-title: 'Planning Framework'
-subtitle: 'Surfacing key questions to shape scientific software development'
+id: 'ux-training-and-planning-overview'
+title: 'UX Training and Planning'
+subtitle: 'Learn the fundamentals to build good user experiences'
 ---
-import { Grid } from '@mui/material';
+import { Grid, Stack, Box } from '@mui/material';
 import { Hero } from '/src/components/Hero';
 import { PageContainer } from '/src/components/PageContainer';
 import { ContentCard } from '/src/components/ContentCard';
 import { Link } from 'gatsby';
+import { Button } from 'gatsby-theme-material-ui';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 <Hero>
-  STRUDEL Planning Framework will help scientific software teams incorporate UX practices in their development work.
-
-  ## The STRUDEL Planning Framework
-
-  <Grid container spacing={4}>
-    <Grid item md={4}>
-      <ContentCard>
-        #### Surfaces key questions
-
-        Surfaces key questions to consider when planning and designing new software products or features
-      </ContentCard>
-    </Grid>
-    <Grid item md={4}>
-      <ContentCard>
-        #### Foregrounds sociotechnical matters
-
-        Consider organizational, social, and technical topics affecting team work
-      </ContentCard>
-    </Grid>
-    <Grid item md={4}>
-      <ContentCard>
-        #### Informed by typology research
-
-        Key questions emerged from R&D of sociotechnical typology
-      </ContentCard>
-    </Grid>
-  </Grid>
+  STRUDEL offers open educational materials to strategize, design and evaluate high quality experiences for users. Developed with the research community’s needs in mind, our lessons, content, and tools can show you how to learn from and respond to scientific users’ needs when working with staffing constraints and a small budget. 
 </Hero>
 
 <PageContainer>
-# More information is coming soon!
 
-Understand the background and motivation by reviewing our initial <Link to="/planning-framework/typology">typology</Link>.
+  ## Apply UX Research Methods
+
+  User experience can be evaluated in many ways. STRUDEL offers lessons and tools for some common methods.
+  
+  <Grid container spacing={4}>
+    <Grid item md={4}>
+      <ContentCard variant="light" sx={{ height: '100%' }}>
+        #### Rapid Usability Testing
+
+        This Carpentries Incubator lesson teaches you to evaluate your tool's usability by observing users perform tasks. From participant recruitment to data analysis, this lesson has you covered.
+          <Button 
+              to="https://carpentries-incubator.github.io/rapid-usability-tutorial/index.html"
+              target="_blank"
+              size="large"
+              endIcon={<ArrowForwardIcon />}
+            >
+              Start Learning
+          </Button>
+      </ContentCard>
+    </Grid>
+    <Grid item md={4}>
+      <ContentCard variant="light" sx={{ height: '100%' }}>
+      <Stack
+          sx={{
+            justifyContent: 'space-between',
+            height: '100%',
+          }}
+        >
+          <Box>
+            #### Semi-Structured Interviews
+
+            This presentation teaches you how to learn from your users, giving practical techniques to gather rich data through interviews.
+          </Box>
+          <Box>
+            <Button 
+                  to="https://zenodo.org/records/17362664"
+                  target="_blank"
+                  size="large"
+                  endIcon={<ArrowForwardIcon />}
+                >
+                  Start Learning
+            </Button>
+          </Box>
+        </Stack>
+      </ContentCard>
+    </Grid>
+    <Grid item md={4}>
+      <ContentCard variant="light" sx={{ height: '100%' }}>
+        <Stack
+          sx={{
+            justifyContent: 'space-between',
+            height: '100%',
+          }}
+        >
+          <Box>
+            #### Heuristic Evaluation
+
+            Assessing your software—whether it is a CLI or GUI based tool—using design heuristics can surface key usability issues.
+          </Box>
+          <Box>
+            <Button 
+                  to="https://docs.google.com/document/d/1MuQ3bEux7dRvOqyHc4379mycBPIVOTBhIcyzjuNXFtI/edit?tab=t.0"
+                  target="_blank"
+                  size="large"
+                  endIcon={<ArrowForwardIcon />}
+                >
+                  Use our Template
+            </Button>
+          </Box>
+        </Stack>
+      </ContentCard>
+    </Grid>
+  </Grid>
+
+
+  ## Strategize, Design, and Develop with STRUDEL
+  
+  STRUDEL offers guidance on how to approach and execute your software project so that it is usable and able to grow over the long-term.
+
+  <Grid container spacing={4}>
+    <Grid item md={4}>
+      <ContentCard variant="light" sx={{ height: '100%' }}>
+        <Stack
+          sx={{
+            justifyContent: 'space-between',
+            height: '100%',
+          }}
+        >
+          <Box>
+            #### Ten Principles for Creating Usable Software for Science
+
+            Not sure where to begin with user experience work? In this paper, STRUDEL contributors explain why scientific software is unique and how to approach its usability.
+          </Box>
+          <Box>
+            <Button 
+                to="https://escholarship.org/content/qt0w5547jv/qt0w5547jv_noSplash_fb5d052988314657a264f28acb6ffc95.pdf"
+                target="_blank"
+                size="large"
+                endIcon={<ArrowForwardIcon />}
+              >
+                Start Learning
+            </Button>
+          </Box>
+        </Stack>
+      </ContentCard>
+    </Grid>
+    <Grid item md={4}>
+      <ContentCard variant="light" sx={{ height: '100%' }}>
+      <Stack
+          sx={{
+            justifyContent: 'space-between',
+            height: '100%',
+          }}
+        >
+          <Box>
+            #### Tips and Tricks for Using STRUDEL with AI assistants
+
+            If you want to speed up your app development using generative AI tools, explore our documentation on using STRUDEL with AI assistants. These tips are generalizable to any software development work with generative AI.
+          </Box>
+          <Box>
+            <Button 
+                  to="https://strudel.science/strudel-kit/docs/usage-with-ai"
+                  target="_blank"
+                  size="large"
+                  endIcon={<ArrowForwardIcon />}
+                >
+                  Get Tips
+            </Button>
+          </Box>
+        </Stack>
+      </ContentCard>
+    </Grid>
+    <Grid item md={4}>
+      <ContentCard variant="light" sx={{ height: '100%' }}>
+        <Stack
+          sx={{
+            justifyContent: 'space-between',
+            height: '100%',
+          }}
+        >
+          <Box>
+            #### Implement Task Flows Expertly
+
+            Each STRUDEL Task Flow comes with advice on how to implement it in your context. Check each flow for the Guidelines for adapting the Task Flow to identify essential features to include.
+          </Box>
+          <Box>
+            <Button 
+                  to="/design-system/task-flows/overview"
+                  target="_blank"
+                  size="large"
+                  endIcon={<ArrowForwardIcon />}
+                >
+                  See UX Guidelines
+            </Button>
+          </Box>
+        </Stack>
+      </ContentCard>
+    </Grid>
+  </Grid>
+
 
 </PageContainer>

@@ -7,19 +7,19 @@
       "markdownId": "home"
     },
     {
-      "name": "Planning Framework",
-      "path": "/planning-framework",
-      "redirectTo": "/planning-framework/overview",
+      "name": "UX Training & Planning",
+      "path": "/ux-training-&-planning",
+      "redirectTo": "/ux-training-&-planning/overview",
       "children": [
         {
           "name": "Overview",
-          "path": "/planning-framework/overview",
-          "markdownId": "planning-framework-overview",
+          "path": "/ux-training-&-planning/overview",
+          "markdownId": "ux-training-and-planning-overview",
           "layoutComponent": "PageLayout"
         },
         {
           "name": "Typology",
-          "path": "/planning-framework/typology",
+          "path": "/ux-training-&-planning/typology",
           "markdownId": "planning-framework-typology",
           "layoutComponent": "PageLayout"
         }
