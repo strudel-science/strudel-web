@@ -99,6 +99,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ rootPage, navProps, sx, ...res
           color: 'secondary.main',
           height: '100%',
           left: 0,
+          overflowY: 'auto',
           paddingTop: '3rem',
           position: 'fixed',
           top: 0,
