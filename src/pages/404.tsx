@@ -40,9 +40,9 @@ const NotFoundPage: React.FC<PageProps> = () => {
             </Link>
           </Grid>
           <Grid item xs={6}>
-            <Link to="/planning-framework/overview">
+            <Link to="/ux-training-&-planning/overview">
               <Button variant="outlined" size="large" sx={{ height: '100%', width: '100%' }}>
-                Planning Framework
+                UX Training and Planning
               </Button>
             </Link>
           </Grid>
