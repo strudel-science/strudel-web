@@ -169,10 +169,16 @@ This website is built with [Gatsby](https://www.gatsbyjs.com/docs), a React-base
 
 1.  **Clone the repo and install dependencies**
 
-    Clone the strudel repo onto your local machine.
+    (STRUDEL Team) Clone the strudel-web repo onto your local machine.
 
     ```shell
     git clone git@github.com:strudel-science/strudel-web.git
+    ```
+
+    (External Contributors) Fork the strudel-web repo and then clone your fork onto your local machine.
+
+    ```shell
+    git clone git@github.com:your-gh-username/strudel-web.git
     ```
 
     Navigate into the new strudel directory and install the dependencies.
@@ -205,6 +211,10 @@ This website is built with [Gatsby](https://www.gatsbyjs.com/docs), a React-base
     - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
     - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
     - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+
+5. **Open a Pull Request**
+
+    See the [Contributing](#contributing) section
 
 ### Troubleshooting
 
