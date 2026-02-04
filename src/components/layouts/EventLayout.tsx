@@ -87,7 +87,7 @@ const EventLayout: React.FC<PageProps<any, any>> = ({ pageContext, children }) =
               )}
               {!pageContext.frontmatter.registrationLink && pageContext.frontmatter.upcoming && (
                 <Button variant="contained" startIcon={<AssignmentIndIcon />} disabled>
-                  Registration is not open yet
+                  Registration is closed
                 </Button>
               )}
             </Box>
