@@ -22,6 +22,12 @@
           "path": "/ux-training-&-planning/typology",
           "markdownId": "ux-training-and-planning-typology",
           "layoutComponent": "PageLayout"
+        },
+        {
+          "name": "STRUDEL Bot Demo",
+          "path": "/ux-training-&-planning/bot-demo",
+          "markdownId": "ux-training-and-planning-bot-demo",
+          "layoutComponent": "PageLayout"
         }
       ]
     },

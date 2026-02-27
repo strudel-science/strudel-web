@@ -1,0 +1,993 @@
+---
+id: 'ux-training-and-planning-bot-demo'
+title: 'Example chat with STRUDEL Bot'
+---
+import { Paper } from '@mui/material';
+import { PageContainer } from '/src/components/PageContainer';
+import { Link } from 'gatsby';
+
+<PageContainer>
+_The following chat was executed by a STRUDEL team member on Feb 24, 2026 to demonstrate STRUDEL Bot. <Link to="https://chatgpt.com/g/g-6980fd16eb448191893c39765fab0e5a-strudel-bot" target="_blank">Try STRUDEL Bot yourself now</Link>._
+
+<Paper variant="outlined" sx={{ backgroundColor: '#eeeeee', padding: 2 }}>
+# **You said:**
+
+I'm building a VS Code extension to help visualize some complex modeling, display model output, and also to let people edit their scripts/get troubleshooting help/see diffs by using an AI agent. I'm not really sure what users' expectations are for how an agent should work in this system though or how they'd evaluate its changes. Help me plan a quick study to get more information on those expectations.
+</Paper>
+
+# **STRUDEL Bot said:**
+
+Before I suggest a study design, I want to understand your project in sociotechnical terms so the study actually fits your context rather than being generic.
+
+A few focused questions (answer what you can):
+
+1\. Project Composition
+
+* What is the primary purpose of this extension? Is it mainly a visualization tool for complex modeling, an AI coding assistant, or a workflow hub that combines both?  
+* Who is funding or motivating this work (e.g., research grant, internal lab effort, open-source side project)?  
+* How will you define success? Adoption? Reduced support tickets? Fewer modeling errors?
+
+2\. People & Teams
+
+* How large is your team, and what roles are represented (domain scientists, RSEs, AI/ML folks, UX expertise)?  
+* Are you yourself part of the target user group, or are the users meaningfully different from you?  
+* Do you expect turnover or short-term contributors to the codebase?
+
+3\. Software Product
+
+* Who are your primary user types? (e.g., grad students running models weekly, facility staff running large jobs daily, occasional collaborators)  
+* What computing paradigm are they working in (local VS Code only? HPC? cloud notebooks?)  
+* Is this an internal tool or something you expect to distribute publicly?
+
+4\. The AI Agent Specifically
+
+* What kinds of changes will the agent make? Small diffs? Whole-file rewrites? Workflow-level suggestions?  
+* Are you imagining the agent acts proactively (suggesting changes), reactively (responding to prompts), or autonomously?  
+* What is your biggest concern right now: trust, transparency, correctness, loss of control, or something else?
+
+Once I understand these dimensions, I can help you design a quick, lightweight study (likely semi-structured interviews \+ a small scenario-based evaluation) that gets at users' expectations for AI behavior, change visibility, and evaluation criteria—without overburdening you.
+
+<Paper variant="outlined" sx={{ backgroundColor: '#eeeeee', padding: 2 }}>
+# **You said:**
+
+1\. The extension is to add onto a model library for resource optimization. The extension is mean to help making working with complex models easier, so we're trying to visualize/display key information and provide new ways of working with scripts. Success would mean easier onboarding and people finding it easier to work with their models.  
+2\. One dev and one designer and some ad hoc support from other devs. Users are domain scientists and industry reps—they're different from us. No short term contributors  
+3\. Users are domain scientists and industry reps who might work with the tool for a few days at a time sporadically. They'll mostly do local VS Code, some might have used notebooks before. It's a public tool.  
+4\. Not sure about the changes people would want to make. I imagine it would be reactive, but i don't know. My major concerns are correctness and transparency
+</Paper>
+
+# **STRUDEL Bot said:**
+
+This is helpful context. Based on what you've described, you're in this situation:
+
+* You're planning a new UX layer on top of an existing modeling library (not just polishing an interface).  
+* You have an active but sporadic user base (domain scientists \+ industry reps).  
+* You're especially uncertain about expectations around an AI agent, and concerned about correctness and transparency.  
+* You have a small team and likely can't run a long, formal study.
+
+So I'm going to suggest a quick, high-yield study that focuses specifically on:
+
+1. How users expect an AI agent to behave  
+2. How they want changes surfaced and evaluated  
+3. What makes them trust (or distrust) automated modifications
+
+This will combine:
+
+* 3-5 semi-structured interviews  
+* A lightweight scenario-based “concept test”  
+* Rapid thematic analysis
+
+You can do this in \~2-3 weeks with minimal overhead.  
+
+
+### **Study Goal (Be Explicit About This)**
+
+Your goal is not:
+
+“Do users like AI?”
+
+Your goal is:
+
+Understand users' expectations for AI-assisted model editing, especially around correctness, transparency, and change visibility.
+
+Keep this written at the top of your protocol. It will prevent you from drifting.  
+
+
+### **Study Design Overview**
+
+#### ***Participants***
+
+Recruit 3-5 people:
+
+* 2 domain scientists  
+* 1-2 industry reps  
+* Preferably a mix of more and less experienced model users
+
+Because they use the tool sporadically, you'll likely surface onboarding and memory-related issues too (which is valuable).
+
+Even 3 interviews is enough to see strong patterns.  
+
+
+#### ***Part 1: Interview About Current Workflow (30-40 min)***
+
+You need to understand their *mental model* before introducing AI.
+
+Use a semi-structured format (strongly recommended here ).
+
+Focus on:
+
+##### **1\. How they currently work with models**
+
+Ask:
+
+* “Thinking about the last time you edited a model script, can you walk me through what you were trying to do?”  
+* “What parts of working with these models feel most cognitively heavy?”  
+* “Where do you worry about making mistakes?”
+
+You are looking for:
+
+* Fear of silent errors  
+* How they validate correctness  
+* What “confidence” means to them
+
+
+
+#### **2\. How they evaluate changes today**
+
+Ask:
+
+* “When you modify a script, how do you know the change is correct?”  
+* “What signals tell you something is safe?”  
+* “Have you ever made a change that seemed fine but broke something downstream?”
+
+This is critical.  
+You are mapping their current trust infrastructure.  
+
+
+#### ***Part 2: Introduce AI Through Scenarios (Concept Testing)***
+
+Do not ask abstract questions like:
+
+“Would you trust an AI?”
+
+Instead, use concrete scenarios.
+
+Present 2-3 short mockups or written scenarios like:  
+
+
+##### **Scenario A: Small Reactive Suggestion**
+
+“You highlight a constraint block. The agent suggests a small rewrite and shows a diff preview.”
+
+Ask:
+
+* “What would you look at first?”  
+* “What would make this feel safe?”  
+* “What would make this feel risky?”
+
+
+
+##### **Scenario B: Larger Refactor**
+
+“The agent proposes restructuring part of the model to improve performance.”
+
+Ask:
+
+* “Would you want this automatically applied?”  
+* “What would you need to see before accepting this?”  
+* “What level of explanation would you expect?”
+
+
+
+##### **Scenario C: Silent Change (Intentionally Risky)**
+
+“The agent applies a fix automatically and leaves a note.”
+
+Ask:
+
+* “How do you feel about this?”  
+* “Would this be acceptable in any situation?”
+
+This helps surface boundaries.  
+
+
+#### ***What You Are Actually Measuring***
+
+You are probing for:
+
+* Desired visibility of diffs  
+* Need for explanations vs. just results  
+* Desire for reproducibility artifacts  
+* Acceptable autonomy levels  
+* What “correctness” means (syntactic? mathematically equivalent? tested output?)
+
+You are mapping expectations across:
+
+* Transparency  
+* Control  
+* Verification  
+* Accountability
+
+
+
+#### ***After Interviews: Rapid Thematic Analysis***
+
+Follow a lightweight coding approach :
+
+1. Label statements like:  
+   * “Needs to see diff”  
+   * “Wants test run automatically”  
+   * “Doesn't trust black-box changes”  
+   * “Time pressure makes them accept suggestions”  
+2. Group into themes such as:  
+   * Theme: Trust requires traceability  
+   * Theme: Users fear silent model drift  
+   * Theme: Explanation preferred over automation  
+   * Theme: Performance claims must be verifiable
+
+You don't need formal qualitative software. A Google Doc is fine.  
+
+
+### **Deliverable (Internal)**
+
+Produce a short internal memo with:
+
+#### ***1\. User expectations for AI behavior***
+
+#### ***2\. Minimum transparency requirements***
+
+#### ***3\. Acceptable autonomy levels***
+
+#### ***4\. Design implications***
+
+For example:
+
+Users require line-level diffs and explicit justification for constraint changes before accepting AI edits.
+
+This becomes your design guardrail.  
+
+
+### **Important: Ethical Considerations**
+
+If you plan to publish these findings as generalizable knowledge (e.g., about AI trust in scientific modeling), check with your IRB before conducting interviews .
+
+If this is purely internal product improvement, formal IRB review is less likely required — but still protect participant confidentiality.  
+
+
+### **One Strategic Suggestion**
+
+Because your users are sporadic:
+
+You should include at least one question about:
+
+“When you return to a model after a few weeks, what's hardest to remember?”
+
+AI could act as:
+
+* A memory scaffold  
+* A model summarizer  
+* A change explainer
+
+You may discover the highest value isn't rewriting code — it's helping them re-orient.  
+
+
+### **If You Want to Go One Step Further**
+
+After interviews, run a very small usability test with a low-fidelity prototype of how diffs \+ explanations are shown.
+
+You can test:
+
+* Do they actually read explanations?  
+* Do they check diffs?  
+* What do they ignore?
+
+Rapid usability testing works well in agile contexts .  
+
+
+### **Summary of Your Lightweight Plan**
+
+1. Recruit 3-5 users  
+2. Conduct semi-structured interviews (workflow \+ trust infrastructure)  
+3. Run 2-3 scenario-based AI concept probes  
+4. Thematically analyze  
+5. Produce guardrails for:  
+   * Diff visibility  
+   * Explanation level  
+   * Autonomy boundaries  
+   * Correctness verification mechanisms
+
+
+
+If you'd like, next I can:
+
+* Help you draft a 60-minute interview protocol tailored exactly to modeling \+ VS Code  
+* Or help you think through possible AI interaction patterns before you build anything
+
+<Paper variant="outlined" sx={{ backgroundColor: '#eeeeee', padding: 2 }}>
+# **You said:**
+
+I don't have any industry reps that I can talk to, but I have a lot of domain scientists (university profs and staff at national labs). Also there are students of the professors, who I forgot to mention are also users
+</Paper>
+
+# **STRUDEL Bot said:**
+
+That's actually a strong position to be in.
+
+Given your updated context, your user ecosystem now looks like this:
+
+* Senior domain scientists (profs, lab staff)  
+* Students / trainees  
+* No direct access (for now) to industry reps  
+* Sporadic use patterns  
+* High correctness sensitivity  
+* Public tool
+
+This changes how I'd structure your study in an important way.
+
+You don't just want “AI expectations.”
+
+You want to understand how expectations differ by:
+
+* Seniority  
+* Risk tolerance  
+* Ownership of model outputs  
+* Who is accountable when something is wrong
+
+Because AI behavior that feels acceptable to a grad student may feel irresponsible to a PI.
+
+### **Revised Study Plan (Better Fit for Your Context)**
+
+Instead of “3-5 mixed users,” I'd recommend:
+
+* 2 senior scientists (PI / lab staff level)  
+* 2 students  
+* Optional: 1 mid-career staff scientist if available
+
+Even 4 total is fine.
+
+Your key comparison question becomes:
+
+How do expectations for AI behavior vary by role and responsibility?  
+
+
+### **Why Role Differences Matter (Sociotechnical Lens)**
+
+From a People & Teams perspective, your user base differs in:
+
+* Seniority  
+* Responsibility for model correctness  
+* Consequences of error  
+* Time pressure vs reputation risk
+
+Students may optimize for:
+
+* Speed  
+* Learning  
+* Reducing cognitive load
+
+PIs may optimize for:
+
+* Auditability  
+* Reproducibility  
+* Defensibility
+
+Those differences should shape:
+
+* Default autonomy levels  
+* Required transparency mechanisms  
+* Diff presentation style  
+* Explanation depth
+
+
+
+### **How to Structure the Study Now**
+
+#### ***Part 1: Workflow \+ Risk Framing (Same as Before)***
+
+But add one key question:
+
+“If a mistake makes it into a published result or decision, what happens?”
+
+You are trying to surface:
+
+* Social consequences  
+* Institutional consequences  
+* Emotional reactions
+
+This frames their AI tolerance.  
+
+
+#### ***Part 2: AI Expectations by Responsibility***
+
+After presenting a scenario, ask:
+
+* “Would this be appropriate for someone at your level?”  
+* “Would this be appropriate for your students?”  
+* “Would this be appropriate in a production or publication context?”
+
+This helps you detect:
+
+* Situational autonomy tolerance  
+* Conditional trust
+
+
+
+### **Add One Crucial Probe: Ownership**
+
+Ask directly:
+
+“If the AI modifies a constraint and the result is subtly wrong, who do you feel is responsible?”
+
+Possible answers:
+
+* “Me, obviously.”  
+* “The tool.”  
+* “Shared responsibility.”  
+* “Depends.”
+
+This question reveals whether AI is treated as:
+
+* Calculator  
+* Collaborator  
+* Junior assistant  
+* Risky black box
+
+That will strongly influence your interface design.  
+
+
+### **Important Adjustment: Students as a Separate Study Population**
+
+Students are not just “less experienced users.”
+
+They are:
+
+* Learning the modeling language  
+* Possibly unaware of common failure modes  
+* More likely to overtrust automation
+
+So ask students:
+
+* “How confident do you feel evaluating changes?”  
+* “Would you know how to verify this change?”  
+* “What would help you feel confident?”
+
+You may discover AI needs:
+
+* Educational explanations for students  
+* Concise technical justification for seniors
+
+Same feature, different explanation layers.  
+
+
+### **Very Lightweight Data Structure**
+
+When analyzing, tag quotes by role:
+
+* \[PI\]  
+* \[Lab Staff\]  
+* \[Student\]
+
+Then look for patterns:
+
+Theme: Students welcome auto-apply  
+Theme: PIs demand diff \+ justification  
+Theme: Both groups fear silent structural changes
+
+You don't need formal coding software. Just a shared doc.  
+
+
+### **Deliverable Should Explicitly Compare Roles**
+
+Instead of:
+
+“Users want transparency.”
+
+Write:
+
+Senior scientists require line-level diffs and explicit rationale before accepting constraint changes; students are comfortable with guided suggestions but need help verifying correctness.
+
+That gives you actionable design constraints.  
+
+
+### **One Strong Recommendation**
+
+Because you lack industry reps:
+
+At the end of each interview ask:
+
+“Is there someone outside academia who uses this tool differently than you?”
+
+You might get referrals.
+
+If not, that's fine — but document that gap.  
+
+
+### **Important: Keep This Focused**
+
+Do not let this become:
+
+* A general AI ethics study  
+* A full workflow redesign  
+* A 20-participant qualitative project
+
+Your goal is narrow:
+
+What level of transparency and control do different scientific users expect from an AI model-editing assistant?  
+
+
+### **If You Want, Next I Can:**
+
+* Draft a role-sensitive 60-minute interview protocol you can use directly  
+* Help you design 3 concrete AI interaction patterns to test  
+* Or help you define evaluation criteria you can use later in usability testing
+
+You're at a critical architectural decision point. This is exactly the right moment to ask these questions.
+
+<Paper variant="outlined" sx={{ backgroundColor: '#eeeeee', padding: 2 }}>
+# **You said:**
+
+If your example of senior scientists' vs students' requirements proved to be true, how would you account for that in the design? What that actually look like?
+</Paper>
+
+# **STRUDEL Bot said:**
+
+This is exactly the right follow-up question — because if you *don't* account for those differences explicitly, you'll either:
+
+* Overwhelm students  
+* Or under-serve senior scientists  
+* Or build a “one-size-fits-none” interface
+
+Let's assume your study confirms:
+
+* Students want guidance, guardrails, and clarity.  
+* Senior scientists want auditability, precision, and control.
+
+Here's what that would look like in concrete design decisions.  
+
+
+### **1\. Autonomy Levels: Make Them Adjustable (Not Implicit)**
+
+#### ***What not to do:***
+
+Hard-code a single behavior like:
+
+* “AI always auto-applies fixes”  
+* or “AI always requires manual review”
+
+#### ***What to do:***
+
+Introduce explicit autonomy modes.
+
+For example:
+
+#### ***Mode A: Guided (default for new users)***
+
+* AI suggests changes  
+* Shows diff  
+* Requires confirmation  
+* Provides explanation in plain language  
+* Optionally runs validation checks automatically
+
+#### ***Mode B: Expert Review***
+
+* AI suggests changes  
+* Shows minimal explanation  
+* Emphasizes diff \+ technical rationale  
+* Never auto-applies structural changes
+
+You're not labeling these “student mode” and “PI mode.”  
+You're offering configurable interaction styles.
+
+This respects expertise without stereotyping.  
+
+
+### **2\. Layered Explanations (Same Feature, Different Depth)**
+
+If your study shows students need learning scaffolding and PIs want defensible reasoning, then explanations should be progressively disclosed, not bloated.
+
+#### ***Example: AI suggests refactoring a constraint***
+
+What students see first:
+
+“This change simplifies the constraint by removing redundancy.”
+
+Expandable:
+
+“Previously, X and Y were both constraining Z. This version consolidates them.”
+
+What PIs can access:
+
+“Algebraically equivalent under condition A. Removes redundant term B. No change to feasible region.”
+
+You're not duplicating features.  
+You're layering them.
+
+This respects cognitive load for sporadic users.  
+
+
+### **3\. Always Show Diffs — But Tune Emphasis**
+
+Your study may show:
+
+* Students care about: “What changed?”  
+* PIs care about: “What changed and can I defend it?”
+
+So your design should:
+
+* Always show line-level diff  
+* Visually distinguish:  
+  * Cosmetic change  
+  * Performance optimization  
+  * Structural model change
+
+For example:
+
+* Green: formatting  
+* Blue: parameter update  
+* Red/orange: structural change (constraints/objective modified)
+
+This helps both groups quickly categorize risk.  
+
+
+### **4\. Build in Verification Rituals**
+
+Senior scientists often rely on ritualized validation.
+
+Instead of just:
+
+“Apply change”
+
+Consider:
+
+Apply \+ Run Validation
+
+Where validation might:
+
+* Re-run model on last dataset  
+* Compare objective value  
+* Show delta summary  
+* Highlight feasibility change
+
+This does two things:
+
+* Helps PIs trust the change  
+* Teaches students how to verify correctness
+
+It turns AI from “magic” into “assistant with accountability.”  
+
+
+### **5\. Make Responsibility Visible**
+
+If your interviews surface that users feel *personally responsible* for AI changes, your design should reinforce that.
+
+For example:
+
+Instead of:
+
+AI updated constraint.
+
+Use:
+
+You accepted AI suggestion to update constraint.
+
+This subtle language keeps accountability clear.
+
+You are designing for scientific integrity.  
+
+
+### **6\. Don't Auto-Apply Structural Changes**
+
+If correctness is a core concern (which you stated it is), then a safe principle is:
+
+* Minor edits: optionally auto-apply with undo  
+* Structural model edits: always require review
+
+Your interviews may confirm that silent structural changes are unacceptable across roles.  
+
+
+### **7\. Students May Need “Confidence Indicators”**
+
+If students struggle evaluating correctness, add signals like:
+
+* “No change in feasible region detected”  
+* “Objective value difference: 0.00%”  
+* “All previous tests passed”
+
+This scaffolds evaluation ability.
+
+Senior scientists might ignore this — and that's fine.  
+
+
+### **8\. Make Change History First-Class**
+
+For PIs, auditability matters.
+
+So your extension should:
+
+* Log AI-assisted changes  
+* Allow export of change history  
+* Show which changes were AI-suggested vs manually written
+
+If someone asks:
+
+“Why did this constraint change?”
+
+There should be a trace.
+
+That's transparency.  
+
+
+### **9\. Do NOT Split the Interface by Role**
+
+Avoid:
+
+* “Student UI”  
+* “Expert UI”
+
+Instead:
+
+* Offer adjustable depth  
+* Offer toggleable verbosity  
+* Offer optional validation steps
+
+Let expertise express itself naturally.  
+
+
+### **10\. What This Actually Looks Like in VS Code**
+
+Concretely, your extension might include:
+
+* Inline diff panel  
+* Expandable explanation block  
+* “Apply” and “Apply \+ Validate” buttons  
+* Risk indicator badge (Low / Moderate / Structural)  
+* Change log sidebar
+
+That's it.
+
+No need for something dramatically complex.  
+
+
+### **Strategically Important Insight**
+
+If your study shows role differences, the key is not designing two tools.
+
+It's designing:
+
+* Graduated transparency  
+* Optional depth  
+* Explicit autonomy controls
+
+This aligns with your two biggest concerns:
+
+* Correctness  
+* Transparency
+
+
+
+If you'd like, next we can:
+
+* Sketch 2-3 concrete AI interaction patterns and stress-test them against both user types  
+* Or identify the minimum viable transparency features you should not compromise on  
+* Or design a short usability test to validate whichever direction you choose
+
+You're thinking about this at exactly the right architectural layer.
+
+<Paper variant="outlined" sx={{ backgroundColor: '#eeeeee', padding: 2 }}>
+# **You said:**
+
+Okay go ahead and draft me an interview script that I can share with my team
+</Paper>
+
+# **STRUDEL Bot said:**
+
+Below is a 60-minute semi-structured interview protocol tailored to:
+
+* VS Code extension for a modeling library  
+* Domain scientists (faculty, lab staff)  
+* Students  
+* Focus on AI-assisted script editing  
+* Core concerns: correctness \+ transparency  
+* Designed for 3-5 interviews
+
+You can paste this directly into a Google Doc and use it.  
+
+
+### **Interview Protocol**
+
+Project: VS Code Extension for Model Library  
+Goal: Understand expectations for AI-assisted model editing, especially around correctness, transparency, and control.  
+Length: 60 minutes  
+Format: Semi-structured  
+
+
+#### ***Section 0 - Setup (5 minutes)***
+
+Interviewer script
+
+Thanks for taking the time to speak with us.  
+We're working on a VS Code extension to make it easier to work with complex models in \[library name\]. We're exploring ideas for visualization and AI-assisted editing.
+
+We're not testing you — we're testing ideas. There are no right or wrong answers.
+
+With your permission, we'd like to take notes. We'll keep your responses confidential and won't attribute quotes to you personally.
+
+(If recording, obtain explicit permission.)  
+
+
+#### ***Section 1 - Background & Role (5-10 minutes)***
+
+1. Can you briefly describe your role?  
+   * \[If faculty\] Do you actively edit models yourself?  
+   * \[If student\] How long have you been working with this modeling framework?  
+2. How often do you work with models in this library?  
+   * Daily?  
+   * Weekly?  
+   * A few times per year?  
+3. When you return to a model after some time away, what is hardest to remember?
+
+Interviewer note: Listen for cognitive load, memory gaps, and reorientation pain.  
+
+
+#### ***Section 2 - Current Workflow (10-15 minutes)***
+
+4. Thinking about the last time you edited a model script, can you walk me through what you were trying to do?  
+5. What parts of working with these models feel most mentally demanding?  
+6. Where are you most worried about making mistakes?  
+7. When you modify a model, how do you know the change is correct?  
+   * Do you run tests?  
+   * Compare outputs?  
+   * Rely on intuition?  
+   * Review diffs?  
+8. Have you ever made a change that seemed fine but later caused problems?  
+   Can you tell me about that?
+
+Interviewer note:  
+You are mapping their existing “trust and verification rituals.”  
+
+
+#### ***Section 3 - Risk & Responsibility (10 minutes)***
+
+9. If a modeling error made it into a publication or decision, what would happen?  
+10. When you make changes to a model, who do you feel is responsible for correctness?  
+11. If a tool suggested a change and you accepted it, and it later turned out to be wrong — who would you consider responsible?  
+* You?  
+* The tool?  
+* Shared responsibility?  
+* It depends?
+
+Interviewer note:  
+This question is critical. Do not rush it.  
+
+
+#### ***Section 4 - Introducing AI Assistance (Concept Scenarios) (20 minutes)***
+
+Tell participant:
+
+I'm going to describe a few possible features. These don't exist yet — we're exploring directions.  
+
+
+##### **Scenario A - Small Reactive Suggestion**
+
+You highlight a block of constraints.  
+The AI suggests a small rewrite to simplify them.  
+It shows a line-by-line diff and a short explanation.
+
+Questions:
+
+12. What would you look at first?  
+13. What would make this feel safe?  
+14. What would make this feel risky?  
+15. Would you want this automatically applied, or always reviewed first?  
+16. Would this be appropriate at your level of experience?  
+17. Would this be appropriate for your students? (Ask faculty only)
+
+
+
+##### **Scenario B - Larger Structural Change**
+
+The AI proposes restructuring part of the model to improve performance or readability.  
+This changes multiple constraints and the objective structure.
+
+Questions:
+
+18. What would you need to see before accepting this?  
+19. How much explanation would you expect?  
+20. Would you want validation automatically run before applying?  
+21. In what contexts would this be acceptable? (e.g., exploratory work vs publication work)
+
+
+
+##### **Scenario C - Automatic Fix**
+
+The AI detects a potential modeling issue and automatically applies a fix, leaving a note explaining what it did.
+
+22. How do you feel about this?  
+23. Would this be acceptable in any situation?  
+24. What kinds of changes should never be automatic?
+
+
+
+#### ***Section 5 - Transparency & Interface Expectations (10 minutes)***
+
+25. If the AI suggests a change, what information must always be visible?  
+* Diff?  
+* Mathematical justification?  
+* Performance impact?  
+* Confidence score?  
+* Validation results?  
+26. How detailed should explanations be?  
+* High-level summary?  
+* Full technical reasoning?  
+* Both?  
+27. Would you prefer:  
+* Concise explanations by default with expandable detail?  
+* Or full detail immediately?  
+28. Should AI-assisted changes be logged differently than manual edits?  
+29. If you needed to defend a model decision later, what record would you want?
+
+
+
+#### ***Section 6 - Students Only (If Interviewing Students) (5 minutes)***
+
+30. How confident do you feel evaluating changes to a model?  
+31. Would AI suggestions make you more confident or less confident?  
+32. What would help you verify that a suggested change is correct?
+
+
+
+#### ***Section 7 - Wrap-Up (5 minutes)***
+
+33. What concerns you most about AI assistance in modeling tools?  
+34. What excites you most about it?  
+35. Is there anything we haven't asked that feels important?
+
+
+
+### **After the Interview: Analysis Instructions for Your Team**
+
+Immediately after each session:
+
+1. Write 3-5 bullet points:  
+   * Biggest trust concern  
+   * Required transparency features  
+   * Autonomy tolerance level  
+   * Role-specific differences  
+2. Tag quotes by role:  
+   * \[PI\]  
+   * \[Staff\]  
+   * \[Student\]  
+3. Look for themes across roles:  
+   * “No silent structural edits”  
+   * “Must see diff”  
+   * “Need validation ritual”  
+   * “Students want scaffolding”  
+   * “PIs want audit trail”
+
+
+
+### **Expected Outcomes**
+
+By the end of 4-5 interviews, you should be able to answer:
+
+* What autonomy level is acceptable?  
+* What minimum transparency is non-negotiable?  
+* How responsibility is perceived?  
+* Whether students and senior scientists differ meaningfully.  
+* What must never be automatic.
+
+
+
+### **Important Reminder**
+
+If you plan to publish findings as generalizable research, check with your IRB before running interviews.  
+If this is internal product improvement, formal IRB review is less likely required — but still protect confidentiality.  
+
+
+If you'd like, next I can:
+
+* Draft a one-page internal memo template for reporting findings  
+* Or help you convert this into a shorter 30-minute version  
+* Or help you design a simple mockup to use during interviews
+
+</PageContainer>
