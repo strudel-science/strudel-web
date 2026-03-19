@@ -190,6 +190,10 @@
           "layoutComponent": "PageLayout"
         },
         {
+          "name": "Governance",
+          "path": "https://github.com/strudel-science/.github/blob/main/GOVERNANCE.md"
+        },
+        {
           "name": "Glossary",
           "path": "/about/glossary",
           "markdownId": "about-glossary",
